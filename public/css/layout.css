@@ -1,0 +1,388 @@
+/* CSS Document */
+.ui-layout-pane { /* all 'panes' */ 
+	background-color: #FFF; 
+	border: 1px solid #BBB; 
+	padding: 6px; 
+	overflow: auto;
+} 
+
+.ui-layout-resizer { /* all 'resizer-bars' */ 
+	background-color: #DDD; 
+} 
+
+.ui-layout-toggler { /* all 'toggler-buttons' */ 
+	background-color: #AAA; 
+} 
+
+.pane, .ui-layout-pane {
+background-color:#FFFFFF;
+border:1px solid #777777;
+overflow:auto;
+padding:0;
+}
+.pane-north, .pane-south {
+overflow:hidden;
+}
+.pane-north {
+border-bottom:medium none;
+}
+.pane-north .content, .pane-south .content {
+text-align:center;
+}
+.pane-center {
+background-color:#F6F6F6;
+padding:5px;
+}
+.header {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:#80ADE5 url(images/80ade5_40x100_textures_04_highlight_hard_100.png) repeat-x scroll 0 50%;
+border-bottom:1px solid #777777;
+font-weight:bold;
+overflow:hidden;
+padding:2px 0 4px;
+position:relative;
+text-align:center;
+}
+.subhead, .footer {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:#D6D6D6 url(images/d6d6d6_40x100_textures_02_glass_80.png) repeat-x scroll 0 50%;
+font-size:0.85em;
+overflow:hidden;
+padding:3px 10px;
+position:relative;
+white-space:nowrap;
+}
+.subhead {
+border-bottom:1px solid #777777;
+}
+.footer {
+border-top:1px solid #777777;
+}
+#mainContent .footer {
+border-top:1px solid #BBBBBB;
+}
+.content {
+padding:10px;
+position:relative;
+}
+#mainContent .ui-layout-pane {
+padding:10px;
+}
+#mainContent .ui-layout-north, #mainContent .ui-layout-south {
+text-align:center;
+}
+#mainContent .ui-layout-center {
+padding:0 !important;
+}
+#mainContent .ui-layout-content {
+padding:10px;
+}
+#mainContent .ui-layout-center h3 {
+font-size:1em;
+margin:0;
+padding:5px;
+}
+.resizer-south-dragging, .resizer-south:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/resizable-s.gif) repeat-x scroll center center;
+}
+.resizer-west-dragging, .resizer-west-open:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/resizable-w.gif) repeat-y scroll center center;
+}
+.resizer-east-dragging, .resizer-east-open:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/resizable-e.gif) repeat-y scroll center center;
+}
+.resizer-west-open, .resizer-east-open {
+background-color:#999999;
+opacity:0.1;
+}
+.resizer-west-open:hover, .resizer-east-open:hover {
+opacity:1;
+}
+.resizer-dragging {
+}
+* html .resizer-south {
+-moz-background-clip:border !important;
+-moz-background-inline-policy:continuous !important;
+-moz-background-origin:padding !important;
+background:transparent url(images/resizable-s.gif) repeat-x scroll center center !important;
+}
+* html .resizer-west-open {
+-moz-background-clip:border !important;
+-moz-background-inline-policy:continuous !important;
+-moz-background-origin:padding !important;
+background:transparent url(images/resizable-w.gif) repeat-y scroll center center !important;
+}
+* html .resizer-east-open {
+-moz-background-clip:border !important;
+-moz-background-inline-policy:continuous !important;
+-moz-background-origin:padding !important;
+background:transparent url(images/resizable-e.gif) repeat-y scroll center center !important;
+}
+* html .resizer-south, * html .resizer-west-open, * html .resizer-east-open {
+opacity:0.1 !important;
+}
+.toggler-north-open, .toggler-south-closed {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/toggle-up.gif) no-repeat scroll center bottom;
+}
+.toggler-north-closed, .toggler-south-open {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/toggle-dn.gif) no-repeat scroll center top;
+}
+.resizer-west-closed, .resizer-east-closed {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:#D1E6FC url(images/D1E6FC_40x100_textures_10_dots_medium_90.png) repeat scroll 0 0;
+border-bottom:1px solid #777777;
+border-top:1px solid #777777;
+}
+.resizer-west-closed:hover, .resizer-east-closed:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:#D1E6FC none repeat scroll 0 0;
+}
+ul.toolbar {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:#D6D6D6 url(images/d6d6d6_40x100_textures_02_glass_80.png) repeat-x scroll 0 50%;
+border-top:1px solid #BBBBBB;
+height:auto;
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+margin:0;
+overflow:hidden;
+padding:2px;
+position:relative;
+text-align:left;
+width:100%;
+}
+ul.toolbar li {
+border-color:transparent #BBBBBB transparent transparent;
+border-style:solid;
+border-width:1px;
+color:#000000;
+cursor:pointer;
+float:left;
+font-size:0.9em;
+margin:0;
+padding:2px 7px;
+}
+ul.toolbar li:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:#EEEEEE url(images/eeeeee_40x100_textures_02_glass_90.png) repeat-x scroll 0 50%;
+border-bottom-color:#BBBBBB;
+border-top-color:#BBBBBB;
+color:#000055;
+}
+ul.toolbar li.first:hover {
+border-left-color:#BBBBBB;
+}
+ul.toolbar li span {
+display:inline-block;
+height:15px;
+margin-left:-3px;
+margin-right:0.75ex;
+opacity:0.6;
+vertical-align:middle;
+width:15px;
+}
+ul.toolbar li:hover span {
+opacity:1;
+}
+li.button-toggle-north span, li.button-open-south span {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/go-up-on.gif) no-repeat scroll center center;
+}
+li.button-close-south span {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/go-dn-on.gif) no-repeat scroll center center;
+}
+li.button-pin-up span {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/pin-up-on.gif) no-repeat scroll center center;
+}
+li.button-pin-down span {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/pin-dn-on.gif) no-repeat scroll center center;
+}
+span.button-pin, span.button-close {
+cursor:pointer;
+display:block;
+height:20px;
+position:absolute;
+top:0;
+width:20px;
+z-index:2;
+}
+span.button-close-west {
+left:0;
+}
+span.button-close-east {
+right:0;
+}
+span.button-pin-west {
+right:1px;
+}
+span.button-pin-east {
+left:1px;
+}
+span.button-pin-up {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/pin-up-on.gif) no-repeat scroll center center;
+}
+span.button-pin-up:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/pin-up-on.gif) no-repeat scroll center center;
+}
+span.button-pin-down {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/pin-dn-on.gif) no-repeat scroll center center;
+}
+span.button-pin-down:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/pin-dn-on.gif) no-repeat scroll center center;
+}
+span.button-close-west {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/go-lt-on.gif) no-repeat scroll center center;
+}
+span.button-close-west:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/go-lt-on.gif) no-repeat scroll center center;
+}
+span.button-close-east {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/go-rt-off.gif) no-repeat scroll center center;
+}
+span.button-close-east:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/go-rt-on.gif) no-repeat scroll center center;
+}
+.toggler-west-closed {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/go-rt-on.gif) no-repeat scroll center center;
+}
+.toggler-west-closed:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/go-rt-on.gif) no-repeat scroll center center;
+}
+.toggler-east-closed {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/go-lt-off.gif) no-repeat scroll center center;
+}
+.toggler-east-closed:hover {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(images/go-lt-on.gif) no-repeat scroll center center;
+}
+#mainContent .ui-layout-resizer-closed:hover {
+-moz-background-clip:border !important;
+-moz-background-inline-policy:continuous !important;
+-moz-background-origin:padding !important;
+background:#FFEDCA none repeat scroll 0 0 !important;
+}
+#mainContent .ui-layout-resizer-open:hover, #mainContent .ui-layout-resizer-dragging {
+-moz-background-clip:border !important;
+-moz-background-inline-policy:continuous !important;
+-moz-background-origin:padding !important;
+background:#C4E1A4 none repeat scroll 0 0 !important;
+}
+#mainContent .ui-layout-resizer-drag-limit {
+-moz-background-clip:border !important;
+-moz-background-inline-policy:continuous !important;
+-moz-background-origin:padding !important;
+background:#FF3300 none repeat scroll 0 0 !important;
+}
+#mainContent .ui-layout-resizer-north, #mainContent .ui-layout-resizer-south {
+border-left:1px solid #BBBBBB !important;
+border-right:1px solid #BBBBBB !important;
+}
+#mainContent .ui-layout-resizer-north-closed {
+border-top:1px solid #BBBBBB !important;
+}
+#mainContent .ui-layout-resizer-south-closed {
+border-bottom:1px solid #BBBBBB !important;
+}
+#mainContent .ui-layout-resizer-west-closed {
+border-left:1px solid #BBBBBB !important;
+}
+#mainContent .ui-layout-resizer-east-closed {
+border-right:1px solid #BBBBBB !important;
+}
+#mainContent .ui-layout-resizer:hover .ui-layout-toggler {
+opacity:0.4;
+}
+#mainContent .ui-layout-resizer:hover .ui-layout-toggler:hover {
+-moz-background-clip:border !important;
+-moz-background-inline-policy:continuous !important;
+-moz-background-origin:padding !important;
+background:#FFDD99 none repeat scroll 0 0 !important;
+border-color:#CCBB77 !important;
+opacity:1;
+}
+#mainContent .ui-layout-resizer-sliding {
+opacity:0.3;
+}
+#mainContent .ui-layout-resizer-sliding:hover {
+opacity:1;
+}
+#mainContent .ui-layout-resizer-sliding .ui-layout-toggler {
+display:none !important;
+}
+#mainContent .ui-layout-resizer-sliding:hover .ui-layout-toggler {
+display:block !important;
+}

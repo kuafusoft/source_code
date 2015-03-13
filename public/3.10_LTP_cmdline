@@ -1,0 +1,70 @@
+Array
+(
+    [db] => xt
+    [table] => testcase
+    [export_type] => bsp_cmd2
+    [prj] => i.MX6SX-Sabre_SDB-Linux_3.10
+    [priority] => 1,2,3
+    [auto_level] => 1,4
+)
+className = xt_testcase, classFile = C:\Users\b19268\xampp\kuafu\application\jqgrid\xt\testcase\testcase.phpArray
+(
+    [db] => xt
+    [table] => testcase
+    [export_type] => bsp_cmd2
+    [prj] => i.MX6SX-Sabre_SDB-Linux_3.10
+    [priority] => 1,2,3
+    [auto_level] => 1,4
+    [real_table] => testcase
+)
+xt_testcase_exporter_bsp_cmd2 Object
+(
+    [str:protected] => 
+    [userAdmin:protected] => 
+    [userInfo:protected] => stdClass Object
+        (
+            [id] => 0
+            [nickname] => Guest
+            [roles] => Array
+                (
+                    [0] => guest
+                )
+
+            [group_ids] => 0
+            [menus] => Array
+                (
+                    [user] => Array
+                        (
+                            [login] => Array
+                                (
+                                    [action] => userAdmin_login
+                                    [display] => true
+                                )
+
+                            [register] => Array
+                                (
+                                    [action] => userAdmin_register
+                                    [display] => false
+                                )
+
+                            [display] => true
+                        )
+
+                )
+
+        )
+
+    [fileName:protected] => xt_testcase.txt
+    [params] => Array
+        (
+            [db] => xt
+            [table] => testcase
+            [export_type] => bsp_cmd2
+            [prj] => i.MX6SX-Sabre_SDB-Linux_3.10
+            [priority] => 1,2,3
+            [auto_level] => 1,4
+            [real_table] => testcase
+        )
+
+)
+str = 
