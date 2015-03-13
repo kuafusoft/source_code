@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>LCD_WF51TO48</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>LCD Waveform register</description>
+  <bitfields>
+    <bitfield>
+      <name>WF48</name>
+      <bitrange>7:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Controls segments or phases connected to LCD_P48 as described above for WF3TO0[WF3].</description>
+    </bitfield>
+    <bitfield>
+      <name>WF49</name>
+      <bitrange>15:8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Controls segments or phases connected to LCD_P49 as described above for WF3TO0[WF3].</description>
+    </bitfield>
+    <bitfield>
+      <name>WF50</name>
+      <bitrange>23:16</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Controls segments or phases connected to LCD_P50 as described above for WF3TO0[WF3].</description>
+    </bitfield>
+    <bitfield>
+      <name>WF51</name>
+      <bitrange>31:24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Controls segments or phases connected to LCD_P51 as described above for WF3TO0[WF3].</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

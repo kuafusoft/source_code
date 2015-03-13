@@ -1,0 +1,11 @@
+<!--
+ 应该可以进行不同版本之间的对比
+-->
+<?php
+	$kf_tool = new KF_Tool();
+	$field = array('code'=>array('label'=>'Test Case'), 'module', 'testpoint');
+	foreach($this->cycle as $cycle)
+		$field[] = $cycle;
+	$kf_tool->showTable($field, $this->rows);
+//	$kf_tool->showDiff($field, $this->rows);
+?>

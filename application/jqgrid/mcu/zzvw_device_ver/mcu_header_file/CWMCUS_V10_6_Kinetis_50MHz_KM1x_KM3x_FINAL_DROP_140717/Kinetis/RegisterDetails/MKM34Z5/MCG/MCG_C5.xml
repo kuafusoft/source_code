@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MCG_C5</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>MCG Control 5 Register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>4:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name>PLLSTEN0</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>PLL Stop Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>MCGPLLCLK is disabled in any of the Stop modes.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>MCGPLLCLK is enabled if system is in Normal Stop mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>PLLCLKEN0</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>PLL Clock Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>MCGPLLCLK is inactive.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>MCGPLLCLK is active.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,52 @@
+<div id='div_profile'>
+	<input type='hidden' id='user_id' value='<?php echo $this->id; ?>' />
+	<div class='profile_picture_class'>
+		<a href='javascript:profile_change_picture()'>
+			<?php
+				$title = $this->profile['detail']['nickname']."'s Picture, Click to change the picture";
+			?>
+			<img class='profile_picture_class' id='picture'  title="<?php  echo $title; ?>" alt="<?php echo $title; ?>" src='/img/44122162.jpg'>
+		</a>
+	</div>
+	<div class='profile_detail_class'><?php
+		require_once('toolfactory.php');
+		$model = array(
+			array('label'=>'Nick Name', 'index'=>'nickname', 'name'=>'nickname', 'DATA_TYPE'=>'text', 'editable'=>true),
+			array('label'=>'Email', 'index'=>'email', 'name'=>'email', 'DATA_TYPE'=>'text', 'editable'=>false),
+			array('label'=>'Birth-date', 'index'=>'birthdate', 'name'=>'birthdate', 'DATA_TYPE'=>'date', 'editable'=>true),
+			array('label'=>'Location', 'index'=>'place_node_id', 'name'=>'place_node_id', 'DATA_TYPE'=>'text', 'editable'=>true),
+			array('label'=>'Gender', 'index'=>'gender_id', 'name'=>'gender_id', 'DATA_TYPE'=>'int', 'editable'=>true),
+			array('label'=>'Education', 'index'=>'edu_level_id', 'name'=>'edu_level_id', 'DATA_TYPE'=>'text', 'editable'=>false),
+			array('label'=>'Major', 'index'=>'edu_major_id', 'name'=>'edu_major_id', 'DATA_TYPE'=>'text', 'editable'=>false),
+/*
+			array('label'=>'Mobile No.', 'index'=>'mobile_number', 'name'=>'mobile_number', 'DATA_TYPE'=>'text', 'editable'=>false),
+			array('label'=>'MSN', 'index'=>'msn', 'name'=>'msn', 'DATA_TYPE'=>'text', 'editable'=>false),
+			array('label'=>'QQ', 'index'=>'qq', 'name'=>'qq', 'DATA_TYPE'=>'text', 'editable'=>false),
+			array('label'=>'Facebook', 'index'=>'facebook', 'name'=>'facebook', 'DATA_TYPE'=>'text', 'editable'=>false),
+			array('label'=>'Hobby', 'index'=>'interest', 'name'=>'interest', 'DATA_TYPE'=>'text', 'editable'=>false),
+			array('label'=>'Memorial Day', 'index'=>'memorial_day', 'name'=>'memorial_day', 'DATA_TYPE'=>'text', 'editable'=>false),
+*/		
+		);
+		$kf_tool = toolFactory::get('kf');
+		$kf_tool->cf($model, $this->id == 0, $this->profile['detail'], 1);
+	?></div>
+	<div style="clear:both"> </div>
+	<div id='profile_tabs' class='profile_tabs_class'>
+		<ul>
+			<li><a href='#profile_expe'>Experience</a></li>
+			<li><a href='#profile_circle'>Circle</a></li>
+		</ul>
+		<div id='profile_expe'>
+			experiences
+		</div>
+		<div id='profile_circle'>
+			circles
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function(){
+		$('#profile_tabs').tabs();
+	});
+</script>

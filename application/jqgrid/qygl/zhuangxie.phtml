@@ -1,0 +1,17 @@
+<fieldset><legend><label><input type='checkbox' id='has_zhuangxie'>装卸</label></legend>	
+	<div id='div_zhuangxie' style='display:none'>
+	<?php
+		$ces = array(
+			array('label'=>'装卸方', 'name'=>'zhuangxie[hb_id]', 'id'=>'zhuangxie_hb_id', 'type'=>'select', 'DATA_TYPE'=>'int', 'editable'=>true, 'editoptions'=>array('value'=>$this->zxr)),
+			array('label'=>'数量', 'name'=>'zhuangxie[amount]', 'id'=>'zhuangxie_amount', 'type'=>'text', 'post'=>'吨', 'DATA_TYPE'=>'float', 'editable'=>true),
+			array('label'=>'装卸单价', 'name'=>'zhuangxie[price]', 'id'=>'zhuangxie_price', 'type'=>'text', 'post'=>'元/吨', 'DATA_TYPE'=>'float', 'editable'=>true),
+			array('label'=>'装卸费', 'name'=>'zhuangxie[total]', 'id'=>'zhuangxie_total', 'type'=>'text', 'post'=>'元', 'DATA_TYPE'=>'float', 'editable'=>false),
+			array('label'=>'装卸日期', 'name'=>'zhuangxie[happen_date]', 'id'=>'yunshu_happen_date', 'type'=>'date', 'DATA_TYPE'=>'date', 'editable'=>true, 'defval'=>date('Y-m-d')),
+		);
+		$tool = toolFactory::get('kf');
+		$tool->cf($ces, true, null, 3, false, array(), true);
+
+		echo $this->partial('zf.phtml', array('type'=>'zhuangxie_zf', 'title'=>'装卸费', 'zjzh'=>$this->zjzh, 'jbr'=>$this->jbr));
+	?>
+	</div>
+</fieldset>

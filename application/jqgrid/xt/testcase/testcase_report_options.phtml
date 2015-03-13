@@ -1,0 +1,19 @@
+<?php
+require_once('toolfactory.php');
+
+$tool = toolFactory::get('kf');
+$es = array(
+	array('label'=>'Edit History', 'name'=>'edit_history', 'editable'=>true, 'DATA_TYPE'=>'int', 'type'=>'checkbox', 'defval'=>0, 'editoptions'=>array('value'=>array(1=>'Yes'))),
+	array('label'=>'Include Editing Versions', 'name'=>'include_editing_versions', 'editable'=>true, 'DATA_TYPE'=>'int', 'type'=>'checkbox', 'defval'=>1, 'cols'=>1, 'editoptions'=>array('value'=>array(1=>'Yes'))),
+	array('label'=>'From', 'name'=>'edit_from', 'editable'=>true, 'DATA_TYPE'=>'date', 'type'=>'date', 'value'=>''),
+	array('label'=>'To', 'name'=>'edit_to', 'editable'=>true, 'DATA_TYPE'=>'date', 'type'=>'date', 'value'=>''),
+
+	array('label'=>'Test History', 'name'=>'test_history', 'editable'=>true, 'DATA_TYPE'=>'int', 'type'=>'checkbox', 'value'=>0, 'cols'=>1, 'editoptions'=>array('value'=>array(1=>'Yes'))),
+	array('label'=>'From', 'name'=>'test_from', 'editable'=>true, 'DATA_TYPE'=>'date', 'type'=>'date', 'value'=>''),
+	array('label'=>'To', 'name'=>'test_to', 'editable'=>true, 'DATA_TYPE'=>'date', 'type'=>'date', 'value'=>''),
+	
+	array('label'=>'Include Projects', 'name'=>'prj_ids', 'editable'=>true, 'DATA_TYPE'=>'text', 'type'=>'cart', 'cart_db'=>'xt', 'cart_table'=>'prj')
+);
+$tool->cf($es, true, null, 1);
+
+?>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>AFE_CKR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x10000000</reset-value>
+  <description>Clock Configuration Register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>20:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>CLS</name>
+      <bitrange>22:21</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Clock Source Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>mod_clk0</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>mod_clk1</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>mod_clk2</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>mod_clk3</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>27:23</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>DIV</name>
+      <bitrange>31:28</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Clock Divider Select</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>divide by 1</description>
+        </value>
+        <value>
+          <value>0b0001</value>
+          <description>divide by 2 (default)</description>
+        </value>
+        <value>
+          <value>0b0010</value>
+          <description>divide by 4</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>divide by 8</description>
+        </value>
+        <value>
+          <value>0b0100</value>
+          <description>divide by 16</description>
+        </value>
+        <value>
+          <value>0b0101</value>
+          <description>divide by 32</description>
+        </value>
+        <value>
+          <value>0b0110</value>
+          <description>divide by 64</description>
+        </value>
+        <value>
+          <value>0b0111</value>
+          <description>divide by 128</description>
+        </value>
+        <value>
+          <value>0b1---</value>
+          <description>divide by 256</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

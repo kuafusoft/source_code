@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>DefaultLayout_cpuMKM34Z5</name>
+  <register-sets>
+    <register-file-name>Registers/cortexM0/CORE_layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/FTFA_FlashConfig_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/AIPS_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/DMA_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/MPU_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/FTFA_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/DMAMUX0_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/DMAMUX1_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/DMAMUX2_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/DMAMUX3_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/RNG_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/ADC_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PIT0_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PIT1_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/AFE_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/LPTMR_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/SIM_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PORTA_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PORTB_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PORTC_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PORTD_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PORTE_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PORTF_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PORTG_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PORTH_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PORTI_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/RTC_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/WDOG_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/XBAR_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/TMR0_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/TMR1_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/TMR2_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/TMR3_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/EWM_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/MCG_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/OSC_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/I2C0_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/I2C1_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/UART0_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/UART1_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/UART2_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/UART3_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/VREF_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/RCM_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/LLWU_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/PMC_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/SMC_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/GPIOA_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/GPIOB_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/GPIOC_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/GPIOD_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/GPIOE_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/GPIOF_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/GPIOG_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/GPIOH_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/GPIOI_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/DWT_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/BP_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/SystemControl_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/SysTick_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/NVIC_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/CoreDebug_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/MTB_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/MTBDWT_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/ROM_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/MCM_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/CRC_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/LCD_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/CMP0_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/CMP1_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/SPI0_Layout.xml</register-file-name>
+    <register-file-name>Registers/MKM34Z5/SPI1_Layout.xml</register-file-name>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

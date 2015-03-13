@@ -1,0 +1,304 @@
+<div id="user-homepage">
+    <?php
+        if ($this->userLogined){
+    ?>
+    <a href="javascript:XT.refresh_user_info()">Refresh My(<em style='color:red'><?php echo $this->userInfo->nickname;?></em>) Info</a>
+	<ul>
+		<li><a href="#tabs-my-profile">My Profile</a></li>
+		<?php
+			if(isset($this->myControlledTasks)){
+		?>
+		<li><a href="#tabs-my-controlled-tasks">My <span style="color:red">Controlled</span> Tasks<span style="color:red">(<?php echo count($this->myControlledTasks);?>)</span></a></li>
+		<?php
+			}
+		?>
+		<?php
+			if(isset($this->tasks)){
+		?>
+		<li><a href="#tabs-mytasks">My <span style="color:red">Unfinished</span> Tasks<span style="color:red">(<?php echo count($this->tasks);?>)</span></a></li>
+		<?php
+			}
+		?>
+		<?php
+			if(isset($this->cycles)){
+		?>
+		<li><a href="#tabs-mycycles">My <span style="color:red">Unfinished</span> Cycles<span style="color:red">(<?php echo count($this->cycles);?>)</span></a></li>
+		<?php
+			}
+		?>
+		<?php
+			if(isset($this->cases)){
+		?>
+		<li><a href="#tabs-mycases">My <span style="color:red">NOT</span> Published Cases<span style="color:red">(<?php echo count($this->cases);?>)</span></a></li>
+		<?php
+			}
+		?>
+		<?php
+			if(isset($this->subscribes)){
+		?>
+		<li><a href="#tabs-subscribes">My Subscribe List</a></li>
+		<?php
+			}
+		?>
+		<?php
+			if(isset($this->messages)){
+		?>
+		<li><a href="#tabs-messages">My Messages<span style="color:red">(<?php echo count($this->messages);?>)</span></a></li>
+		<?php
+			}
+		?>
+	</ul>
+	<div id='tabs-my-profile'>
+		<?php
+		echo $this->partial("index/profile.phtml", array('profile'=>$this->profile));
+		?>
+	</div>
+	<?php
+		if(isset($this->myControlledTasks)){
+	?>
+	<div id='tabs-my-controlled-tasks'>
+	   <?php
+//print_r($this->tasks);	   
+        if (empty($this->myControlledTasks)) echo "There's no controlled tasks";
+        else{
+            foreach($this->myControlledTasks as $task){
+                switch($task['action_type_id']){
+                    case 1: //'dialog':
+                        $class = "task_priority_".$task['task_priority_id']." task_result_".$task['task_result_id'];
+                        $deadline_class = "task_normal";
+                        if (!empty($task['deadline'])){
+                            $diff = strtotime($task['deadline'].' 23:59:59') - time();
+                            if ($diff < 0)
+                                $deadline_class = "task_overdue";
+                            else if ($diff < 2 * 3600 * 24) // two days
+                                $deadline_class = "task_urgent";
+                            $class .= " ".$deadline_class;
+                        }
+						$progress_class = "task_progress_100";
+						if ($task['progress'] < 20)
+							$progress_class = 'task_progress_20';
+						else if ($task['progress'] < 50)
+							$progress_class = 'task_progress_50';
+						else if ($task['progress'] < 80)
+							$progress_class = 'task_progress_80';
+						if (empty($task['task_result_id']))
+							$task['task_result'] = 'No Result';
+						$task['task_type'] = 'modify_task';
+						$task['url'] = "/jqgrid/jqgrid/db/useradmin/table/task/oper/modifyTask/element/{$task['id']}";
+                        print_r('<a class="'.$class.'" href="javascript:XT.gen_task_dialog('.$task['id'].',\''.$task['url'].'\',\''.$task['task_type'].'\')" title="'.$task['description'].'">'.
+							$task['description'].', dealine is: <span class="'.$deadline_class.'_deadline">'.$task['deadline'].'</span>'.
+							', priority: <span class="task_priority_'.$task['task_priority'].'">'.$task['task_priority'].'</span>'.
+							', Current progress: <span class="'.$progress_class.'">'.$task['progress'].'%</span>'.
+							', Result:'.$task['task_result'].
+							'</a></BR>');
+                        break;
+                    case 'newtab':
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+       ?>
+    </div>
+	<?php
+		}
+	?>
+	<?php
+		if(isset($this->tasks)){
+	?>
+	<div id="tabs-mytasks">
+		<label for="task_finished" style="color:blue">Display finished tasks
+			<input id="task_finished" type="checkbox">
+		</label><BR />
+		<?php
+        if (empty($this->tasks)) echo "There's no unfinished tasks";
+        else{
+            foreach($this->tasks as $task){
+                switch($task['action_type_id']){
+                    case 1: //'dialog':
+                        $class = "task_priority_".$task['task_priority_id']." task_result_".$task['task_result_id'];
+                        $deadline_class = "task_normal";
+                        if (!empty($task['deadline'])){
+                            $diff = strtotime($task['deadline'].' 23:59:59') - time();
+//print_r("deadline = ".$task['deadline'].", diff = $diff");                            
+                            if ($diff < 0)
+                                $deadline_class = "task_overdue";
+                            else if ($diff < 2 * 3600 * 24) // two days
+                                $deadline_class = "task_urgent";
+                            $class .= " ".$deadline_class;
+                        }
+						$progress_class = "task_progress_100";
+						if ($task['progress'] < 20)
+							$progress_class = 'task_progress_20';
+						else if ($task['progress'] < 50)
+							$progress_class = 'task_progress_50';
+						else if ($task['progress'] < 80)
+							$progress_class = 'task_progress_80';
+						
+                        print_r('<a class="'.$class.'" href="javascript:XT.gen_task_dialog('.$task['id'].',\''.$task['url'].'\',\''.$task['task_type'].'\')" title="'.$task['description'].'">'.
+							$task['description'].', dealine is: <span class="'.$deadline_class.'_deadline">'.$task['deadline'].'</span>'.
+							', priority: <span class="task_priority_'.$task['task_priority'].'">'.$task['task_priority'].'</span>'.
+							', Current progress: <span class="'.$progress_class.'">'.$task['progress'].'%</span>'.
+							', My result:'.$task['my_task_result'].
+							'</a></BR>');
+                        break;
+                    case 'newtab':
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+		?>		
+		<BR />
+		<div id='my-finished-tasks'>
+			<fieldset><legend>Finished latest 20 tasks</legend>
+			<?php
+            foreach($this->finishedTasks as $task){
+                switch($task['action_type_id']){
+                    case 1: //'dialog':
+                        $class = "task_priority_".$task['task_priority_id']." task_result_".$task['task_result_id'];
+                        $deadline_class = "task_normal";
+                        if (!empty($task['deadline'])){
+                            $diff = strtotime($task['deadline'].' 23:59:59') - time();
+//print_r("deadline = ".$task['deadline'].", diff = $diff");                            
+                            if ($diff < 0)
+                                $deadline_class = "task_overdue";
+                            else if ($diff < 2 * 3600 * 24) // two days
+                                $deadline_class = "task_urgent";
+                            $class .= " ".$deadline_class;
+                        }
+						$progress_class = "task_progress_100";
+						if ($task['progress'] < 20)
+							$progress_class = 'task_progress_20';
+						else if ($task['progress'] < 50)
+							$progress_class = 'task_progress_50';
+						else if ($task['progress'] < 80)
+							$progress_class = 'task_progress_80';
+						
+                        print_r('<a class="'.$class.'" href="javascript:XT.gen_task_dialog('.$task['id'].',\''.$task['url'].'\',\''.$task['task_type'].'\', 1)" title="'.$task['description'].'">'.
+							$task['description'].', dealine is: <span class="'.$deadline_class.'_deadline">'.$task['deadline'].'</span>'.
+							', priority: <span class="task_priority_'.$task['task_priority'].'">'.$task['task_priority'].'</span>'.
+							', Current progress: <span class="'.$progress_class.'">'.$task['progress'].'%</span>'.
+							', My result:'.$task['my_task_result'].
+							'</a></BR>');
+                        break;
+                    case 'newtab':
+                        break;
+                    default:
+                        break;
+                }
+            }
+			?>
+			</fieldset>
+		</div>
+	</div>
+	<?php
+		}
+	?>
+	<?php
+		if(isset($this->cycles)){
+	?>
+	<div id="tabs-mycycles">
+		<?php
+		if (empty($this->cycles))
+			echo "There's no non-published cycles assigned to me";
+		else{
+            foreach($this->cycles as $cycle){
+				$url = "/jqgrid/jqgrid/newpage/1/oper/information/db/xt/table/zzvw_cycle/element/{$cycle['id']}";
+				$label = array();
+				foreach($cycle as $f=>$v){
+					if ($f == 'id' || $f == 'name')
+						continue;
+					$label[] = "$f:$v";
+				}
+                print_r('<a href="'.$url.'" title="information" target="_blank"><span style="color:red">['.$cycle['name'].']:</span></a>'.implode(', ', $label).'</BR>');
+            }
+		}
+		?>
+	</div>
+	<?php
+		}
+	?>
+	<?php
+		if(isset($this->cases)){
+	?>
+	<div id="tabs-mycases">
+		<?php
+		if (empty($this->cases))
+			echo "There's no non-published cases owned by me";
+		else{
+            foreach($this->cases as $case){
+				$url = "/jqgrid/jqgrid/newpage/1/oper/information/db/xt/table/testcase/element/{$case['testcase_id']}/parent/0/ver/{$case['ver_ids']}";
+                print_r('<a href="'.$url.'" title="information" target="_blank"><span style="color:red">['.$case['edit_status'].']</span>'.$case['code'].':'.$case['summary'].'</a></BR>');
+            }
+		}
+		?>
+	</div>
+	<?php
+		}
+	?>
+	<?php
+		if(isset($this->subscribes)){
+	?>
+	<div id="tabs-subscribes">
+	   <?php
+	    if (empty($this->subscribes))
+	       echo "There's no subscribes";
+	    else{
+            foreach($this->subscribes as $subscribe){
+                print_r('<a href="javascript:XT.unscribe('.$subscribe['id'].')" title="unscribe">'.' (unscribe it)</a> '.$subscribe['description'].'</BR>');
+            }
+        }
+        ?>
+    </div>
+	<?php
+		}
+	?>
+	<?php
+		if(isset($this->messages)){
+	?>
+	<div id="tabs-messages">
+	   <?php
+        if (empty($this->messages)) echo "There's no unread messages";
+        else{
+            foreach($this->messages as $message){
+				print_r("<div id='msg_{$message['id']}'>");
+				$class = '';
+				if($message['handled'])
+					print_r("[<a title='Remove the message from the list' href='javascript:void(0)' onclick='javascript:XT.removeMsg({$message['id']})'>X</a>][<span style='color:red' title='This message has been readed'>*</span>]");
+                print_r('<a '.$class.' href="javascript:XT.readMessage('.$message['id'].')" title="'.htmlentities($message['message']).'">'.$message['name'].': [Subject:'.htmlentities($message['subject']).']</a></BR>');
+				print_r("</div>");
+            }
+        }
+        ?>
+	</div>
+	<?php
+		}
+	?>
+	
+	<?php
+        }
+        else{
+    ?>
+        There's No User Logined;   
+    <?php
+        }
+    ?>
+</div>
+
+<script>
+    $(function(){
+		$('#profile_tabs').tabs();
+        var selected = 'tabs-my-control-tasks';
+        $( "#user-homepage" ).tabs({ selected: selected });   
+        $('#task_finished').unbind('change').bind('change', function(){
+            if (this.checked){
+                $("#my-finished-tasks").show();
+            }
+            else
+                $("#my-finished-tasks").hide();
+        });
+    })
+</script>

@@ -1,0 +1,98 @@
+<table>
+	<tr>
+		<td>
+			<label for="export_type_default">
+				<input type="radio" name="export_type" id="export_type_default" checked="checked" value="excel"> 
+				Export the selected rows
+			</label> 
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="export_type_forimportresult">
+				<input type="radio" name="export_type" id="export_type_forimportresult" value="importresult"> 
+				Export the selected rows for importing test result
+			</label> 
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="report_type_release">
+				<input type="radio" name="export_type" id="report_type_release" value="rel"> 
+				Case Release: HTML Format Report 
+			</label> 
+		</td> 
+	</tr> 
+	<tr> 
+		<td>
+			<label for="report_type_script"> 
+				<input type="radio" name="export_type" id="report_type_script" value="script"> 
+				Command File For Linux BSP: testcaseid cmd_line 
+			</label> 
+		</td> 
+	</tr> 
+	<tr> 
+		<td>
+			<label for="report_type_config"> 
+				<input type="radio" name="export_type" id="report_type_config" value="config"> 
+				Config File For Linux BSP: testcaseid config 
+			</label> 
+		</td> 
+	</tr> 
+<?php if(($this->group_id == '3' || $this->group_id == '9') && $this->os == 'Linux'){?>
+	<tr> 
+		<td>
+			<label for="report_type_playlist_cte"> 
+				<input type="radio" name="export_type" id="report_type_playlist_cte" value="codec_playlist_cte"> 
+					XML Playlist For CTE<BR />
+					<div id='div_for_playlist_cte'>
+						<pre>
+		&lt;playlist&gt
+			&lt;testscase&gt;
+				&lt;testcaseid &gt...&lt;/testcaseid&gt;
+				&lt;cmdline&gt;...&lt;/cmdline&gt;
+				&lt;location &gt...&lt;/location&gt;
+				&lt;module&gt;...&lt;/module&gt;
+				&lt;title&gt...&lt;/title&gt;
+			&lt;/testscase&gt;
+		&lt;/playlist&gt;
+						</pre>
+				</div>
+			</label> 
+		</td> 
+	</tr> 
+	<tr> 
+		<td>
+			<label for="report_type_playlist_gvb"> 
+				<input type="radio" name="export_type" id="report_type_playlist_gvb" value="codec_playlist_gvb"> 
+					XML Playlist For GVB<BR />
+					<div id='div_for_playlist_gvb'>
+						<pre>
+		&lt;playlist&gt
+			&lt;testconfig desc=...&gt;
+				&lt;trickmode  desc=...&&gt;
+				&lt;/trickmode&&gt;
+			&lt;/testconfig&gt;
+			&lt;teststream id = ...&gt;
+				&lt;caseinfo&gt;
+					&lt;type &gt...&lt;/testcaseid&gt;
+					&lt;module&gt;...&lt;/cmdline&gt;
+					&lt;...&gt;
+				&lt;/caseinfo&gt;
+				&lt;streaminfo&gt;
+					&lt;video&gt;
+						&lt;...&gt;
+					&lt;/video&gt;
+					&lt;audio&gt;
+						&lt;...&gt;
+					&lt;/audio&gt;
+				&lt;/streaminfo&gt;
+			&lt;/testscase&gt;
+		&lt;/playlist&gt;
+						</pre>
+				</div>
+			</label> 
+		</td> 
+	</tr> 
+<?php }?>
+</table> 

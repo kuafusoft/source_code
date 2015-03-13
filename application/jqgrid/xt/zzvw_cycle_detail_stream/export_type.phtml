@@ -1,0 +1,92 @@
+<table>
+	<tr>
+		<td>
+			<label for="export_type_default">
+				<input type="radio" name="export_type" id="export_type_default" checked="checked" value="excel"> 
+				Export the selected rows
+			</label> 
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="report_type_release">
+				<input type="radio" name="export_type" id="report_type_release" value="rel"> 
+				Case Release: HTML Format Report 
+			</label> 
+		</td> 
+	</tr> 
+	<tr> 
+		<td>
+			<label for="report_type_script"> 
+				<input type="radio" name="export_type" id="report_type_script" value="script"> 
+				Command File For Linux BSP: testcaseid cmd_line 
+			</label> 
+		</td> 
+	</tr> 
+<?php if(($this->group_id == '3' || $this->group_id == '9')  && $this->os == 'linux'){?>
+	<tr> 
+		<td>
+			<label for="report_type_playlist_gvb"> 
+				<input type="radio" name="export_type" id="report_type_playlist_gvb" value="codec_playlist_gvb"> 
+					XML Playlist For GVB<BR />
+					<div id='div_for_playlist_gvb'>
+						<pre>
+		&lt;playlist&gt
+			&lt;testconfig desc=...&gt;
+				&lt;trickmode  desc=...&&gt;
+				&lt;/trickmode&&gt;
+			&lt;/testconfig&gt;
+			&lt;teststream id = ...&gt;
+				&lt;caseinfo&gt;
+					&lt;type &gt...&lt;/testcaseid&gt;
+					&lt;module&gt;...&lt;/cmdline&gt;
+					&lt;...&gt;
+				&lt;/caseinfo&gt;
+				&lt;streaminfo&gt;
+					&lt;video&gt;
+						&lt;...&gt;
+					&lt;/video&gt;
+					&lt;audio&gt;
+						&lt;...&gt;
+					&lt;/audio&gt;
+				&lt;/streaminfo&gt;
+			&lt;/testscase&gt;
+		&lt;/playlist&gt;
+						</pre>
+				</div>
+			</label> 
+		</td> 
+	</tr> 
+<?php }
+if($this->group_id == '3'  && $this->os == 'android'){?>
+	<tr> 
+		<td>
+			<label for="report_type_playlist_android"> 
+				<input type="radio" name="export_type" id="report_type_playlist_android" value="codec_playlist_android"> 
+					XML Playlist For Android<BR />
+					<div id='div_for_playlist_android'>
+						<pre>
+		&lt;playlist&gt
+			&lt;teststream id = ...&gt;
+				&lt;caseinfo&gt;
+					&lt;type &gt...&lt;/testcaseid&gt;
+					&lt;module&gt;...&lt;/cmdline&gt;
+					&lt;...&gt;
+				&lt;/caseinfo&gt;
+				&lt;streaminfo&gt;
+					&lt;video&gt;
+						&lt;...&gt;
+					&lt;/video&gt;
+					&lt;audio&gt;
+						&lt;...&gt;
+					&lt;/audio&gt;
+				&lt;/streaminfo&gt;
+			&lt;/testscase&gt;
+		&lt;/playlist&gt;
+						</pre>
+				</div>
+			</label> 
+		</td> 
+	</tr>
+<?php }?>
+</table> 

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>FTFA_FCNFG</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Flash Configuration Register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>ERSSUSP</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Erase Suspend</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No suspend requested</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Suspend the current Erase Flash Sector command execution.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ERSAREQ</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Erase All Request</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No request or request complete</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Request to: run the Erase All Blocks command, verify the erased state, program the security byte in the Flash Configuration Field to the unsecure state, and release MCU security by setting the FSEC[SEC] field to the unsecure state.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RDCOLLIE</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read Collision Error Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Read collision error interrupt disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Read collision error interrupt enabled. An interrupt request is generated whenever a flash memory read collision error is detected (see the description of FSTAT[RDCOLERR]).</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CCIE</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Command Complete Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Command complete interrupt disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Command complete interrupt enabled. An interrupt request is generated whenever the FSTAT[CCIF] flag is set.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<role_access>
+	<guest>
+		<all value='0' />
+		<client_export value='1' />
+	</guest>
+	<normal extends='guest'>
+		<export value='1' />
+		<index value='1' />
+		<query value='1' />
+		<list value='1' />
+		<information value='1' />
+		<update_information_page value='1' />
+		<tag value='1' />
+	</normal>
+
+	<Dev extends="normal" >
+		<ver_diff value='1' />
+		<diff value='1' />
+	</Dev>
+
+	<tester extends='Dev'>
+		<link2prj value='1' />
+		<getlink2prj value='1' />
+		<unlinkfromprj value='1' />
+		<ver_abort value='1' />
+		<change_owner value='1' />
+	</tester>
+
+	<assistent_admin extends='tester'/>
+	<admin extends='assistent_admin' />
+</role_access>

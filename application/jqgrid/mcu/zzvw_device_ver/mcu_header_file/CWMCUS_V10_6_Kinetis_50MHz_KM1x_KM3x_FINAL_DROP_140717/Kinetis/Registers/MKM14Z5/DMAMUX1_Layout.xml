@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>DMAMUX1_Layout</name>
+  <register-sets>
+    <register-set-descriptor>
+      <name>DMA channel multiplexor (DMAMUX1)</name>
+      <registers>
+        <register>
+          <name>DMAMUX1_CHCFG</name>
+          <access>RW</access>
+          <register-details-file-name>DMAMUX1/DMAMUX1_CHCFG.xml</register-details-file-name>
+          <offset>0</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x40022000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+      </registers>
+    </register-set-descriptor>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

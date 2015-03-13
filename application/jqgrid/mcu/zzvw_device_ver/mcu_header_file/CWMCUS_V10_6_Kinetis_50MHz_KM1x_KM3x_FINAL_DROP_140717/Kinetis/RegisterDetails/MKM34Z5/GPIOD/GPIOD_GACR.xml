@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>GPIOD_GACR</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>GPIO Attribute Checker Register</description>
+  <bitfields>
+    <bitfield>
+      <name>ACB</name>
+      <bitrange>2:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute Check Byte</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>User nonsecure: Read + Write; User Secure: Read + Write; Privileged Secure: Read + Write</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>User nonsecure: Read; User Secure: Read + Write; Privileged Secure: Read + Write</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>User nonsecure: None; User Secure: Read + Write; Privileged Secure: Read + Write</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>User nonsecure: Read; User Secure: Read; Privileged Secure: Read + Write</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>User nonsecure: None; User Secure: Read; Privileged Secure: Read + Write</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>User nonsecure: None; User Secure: None; Privileged Secure: Read + Write</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>User nonsecure: None; User Secure: None; Privileged Secure: Read</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>User nonsecure: None; User Secure: None; Privileged Secure: None</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>6:3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>ROB</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read-Only Byte</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to the ACB are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to the ACB are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,37 @@
+<fieldset>
+    <legend>Add New Comment</legend>
+    <textarea id="comment_new" rows="5" cols="80">New Comment</textarea>
+</fieldset>
+<?php 
+    $totalComments = count($this->comments);
+    if($totalComments){
+?>
+<fieldset>
+    <legend>Comments(Total <?php echo $totalComments; ?>)</legend>
+    <div id='all_comments'>
+    <?php 
+        $count = 0;
+        $max = 5;
+		$hidden = false;
+        foreach($this->comments as $comment){
+            $count ++;
+            print_r('<div id="comment_'.$comment['id'].'" class="comment_item">');
+            print_r($comment['commentator']." at ".$comment['created'].":");
+            print_r('<div class="comment_content">'.$comment['comment'].'</div>');
+            print_r("<BR />");
+			print_r("</div>");
+			if($totalComments > $max && $count == $max){
+				print_r("<div id='more_comment' style='display:none'>");
+				$hidden = true;
+			}
+        }
+		if ($hidden){
+			print_r("</div>");
+            print_r('<button id="comment_more" onclick="more_comment(this)">More</button>');
+		}
+    ?>
+    </div>
+</fieldset>
+<?php
+    }
+?>

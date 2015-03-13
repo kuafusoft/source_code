@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>I2C0_F</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>I2C Frequency Divider register</description>
+  <bitfields>
+    <bitfield>
+      <name>ICR</name>
+      <bitrange>5:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>ClockRate</description>
+    </bitfield>
+    <bitfield>
+      <name>MULT</name>
+      <bitrange>7:6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>The MULT bits define the multiplier factor mul. This factor is used along with the SCL divider to generate the I2C baud rate.</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>mul = 1</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>mul = 2</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>mul = 4</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

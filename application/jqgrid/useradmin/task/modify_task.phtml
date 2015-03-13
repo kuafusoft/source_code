@@ -1,0 +1,16 @@
+<div id='div_modify_task'>
+	<fieldset>
+	<?php
+		require_once('toolfactory.php');
+		$editing = true;//isset($this->editing) ? $this->editing : false;
+		$cols = 1;
+		$tool = toolFactory::get('kf');
+		$tool->cf($this->model, $editing, $this->value, $cols);
+	?>
+		<fieldset><legend>Result</legend>
+		<?php
+			$tool->cf($this->result_model, $editing, $this->result_value, $cols);
+		?>
+		</fieldset>
+	</fieldset>
+</div>

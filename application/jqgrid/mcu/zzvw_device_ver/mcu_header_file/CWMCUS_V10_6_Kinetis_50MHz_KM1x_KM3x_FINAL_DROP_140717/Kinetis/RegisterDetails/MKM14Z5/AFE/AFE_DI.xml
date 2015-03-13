@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>AFE_DI</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>DMA and Interrupt Register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>22:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>INTEN3</name>
+      <bitrange>23</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Enable 3</description>
+    </bitfield>
+    <bitfield>
+      <name>INTEN2</name>
+      <bitrange>24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Enable 2</description>
+    </bitfield>
+    <bitfield>
+      <name>INTEN1</name>
+      <bitrange>25</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Enable 1</description>
+    </bitfield>
+    <bitfield>
+      <name>INTEN0</name>
+      <bitrange>26</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Enable 0</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>27</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>DMAEN3</name>
+      <bitrange>28</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA Enable3</description>
+    </bitfield>
+    <bitfield>
+      <name>DMAEN2</name>
+      <bitrange>29</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA Enable2</description>
+    </bitfield>
+    <bitfield>
+      <name>DMAEN1</name>
+      <bitrange>30</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA Enable1</description>
+    </bitfield>
+    <bitfield>
+      <name>DMAEN0</name>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA Enable0</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

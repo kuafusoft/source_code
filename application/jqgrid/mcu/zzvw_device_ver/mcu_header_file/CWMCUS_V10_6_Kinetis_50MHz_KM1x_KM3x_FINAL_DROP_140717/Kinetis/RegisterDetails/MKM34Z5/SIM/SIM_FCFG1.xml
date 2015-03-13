@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SIM_FCFG1</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x7000000</reset-value>
+  <description>Flash Configuration Register 1</description>
+  <bitfields>
+    <bitfield>
+      <name>FLASHDIS</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Flash Disable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Flash is enabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Flash is disabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FLASHDOZE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Flash Doze</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Flash remains enabled during Wait mode</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Flash is disabled for the duration of Wait mode</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>23:2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>PFSIZE</name>
+      <bitrange>27:24</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Program flash size</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b0001</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b0100</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b0101</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b0110</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b0111</value>
+          <description>64 KB of program flash memory, 2 KB protection region</description>
+        </value>
+        <value>
+          <value>0b1000</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b1001</value>
+          <description>128 KB of program flash memory, 4 KB protection region</description>
+        </value>
+        <value>
+          <value>0b1111</value>
+          <description>(Default)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:28</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

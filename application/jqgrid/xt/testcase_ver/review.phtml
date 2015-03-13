@@ -1,0 +1,23 @@
+<!--
+如果是一个新的Case，那么就显示该Case内容
+如果是基于某一个版本进行的修改，则列出基础版本和现版本的内容，进行对比
+
+
+
+-->
+<?php
+	echo $this->partial('/xt/zzvw_testcase_ver/testcase_ver_diff.phtml', array('vers'=>$this->vers));
+?>
+
+<div id='review_comments'>
+<input type='hidden' id='task_id' value='<?php echo $this->task_id; ?>' >
+	<fieldset>
+		<legend>New Review Comment</legend>
+		<textarea style='width:100%' id='new_review_comments'><?php echo $this->review_comments;?></textarea>
+	</fieldset>
+</div>
+<div>
+	<button type='button' id='btn_save_review'>Save</button>
+	<button type='button' id='btn_submit_review'>Accept</button>
+	<button type='button' id='btn_refuge_review'>Refuge</button>
+</div>

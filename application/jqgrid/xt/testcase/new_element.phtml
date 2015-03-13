@@ -1,0 +1,8 @@
+<?php
+	require_once('toolfactory.php');
+	$tool = toolFactory::get('kf');
+	$params = isset($this->params) ? $this->params : array();
+	print_r("<fieldset><legend>{$this->legend}</legend>");
+		$tool->cf($this->cols, true, null, 1, false, $params, true);
+	print_r("</fieldset>");
+?>

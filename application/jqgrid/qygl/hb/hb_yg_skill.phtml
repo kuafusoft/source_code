@@ -1,0 +1,22 @@
+<?php
+//<!-- 员工技能 -->
+    require_once('kf_tool.php');
+    $tool = new kf_tool();
+    $es = array(
+        array('type'=>'div', 'id'=>'div_yg_skill'),
+            array('type'=>'div', 'id'=>'div_is_yg'),
+                array('type'=>'checkbox', 'id'=>'is_yg', 'name'=>'is_yg', 'label'=>'是否员工')，
+            array('type'=>'/div'),
+            array('type'=>'fieldset', 'id'=>'yg_skill', 'legend'=>'员工技能'),
+                array('type'=>'div', 'id'=>'yg_skill_inner'),
+                    array('type'=>'div', 'id'=>'yg_skill_temp'),
+                        array('type'=>'select', 'id'=>'yg_gx', 'name'=>'gx[]', 'label'=>'工序', 'option'=>$this->gx),
+                        array('type'=>'select', 'id'=>'yg_grade', 'name'=>'grade[]', 'label'=>'熟练程度', 'option'=>$this->grade),
+                    array('type'=>'/div'),
+                array('type'=>'/div'),   
+                array('type'=>'button', 'id'=>'yg_add_skill', 'value'=>'+', 'onclick'=>"yg_addSkill('yg_skill_inner', 'yg_skill_temp')"),                     
+            array('type'=>'/fieldset'),
+        array('type'=>'/div')
+    );
+    $tool->createElements($es);
+?>

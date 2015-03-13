@@ -1,0 +1,56 @@
+<?php
+$disabled = '';
+if (empty($this->prj_ids)){
+	print_r("Please select a project to locate the testcase version:");
+}
+else{
+	$disabled = 'disabled="disabled"';
+	print_r("You've select the project to locate the testcase version:");
+}
+?>
+<select id='prj_id' <?php echo $disabled; ?>>
+	<?php
+	foreach($this->projects as $project){
+		$selected = '';
+		if ($project['id'] == $this->prj_ids)
+			$selected = 'selected="selected"';
+	?>
+		<option value='<?php echo $project['id'];?>' <?php echo $selected;?>><?php echo $project['name'];?></option>
+	<?php
+	}
+	?>
+</select>
+
+<p>Please select projects to link/unlink:</p>
+<?php
+	if (count($this->projects) < 30){
+		print_r("<table><tbody>");
+		$i = 0;
+		print_r("<tr>");
+		foreach($this->projects as $project){
+	//print_r($project);		
+			$checked = 'checked="checked"';
+			$color = 'style="color:red"';
+			if (empty($project['linked'])){
+				$checked = '';    
+				$color = '';
+			}
+			print_r('<td '.$color.'><label><input type="checkbox" name="projects" '.$checked.' value="'.$project['id'].'"/>'.$project['name'].'</label></td>');
+			$i ++;
+			if ($i % 4 == 0){
+				print_r("</tr>");
+			}
+		}
+		if ($i % 4)
+			print_r("</tr>"); 
+		print_r("</tbody></table>");
+	}
+	else{
+		require_once('toolfactory.php');
+		$ces = array(
+			array('label'=>'Projects', 'name'=>'projects', 'editable'=>true, 'required'=>true, 'DATA_TYPE'=>'int', 'type'=>'cart', 'cart_db'=>'xt', 'cart_table'=>'prj')
+		);
+		$tool = toolFactory::get('kf_tool');
+		$tool->cf($ces, true);
+	}
+?>

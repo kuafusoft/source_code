@@ -1,0 +1,10 @@
+<!--
+应显示：ver, cycle, prj, time, result, crid, comments
+应该可以搜索过滤
+-->
+<?php
+	$kf_tool = new KF_Tool();
+	$fields = array('ver', 'cycle', 'build_result_type'=>'Build Result', 'result_type'=>'Result', 'start_time', 'duration', 'prj');
+//print_r($this->test_history);	
+	$kf_tool->showTable($fields, $this->test_history);
+?>

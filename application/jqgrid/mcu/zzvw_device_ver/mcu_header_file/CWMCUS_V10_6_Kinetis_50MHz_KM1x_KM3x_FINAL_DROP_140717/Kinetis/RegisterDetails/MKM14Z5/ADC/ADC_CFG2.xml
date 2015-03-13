@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>ADC_CFG2</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>ADC Configuration Register 2</description>
+  <bitfields>
+    <bitfield>
+      <name>ADLSTS</name>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Long Sample Time Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Default longest sample time; 20 extra ADCK cycles; 24 ADCK cycles total.</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>12 extra ADCK cycles; 16 ADCK cycles total sample time.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>6 extra ADCK cycles; 10 ADCK cycles total sample time.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>2 extra ADCK cycles; 6 ADCK cycles total sample time.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ADHSC</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>High-Speed Configuration</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Normal conversion sequence selected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>High-speed conversion sequence selected with 2 additional ADCK cycles to total conversion time.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ADACKEN</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Asynchronous Clock Output Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Asynchronous clock output disabled; Asynchronous clock is enabled only if selected by ADICLK and a conversion is active.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Asynchronous clock and clock output is enabled regardless of the state of the ADC.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>MUXSEL</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>ADC Mux Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>ADxxa channels are selected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>ADxxb channels are selected.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7:5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

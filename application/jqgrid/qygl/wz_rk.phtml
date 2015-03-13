@@ -1,0 +1,10 @@
+<!-- 运输和装卸 -->
+<label for ='ruku'>现在入库？<input type='checkbox' id='ruku' checked='false'></label>
+<div id='div_ruku'>
+	<fieldset><legend>入库信息</legend>
+		<?php
+			echo $this->partial('yunshu.phtml', array('yunshu'=>$this->yunshu, 'zjzh'=>$this->zjzh, 'jbr'=>$this->jbr));
+			echo $this->partial('zhuangxie.phtml', array('zhuangxie'=>$this->zhuangxie, 'zjzh'=>$this->zjzh, 'jbr'=>$this->jbr));
+		?>
+	</fieldset>
+</div>

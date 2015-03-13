@@ -1,0 +1,34 @@
+<div id='div_view_edit'>
+	<input type='hidden' id='testcase_id' value='<?php echo $this->id; ?>' />
+	<input type='hidden' id='testcase_ver_id' value='<?php echo $this->verValue['id'];?>' />
+	<p style="font-size:16px">The testcase [<?php echo $this->caseValue['code']; ?>] has total <span style="color:red"><?php echo $this->totalVers; ?></span> Versions;</p>
+	<?php
+		require_once('toolFactory.php');
+		$editing = isset($this->editing) ? $this->editing : false;
+		$tool = toolFactory::get('kf');
+		print_r("<fieldset style='width:100%'><legend>Testcase Information <span style='color:RED'>[Affect all Versions]</span></legend>");
+			$tool->cf($this->caseModels, $this->id == 0, $this->caseValue, 1); // 如果Testcase_id非零，则Testcase的字段应不可编辑
+		print_r("</fieldset>");
+		print_r("<fieldset  style='width:100%'><legend>Version Information</legend>");
+			$tool->cf($this->verModels, $editing, $this->verValue, 1);
+		print_r("</fieldset>");
+	?>
+</div>
+<div id="div_button_edit" style="width:100%">
+<?php
+	echo $this->partial('button.phtml', $this);
+?>
+</div>
+<?php
+if($this->id > 0){
+?>	
+<BR /><BR />
+<div id='steps_<?php echo $this->verValue['id'];?>' style="width:100%">
+	<fieldset style="width:100%"><legend>Test Steps</legend>
+		<table id='steps_<?php echo $this->verValue['id'];?>_xt_testcase_ver_step_list'></table>
+		<div id='steps_<?php echo $this->verValue['id'];?>_xt_testcase_ver_step_pager'></div>
+	</fieldset>
+</div>
+<?php
+}
+?>

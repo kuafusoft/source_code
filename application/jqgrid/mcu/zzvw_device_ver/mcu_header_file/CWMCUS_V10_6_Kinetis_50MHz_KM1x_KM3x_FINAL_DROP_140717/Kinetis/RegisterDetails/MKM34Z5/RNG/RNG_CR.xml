@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>RNG_CR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x10</reset-value>
+  <description>RNGA Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>GO</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>This field must be set before the RNGA begins loading data into the RNGA Output Register. This field is sticky and can only be cleared by a hardware reset. Setting this field does not bring the RNGA out of Sleep mode. Furthermore, this field does not need to be reset after exiting Sleep mode.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>RNGA Output Register is not loaded with random data.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>RNGA Output Register is loaded with random data.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>HA</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>High Assurance</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Notification of security violations is masked.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Notification of security violations is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>INTM</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Mask</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is masked.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CLRI</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Clear Interrupt</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Do not clear the interrupt.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clear the interrupt.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SLP</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Sleep</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>RNGA is not in Sleep mode.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>RNGA is in Sleep mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

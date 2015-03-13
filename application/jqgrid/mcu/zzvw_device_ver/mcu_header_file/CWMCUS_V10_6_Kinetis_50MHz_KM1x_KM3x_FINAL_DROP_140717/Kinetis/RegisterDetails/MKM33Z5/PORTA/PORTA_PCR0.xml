@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>PORTA_PCR0</name>
+  <bitrange>31:0</bitrange>
+  <description>Pin Control Register n</description>
+  <bitfields>
+    <bitfield>
+      <name>PS</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Pull Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal pulldown resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal pullup resistor is enabled on the corresponding pin, if the corresponding Port Pull Enable field is set.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>PE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Pull Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal pullup or pulldown resistor is not enabled on the corresponding pin.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal pullup or pulldown resistor is enabled on the corresponding pin, if the pin is configured as a digital input.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SRE</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Slew Rate Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Fast slew rate is configured on the corresponding pin, if the pin is configured as a digital output.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Slow slew rate is configured on the corresponding pin, if the pin is configured as a digital output.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>MUX</name>
+      <bitrange>10:8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Pin Mux Control</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>Pin disabled (analog).</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>Alternative 1 (GPIO).</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>Alternative 2 (chip-specific).</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>Alternative 3 (chip-specific).</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>Alternative 4 (chip-specific).</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>Alternative 5 (chip-specific).</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>Alternative 6 (chip-specific).</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>Alternative 7 (chip-specific).</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>14:11</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>LK</name>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Lock Register</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Pin Control Register fields [15:0] are not locked.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Pin Control Register fields [15:0] are locked and cannot be updated until the next system reset.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IRQC</name>
+      <bitrange>19:16</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Configuration</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>Interrupt/DMA request disabled.</description>
+        </value>
+        <value>
+          <value>0b0001</value>
+          <description>DMA request on rising edge.</description>
+        </value>
+        <value>
+          <value>0b0010</value>
+          <description>DMA request on falling edge.</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>DMA request on either edge.</description>
+        </value>
+        <value>
+          <value>0b1000</value>
+          <description>Interrupt when logic zero.</description>
+        </value>
+        <value>
+          <value>0b1001</value>
+          <description>Interrupt on rising edge.</description>
+        </value>
+        <value>
+          <value>0b1010</value>
+          <description>Interrupt on falling edge.</description>
+        </value>
+        <value>
+          <value>0b1011</value>
+          <description>Interrupt on either edge.</description>
+        </value>
+        <value>
+          <value>0b1100</value>
+          <description>Interrupt when logic one.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>23:20</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>ISF</name>
+      <bitrange>24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Status Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Configured interrupt is not detected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Configured interrupt is detected. If the pin is configured to generate a DMA request, then the corresponding flag will be cleared automatically at the completion of the requested DMA transfer. Otherwise, the flag remains set until a logic one is written to the flag. If the pin is configured for a level sensitive interrupt and the pin remains asserted, then the flag is set again immediately after it is cleared.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:25</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

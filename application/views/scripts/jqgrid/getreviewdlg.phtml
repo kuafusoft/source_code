@@ -1,0 +1,18 @@
+<div id="srs_review" title="Ask to Review">
+	<p class="validateTips">All form fields are required.</p>
+
+	<form>
+	<fieldset>
+		<label for="reviewers">Name</label>
+		<select multiple="true" name="reviewers" id="reviewers" class="text ui-widget-content ui-corner-all" >
+		<?php
+		foreach($this->reviewers as $key=>$v)
+		    echo "<option value='$key'>$v</option>";
+		?>
+		</select>
+		</BR>
+		<label for="note">Note</label>
+		<textarea name="note" id="note" value="" class="text ui-widget-content ui-corner-all" />
+	</fieldset>
+	</form>
+</div>

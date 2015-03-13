@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>LLWU_ME</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>LLWU Module Enable register</description>
+  <bitfields>
+    <bitfield>
+      <name>WUME0</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Module Enable For Module 0</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal module flag not used as wakeup source</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal module flag used as wakeup source</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WUME1</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Module Enable for Module 1</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal module flag not used as wakeup source</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal module flag used as wakeup source</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WUME2</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Module Enable For Module 2</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal module flag not used as wakeup source</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal module flag used as wakeup source</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WUME3</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Module Enable For Module 3</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal module flag not used as wakeup source</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal module flag used as wakeup source</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WUME4</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Module Enable For Module 4</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal module flag not used as wakeup source</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal module flag used as wakeup source</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WUME5</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Module Enable For Module 5</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal module flag not used as wakeup source</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal module flag used as wakeup source</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WUME6</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Module Enable For Module 6</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal module flag not used as wakeup source</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal module flag used as wakeup source</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WUME7</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Module Enable For Module 7</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal module flag not used as wakeup source</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal module flag used as wakeup source</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

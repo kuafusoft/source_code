@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>TMR0_ENBL</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0xF</reset-value>
+  <description>Timer Channel Enable Register</description>
+  <bitfields>
+    <bitfield>
+      <name>ENBL</name>
+      <bitrange>3:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Channel Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Timer channel is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Timer channel is enabled. (default)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15:4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

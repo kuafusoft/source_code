@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>WDOG_STCTRLH</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x1D1</reset-value>
+  <description>Watchdog Status and Control Register High</description>
+  <bitfields>
+    <bitfield>
+      <name>WDOGEN</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enables or disables the WDOG&apos;s operation. In the disabled state, the watchdog timer is kept in the reset state, but the other exception conditions can still trigger a reset/interrupt. A change in the value of this bit must be held for more than one WDOG_CLK cycle for the WDOG to be enabled or disabled.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>WDOG is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>WDOG is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CLKSRC</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Selects clock source for the WDOG timer and other internal timing operations.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>WDOG clock sourced from LPO .</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>WDOG clock sourced from alternate clock source.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IRQRSTEN</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Used to enable the debug breadcrumbs feature. A change in this bit is updated immediately, as opposed to updating after WCT.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>WDOG time-out generates reset only.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>WDOG time-out initially generates an interrupt. After WCT, it generates a reset.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WINEN</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enables Windowing mode.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Windowing mode is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Windowing mode is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ALLOWUPDATE</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enables updates to watchdog write-once registers, after the reset-triggered initial configuration window (WCT) closes, through unlock sequence.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No further updates allowed to WDOG write-once registers.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>WDOG write-once registers can be unlocked for updating.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DBGEN</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enables or disables WDOG in Debug mode.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>WDOG is disabled in CPU Debug mode.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>WDOG is enabled in CPU Debug mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>STOPEN</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enables or disables WDOG in Stop mode.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>WDOG is disabled in CPU Stop mode.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>WDOG is enabled in CPU Stop mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>TESTWDOG</name>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Puts the watchdog in the functional test mode. In this mode, the watchdog timer and the associated compare and reset generation logic is tested for correct operation. The clock for the timer is switched from the main watchdog clock to the fast clock input for watchdog functional test. The TESTSEL bit selects the test to be run.</description>
+    </bitfield>
+    <bitfield>
+      <name>TESTSEL</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Effective only if TESTWDOG is set. Selects the test to be run on the watchdog timer.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Quick test. The timer runs in normal operation. You can load a small time-out value to do a quick test.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Byte test. Puts the timer in the byte test mode where individual bytes of the timer are enabled for operation and are compared for time-out against the corresponding byte of the programmed time-out value. Select the byte through BYTESEL[1:0] for testing.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>BYTESEL</name>
+      <bitrange>13:12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>This 2-bit field selects the byte to be tested when the watchdog is in the byte test mode.</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Byte 0 selected</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Byte 1 selected</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Byte 2 selected</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Byte 3 selected</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DISTESTWDOG</name>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Allows the WDOG&apos;s functional test mode to be disabled permanently. After it is set, it can only be cleared by a reset. It cannot be unlocked for editing after it is set.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>WDOG functional test mode is not disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>WDOG functional test mode is disabled permanently until reset.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,25 @@
+<?php
+	$columnMap = array(
+		'tms_tc_platform_link'=>array(
+			'start_row'=>2,
+			'columns'=>array(
+				'come_from'=>'A',
+				'code'=>'B',
+				'summary'=>'C',
+				'testcase_testpoint'=>'D',
+				'testcase_module'=>'E',
+				'tag'=>'F',
+				'testcase_source'=>'G',
+				'testcase_priority'=>'H',
+				'testcase_category'=>'I',
+				'platform'=>'J',
+				'os'=>'K',
+				'objective'=>'L',
+				'precondition'=>'M',
+				'steps'=>'N',
+				'command'=>'O',
+				'expected_result'=>'P'
+			)
+		)
+	);
+?>

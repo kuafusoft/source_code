@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>CMP1_CR1</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>CMP Control Register 1</description>
+  <bitfields>
+    <bitfield>
+      <name>EN</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Comparator Module Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Analog Comparator is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Analog Comparator is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>OPE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Comparator Output Pin Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>CMPO is not available on the associated CMPO output pin.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>CMPO is available on the associated CMPO output pin.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>COS</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Comparator Output Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Set the filtered comparator output (CMPO) to equal COUT.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Set the unfiltered comparator output (CMPO) to equal COUTA.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>INV</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Comparator INVERT</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Does not invert the comparator output.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Inverts the comparator output.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>PMODE</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Power Mode Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Low-Speed (LS) Comparison mode selected. In this mode, CMP has slower output propagation delay and lower current consumption.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>High-Speed (HS) Comparison mode selected. In this mode, CMP has faster output propagation delay and higher current consumption.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TRIGM</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Trigger Mode Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Trigger mode is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Trigger mode is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WE</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Windowing Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Windowing mode is not selected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Windowing mode is selected.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SE</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Sample Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Sampling mode is not selected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Sampling mode is selected.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

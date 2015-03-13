@@ -1,0 +1,29 @@
+<!-- 支付 -->
+<label for ='<?php echo $this->type;?>_pay'>支付<?php echo $this->title;?>款？
+	<input type='checkbox' id='<?php echo $this->type;?>_pay' name='<?php echo $this->type;?>[pay]'>
+</label>
+<div />
+<div id="div_<?php echo $this->type;?>_pay" style='display:none'>
+	<fieldset><legend>支付</legend>
+	<?php
+	$ces = array(
+		array('label'=>'支付账户', 'name'=>$this->type.'[out_zjzh_id]', 'id'=>$this->type.'_out_zjzh_id', 'type'=>'select', 'DATA_TYPE'=>'int', 'editable'=>true, 
+			'editoptions'=>array('value'=>$this->zjzh)
+		),
+		//如果是票据账户，则还需要选择具体的票据，否则应隐藏该行
+		array('label'=>'票据号', 'name'=>$this->type.'[zj_pj_id]', 'id'=>$this->type.'_zj_pj_id', 'type'=>'select', 'DATA_TYPE'=>'int', 'editable'=>true, 
+			'editoptions'=>array('value'=>$this->zj_pj)
+		),
+		array('label'=>'账户余额', 'name'=>$this->type.'[remained]', 'id'=>$this->type.'_remained', 'type'=>'text', 'DATA_TYPE'=>'float', 'editable'=>false, 'defval'=>0, 'post'=>'元'),
+		array('label'=>'支付金额', 'name'=>$this->type.'[amount]', 'id'=>$this->type.'_amount', 'type'=>'text', 'DATA_TYPE'=>'float', 'editable'=>true, 'post'=>'元'),
+		array('label'=>'中间费用', 'name'=>$this->type.'[cost]', 'id'=>$this->type.'_cost', 'type'=>'text', 'DATA_TYPE'=>'float', 'editable'=>true, 'defval'=>0, 'post'=>'元'),
+		array('label'=>'经办人', 'name'=>$this->type.'[jbr_id]', 'id'=>$this->type.'_jbr_id', 'type'=>'select', 'DATA_TYPE'=>'int', 'editable'=>true, 
+			'defval'=>0, 'editoptions'=>array('value'=>$this->jbr)),
+		array('label'=>'支付日期', 'name'=>$this->type.'[happen_date]', 'id'=>$this->type.'_happen_date', 'type'=>'date', 'DATA_TYPE'=>'date', 'editable'=>true, 'defval'=>date('Y-m-d')),
+		array('label'=>'备注', 'name'=>$this->type.'[note]', 'id'=>$this->type.'_note', 'type'=>'textarea', 'DATA_TYPE'=>'text', 'editable'=>true, 'colspan'=>3, 'rows'=>2),
+	);
+	$tool = toolFactory::get('kf');
+	$tool->cf($ces, true, null, 3, false, array(), true);
+	?>
+	</fieldset>
+</div>

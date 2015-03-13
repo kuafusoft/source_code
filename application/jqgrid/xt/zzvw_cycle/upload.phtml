@@ -1,0 +1,9 @@
+<div id='div_upload_edit_<?php print_r($this->f) ?>'>
+	<fieldset>
+	<?php
+		require_once('kf_tool.php');
+		$tool = new KF_Tool();
+		$tool->cf($this->cols, true, null, 1, false, array(), true);
+	?>
+	</fieldset>
+</div>

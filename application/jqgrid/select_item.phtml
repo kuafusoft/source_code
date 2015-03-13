@@ -1,0 +1,12 @@
+<div id='select_base'>
+	<label for='select_item'>Please Select the <?php echo $this->type;?>:</label>
+	<select id='select_item'>
+		<?php
+		if ($this->blank != 'false')
+			echo "<option id='op_0' value='0'></option>";
+		foreach($this->items as $id=>$v){
+			echo "<option id='op_{$v['id']}' value='{$v['id']}'>{$v['name']}</option>";
+		}
+		?>
+	</select>
+</div>

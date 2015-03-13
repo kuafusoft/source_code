@@ -1,0 +1,8 @@
+<?php
+	require_once('toolfactory.php');
+	$tool = toolFactory::get('kf');
+	$fields = array('ver'=>'Ver', 'code', 'summary', 'edit_status', 'auto_run_seconds', 'manual_run_seconds', 'testcase_priority', 'auto_level',
+		'objective', 'precondition', 'expected_result', 'steps', 'command', 'resource_link', 'config',
+		'update_comment', 'review_comment', 'project', 'updater');
+	$tool->showDiff($fields, $this->vers);
+?>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MCG_C4</name>
+  <bitrange>7:0</bitrange>
+  <description>MCG Control 4 Register</description>
+  <bitfields>
+    <bitfield>
+      <name>SCFTRIM</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Slow Internal Reference Clock Fine Trim</description>
+    </bitfield>
+    <bitfield>
+      <name>FCTRIM</name>
+      <bitrange>4:1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Fast Internal Reference Clock Trim Setting</description>
+    </bitfield>
+    <bitfield>
+      <name>DRST_DRS</name>
+      <bitrange>6:5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DCO Range Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Encoding 0 - Low range (reset default).</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Encoding 1 - Mid range.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Encoding 2 - Mid-high range.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Encoding 3 - High range.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DMX32</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DCO Maximum Frequency with 32.768 kHz Reference</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>DCO has a default range of 25%.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>DCO is fine-tuned for maximum frequency with 32.768 kHz reference.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

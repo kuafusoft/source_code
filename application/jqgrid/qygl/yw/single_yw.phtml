@@ -1,0 +1,15 @@
+<?php
+require_once('const_def_qygl.php');
+require_once(APPLICATION_PATH."/jqgrid/qygl/yw_tool.php");
+
+$yw_tool = new yw_tool($this->tool);
+$ret = $yw_tool->getTemplate($this->yw_fl_id);
+$columnDef = $ret['columnDef'];
+$type = $ret['type'];
+if($type == 'multi_row_edit')
+	$html = $this->tool->multiRowEdit($columnDef);
+else
+	$html = $this->tool->generateEmbed_table($columnDef);
+
+print_r($html);
+?>

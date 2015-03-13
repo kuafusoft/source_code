@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>PORTI_ISFR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Interrupt Status Flag Register</description>
+  <bitfields>
+    <bitfield>
+      <name>ISF</name>
+      <bitrange>31:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Status Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Configured interrupt is not detected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Configured interrupt is detected. If the pin is configured to generate a DMA request, then the corresponding flag will be cleared automatically at the completion of the requested DMA transfer. Otherwise, the flag remains set until a logic one is written to the flag. If the pin is configured for a level sensitive interrupt and the pin remains asserted, then the flag is set again immediately after it is cleared.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

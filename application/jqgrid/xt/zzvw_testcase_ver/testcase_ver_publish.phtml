@@ -1,0 +1,33 @@
+The following testcase version(s) are not published:<BR>
+<?php
+foreach($this->vers as $ver){
+	print_r($ver['code'].' (Version '.$ver['ver'].'), ');
+}
+?>
+When publish the cases, we must select one or more projects to be linked:
+<div id='prj'>
+	<fieldset>
+		<legend>Projects</legend>
+			<table style='width:100%'>
+<?php
+// Ã¿ÐÐ3ÁÐ
+$col = 0;
+foreach($this->prjs as $prj){
+	if ($col == 0)
+		print_r("<tr>");
+	print_r("<td><label><input type='checkbox' name='projects' value='".$prj['id']."'>".$prj['name']."</label></td>");
+	$col ++;
+	if ($col == 3){
+		print_r("</tr>");
+		$col = 0;
+	}
+}
+
+?>
+		</table>
+	</fieldset>
+	<br>
+<div>	
+Please input the note:<textarea id='note' rows=5 style='width:100%;'></textarea>
+</div>
+</div>

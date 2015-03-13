@@ -1,0 +1,113 @@
+<table>
+	<tr>
+		<td>
+			<label for="export_type_default">
+				<input type="radio" name="export_type" id="export_type_default" checked="checked" value="excel"> 
+				Export the selected rows
+			</label> 
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="export_type_report">
+				<input type="radio" name="export_type" id="export_type_report" value="report"> 
+				Testcase Report for the selected rows
+				<div id='div_for_report_options'>
+					<?php
+						echo $this->partial('testcase_report_options.phtml', $this);
+					?>
+				</div>
+			</label> 
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="report_type_release">
+				<input type="radio" name="export_type" id="report_type_release" value="rel"> 
+				Case Release: HTML Format Report 
+			</label> 
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="report_type_excel_release">
+				<input type="radio" name="export_type" id="report_type_excel_release" value="excel_rel"> 
+				Case Release: Excel Format Report 
+			</label> 
+		</td> 
+	</tr> 
+	<tr> 
+		<td>
+			<label for="report_type_cmd"> 
+				<input type="radio" name="export_type" id="report_type_cmd" value="bsp_cmd"> 
+				Command File For Linux BSP: testcaseid cmd_line 
+			</label> 
+		</td> 
+	</tr> 
+	<tr> 
+		<td>
+			<label for="report_type_config"> 
+				<input type="radio" name="export_type" id="report_type_config" value="bsp_config"> 
+				Config File For Linux BSP: testcaseid config 
+			</label> 
+		</td> 
+	</tr> 
+	<tr> 
+		<td>
+			<label for="report_type_time_cmd"> 
+				<input type="radio" name="export_type" id="report_type_time_cmd" value="bsp_time_cmd"> 
+				Command File For Linux BSP: testcaseid auto_run_time cmd_line
+			</label> 
+		</td> 
+	</tr> 
+	<tr> 
+		<td>
+			<label for="report_type_codec_cmd"> 
+				<input type="radio" name="export_type" id="report_type_codec_cmd" value="codec_cmd" > 
+				Command File For Codec: testcaseid cmd_line 
+			</label> 
+		</td> 
+	</tr> 
+	<tr> 
+		<td>
+			<label for="report_type_xml_cmd"> 
+				<input type="radio" name="export_type" id="report_type_xml_cmd" value="codec_xml_cmd"> 
+					XML Command File For Codec<BR />
+					<div id='div_for_xml_cmd'>
+						<pre>
+		&lt;playlist&gt
+			&lt;teststream id="testcaseid"&gt;
+				&lt;caseinfo &gt...&lt;/caseinfo&gt;
+				&lt;streaminfo&gt;...&lt;/streaminfo&gt;
+			&lt;/teststream&gt;
+		&lt;/playlist&gt;
+						</pre>
+				</div>
+			</label> 
+		</td> 
+	</tr> 
+</table> 
+<?php
+	if (!empty($this->prj)){
+		$disabled = '';
+		if (!empty($this->select_prj))
+			$disabled = "disabled='disabled'";
+?>	
+<div id="select_prj">
+	<label for="prj">Please select project:
+		<select name='prj_id' id='prj' <?php echo $disabled; ?>>
+			<option value='0'></option>
+		<?php
+			foreach($this->prj as $k=>$v){
+				if (isset($this->select_prj) && $this->select_prj == $k)
+					print_r("<option value='$k' selected='selected'>$v</option>");
+				else
+					print_r("<option value='$k'>$v</option>");
+			}
+		?>
+		</select>
+	</label>
+</div>
+<?php
+}
+?>

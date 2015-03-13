@@ -1,0 +1,43 @@
+<?php
+	require_once("toolfactory.php");
+	
+	$ces = array(
+		array('name'=>'testcase_type_id', 'label'=>'Testcase Type', 'DATA_TYPE'=>'int', 'editable'=>true, 
+			'type'=>'cart', 'cart_db'=>'xt', 'cart_table'=>'testcase_type'
+			),
+		array('name'=>'prj_ids', 'label'=>'Projects', 'DATA_TYPE'=>'int', 'editable'=>true, 'editrules'=>array('required'=>false), 'type'=>'cart', 
+			'value'=>'', 'cart_db'=>'xt', 'cart_table'=>'prj'
+			),
+	);
+	$tool = toolFactory::get('kf');
+	$tool->cf($ces, true, 'new');
+?>
+<table>
+	<tr>
+		<td>
+			<label for="query_report_not_tested_cases">
+				<input type="checkbox" name="report_type" id="query_report_not_tested_cases" checked="checked" value="not_tested"> 
+				Testcases Run Status from 
+			</label> 
+			<input type='text' name='not_tested_from' id='not_tested_from' date='date' /> to <input type='text' name='not_tested_to' id='not_tested_to' date='date' />
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="query_report_last_result">
+				<input type="checkbox" name="report_type" id="query_report_last_result" checked="checked" value="last_result"> 
+				Testcases' Last result from 
+			</label>
+			<input type='text' name='last_result_from' id='last_result_from' date='date' /> to <input type='text' name='last_result_to' id='last_result_to' date='date' />
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="query_report_modified_testcase">
+				<input type="checkbox" name="report_type" id="query_report_modified_testcase" checked="checked" value="modified_testcase"> 
+				New/Modified Testcases from 
+			</label> 
+			<input type='text' name='modified_from' id='modified_from' date='date' /> to <input type='text' name='modified_to' id='modified_to' date='date' />
+		</td> 
+	</tr> 
+</table> 

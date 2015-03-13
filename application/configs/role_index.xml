@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<list>
+    <items>
+		<my_controlled_task label='My Controlled Task' />
+		<my_unfinished_task label='My Unfinished Task' />
+		<my_subscribe_list label='My Subscribe List' />
+		<my_message label='My Message' />
+		<my_unfinished_cycle label='My Unfinished Cycle' />
+		<my_not_published_case label='My NOT Publised Case' />
+	</items>
+	
+	<normal extends='items'>
+		<my_controlled_task display='true' />
+		<my_unfinished_task display='true' />
+		<my_subscribe_list display='true' />
+		<my_message display='true' />
+	</normal>
+	
+	<tester extends='normal'>
+		<my_unfinished_cycle display='true' />
+		<my_not_published_case display='true' />
+	</tester>
+
+</list>
+

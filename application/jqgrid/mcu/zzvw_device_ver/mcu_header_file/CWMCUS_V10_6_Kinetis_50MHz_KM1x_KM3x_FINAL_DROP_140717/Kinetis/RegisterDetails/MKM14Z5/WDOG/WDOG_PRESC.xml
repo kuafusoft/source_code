@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>WDOG_PRESC</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x400</reset-value>
+  <description>Watchdog Prescaler register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>7:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>PRESCVAL</name>
+      <bitrange>10:8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>3-bit prescaler for the watchdog clock source. A value of zero indicates no division of the input WDOG clock. The watchdog clock is divided by (PRESCVAL + 1) to provide the prescaled WDOG_CLK.</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15:11</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

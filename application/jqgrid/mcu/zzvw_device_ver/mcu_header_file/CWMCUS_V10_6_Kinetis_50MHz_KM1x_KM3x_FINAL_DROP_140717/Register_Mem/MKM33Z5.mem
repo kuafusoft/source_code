@@ -1,0 +1,1136 @@
+//         Memory Mapped Registers:
+//         ----------------------------------------------------------------------
+
+// AIPS-Lite Bridge (AIPS)
+// range      0x40000020 0x40000023 4 ReadWrite                        // AIPS_PACRA
+// range      0x40000024 0x40000027 4 ReadWrite                        // AIPS_PACRB
+reserved   0x40000028 0x4000003F
+// range      0x40000040 0x40000043 4 ReadWrite                        // AIPS_PACRE
+// range      0x40000044 0x40000047 4 ReadWrite                        // AIPS_PACRF
+// range      0x40000048 0x4000004B 4 ReadWrite                        // AIPS_PACRG
+// range      0x4000004C 0x4000004F 4 ReadWrite                        // AIPS_PACRH
+// range      0x40000050 0x40000053 4 ReadWrite                        // AIPS_PACRI
+// range      0x40000054 0x40000057 4 ReadWrite                        // AIPS_PACRJ
+// range      0x40000058 0x4000005B 4 ReadWrite                        // AIPS_PACRK
+// range      0x4000005C 0x4000005F 4 ReadWrite                        // AIPS_PACRL
+// range      0x40000060 0x40000063 4 ReadWrite                        // AIPS_PACRM
+// range      0x40000064 0x40000067 4 ReadWrite                        // AIPS_PACRN
+// range      0x40000068 0x4000006B 4 ReadWrite                        // AIPS_PACRO
+// range      0x4000006C 0x4000006F 4 ReadWrite                        // AIPS_PACRP
+reserved   0x40000070 0x400080FF
+
+// DMA Controller (DMA)
+// range      0x40008100 0x40008103 4 ReadWrite                        // DMA_SAR0
+// range      0x40008104 0x40008107 4 ReadWrite                        // DMA_DAR0
+// range      0x40008108 0x4000810B 4 ReadWrite                        // DMA_DSR_BCR0
+// range      0x4000810C 0x4000810F 4 ReadWrite                        // DMA_DCR0
+// range      0x40008110 0x40008113 4 ReadWrite                        // DMA_SAR1
+// range      0x40008114 0x40008117 4 ReadWrite                        // DMA_DAR1
+// range      0x40008118 0x4000811B 4 ReadWrite                        // DMA_DSR_BCR1
+// range      0x4000811C 0x4000811F 4 ReadWrite                        // DMA_DCR1
+// range      0x40008120 0x40008123 4 ReadWrite                        // DMA_SAR2
+// range      0x40008124 0x40008127 4 ReadWrite                        // DMA_DAR2
+// range      0x40008128 0x4000812B 4 ReadWrite                        // DMA_DSR_BCR2
+// range      0x4000812C 0x4000812F 4 ReadWrite                        // DMA_DCR2
+// range      0x40008130 0x40008133 4 ReadWrite                        // DMA_SAR3
+// range      0x40008134 0x40008137 4 ReadWrite                        // DMA_DAR3
+// range      0x40008138 0x4000813B 4 ReadWrite                        // DMA_DSR_BCR3
+// range      0x4000813C 0x4000813F 4 ReadWrite                        // DMA_DCR3
+reserved   0x40008140 0x40009FFF
+
+// Memory protection unit (MPU)
+// range      0x4000A000 0x4000A003 4 ReadWrite                        // MPU_CESR
+reserved   0x4000A004 0x4000A00F
+range      0x4000A010 0x4000A013 4 Read                                // MPU_EAR0
+range      0x4000A014 0x4000A017 4 Read                                // MPU_EDR0
+range      0x4000A018 0x4000A01B 4 Read                                // MPU_EAR1
+range      0x4000A01C 0x4000A01F 4 Read                                // MPU_EDR1
+reserved   0x4000A020 0x4000A3FF
+// range      0x4000A400 0x4000A403 4 ReadWrite                        // MPU_RGD0_WORD0
+// range      0x4000A404 0x4000A407 4 ReadWrite                        // MPU_RGD0_WORD1
+// range      0x4000A408 0x4000A40B 4 ReadWrite                        // MPU_RGD0_WORD2
+// range      0x4000A40C 0x4000A40F 4 ReadWrite                        // MPU_RGD0_WORD3
+// range      0x4000A410 0x4000A413 4 ReadWrite                        // MPU_RGD1_WORD0
+// range      0x4000A414 0x4000A417 4 ReadWrite                        // MPU_RGD1_WORD1
+// range      0x4000A418 0x4000A41B 4 ReadWrite                        // MPU_RGD1_WORD2
+// range      0x4000A41C 0x4000A41F 4 ReadWrite                        // MPU_RGD1_WORD3
+// range      0x4000A420 0x4000A423 4 ReadWrite                        // MPU_RGD2_WORD0
+// range      0x4000A424 0x4000A427 4 ReadWrite                        // MPU_RGD2_WORD1
+// range      0x4000A428 0x4000A42B 4 ReadWrite                        // MPU_RGD2_WORD2
+// range      0x4000A42C 0x4000A42F 4 ReadWrite                        // MPU_RGD2_WORD3
+// range      0x4000A430 0x4000A433 4 ReadWrite                        // MPU_RGD3_WORD0
+// range      0x4000A434 0x4000A437 4 ReadWrite                        // MPU_RGD3_WORD1
+// range      0x4000A438 0x4000A43B 4 ReadWrite                        // MPU_RGD3_WORD2
+// range      0x4000A43C 0x4000A43F 4 ReadWrite                        // MPU_RGD3_WORD3
+// range      0x4000A440 0x4000A443 4 ReadWrite                        // MPU_RGD4_WORD0
+// range      0x4000A444 0x4000A447 4 ReadWrite                        // MPU_RGD4_WORD1
+// range      0x4000A448 0x4000A44B 4 ReadWrite                        // MPU_RGD4_WORD2
+// range      0x4000A44C 0x4000A44F 4 ReadWrite                        // MPU_RGD4_WORD3
+// range      0x4000A450 0x4000A453 4 ReadWrite                        // MPU_RGD5_WORD0
+// range      0x4000A454 0x4000A457 4 ReadWrite                        // MPU_RGD5_WORD1
+// range      0x4000A458 0x4000A45B 4 ReadWrite                        // MPU_RGD5_WORD2
+// range      0x4000A45C 0x4000A45F 4 ReadWrite                        // MPU_RGD5_WORD3
+// range      0x4000A460 0x4000A463 4 ReadWrite                        // MPU_RGD6_WORD0
+// range      0x4000A464 0x4000A467 4 ReadWrite                        // MPU_RGD6_WORD1
+// range      0x4000A468 0x4000A46B 4 ReadWrite                        // MPU_RGD6_WORD2
+// range      0x4000A46C 0x4000A46F 4 ReadWrite                        // MPU_RGD6_WORD3
+// range      0x4000A470 0x4000A473 4 ReadWrite                        // MPU_RGD7_WORD0
+// range      0x4000A474 0x4000A477 4 ReadWrite                        // MPU_RGD7_WORD1
+// range      0x4000A478 0x4000A47B 4 ReadWrite                        // MPU_RGD7_WORD2
+// range      0x4000A47C 0x4000A47F 4 ReadWrite                        // MPU_RGD7_WORD3
+reserved   0x4000A480 0x4000A7FF
+// range      0x4000A800 0x4000A803 4 ReadWrite                        // MPU_RGDAAC0
+// range      0x4000A804 0x4000A807 4 ReadWrite                        // MPU_RGDAAC1
+// range      0x4000A808 0x4000A80B 4 ReadWrite                        // MPU_RGDAAC2
+// range      0x4000A80C 0x4000A80F 4 ReadWrite                        // MPU_RGDAAC3
+// range      0x4000A810 0x4000A813 4 ReadWrite                        // MPU_RGDAAC4
+// range      0x4000A814 0x4000A817 4 ReadWrite                        // MPU_RGDAAC5
+// range      0x4000A818 0x4000A81B 4 ReadWrite                        // MPU_RGDAAC6
+// range      0x4000A81C 0x4000A81F 4 ReadWrite                        // MPU_RGDAAC7
+reserved   0x4000A820 0x4001FFFF
+
+// Flash Memory Interface (FTFA)
+// range      0x40020000 0x40020000 1 ReadWrite                        // FTFA_FSTAT
+// range      0x40020001 0x40020001 1 ReadWrite                        // FTFA_FCNFG
+range      0x40020002 0x40020002 1 Read                                // FTFA_FSEC
+range      0x40020003 0x40020003 1 Read                                // FTFA_FOPT
+// range      0x40020004 0x40020004 1 ReadWrite                        // FTFA_FCCOB3
+// range      0x40020005 0x40020005 1 ReadWrite                        // FTFA_FCCOB2
+// range      0x40020006 0x40020006 1 ReadWrite                        // FTFA_FCCOB1
+// range      0x40020007 0x40020007 1 ReadWrite                        // FTFA_FCCOB0
+// range      0x40020008 0x40020008 1 ReadWrite                        // FTFA_FCCOB7
+// range      0x40020009 0x40020009 1 ReadWrite                        // FTFA_FCCOB6
+// range      0x4002000A 0x4002000A 1 ReadWrite                        // FTFA_FCCOB5
+// range      0x4002000B 0x4002000B 1 ReadWrite                        // FTFA_FCCOB4
+// range      0x4002000C 0x4002000C 1 ReadWrite                        // FTFA_FCCOBB
+// range      0x4002000D 0x4002000D 1 ReadWrite                        // FTFA_FCCOBA
+// range      0x4002000E 0x4002000E 1 ReadWrite                        // FTFA_FCCOB9
+// range      0x4002000F 0x4002000F 1 ReadWrite                        // FTFA_FCCOB8
+// range      0x40020010 0x40020010 1 ReadWrite                        // FTFA_FPROT3
+// range      0x40020011 0x40020011 1 ReadWrite                        // FTFA_FPROT2
+// range      0x40020012 0x40020012 1 ReadWrite                        // FTFA_FPROT1
+// range      0x40020013 0x40020013 1 ReadWrite                        // FTFA_FPROT0
+reserved   0x40020014 0x40020FFF
+
+// DMA channel multiplexor (DMAMUX0)
+// range      0x40021000 0x40021000 1 ReadWrite                        // DMAMUX0_CHCFG
+reserved   0x40021001 0x40021FFF
+
+// DMA channel multiplexor (DMAMUX1)
+// range      0x40022000 0x40022000 1 ReadWrite                        // DMAMUX1_CHCFG
+reserved   0x40022001 0x40022FFF
+
+// DMA channel multiplexor (DMAMUX2)
+// range      0x40023000 0x40023000 1 ReadWrite                        // DMAMUX2_CHCFG
+reserved   0x40023001 0x40023FFF
+
+// DMA channel multiplexor (DMAMUX3)
+// range      0x40024000 0x40024000 1 ReadWrite                        // DMAMUX3_CHCFG
+reserved   0x40024001 0x40028FFF
+
+// Random Number Generator Accelerator (RNG)
+// range      0x40029000 0x40029003 4 ReadWrite                        // RNG_CR
+range      0x40029004 0x40029007 4 Read                                // RNG_SR
+range      0x40029008 0x4002900B 4 Write                               // RNG_ER
+range      0x4002900C 0x4002900F 4 Read                                // RNG_OR
+reserved   0x40029010 0x4002AFFF
+
+// Analog-to-Digital Converter (ADC)
+// range      0x4002B000 0x4002B003 4 ReadWrite                        // ADC_SC1A
+// range      0x4002B004 0x4002B007 4 ReadWrite                        // ADC_SC1B
+// range      0x4002B008 0x4002B00B 4 ReadWrite                        // ADC_SC1C
+// range      0x4002B00C 0x4002B00F 4 ReadWrite                        // ADC_SC1D
+// range      0x4002B010 0x4002B013 4 ReadWrite                        // ADC_CFG1
+// range      0x4002B014 0x4002B017 4 ReadWrite                        // ADC_CFG2
+range      0x4002B018 0x4002B01B 4 Read                                // ADC_RA
+range      0x4002B01C 0x4002B01F 4 Read                                // ADC_RB
+range      0x4002B020 0x4002B023 4 Read                                // ADC_RC
+range      0x4002B024 0x4002B027 4 Read                                // ADC_RD
+// range      0x4002B028 0x4002B02B 4 ReadWrite                        // ADC_CV1
+// range      0x4002B02C 0x4002B02F 4 ReadWrite                        // ADC_CV2
+// range      0x4002B030 0x4002B033 4 ReadWrite                        // ADC_SC2
+// range      0x4002B034 0x4002B037 4 ReadWrite                        // ADC_SC3
+// range      0x4002B038 0x4002B03B 4 ReadWrite                        // ADC_OFS
+// range      0x4002B03C 0x4002B03F 4 ReadWrite                        // ADC_PG
+reserved   0x4002B040 0x4002B043
+// range      0x4002B044 0x4002B047 4 ReadWrite                        // ADC_CLPD
+// range      0x4002B048 0x4002B04B 4 ReadWrite                        // ADC_CLPS
+// range      0x4002B04C 0x4002B04F 4 ReadWrite                        // ADC_CLP4
+// range      0x4002B050 0x4002B053 4 ReadWrite                        // ADC_CLP3
+// range      0x4002B054 0x4002B057 4 ReadWrite                        // ADC_CLP2
+// range      0x4002B058 0x4002B05B 4 ReadWrite                        // ADC_CLP1
+// range      0x4002B05C 0x4002B05F 4 ReadWrite                        // ADC_CLP0
+reserved   0x4002B060 0x4002CFFF
+
+// Periodic Interrupt Timer (PIT0)
+// range      0x4002D000 0x4002D003 4 ReadWrite                        // PIT0_MCR
+reserved   0x4002D004 0x4002D0FF
+// range      0x4002D100 0x4002D103 4 ReadWrite                        // PIT0_LDVAL0
+range      0x4002D104 0x4002D107 4 Read                                // PIT0_CVAL0
+// range      0x4002D108 0x4002D10B 4 ReadWrite                        // PIT0_TCTRL0
+// range      0x4002D10C 0x4002D10F 4 ReadWrite                        // PIT0_TFLG0
+// range      0x4002D110 0x4002D113 4 ReadWrite                        // PIT0_LDVAL1
+range      0x4002D114 0x4002D117 4 Read                                // PIT0_CVAL1
+// range      0x4002D118 0x4002D11B 4 ReadWrite                        // PIT0_TCTRL1
+// range      0x4002D11C 0x4002D11F 4 ReadWrite                        // PIT0_TFLG1
+reserved   0x4002D120 0x4002DFFF
+
+// Periodic Interrupt Timer (PIT1)
+// range      0x4002E000 0x4002E003 4 ReadWrite                        // PIT1_MCR
+reserved   0x4002E004 0x4002E0FF
+// range      0x4002E100 0x4002E103 4 ReadWrite                        // PIT1_LDVAL0
+range      0x4002E104 0x4002E107 4 Read                                // PIT1_CVAL0
+// range      0x4002E108 0x4002E10B 4 ReadWrite                        // PIT1_TCTRL0
+// range      0x4002E10C 0x4002E10F 4 ReadWrite                        // PIT1_TFLG0
+// range      0x4002E110 0x4002E113 4 ReadWrite                        // PIT1_LDVAL1
+range      0x4002E114 0x4002E117 4 Read                                // PIT1_CVAL1
+// range      0x4002E118 0x4002E11B 4 ReadWrite                        // PIT1_TCTRL1
+// range      0x4002E11C 0x4002E11F 4 ReadWrite                        // PIT1_TFLG1
+reserved   0x4002E120 0x4002FFFF
+
+// This section describes the ADC registers. (AFE)
+// range      0x40030000 0x40030003 4 ReadWrite                        // AFE_CH0_CFR
+// range      0x40030004 0x40030007 4 ReadWrite                        // AFE_CH1_CFR
+// range      0x40030008 0x4003000B 4 ReadWrite                        // AFE_CH2_CFR
+reserved   0x4003000C 0x40030017
+// range      0x40030018 0x4003001B 4 ReadWrite                        // AFE_CR
+// range      0x4003001C 0x4003001F 4 ReadWrite                        // AFE_CKR
+// range      0x40030020 0x40030023 4 ReadWrite                        // AFE_DI
+reserved   0x40030024 0x4003002B
+// range      0x4003002C 0x4003002F 4 ReadWrite                        // AFE_CH0_DR
+// range      0x40030030 0x40030033 4 ReadWrite                        // AFE_CH1_DR
+// range      0x40030034 0x40030037 4 ReadWrite                        // AFE_CH2_DR
+reserved   0x40030038 0x40030043
+range      0x40030044 0x40030047 4 Read                                // AFE_CH0_RR
+range      0x40030048 0x4003004B 4 Read                                // AFE_CH1_RR
+range      0x4003004C 0x4003004F 4 Read                                // AFE_CH2_RR
+reserved   0x40030050 0x4003005B
+range      0x4003005C 0x4003005F 4 Read                                // AFE_SR
+reserved   0x40030060 0x40033FFF
+
+// Cyclic Redundancy Check (CRC) Registers
+// range      0x40034000 0x40034003 4 ReadWrite                        // CRC_DATA
+// range      0x40034004 0x40034007 4 ReadWrite                        // CRC_GPOLY
+// range      0x40034008 0x4003400B 4 ReadWrite                        // CRC_CTRL
+reserved   0x4003400C 0x4003BFFF
+
+// Low Power Timer (LPTMR)
+// range      0x4003C000 0x4003C003 4 ReadWrite                        // LPTMR_CSR
+// range      0x4003C004 0x4003C007 4 ReadWrite                        // LPTMR_PSR
+// range      0x4003C008 0x4003C00B 4 ReadWrite                        // LPTMR_CMR
+// range      0x4003C00C 0x4003C00F 4 ReadWrite                        // LPTMR_CNR
+reserved   0x4003C010 0x4003DFFF
+
+// System Integration Module (SIM)
+// range      0x4003E000 0x4003E003 4 ReadWrite                        // SIM_SOPT1
+// range      0x4003E004 0x4003E007 4 ReadWrite                        // SIM_SOPT1_CFG
+reserved   0x4003E008 0x4003F003
+// range      0x4003F004 0x4003F007 4 ReadWrite                        // SIM_CTRL_REG
+reserved   0x4003F008 0x4003F023
+range      0x4003F024 0x4003F027 4 Read                                // SIM_SDID
+reserved   0x4003F028 0x4003F033
+// range      0x4003F034 0x4003F037 4 ReadWrite                        // SIM_SCGC4
+// range      0x4003F038 0x4003F03B 4 ReadWrite                        // SIM_SCGC5
+// range      0x4003F03C 0x4003F03F 4 ReadWrite                        // SIM_SCGC6
+// range      0x4003F040 0x4003F043 4 ReadWrite                        // SIM_SCGC7
+// range      0x4003F044 0x4003F047 4 ReadWrite                        // SIM_CLKDIV1
+reserved   0x4003F048 0x4003F04B
+// range      0x4003F04C 0x4003F04F 4 ReadWrite                        // SIM_FCFG1
+range      0x4003F050 0x4003F053 4 Read                                // SIM_FCFG2
+range      0x4003F054 0x4003F057 4 Read                                // SIM_UID0
+range      0x4003F058 0x4003F05B 4 Read                                // SIM_UID1
+range      0x4003F05C 0x4003F05F 4 Read                                // SIM_UID2
+range      0x4003F060 0x4003F063 4 Read                                // SIM_UID3
+reserved   0x4003F064 0x4003F06B
+// range      0x4003F06C 0x4003F06F 4 ReadWrite                        // SIM_MISC_CTL
+reserved   0x4003F070 0x40042FFF
+
+// Segment Liquid Crystal Display (LCD)
+// range      0x40043000 0x40043003 4 ReadWrite                        // LCD_GCR
+// range      0x40043004 0x40043007 4 ReadWrite                        // LCD_AR
+// range      0x40043008 0x4004300B 4 ReadWrite                        // LCD_FDCR
+// range      0x4004300C 0x4004300F 4 ReadWrite                        // LCD_FDSR
+// range      0x40043010 0x40043013 4 ReadWrite                        // LCD_PENL
+// range      0x40043014 0x40043017 4 ReadWrite                        // LCD_PENH
+// range      0x40043018 0x4004301B 4 ReadWrite                        // LCD_BPENL
+// range      0x4004301C 0x4004301F 4 ReadWrite                        // LCD_BPENH
+// range      0x40043020 0x40043023 4 ReadWrite                        // LCD_WF3TO0
+// range      0x40043024 0x40043027 4 ReadWrite                        // LCD_WF7TO4
+// range      0x40043028 0x4004302B 4 ReadWrite                        // LCD_WF11TO8
+// range      0x4004302C 0x4004302F 4 ReadWrite                        // LCD_WF15TO12
+// range      0x40043030 0x40043033 4 ReadWrite                        // LCD_WF19TO16
+// range      0x40043034 0x40043037 4 ReadWrite                        // LCD_WF23TO20
+// range      0x40043038 0x4004303B 4 ReadWrite                        // LCD_WF27TO24
+// range      0x4004303C 0x4004303F 4 ReadWrite                        // LCD_WF31TO28
+// range      0x40043040 0x40043043 4 ReadWrite                        // LCD_WF35TO32
+// range      0x40043044 0x40043047 4 ReadWrite                        // LCD_WF39TO36
+// range      0x40043048 0x4004304B 4 ReadWrite                        // LCD_WF43TO40
+// range      0x4004304C 0x4004304F 4 ReadWrite                        // LCD_WF47TO44
+// range      0x40043050 0x40043053 4 ReadWrite                        // LCD_WF51TO48
+// range      0x40043054 0x40043057 4 ReadWrite                        // LCD_WF55TO52
+// range      0x40043058 0x4004305B 4 ReadWrite                        // LCD_WF59TO56
+// range      0x4004305C 0x4004305F 4 ReadWrite                        // LCD_WF63TO60
+reserved   0x40043060 0x40045FFF
+
+// Pin Control and Interrupts (PORTA)
+// range      0x40046000 0x40046003 4 ReadWrite                        // PORTA_PCR0
+// range      0x40046004 0x40046007 4 ReadWrite                        // PORTA_PCR1
+// range      0x40046008 0x4004600B 4 ReadWrite                        // PORTA_PCR2
+// range      0x4004600C 0x4004600F 4 ReadWrite                        // PORTA_PCR3
+// range      0x40046010 0x40046013 4 ReadWrite                        // PORTA_PCR4
+// range      0x40046014 0x40046017 4 ReadWrite                        // PORTA_PCR5
+// range      0x40046018 0x4004601B 4 ReadWrite                        // PORTA_PCR6
+// range      0x4004601C 0x4004601F 4 ReadWrite                        // PORTA_PCR7
+reserved   0x40046020 0x4004607F
+range      0x40046080 0x40046083 4 Write                               // PORTA_GPCLR
+range      0x40046084 0x40046087 4 Write                               // PORTA_GPCHR
+reserved   0x40046088 0x4004609F
+// range      0x400460A0 0x400460A3 4 ReadWrite                        // PORTA_ISFR
+reserved   0x400460A4 0x400460BF
+// range      0x400460C0 0x400460C3 4 ReadWrite                        // PORTA_DFER
+// range      0x400460C4 0x400460C7 4 ReadWrite                        // PORTA_DFCR
+// range      0x400460C8 0x400460CB 4 ReadWrite                        // PORTA_DFWR
+reserved   0x400460CC 0x40046FFF
+
+// Pin Control and Interrupts (PORTB)
+// range      0x40047000 0x40047003 4 ReadWrite                        // PORTB_PCR0
+// range      0x40047004 0x40047007 4 ReadWrite                        // PORTB_PCR1
+// range      0x40047008 0x4004700B 4 ReadWrite                        // PORTB_PCR2
+// range      0x4004700C 0x4004700F 4 ReadWrite                        // PORTB_PCR3
+// range      0x40047010 0x40047013 4 ReadWrite                        // PORTB_PCR4
+// range      0x40047014 0x40047017 4 ReadWrite                        // PORTB_PCR5
+// range      0x40047018 0x4004701B 4 ReadWrite                        // PORTB_PCR6
+// range      0x4004701C 0x4004701F 4 ReadWrite                        // PORTB_PCR7
+reserved   0x40047020 0x4004707F
+range      0x40047080 0x40047083 4 Write                               // PORTB_GPCLR
+range      0x40047084 0x40047087 4 Write                               // PORTB_GPCHR
+reserved   0x40047088 0x4004709F
+// range      0x400470A0 0x400470A3 4 ReadWrite                        // PORTB_ISFR
+reserved   0x400470A4 0x400470BF
+// range      0x400470C0 0x400470C3 4 ReadWrite                        // PORTB_DFER
+// range      0x400470C4 0x400470C7 4 ReadWrite                        // PORTB_DFCR
+// range      0x400470C8 0x400470CB 4 ReadWrite                        // PORTB_DFWR
+reserved   0x400470CC 0x40047FFF
+
+// Pin Control and Interrupts (PORTC)
+// range      0x40048000 0x40048003 4 ReadWrite                        // PORTC_PCR0
+// range      0x40048004 0x40048007 4 ReadWrite                        // PORTC_PCR1
+// range      0x40048008 0x4004800B 4 ReadWrite                        // PORTC_PCR2
+// range      0x4004800C 0x4004800F 4 ReadWrite                        // PORTC_PCR3
+// range      0x40048010 0x40048013 4 ReadWrite                        // PORTC_PCR4
+// range      0x40048014 0x40048017 4 ReadWrite                        // PORTC_PCR5
+// range      0x40048018 0x4004801B 4 ReadWrite                        // PORTC_PCR6
+// range      0x4004801C 0x4004801F 4 ReadWrite                        // PORTC_PCR7
+reserved   0x40048020 0x4004807F
+range      0x40048080 0x40048083 4 Write                               // PORTC_GPCLR
+range      0x40048084 0x40048087 4 Write                               // PORTC_GPCHR
+reserved   0x40048088 0x4004809F
+// range      0x400480A0 0x400480A3 4 ReadWrite                        // PORTC_ISFR
+reserved   0x400480A4 0x400480BF
+// range      0x400480C0 0x400480C3 4 ReadWrite                        // PORTC_DFER
+// range      0x400480C4 0x400480C7 4 ReadWrite                        // PORTC_DFCR
+// range      0x400480C8 0x400480CB 4 ReadWrite                        // PORTC_DFWR
+reserved   0x400480CC 0x40048FFF
+
+// Pin Control and Interrupts (PORTD)
+// range      0x40049000 0x40049003 4 ReadWrite                        // PORTD_PCR0
+// range      0x40049004 0x40049007 4 ReadWrite                        // PORTD_PCR1
+// range      0x40049008 0x4004900B 4 ReadWrite                        // PORTD_PCR2
+// range      0x4004900C 0x4004900F 4 ReadWrite                        // PORTD_PCR3
+// range      0x40049010 0x40049013 4 ReadWrite                        // PORTD_PCR4
+// range      0x40049014 0x40049017 4 ReadWrite                        // PORTD_PCR5
+// range      0x40049018 0x4004901B 4 ReadWrite                        // PORTD_PCR6
+// range      0x4004901C 0x4004901F 4 ReadWrite                        // PORTD_PCR7
+reserved   0x40049020 0x4004907F
+range      0x40049080 0x40049083 4 Write                               // PORTD_GPCLR
+range      0x40049084 0x40049087 4 Write                               // PORTD_GPCHR
+reserved   0x40049088 0x4004909F
+// range      0x400490A0 0x400490A3 4 ReadWrite                        // PORTD_ISFR
+reserved   0x400490A4 0x400490BF
+// range      0x400490C0 0x400490C3 4 ReadWrite                        // PORTD_DFER
+// range      0x400490C4 0x400490C7 4 ReadWrite                        // PORTD_DFCR
+// range      0x400490C8 0x400490CB 4 ReadWrite                        // PORTD_DFWR
+reserved   0x400490CC 0x40049FFF
+
+// Pin Control and Interrupts (PORTE)
+// range      0x4004A000 0x4004A003 4 ReadWrite                        // PORTE_PCR0
+// range      0x4004A004 0x4004A007 4 ReadWrite                        // PORTE_PCR1
+// range      0x4004A008 0x4004A00B 4 ReadWrite                        // PORTE_PCR2
+// range      0x4004A00C 0x4004A00F 4 ReadWrite                        // PORTE_PCR3
+// range      0x4004A010 0x4004A013 4 ReadWrite                        // PORTE_PCR4
+// range      0x4004A014 0x4004A017 4 ReadWrite                        // PORTE_PCR5
+// range      0x4004A018 0x4004A01B 4 ReadWrite                        // PORTE_PCR6
+// range      0x4004A01C 0x4004A01F 4 ReadWrite                        // PORTE_PCR7
+reserved   0x4004A020 0x4004A07F
+range      0x4004A080 0x4004A083 4 Write                               // PORTE_GPCLR
+range      0x4004A084 0x4004A087 4 Write                               // PORTE_GPCHR
+reserved   0x4004A088 0x4004A09F
+// range      0x4004A0A0 0x4004A0A3 4 ReadWrite                        // PORTE_ISFR
+reserved   0x4004A0A4 0x4004A0BF
+// range      0x4004A0C0 0x4004A0C3 4 ReadWrite                        // PORTE_DFER
+// range      0x4004A0C4 0x4004A0C7 4 ReadWrite                        // PORTE_DFCR
+// range      0x4004A0C8 0x4004A0CB 4 ReadWrite                        // PORTE_DFWR
+reserved   0x4004A0CC 0x4004AFFF
+
+// Pin Control and Interrupts (PORTF)
+// range      0x4004B000 0x4004B003 4 ReadWrite                        // PORTF_PCR0
+// range      0x4004B004 0x4004B007 4 ReadWrite                        // PORTF_PCR1
+// range      0x4004B008 0x4004B00B 4 ReadWrite                        // PORTF_PCR2
+// range      0x4004B00C 0x4004B00F 4 ReadWrite                        // PORTF_PCR3
+// range      0x4004B010 0x4004B013 4 ReadWrite                        // PORTF_PCR4
+// range      0x4004B014 0x4004B017 4 ReadWrite                        // PORTF_PCR5
+// range      0x4004B018 0x4004B01B 4 ReadWrite                        // PORTF_PCR6
+// range      0x4004B01C 0x4004B01F 4 ReadWrite                        // PORTF_PCR7
+reserved   0x4004B020 0x4004B07F
+range      0x4004B080 0x4004B083 4 Write                               // PORTF_GPCLR
+range      0x4004B084 0x4004B087 4 Write                               // PORTF_GPCHR
+reserved   0x4004B088 0x4004B09F
+// range      0x4004B0A0 0x4004B0A3 4 ReadWrite                        // PORTF_ISFR
+reserved   0x4004B0A4 0x4004B0BF
+// range      0x4004B0C0 0x4004B0C3 4 ReadWrite                        // PORTF_DFER
+// range      0x4004B0C4 0x4004B0C7 4 ReadWrite                        // PORTF_DFCR
+// range      0x4004B0C8 0x4004B0CB 4 ReadWrite                        // PORTF_DFWR
+reserved   0x4004B0CC 0x4004BFFF
+
+// Pin Control and Interrupts (PORTG)
+// range      0x4004C000 0x4004C003 4 ReadWrite                        // PORTG_PCR0
+// range      0x4004C004 0x4004C007 4 ReadWrite                        // PORTG_PCR1
+// range      0x4004C008 0x4004C00B 4 ReadWrite                        // PORTG_PCR2
+// range      0x4004C00C 0x4004C00F 4 ReadWrite                        // PORTG_PCR3
+// range      0x4004C010 0x4004C013 4 ReadWrite                        // PORTG_PCR4
+// range      0x4004C014 0x4004C017 4 ReadWrite                        // PORTG_PCR5
+// range      0x4004C018 0x4004C01B 4 ReadWrite                        // PORTG_PCR6
+// range      0x4004C01C 0x4004C01F 4 ReadWrite                        // PORTG_PCR7
+reserved   0x4004C020 0x4004C07F
+range      0x4004C080 0x4004C083 4 Write                               // PORTG_GPCLR
+range      0x4004C084 0x4004C087 4 Write                               // PORTG_GPCHR
+reserved   0x4004C088 0x4004C09F
+// range      0x4004C0A0 0x4004C0A3 4 ReadWrite                        // PORTG_ISFR
+reserved   0x4004C0A4 0x4004C0BF
+// range      0x4004C0C0 0x4004C0C3 4 ReadWrite                        // PORTG_DFER
+// range      0x4004C0C4 0x4004C0C7 4 ReadWrite                        // PORTG_DFCR
+// range      0x4004C0C8 0x4004C0CB 4 ReadWrite                        // PORTG_DFWR
+reserved   0x4004C0CC 0x4004CFFF
+
+// Pin Control and Interrupts (PORTH)
+// range      0x4004D000 0x4004D003 4 ReadWrite                        // PORTH_PCR0
+// range      0x4004D004 0x4004D007 4 ReadWrite                        // PORTH_PCR1
+// range      0x4004D008 0x4004D00B 4 ReadWrite                        // PORTH_PCR2
+// range      0x4004D00C 0x4004D00F 4 ReadWrite                        // PORTH_PCR3
+// range      0x4004D010 0x4004D013 4 ReadWrite                        // PORTH_PCR4
+// range      0x4004D014 0x4004D017 4 ReadWrite                        // PORTH_PCR5
+// range      0x4004D018 0x4004D01B 4 ReadWrite                        // PORTH_PCR6
+// range      0x4004D01C 0x4004D01F 4 ReadWrite                        // PORTH_PCR7
+reserved   0x4004D020 0x4004D07F
+range      0x4004D080 0x4004D083 4 Write                               // PORTH_GPCLR
+range      0x4004D084 0x4004D087 4 Write                               // PORTH_GPCHR
+reserved   0x4004D088 0x4004D09F
+// range      0x4004D0A0 0x4004D0A3 4 ReadWrite                        // PORTH_ISFR
+reserved   0x4004D0A4 0x4004D0BF
+// range      0x4004D0C0 0x4004D0C3 4 ReadWrite                        // PORTH_DFER
+// range      0x4004D0C4 0x4004D0C7 4 ReadWrite                        // PORTH_DFCR
+// range      0x4004D0C8 0x4004D0CB 4 ReadWrite                        // PORTH_DFWR
+reserved   0x4004D0CC 0x4004DFFF
+
+// Pin Control and Interrupts (PORTI)
+// range      0x4004E000 0x4004E003 4 ReadWrite                        // PORTI_PCR0
+// range      0x4004E004 0x4004E007 4 ReadWrite                        // PORTI_PCR1
+// range      0x4004E008 0x4004E00B 4 ReadWrite                        // PORTI_PCR2
+// range      0x4004E00C 0x4004E00F 4 ReadWrite                        // PORTI_PCR3
+// range      0x4004E010 0x4004E013 4 ReadWrite                        // PORTI_PCR4
+// range      0x4004E014 0x4004E017 4 ReadWrite                        // PORTI_PCR5
+// range      0x4004E018 0x4004E01B 4 ReadWrite                        // PORTI_PCR6
+// range      0x4004E01C 0x4004E01F 4 ReadWrite                        // PORTI_PCR7
+reserved   0x4004E020 0x4004E07F
+range      0x4004E080 0x4004E083 4 Write                               // PORTI_GPCLR
+range      0x4004E084 0x4004E087 4 Write                               // PORTI_GPCHR
+reserved   0x4004E088 0x4004E09F
+// range      0x4004E0A0 0x4004E0A3 4 ReadWrite                        // PORTI_ISFR
+reserved   0x4004E0A4 0x4004E0BF
+// range      0x4004E0C0 0x4004E0C3 4 ReadWrite                        // PORTI_DFER
+// range      0x4004E0C4 0x4004E0C7 4 ReadWrite                        // PORTI_DFCR
+// range      0x4004E0C8 0x4004E0CB 4 ReadWrite                        // PORTI_DFWR
+reserved   0x4004E0CC 0x4004FFFF
+
+// Real Time Clock (RTC)
+// range      0x40050000 0x40050001 2 ReadWrite                        // RTC_YEARMON
+// range      0x40050002 0x40050003 2 ReadWrite                        // RTC_DAYS
+// range      0x40050004 0x40050005 2 ReadWrite                        // RTC_HOURMIN
+// range      0x40050006 0x40050007 2 ReadWrite                        // RTC_SECONDS
+// range      0x40050008 0x40050009 2 ReadWrite                        // RTC_ALM_YEARMON
+// range      0x4005000A 0x4005000B 2 ReadWrite                        // RTC_ALM_DAYS
+// range      0x4005000C 0x4005000D 2 ReadWrite                        // RTC_ALM_HOURMIN
+// range      0x4005000E 0x4005000F 2 ReadWrite                        // RTC_ALM_SECONDS
+// range      0x40050010 0x40050011 2 ReadWrite                        // RTC_CTRL
+// range      0x40050012 0x40050013 2 ReadWrite                        // RTC_STATUS
+// range      0x40050014 0x40050015 2 ReadWrite                        // RTC_ISR
+// range      0x40050016 0x40050017 2 ReadWrite                        // RTC_IER
+reserved   0x40050018 0x4005001F
+// range      0x40050020 0x40050021 2 ReadWrite                        // RTC_GP_DATA_REG
+// range      0x40050022 0x40050023 2 ReadWrite                        // RTC_DST_HOUR
+// range      0x40050024 0x40050025 2 ReadWrite                        // RTC_DST_MONTH
+// range      0x40050026 0x40050027 2 ReadWrite                        // RTC_DST_DAY
+// range      0x40050028 0x40050029 2 ReadWrite                        // RTC_COMPEN
+reserved   0x4005002A 0x4005002B
+// range      0x4005002C 0x4005002D 2 ReadWrite                        // RTC_TAMPER_DIRECTION
+// range      0x4005002E 0x4005002F 2 ReadWrite                        // RTC_TAMPER_QSCR
+reserved   0x40050030 0x40050031
+// range      0x40050032 0x40050033 2 ReadWrite                        // RTC_TAMPER_SCR
+// range      0x40050034 0x40050035 2 ReadWrite                        // RTC_FILTER01_CFG
+// range      0x40050036 0x40050037 2 ReadWrite                        // RTC_FILTER2_CFG
+reserved   0x40050038 0x4005003F
+range      0x40050040 0x40050041 2 Read                                // RTC_TAMPER_QUEUE
+// range      0x40050042 0x40050043 2 ReadWrite                        // RTC_CTRL2
+reserved   0x40050044 0x40052FFF
+
+// Generation 2008 Watchdog Timer (WDOG)
+// range      0x40053000 0x40053001 2 ReadWrite                        // WDOG_STCTRLH
+// range      0x40053002 0x40053003 2 ReadWrite                        // WDOG_STCTRLL
+// range      0x40053004 0x40053005 2 ReadWrite                        // WDOG_TOVALH
+// range      0x40053006 0x40053007 2 ReadWrite                        // WDOG_TOVALL
+// range      0x40053008 0x40053009 2 ReadWrite                        // WDOG_WINH
+// range      0x4005300A 0x4005300B 2 ReadWrite                        // WDOG_WINL
+// range      0x4005300C 0x4005300D 2 ReadWrite                        // WDOG_REFRESH
+// range      0x4005300E 0x4005300F 2 ReadWrite                        // WDOG_UNLOCK
+// range      0x40053010 0x40053011 2 ReadWrite                        // WDOG_TMROUTH
+// range      0x40053012 0x40053013 2 ReadWrite                        // WDOG_TMROUTL
+// range      0x40053014 0x40053015 2 ReadWrite                        // WDOG_RSTCNT
+// range      0x40053016 0x40053017 2 ReadWrite                        // WDOG_PRESC
+reserved   0x40053018 0x40054FFF
+
+// Crossbar Switch (XBAR)
+// range      0x40055000 0x40055001 2 ReadWrite                        // XBAR_SEL0
+// range      0x40055002 0x40055003 2 ReadWrite                        // XBAR_SEL1
+// range      0x40055004 0x40055005 2 ReadWrite                        // XBAR_SEL2
+// range      0x40055006 0x40055007 2 ReadWrite                        // XBAR_SEL3
+// range      0x40055008 0x40055009 2 ReadWrite                        // XBAR_SEL4
+// range      0x4005500A 0x4005500B 2 ReadWrite                        // XBAR_SEL5
+// range      0x4005500C 0x4005500D 2 ReadWrite                        // XBAR_SEL6
+// range      0x4005500E 0x4005500F 2 ReadWrite                        // XBAR_SEL7
+// range      0x40055010 0x40055011 2 ReadWrite                        // XBAR_SEL8
+// range      0x40055012 0x40055013 2 ReadWrite                        // XBAR_SEL9
+// range      0x40055014 0x40055015 2 ReadWrite                        // XBAR_SEL10
+// range      0x40055016 0x40055017 2 ReadWrite                        // XBAR_SEL11
+// range      0x40055018 0x40055019 2 ReadWrite                        // XBAR_SEL12
+// range      0x4005501A 0x4005501B 2 ReadWrite                        // XBAR_SEL13
+// range      0x4005501C 0x4005501D 2 ReadWrite                        // XBAR_SEL14
+// range      0x4005501E 0x4005501F 2 ReadWrite                        // XBAR_SEL15
+// range      0x40055020 0x40055021 2 ReadWrite                        // XBAR_SEL16
+// range      0x40055022 0x40055023 2 ReadWrite                        // XBAR_CTRL0
+reserved   0x40055024 0x40056FFF
+
+// Quad Timer (TMR0)
+// range      0x40057000 0x40057001 2 ReadWrite                        // TMR0_COMP1
+// range      0x40057002 0x40057003 2 ReadWrite                        // TMR0_COMP2
+// range      0x40057004 0x40057005 2 ReadWrite                        // TMR0_CAPT
+// range      0x40057006 0x40057007 2 ReadWrite                        // TMR0_LOAD
+// range      0x40057008 0x40057009 2 ReadWrite                        // TMR0_HOLD
+// range      0x4005700A 0x4005700B 2 ReadWrite                        // TMR0_CNTR
+// range      0x4005700C 0x4005700D 2 ReadWrite                        // TMR0_CTRL
+// range      0x4005700E 0x4005700F 2 ReadWrite                        // TMR0_SCTRL
+// range      0x40057010 0x40057011 2 ReadWrite                        // TMR0_CMPLD1
+// range      0x40057012 0x40057013 2 ReadWrite                        // TMR0_CMPLD2
+// range      0x40057014 0x40057015 2 ReadWrite                        // TMR0_CSCTRL
+// range      0x40057016 0x40057017 2 ReadWrite                        // TMR0_FILT
+reserved   0x40057018 0x4005701D
+// range      0x4005701E 0x4005701F 2 ReadWrite                        // TMR0_ENBL
+reserved   0x40057020 0x40057FFF
+
+// Quad Timer (TMR1)
+// range      0x40058000 0x40058001 2 ReadWrite                        // TMR1_COMP1
+// range      0x40058002 0x40058003 2 ReadWrite                        // TMR1_COMP2
+// range      0x40058004 0x40058005 2 ReadWrite                        // TMR1_CAPT
+// range      0x40058006 0x40058007 2 ReadWrite                        // TMR1_LOAD
+// range      0x40058008 0x40058009 2 ReadWrite                        // TMR1_HOLD
+// range      0x4005800A 0x4005800B 2 ReadWrite                        // TMR1_CNTR
+// range      0x4005800C 0x4005800D 2 ReadWrite                        // TMR1_CTRL
+// range      0x4005800E 0x4005800F 2 ReadWrite                        // TMR1_SCTRL
+// range      0x40058010 0x40058011 2 ReadWrite                        // TMR1_CMPLD1
+// range      0x40058012 0x40058013 2 ReadWrite                        // TMR1_CMPLD2
+// range      0x40058014 0x40058015 2 ReadWrite                        // TMR1_CSCTRL
+// range      0x40058016 0x40058017 2 ReadWrite                        // TMR1_FILT
+reserved   0x40058018 0x40058FFF
+
+// Quad Timer (TMR2)
+// range      0x40059000 0x40059001 2 ReadWrite                        // TMR2_COMP1
+// range      0x40059002 0x40059003 2 ReadWrite                        // TMR2_COMP2
+// range      0x40059004 0x40059005 2 ReadWrite                        // TMR2_CAPT
+// range      0x40059006 0x40059007 2 ReadWrite                        // TMR2_LOAD
+// range      0x40059008 0x40059009 2 ReadWrite                        // TMR2_HOLD
+// range      0x4005900A 0x4005900B 2 ReadWrite                        // TMR2_CNTR
+// range      0x4005900C 0x4005900D 2 ReadWrite                        // TMR2_CTRL
+// range      0x4005900E 0x4005900F 2 ReadWrite                        // TMR2_SCTRL
+// range      0x40059010 0x40059011 2 ReadWrite                        // TMR2_CMPLD1
+// range      0x40059012 0x40059013 2 ReadWrite                        // TMR2_CMPLD2
+// range      0x40059014 0x40059015 2 ReadWrite                        // TMR2_CSCTRL
+// range      0x40059016 0x40059017 2 ReadWrite                        // TMR2_FILT
+reserved   0x40059018 0x40059FFF
+
+// Quad Timer (TMR3)
+// range      0x4005A000 0x4005A001 2 ReadWrite                        // TMR3_COMP1
+// range      0x4005A002 0x4005A003 2 ReadWrite                        // TMR3_COMP2
+// range      0x4005A004 0x4005A005 2 ReadWrite                        // TMR3_CAPT
+// range      0x4005A006 0x4005A007 2 ReadWrite                        // TMR3_LOAD
+// range      0x4005A008 0x4005A009 2 ReadWrite                        // TMR3_HOLD
+// range      0x4005A00A 0x4005A00B 2 ReadWrite                        // TMR3_CNTR
+// range      0x4005A00C 0x4005A00D 2 ReadWrite                        // TMR3_CTRL
+// range      0x4005A00E 0x4005A00F 2 ReadWrite                        // TMR3_SCTRL
+// range      0x4005A010 0x4005A011 2 ReadWrite                        // TMR3_CMPLD1
+// range      0x4005A012 0x4005A013 2 ReadWrite                        // TMR3_CMPLD2
+// range      0x4005A014 0x4005A015 2 ReadWrite                        // TMR3_CSCTRL
+// range      0x4005A016 0x4005A017 2 ReadWrite                        // TMR3_FILT
+reserved   0x4005A018 0x40060FFF
+
+// External Watchdog Monitor (EWM)
+// range      0x40061000 0x40061000 1 ReadWrite                        // EWM_CTRL
+range      0x40061001 0x40061001 1 Write                               // EWM_SERV
+// range      0x40061002 0x40061002 1 ReadWrite                        // EWM_CMPL
+// range      0x40061003 0x40061003 1 ReadWrite                        // EWM_CMPH
+reserved   0x40061004 0x40063FFF
+
+// Multipurpose Clock Generator module (MCG)
+// range      0x40064000 0x40064000 1 ReadWrite                        // MCG_C1
+// range      0x40064001 0x40064001 1 ReadWrite                        // MCG_C2
+// range      0x40064002 0x40064002 1 ReadWrite                        // MCG_C3
+// range      0x40064003 0x40064003 1 ReadWrite                        // MCG_C4
+// range      0x40064004 0x40064004 1 ReadWrite                        // MCG_C5
+// range      0x40064005 0x40064005 1 ReadWrite                        // MCG_C6
+// range      0x40064006 0x40064006 1 ReadWrite                        // MCG_S
+reserved   0x40064007 0x40064007
+// range      0x40064008 0x40064008 1 ReadWrite                        // MCG_SC
+reserved   0x40064009 0x40064009
+// range      0x4006400A 0x4006400A 1 ReadWrite                        // MCG_ATCVH
+// range      0x4006400B 0x4006400B 1 ReadWrite                        // MCG_ATCVL
+// range      0x4006400C 0x4006400C 1 ReadWrite                        // MCG_C7
+// range      0x4006400D 0x4006400D 1 ReadWrite                        // MCG_C8
+range      0x4006400E 0x4006400E 1 Read                                // MCG_C9
+range      0x4006400F 0x4006400F 1 Read                                // MCG_C10
+reserved   0x40064010 0x40065FFF
+
+// Oscillator (OSC)
+// range      0x40066000 0x40066000 1 ReadWrite                        // OSC_CR
+reserved   0x40066001 0x40066FFF
+
+// Inter-Integrated Circuit (I2C0)
+// range      0x40067000 0x40067000 1 ReadWrite                        // I2C0_A1
+// range      0x40067001 0x40067001 1 ReadWrite                        // I2C0_F
+// range      0x40067002 0x40067002 1 ReadWrite                        // I2C0_C1
+// range      0x40067003 0x40067003 1 ReadWrite                        // I2C0_S
+// range      0x40067004 0x40067004 1 ReadWrite                        // I2C0_D
+// range      0x40067005 0x40067005 1 ReadWrite                        // I2C0_C2
+// range      0x40067006 0x40067006 1 ReadWrite                        // I2C0_FLT
+// range      0x40067007 0x40067007 1 ReadWrite                        // I2C0_RA
+// range      0x40067008 0x40067008 1 ReadWrite                        // I2C0_SMB
+// range      0x40067009 0x40067009 1 ReadWrite                        // I2C0_A2
+// range      0x4006700A 0x4006700A 1 ReadWrite                        // I2C0_SLTH
+// range      0x4006700B 0x4006700B 1 ReadWrite                        // I2C0_SLTL
+reserved   0x4006700C 0x40067FFF
+
+// Inter-Integrated Circuit (I2C1)
+// range      0x40068000 0x40068000 1 ReadWrite                        // I2C1_A1
+// range      0x40068001 0x40068001 1 ReadWrite                        // I2C1_F
+// range      0x40068002 0x40068002 1 ReadWrite                        // I2C1_C1
+// range      0x40068003 0x40068003 1 ReadWrite                        // I2C1_S
+// range      0x40068004 0x40068004 1 ReadWrite                        // I2C1_D
+// range      0x40068005 0x40068005 1 ReadWrite                        // I2C1_C2
+// range      0x40068006 0x40068006 1 ReadWrite                        // I2C1_FLT
+// range      0x40068007 0x40068007 1 ReadWrite                        // I2C1_RA
+// range      0x40068008 0x40068008 1 ReadWrite                        // I2C1_SMB
+// range      0x40068009 0x40068009 1 ReadWrite                        // I2C1_A2
+// range      0x4006800A 0x4006800A 1 ReadWrite                        // I2C1_SLTH
+// range      0x4006800B 0x4006800B 1 ReadWrite                        // I2C1_SLTL
+reserved   0x4006800C 0x40069FFF
+
+// Serial Communication Interface (UART0)
+// range      0x4006A000 0x4006A000 1 ReadWrite                        // UART0_BDH
+// range      0x4006A001 0x4006A001 1 ReadWrite                        // UART0_BDL
+// range      0x4006A002 0x4006A002 1 ReadWrite                        // UART0_C1
+// range      0x4006A003 0x4006A003 1 ReadWrite                        // UART0_C2
+range      0x4006A004 0x4006A004 1 Read                                // UART0_S1
+// range      0x4006A005 0x4006A005 1 ReadWrite                        // UART0_S2
+// range      0x4006A006 0x4006A006 1 ReadWrite                        // UART0_C3
+// range      0x4006A007 0x4006A007 1 ReadWrite                        // UART0_D
+// range      0x4006A008 0x4006A008 1 ReadWrite                        // UART0_MA1
+// range      0x4006A009 0x4006A009 1 ReadWrite                        // UART0_MA2
+// range      0x4006A00A 0x4006A00A 1 ReadWrite                        // UART0_C4
+// range      0x4006A00B 0x4006A00B 1 ReadWrite                        // UART0_C5
+range      0x4006A00C 0x4006A00C 1 Read                                // UART0_ED
+// range      0x4006A00D 0x4006A00D 1 ReadWrite                        // UART0_MODEM
+reserved   0x4006A00E 0x4006A00F
+// range      0x4006A010 0x4006A010 1 ReadWrite                        // UART0_PFIFO
+// range      0x4006A011 0x4006A011 1 ReadWrite                        // UART0_CFIFO
+// range      0x4006A012 0x4006A012 1 ReadWrite                        // UART0_SFIFO
+// range      0x4006A013 0x4006A013 1 ReadWrite                        // UART0_TWFIFO
+range      0x4006A014 0x4006A014 1 Read                                // UART0_TCFIFO
+// range      0x4006A015 0x4006A015 1 ReadWrite                        // UART0_RWFIFO
+range      0x4006A016 0x4006A016 1 Read                                // UART0_RCFIFO
+reserved   0x4006A017 0x4006AFFF
+
+// Serial Communication Interface (UART1)
+// range      0x4006B000 0x4006B000 1 ReadWrite                        // UART1_BDH
+// range      0x4006B001 0x4006B001 1 ReadWrite                        // UART1_BDL
+// range      0x4006B002 0x4006B002 1 ReadWrite                        // UART1_C1
+// range      0x4006B003 0x4006B003 1 ReadWrite                        // UART1_C2
+range      0x4006B004 0x4006B004 1 Read                                // UART1_S1
+// range      0x4006B005 0x4006B005 1 ReadWrite                        // UART1_S2
+// range      0x4006B006 0x4006B006 1 ReadWrite                        // UART1_C3
+// range      0x4006B007 0x4006B007 1 ReadWrite                        // UART1_D
+// range      0x4006B008 0x4006B008 1 ReadWrite                        // UART1_MA1
+// range      0x4006B009 0x4006B009 1 ReadWrite                        // UART1_MA2
+// range      0x4006B00A 0x4006B00A 1 ReadWrite                        // UART1_C4
+// range      0x4006B00B 0x4006B00B 1 ReadWrite                        // UART1_C5
+range      0x4006B00C 0x4006B00C 1 Read                                // UART1_ED
+// range      0x4006B00D 0x4006B00D 1 ReadWrite                        // UART1_MODEM
+reserved   0x4006B00E 0x4006B00F
+// range      0x4006B010 0x4006B010 1 ReadWrite                        // UART1_PFIFO
+// range      0x4006B011 0x4006B011 1 ReadWrite                        // UART1_CFIFO
+// range      0x4006B012 0x4006B012 1 ReadWrite                        // UART1_SFIFO
+// range      0x4006B013 0x4006B013 1 ReadWrite                        // UART1_TWFIFO
+range      0x4006B014 0x4006B014 1 Read                                // UART1_TCFIFO
+// range      0x4006B015 0x4006B015 1 ReadWrite                        // UART1_RWFIFO
+range      0x4006B016 0x4006B016 1 Read                                // UART1_RCFIFO
+reserved   0x4006B017 0x4006B017
+// range      0x4006B018 0x4006B018 1 ReadWrite                        // UART1_C7816
+// range      0x4006B019 0x4006B019 1 ReadWrite                        // UART1_IE7816
+// range      0x4006B01A 0x4006B01A 1 ReadWrite                        // UART1_IS7816
+// range      0x4006B01B 0x4006B01B 1 ReadWrite                        // UART1_WP7816T0(ReadWrite) / UART1_WP7816T1(ReadWrite)
+// range      0x4006B01C 0x4006B01C 1 ReadWrite                        // UART1_WN7816
+// range      0x4006B01D 0x4006B01D 1 ReadWrite                        // UART1_WF7816
+// range      0x4006B01E 0x4006B01E 1 ReadWrite                        // UART1_ET7816
+// range      0x4006B01F 0x4006B01F 1 ReadWrite                        // UART1_TL7816
+reserved   0x4006B020 0x4006BFFF
+
+// Serial Communication Interface (UART2)
+// range      0x4006C000 0x4006C000 1 ReadWrite                        // UART2_BDH
+// range      0x4006C001 0x4006C001 1 ReadWrite                        // UART2_BDL
+// range      0x4006C002 0x4006C002 1 ReadWrite                        // UART2_C1
+// range      0x4006C003 0x4006C003 1 ReadWrite                        // UART2_C2
+range      0x4006C004 0x4006C004 1 Read                                // UART2_S1
+// range      0x4006C005 0x4006C005 1 ReadWrite                        // UART2_S2
+// range      0x4006C006 0x4006C006 1 ReadWrite                        // UART2_C3
+// range      0x4006C007 0x4006C007 1 ReadWrite                        // UART2_D
+// range      0x4006C008 0x4006C008 1 ReadWrite                        // UART2_MA1
+// range      0x4006C009 0x4006C009 1 ReadWrite                        // UART2_MA2
+// range      0x4006C00A 0x4006C00A 1 ReadWrite                        // UART2_C4
+// range      0x4006C00B 0x4006C00B 1 ReadWrite                        // UART2_C5
+range      0x4006C00C 0x4006C00C 1 Read                                // UART2_ED
+// range      0x4006C00D 0x4006C00D 1 ReadWrite                        // UART2_MODEM
+reserved   0x4006C00E 0x4006C00F
+// range      0x4006C010 0x4006C010 1 ReadWrite                        // UART2_PFIFO
+// range      0x4006C011 0x4006C011 1 ReadWrite                        // UART2_CFIFO
+// range      0x4006C012 0x4006C012 1 ReadWrite                        // UART2_SFIFO
+// range      0x4006C013 0x4006C013 1 ReadWrite                        // UART2_TWFIFO
+range      0x4006C014 0x4006C014 1 Read                                // UART2_TCFIFO
+// range      0x4006C015 0x4006C015 1 ReadWrite                        // UART2_RWFIFO
+range      0x4006C016 0x4006C016 1 Read                                // UART2_RCFIFO
+reserved   0x4006C017 0x4006CFFF
+
+// Serial Communication Interface (UART3)
+// range      0x4006D000 0x4006D000 1 ReadWrite                        // UART3_BDH
+// range      0x4006D001 0x4006D001 1 ReadWrite                        // UART3_BDL
+// range      0x4006D002 0x4006D002 1 ReadWrite                        // UART3_C1
+// range      0x4006D003 0x4006D003 1 ReadWrite                        // UART3_C2
+range      0x4006D004 0x4006D004 1 Read                                // UART3_S1
+// range      0x4006D005 0x4006D005 1 ReadWrite                        // UART3_S2
+// range      0x4006D006 0x4006D006 1 ReadWrite                        // UART3_C3
+// range      0x4006D007 0x4006D007 1 ReadWrite                        // UART3_D
+// range      0x4006D008 0x4006D008 1 ReadWrite                        // UART3_MA1
+// range      0x4006D009 0x4006D009 1 ReadWrite                        // UART3_MA2
+// range      0x4006D00A 0x4006D00A 1 ReadWrite                        // UART3_C4
+// range      0x4006D00B 0x4006D00B 1 ReadWrite                        // UART3_C5
+range      0x4006D00C 0x4006D00C 1 Read                                // UART3_ED
+// range      0x4006D00D 0x4006D00D 1 ReadWrite                        // UART3_MODEM
+reserved   0x4006D00E 0x4006D00F
+// range      0x4006D010 0x4006D010 1 ReadWrite                        // UART3_PFIFO
+// range      0x4006D011 0x4006D011 1 ReadWrite                        // UART3_CFIFO
+// range      0x4006D012 0x4006D012 1 ReadWrite                        // UART3_SFIFO
+// range      0x4006D013 0x4006D013 1 ReadWrite                        // UART3_TWFIFO
+range      0x4006D014 0x4006D014 1 Read                                // UART3_TCFIFO
+// range      0x4006D015 0x4006D015 1 ReadWrite                        // UART3_RWFIFO
+range      0x4006D016 0x4006D016 1 Read                                // UART3_RCFIFO
+reserved   0x4006D017 0x4006D017
+// range      0x4006D018 0x4006D018 1 ReadWrite                        // UART3_C7816
+// range      0x4006D019 0x4006D019 1 ReadWrite                        // UART3_IE7816
+// range      0x4006D01A 0x4006D01A 1 ReadWrite                        // UART3_IS7816
+// range      0x4006D01B 0x4006D01B 1 ReadWrite                        // UART3_WP7816T0(ReadWrite) / UART3_WP7816T1(ReadWrite)
+// range      0x4006D01C 0x4006D01C 1 ReadWrite                        // UART3_WN7816
+// range      0x4006D01D 0x4006D01D 1 ReadWrite                        // UART3_WF7816
+// range      0x4006D01E 0x4006D01E 1 ReadWrite                        // UART3_ET7816
+// range      0x4006D01F 0x4006D01F 1 ReadWrite                        // UART3_TL7816
+reserved   0x4006D020 0x4006EFFF
+
+// Voltage Reference (VREF)
+// range      0x4006F000 0x4006F000 1 ReadWrite                        // VREF_VREFH_TRM
+// range      0x4006F001 0x4006F001 1 ReadWrite                        // VREF_VREFH_SC
+reserved   0x4006F002 0x4006F004
+// range      0x4006F005 0x4006F005 1 ReadWrite                        // VREF_VREFL_TRM
+reserved   0x4006F006 0x40071FFF
+
+// High-Speed Comparator (CMP), Voltage Reference (VREF) Digital-to-Analog Converter (DAC), and Analog Mux (ANMUX) (CMP0)
+// range      0x40072000 0x40072000 1 ReadWrite                        // CMP0_CR0
+// range      0x40072001 0x40072001 1 ReadWrite                        // CMP0_CR1
+// range      0x40072002 0x40072002 1 ReadWrite                        // CMP0_FPR
+// range      0x40072003 0x40072003 1 ReadWrite                        // CMP0_SCR
+// range      0x40072004 0x40072004 1 ReadWrite                        // CMP0_DACCR
+// range      0x40072005 0x40072005 1 ReadWrite                        // CMP0_MUXCR
+reserved   0x40072006 0x40072007
+
+// High-Speed Comparator (CMP), Voltage Reference (VREF) Digital-to-Analog Converter (DAC), and Analog Mux (ANMUX) (CMP1)
+// range      0x40072008 0x40072008 1 ReadWrite                        // CMP1_CR0
+// range      0x40072009 0x40072009 1 ReadWrite                        // CMP1_CR1
+// range      0x4007200A 0x4007200A 1 ReadWrite                        // CMP1_FPR
+// range      0x4007200B 0x4007200B 1 ReadWrite                        // CMP1_SCR
+// range      0x4007200C 0x4007200C 1 ReadWrite                        // CMP1_DACCR
+// range      0x4007200D 0x4007200D 1 ReadWrite                        // CMP1_MUXCR
+reserved   0x4007200E 0x40074FFF
+
+// Serial Peripheral Interface (SPI0)
+range      0x40075000 0x40075000 1 Read                                // SPI0_S
+// range      0x40075001 0x40075001 1 ReadWrite                        // SPI0_BR
+// range      0x40075002 0x40075002 1 ReadWrite                        // SPI0_C2
+// range      0x40075003 0x40075003 1 ReadWrite                        // SPI0_C1
+// range      0x40075004 0x40075004 1 ReadWrite                        // SPI0_ML
+// range      0x40075005 0x40075005 1 ReadWrite                        // SPI0_MH
+// range      0x40075006 0x40075006 1 ReadWrite                        // SPI0_DL
+// range      0x40075007 0x40075007 1 ReadWrite                        // SPI0_DH
+reserved   0x40075008 0x40075009
+// range      0x4007500A 0x4007500A 1 ReadWrite                        // SPI0_CI
+// range      0x4007500B 0x4007500B 1 ReadWrite                        // SPI0_C3
+reserved   0x4007500C 0x40075FFF
+
+// Serial Peripheral Interface (SPI1)
+range      0x40076000 0x40076000 1 Read                                // SPI1_S
+// range      0x40076001 0x40076001 1 ReadWrite                        // SPI1_BR
+// range      0x40076002 0x40076002 1 ReadWrite                        // SPI1_C2
+// range      0x40076003 0x40076003 1 ReadWrite                        // SPI1_C1
+// range      0x40076004 0x40076004 1 ReadWrite                        // SPI1_ML
+// range      0x40076005 0x40076005 1 ReadWrite                        // SPI1_MH
+// range      0x40076006 0x40076006 1 ReadWrite                        // SPI1_DL
+// range      0x40076007 0x40076007 1 ReadWrite                        // SPI1_DH
+reserved   0x40076008 0x40076009
+// range      0x4007600A 0x4007600A 1 ReadWrite                        // SPI1_CI
+// range      0x4007600B 0x4007600B 1 ReadWrite                        // SPI1_C3
+reserved   0x4007600C 0x4007AFFF
+
+// Reset Control Module (RCM)
+range      0x4007B000 0x4007B000 1 Read                                // RCM_SRS0
+range      0x4007B001 0x4007B001 1 Read                                // RCM_SRS1
+reserved   0x4007B002 0x4007B003
+// range      0x4007B004 0x4007B004 1 ReadWrite                        // RCM_RPFC
+// range      0x4007B005 0x4007B005 1 ReadWrite                        // RCM_RPFW
+reserved   0x4007B006 0x4007BFFF
+
+// Low leakage wakeup unit (LLWU)
+// range      0x4007C000 0x4007C000 1 ReadWrite                        // LLWU_PE1
+// range      0x4007C001 0x4007C001 1 ReadWrite                        // LLWU_PE2
+// range      0x4007C002 0x4007C002 1 ReadWrite                        // LLWU_PE3
+// range      0x4007C003 0x4007C003 1 ReadWrite                        // LLWU_PE4
+// range      0x4007C004 0x4007C004 1 ReadWrite                        // LLWU_ME
+// range      0x4007C005 0x4007C005 1 ReadWrite                        // LLWU_F1
+// range      0x4007C006 0x4007C006 1 ReadWrite                        // LLWU_F2
+range      0x4007C007 0x4007C007 1 Read                                // LLWU_F3
+// range      0x4007C008 0x4007C008 1 ReadWrite                        // LLWU_FILT1
+// range      0x4007C009 0x4007C009 1 ReadWrite                        // LLWU_FILT2
+reserved   0x4007C00A 0x4007CFFF
+
+// Power Management Controller (PMC)
+// range      0x4007D000 0x4007D000 1 ReadWrite                        // PMC_LVDSC1
+// range      0x4007D001 0x4007D001 1 ReadWrite                        // PMC_LVDSC2
+// range      0x4007D002 0x4007D002 1 ReadWrite                        // PMC_REGSC
+reserved   0x4007D003 0x4007DFFF
+
+// System Mode Controller (SMC)
+// range      0x4007E000 0x4007E000 1 ReadWrite                        // SMC_PMPROT
+// range      0x4007E001 0x4007E001 1 ReadWrite                        // SMC_PMCTRL
+// range      0x4007E002 0x4007E002 1 ReadWrite                        // SMC_STOPCTRL
+range      0x4007E003 0x4007E003 1 Read                                // SMC_PMSTAT
+reserved   0x4007E004 0x400FEFFF
+
+// General Purpose Input/Output (GPIOA)
+// range      0x400FF000 0x400FF000 1 ReadWrite                        // GPIOA_PDOR
+
+// General Purpose Input/Output (GPIOB)
+// range      0x400FF001 0x400FF001 1 ReadWrite                        // GPIOB_PDOR
+
+// General Purpose Input/Output (GPIOC)
+// range      0x400FF002 0x400FF002 1 ReadWrite                        // GPIOC_PDOR
+
+// General Purpose Input/Output (GPIOD)
+// range      0x400FF003 0x400FF003 1 ReadWrite                        // GPIOD_PDOR
+reserved   0x400FF004 0x400FF00F
+
+// General Purpose Input/Output (GPIOA)
+range      0x400FF010 0x400FF010 1 Read                                // GPIOA_PDIR
+
+// General Purpose Input/Output (GPIOB)
+range      0x400FF011 0x400FF011 1 Read                                // GPIOB_PDIR
+
+// General Purpose Input/Output (GPIOC)
+range      0x400FF012 0x400FF012 1 Read                                // GPIOC_PDIR
+
+// General Purpose Input/Output (GPIOD)
+range      0x400FF013 0x400FF013 1 Read                                // GPIOD_PDIR
+
+// General Purpose Input/Output (GPIOA)
+// range      0x400FF014 0x400FF014 1 ReadWrite                        // GPIOA_PDDR
+
+// General Purpose Input/Output (GPIOB)
+// range      0x400FF015 0x400FF015 1 ReadWrite                        // GPIOB_PDDR
+
+// General Purpose Input/Output (GPIOC)
+// range      0x400FF016 0x400FF016 1 ReadWrite                        // GPIOC_PDDR
+
+// General Purpose Input/Output (GPIOD)
+// range      0x400FF017 0x400FF017 1 ReadWrite                        // GPIOD_PDDR
+reserved   0x400FF018 0x400FF01B
+
+// General Purpose Input/Output (GPIOA)
+// range      0x400FF01C 0x400FF01C 1 ReadWrite                        // GPIOA_GACR
+
+// General Purpose Input/Output (GPIOB)
+// range      0x400FF01D 0x400FF01D 1 ReadWrite                        // GPIOB_GACR
+
+// General Purpose Input/Output (GPIOC)
+// range      0x400FF01E 0x400FF01E 1 ReadWrite                        // GPIOC_GACR
+
+// General Purpose Input/Output (GPIOD)
+// range      0x400FF01F 0x400FF01F 1 ReadWrite                        // GPIOD_GACR
+reserved   0x400FF020 0x400FF03F
+
+// General Purpose Input/Output (GPIOE)
+// range      0x400FF040 0x400FF040 1 ReadWrite                        // GPIOE_PDOR
+
+// General Purpose Input/Output (GPIOF)
+// range      0x400FF041 0x400FF041 1 ReadWrite                        // GPIOF_PDOR
+
+// General Purpose Input/Output (GPIOG)
+// range      0x400FF042 0x400FF042 1 ReadWrite                        // GPIOG_PDOR
+
+// General Purpose Input/Output (GPIOH)
+// range      0x400FF043 0x400FF043 1 ReadWrite                        // GPIOH_PDOR
+reserved   0x400FF044 0x400FF04F
+
+// General Purpose Input/Output (GPIOE)
+range      0x400FF050 0x400FF050 1 Read                                // GPIOE_PDIR
+
+// General Purpose Input/Output (GPIOF)
+range      0x400FF051 0x400FF051 1 Read                                // GPIOF_PDIR
+
+// General Purpose Input/Output (GPIOG)
+range      0x400FF052 0x400FF052 1 Read                                // GPIOG_PDIR
+
+// General Purpose Input/Output (GPIOH)
+range      0x400FF053 0x400FF053 1 Read                                // GPIOH_PDIR
+
+// General Purpose Input/Output (GPIOE)
+// range      0x400FF054 0x400FF054 1 ReadWrite                        // GPIOE_PDDR
+
+// General Purpose Input/Output (GPIOF)
+// range      0x400FF055 0x400FF055 1 ReadWrite                        // GPIOF_PDDR
+
+// General Purpose Input/Output (GPIOG)
+// range      0x400FF056 0x400FF056 1 ReadWrite                        // GPIOG_PDDR
+
+// General Purpose Input/Output (GPIOH)
+// range      0x400FF057 0x400FF057 1 ReadWrite                        // GPIOH_PDDR
+reserved   0x400FF058 0x400FF05B
+
+// General Purpose Input/Output (GPIOE)
+// range      0x400FF05C 0x400FF05C 1 ReadWrite                        // GPIOE_GACR
+
+// General Purpose Input/Output (GPIOF)
+// range      0x400FF05D 0x400FF05D 1 ReadWrite                        // GPIOF_GACR
+
+// General Purpose Input/Output (GPIOG)
+// range      0x400FF05E 0x400FF05E 1 ReadWrite                        // GPIOG_GACR
+
+// General Purpose Input/Output (GPIOH)
+// range      0x400FF05F 0x400FF05F 1 ReadWrite                        // GPIOH_GACR
+reserved   0x400FF060 0x400FF07F
+
+// General Purpose Input/Output (GPIOI)
+// range      0x400FF080 0x400FF080 1 ReadWrite                        // GPIOI_PDOR
+reserved   0x400FF081 0x400FF08F
+range      0x400FF090 0x400FF090 1 Read                                // GPIOI_PDIR
+reserved   0x400FF091 0x400FF093
+// range      0x400FF094 0x400FF094 1 ReadWrite                        // GPIOI_PDDR
+reserved   0x400FF095 0x400FF09B
+// range      0x400FF09C 0x400FF09C 1 ReadWrite                        // GPIOI_GACR
+reserved   0x400FF09D 0x400FFFFF
+
+// Data Watchpoint and Trace Unit Registers
+// range      0xE0001000 0xE0001003 4 ReadWrite                        // DWT_CTRL
+reserved   0xE0001004 0xE000101B
+range      0xE000101C 0xE000101F 4 Read                                // DWT_PCSR
+// range      0xE0001020 0xE0001023 4 ReadWrite                        // DWT_COMP0
+// range      0xE0001024 0xE0001027 4 ReadWrite                        // DWT_MASK0
+// range      0xE0001028 0xE000102B 4 ReadWrite                        // DWT_FUNCTION0
+reserved   0xE000102C 0xE000102F
+// range      0xE0001030 0xE0001033 4 ReadWrite                        // DWT_COMP1
+// range      0xE0001034 0xE0001037 4 ReadWrite                        // DWT_MASK1
+// range      0xE0001038 0xE000103B 4 ReadWrite                        // DWT_FUNCTION1
+reserved   0xE000103C 0xE0001FFF
+
+// Breakpoint Unit Registers
+// range      0xE0002000 0xE0002003 4 ReadWrite                        // BP_CTRL
+reserved   0xE0002004 0xE0002007
+// range      0xE0002008 0xE000200B 4 ReadWrite                        // BP_COMP0
+// range      0xE000200C 0xE000200F 4 ReadWrite                        // BP_COMP1
+reserved   0xE0002010 0xE0002FCF
+range      0xE0002FD0 0xE0002FD3 4 Read                                // BP_PID4
+range      0xE0002FD4 0xE0002FD7 4 Read                                // BP_PID5
+range      0xE0002FD8 0xE0002FDB 4 Read                                // BP_PID6
+range      0xE0002FDC 0xE0002FDF 4 Read                                // BP_PID7
+range      0xE0002FE0 0xE0002FE3 4 Read                                // BP_PID0
+range      0xE0002FE4 0xE0002FE7 4 Read                                // BP_PID1
+range      0xE0002FE8 0xE0002FEB 4 Read                                // BP_PID2
+range      0xE0002FEC 0xE0002FEF 4 Read                                // BP_PID3
+range      0xE0002FF0 0xE0002FF3 4 Read                                // BP_CID0
+range      0xE0002FF4 0xE0002FF7 4 Read                                // BP_CID1
+range      0xE0002FF8 0xE0002FFB 4 Read                                // BP_CID2
+range      0xE0002FFC 0xE0002FFF 4 Read                                // BP_CID3
+reserved   0xE0003000 0xE000E007
+
+// System Control Registers
+range      0xE000E008 0xE000E00B 4 Read                                // SCB_ACTLR
+reserved   0xE000E00C 0xE000E00F
+
+// System timer SysTick Registers
+// range      0xE000E010 0xE000E013 4 ReadWrite                        // SYST_CSR
+// range      0xE000E014 0xE000E017 4 ReadWrite                        // SYST_RVR
+// range      0xE000E018 0xE000E01B 4 ReadWrite                        // SYST_CVR
+range      0xE000E01C 0xE000E01F 4 Read                                // SYST_CALIB
+reserved   0xE000E020 0xE000E0FF
+
+// Nested Vectored Interrupt Controller (NVIC) Registers
+// range      0xE000E100 0xE000E103 4 ReadWrite                        // NVIC_ISER
+reserved   0xE000E104 0xE000E17F
+// range      0xE000E180 0xE000E183 4 ReadWrite                        // NVIC_ICER
+reserved   0xE000E184 0xE000E1FF
+// range      0xE000E200 0xE000E203 4 ReadWrite                        // NVIC_ISPR
+reserved   0xE000E204 0xE000E27F
+// range      0xE000E280 0xE000E283 4 ReadWrite                        // NVIC_ICPR
+reserved   0xE000E284 0xE000E3FF
+// range      0xE000E400 0xE000E403 4 ReadWrite                        // NVIC_IPR0
+// range      0xE000E404 0xE000E407 4 ReadWrite                        // NVIC_IPR1
+// range      0xE000E408 0xE000E40B 4 ReadWrite                        // NVIC_IPR2
+// range      0xE000E40C 0xE000E40F 4 ReadWrite                        // NVIC_IPR3
+// range      0xE000E410 0xE000E413 4 ReadWrite                        // NVIC_IPR4
+// range      0xE000E414 0xE000E417 4 ReadWrite                        // NVIC_IPR5
+// range      0xE000E418 0xE000E41B 4 ReadWrite                        // NVIC_IPR6
+// range      0xE000E41C 0xE000E41F 4 ReadWrite                        // NVIC_IPR7
+reserved   0xE000E420 0xE000ECFF
+
+// System Control Registers
+range      0xE000ED00 0xE000ED03 4 Read                                // SCB_CPUID
+// range      0xE000ED04 0xE000ED07 4 ReadWrite                        // SCB_ICSR
+// range      0xE000ED08 0xE000ED0B 4 ReadWrite                        // SCB_VTOR
+// range      0xE000ED0C 0xE000ED0F 4 ReadWrite                        // SCB_AIRCR
+// range      0xE000ED10 0xE000ED13 4 ReadWrite                        // SCB_SCR
+range      0xE000ED14 0xE000ED17 4 Read                                // SCB_CCR
+reserved   0xE000ED18 0xE000ED1B
+// range      0xE000ED1C 0xE000ED1F 4 ReadWrite                        // SCB_SHPR2
+// range      0xE000ED20 0xE000ED23 4 ReadWrite                        // SCB_SHPR3
+// range      0xE000ED24 0xE000ED27 4 ReadWrite                        // SCB_SHCSR
+reserved   0xE000ED28 0xE000ED2F
+// range      0xE000ED30 0xE000ED33 4 ReadWrite                        // SCB_DFSR
+reserved   0xE000ED34 0xE000EDEF
+
+// Core Debug Registers
+// range      0xE000EDF0 0xE000EDF3 4 ReadWrite                        // DHCSR_Read(ReadWrite) / DHCSR_Write(ReadWrite)
+range      0xE000EDF4 0xE000EDF7 4 Write                               // DCRSR
+// range      0xE000EDF8 0xE000EDFB 4 ReadWrite                        // DCRDR
+// range      0xE000EDFC 0xE000EDFF 4 ReadWrite                        // DEMCR
+reserved   0xE000EE00 0xEFFFFFFF
+
+// Micro Trace Buffer (MTB)
+// range      0xF0000000 0xF0000003 4 ReadWrite                        // MTB_POSITION
+// range      0xF0000004 0xF0000007 4 ReadWrite                        // MTB_MASTER
+// range      0xF0000008 0xF000000B 4 ReadWrite                        // MTB_FLOW
+range      0xF000000C 0xF000000F 4 Read                                // MTB_BASE
+reserved   0xF0000010 0xF0000EFF
+range      0xF0000F00 0xF0000F03 4 Read                                // MTB_MODECTRL
+reserved   0xF0000F04 0xF0000F9F
+range      0xF0000FA0 0xF0000FA3 4 Read                                // MTB_TAGSET
+range      0xF0000FA4 0xF0000FA7 4 Read                                // MTB_TAGCLEAR
+reserved   0xF0000FA8 0xF0000FAF
+range      0xF0000FB0 0xF0000FB3 4 Read                                // MTB_LOCKACCESS
+range      0xF0000FB4 0xF0000FB7 4 Read                                // MTB_LOCKSTAT
+range      0xF0000FB8 0xF0000FBB 4 Read                                // MTB_AUTHSTAT
+range      0xF0000FBC 0xF0000FBF 4 Read                                // MTB_DEVICEARCH
+reserved   0xF0000FC0 0xF0000FC7
+range      0xF0000FC8 0xF0000FCB 4 Read                                // MTB_DEVICECFG
+range      0xF0000FCC 0xF0000FCF 4 Read                                // MTB_DEVICETYPID
+range      0xF0000FD0 0xF0000FD3 4 Read                                // MTB_PERIPHID4
+range      0xF0000FD4 0xF0000FD7 4 Read                                // MTB_PERIPHID5
+range      0xF0000FD8 0xF0000FDB 4 Read                                // MTB_PERIPHID6
+range      0xF0000FDC 0xF0000FDF 4 Read                                // MTB_PERIPHID7
+range      0xF0000FE0 0xF0000FE3 4 Read                                // MTB_PERIPHID0
+range      0xF0000FE4 0xF0000FE7 4 Read                                // MTB_PERIPHID1
+range      0xF0000FE8 0xF0000FEB 4 Read                                // MTB_PERIPHID2
+range      0xF0000FEC 0xF0000FEF 4 Read                                // MTB_PERIPHID3
+range      0xF0000FF0 0xF0000FF3 4 Read                                // MTB_COMPID0
+range      0xF0000FF4 0xF0000FF7 4 Read                                // MTB_COMPID1
+range      0xF0000FF8 0xF0000FFB 4 Read                                // MTB_COMPID2
+range      0xF0000FFC 0xF0000FFF 4 Read                                // MTB_COMPID3
+
+// MTB data watchpoint and trace (MTBDWT)
+range      0xF0001000 0xF0001003 4 Read                                // MTBDWT_CTRL
+reserved   0xF0001004 0xF000101F
+// range      0xF0001020 0xF0001023 4 ReadWrite                        // MTBDWT_COMP0
+// range      0xF0001024 0xF0001027 4 ReadWrite                        // MTBDWT_MASK0
+// range      0xF0001028 0xF000102B 4 ReadWrite                        // MTBDWT_FCT0
+reserved   0xF000102C 0xF000102F
+// range      0xF0001030 0xF0001033 4 ReadWrite                        // MTBDWT_COMP1
+// range      0xF0001034 0xF0001037 4 ReadWrite                        // MTBDWT_MASK1
+// range      0xF0001038 0xF000103B 4 ReadWrite                        // MTBDWT_FCT1
+reserved   0xF000103C 0xF00011FF
+// range      0xF0001200 0xF0001203 4 ReadWrite                        // MTBDWT_TBCTRL
+reserved   0xF0001204 0xF0001FC7
+range      0xF0001FC8 0xF0001FCB 4 Read                                // MTBDWT_DEVICECFG
+range      0xF0001FCC 0xF0001FCF 4 Read                                // MTBDWT_DEVICETYPID
+range      0xF0001FD0 0xF0001FD3 4 Read                                // MTBDWT_PERIPHID4
+range      0xF0001FD4 0xF0001FD7 4 Read                                // MTBDWT_PERIPHID5
+range      0xF0001FD8 0xF0001FDB 4 Read                                // MTBDWT_PERIPHID6
+range      0xF0001FDC 0xF0001FDF 4 Read                                // MTBDWT_PERIPHID7
+range      0xF0001FE0 0xF0001FE3 4 Read                                // MTBDWT_PERIPHID0
+range      0xF0001FE4 0xF0001FE7 4 Read                                // MTBDWT_PERIPHID1
+range      0xF0001FE8 0xF0001FEB 4 Read                                // MTBDWT_PERIPHID2
+range      0xF0001FEC 0xF0001FEF 4 Read                                // MTBDWT_PERIPHID3
+range      0xF0001FF0 0xF0001FF3 4 Read                                // MTBDWT_COMPID0
+range      0xF0001FF4 0xF0001FF7 4 Read                                // MTBDWT_COMPID1
+range      0xF0001FF8 0xF0001FFB 4 Read                                // MTBDWT_COMPID2
+range      0xF0001FFC 0xF0001FFF 4 Read                                // MTBDWT_COMPID3
+
+// System ROM (ROM)
+range      0xF0002000 0xF0002003 4 Read                                // ROM_ENTRY0
+range      0xF0002004 0xF0002007 4 Read                                // ROM_ENTRY1
+range      0xF0002008 0xF000200B 4 Read                                // ROM_ENTRY2
+range      0xF000200C 0xF000200F 4 Read                                // ROM_TABLEMARK
+reserved   0xF0002010 0xF0002FCB
+range      0xF0002FCC 0xF0002FCF 4 Read                                // ROM_SYSACCESS
+range      0xF0002FD0 0xF0002FD3 4 Read                                // ROM_PERIPHID4
+range      0xF0002FD4 0xF0002FD7 4 Read                                // ROM_PERIPHID5
+range      0xF0002FD8 0xF0002FDB 4 Read                                // ROM_PERIPHID6
+range      0xF0002FDC 0xF0002FDF 4 Read                                // ROM_PERIPHID7
+range      0xF0002FE0 0xF0002FE3 4 Read                                // ROM_PERIPHID0
+range      0xF0002FE4 0xF0002FE7 4 Read                                // ROM_PERIPHID1
+range      0xF0002FE8 0xF0002FEB 4 Read                                // ROM_PERIPHID2
+range      0xF0002FEC 0xF0002FEF 4 Read                                // ROM_PERIPHID3
+range      0xF0002FF0 0xF0002FF3 4 Read                                // ROM_COMPID0
+range      0xF0002FF4 0xF0002FF7 4 Read                                // ROM_COMPID1
+range      0xF0002FF8 0xF0002FFB 4 Read                                // ROM_COMPID2
+range      0xF0002FFC 0xF0002FFF 4 Read                                // ROM_COMPID3
+reserved   0xF0003000 0xF0003007
+
+// Core Platform Miscellaneous Control Module (MCM)
+range      0xF0003008 0xF0003009 2 Read                                // MCM_PLASC
+range      0xF000300A 0xF000300B 2 Read                                // MCM_PLAMC
+// range      0xF000300C 0xF000300F 4 ReadWrite                        // MCM_PLACR
+reserved   0xF0003010 0xF000302F
+// range      0xF0003030 0xF0003033 4 ReadWrite                        // MCM_PID
+reserved   0xF0003034 0xF000303F
+// range      0xF0003040 0xF0003043 4 ReadWrite                        // MCM_CPO
+reserved   0xF0003044 0xF000307F
+// range      0xF0003080 0xF0003083 4 ReadWrite                        // MCM_MATCR0
+reserved   0xF0003084 0xFFFFFFFF

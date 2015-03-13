@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MTBDWT_MASK0</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>MTB_DWT Comparator Mask Register</description>
+  <bitfields>
+    <bitfield>
+      <name>MASK</name>
+      <bitrange>4:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>MASK</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

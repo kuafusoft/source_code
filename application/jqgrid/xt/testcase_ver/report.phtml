@@ -1,0 +1,9 @@
+<div id='report'>
+	<fieldset>
+	<?php
+		require_once('kf_tool.php');
+		$tool = new KF_Tool();
+			$tool->cf($this->cols, true, false, 1, false, array(), true); // 如果Testcase_id非零，则Testcase的字段应不可编辑
+	?>
+	</fieldset>
+</div>

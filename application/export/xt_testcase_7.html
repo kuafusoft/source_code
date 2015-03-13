@@ -1,0 +1,1641 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Case Release</title><script type='text/javascript'>
+			function displayDiv(id){
+				var div = document.getElementById(id);
+				if (div){
+					var display = div.style.display;
+					if (display == 'none')
+						display = 'block';
+					else
+						display = 'none';
+					div.style.display = display;
+				}
+			}
+			</script><style type='text/css'>
+		<!--
+		a:link {
+			text-decoration: none;
+		}
+		a:visited {
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		a:active {
+			text-decoration: none;
+		}
+		div{
+			position:relative; left:30px;
+		}
+		.module{
+			background-color: #DDDDDD;
+			
+		}
+		.moduledesc{
+			background-color: #EEEEEE;
+		}
+		.case{
+			background-color: #DDDDDD;
+		}
+		-->
+		</style>
+		</head><body><a href='javascript:displayDiv("div_intro")'><strong>Introduction</strong></a><BR /><div id='div_intro' style='display:none'>Intro</div><a href='javascript:displayDiv("div_setup")'><strong>Setup Test Environment</strong></a><BR /><div id='div_setup' style='display:none'>Setup</div><BR /><a href='javascript:displayDiv("div_module_1")'><strong>demo_1</strong></a><BR /><div id='div_module_1' style='display:none'><p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. All commands are executed  successfully! (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>OOBE test <br /><br />Test</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description: No change<br />2 Jumper Setting<br />TWR-SER board:<br />CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. All commands are executed  successfully! (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>OOBE test <br /><br />Test</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description: No change<br />2 Jumper Setting<br />TWR-SER board:<br />CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. All commands are executed  successfully! (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>OOBE test <br /><br />Test</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description: No change<br />2 Jumper Setting<br />TWR-SER board:<br />CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. All commands are executed  successfully! (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>OOBE test <br /><br />Test</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description: No change<br />2 Jumper Setting<br />TWR-SER board:<br />CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. All commands are executed  successfully! (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>OOBE test <br /><br />Test</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description: No change<br />2 Jumper Setting<br />TWR-SER board:<br />CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. All commands are executed  successfully! (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>asdf</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>asdf</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>asdf</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>asdf</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>asdf</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>asdf</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>asdf</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>asdf</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>asdf</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />In file hvac.h<br />#define DEMOCFG_ENABLE_USB_FILESYSTEM  1<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command, execute all command displayed<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result<br />11. Plug Internet cable from PC to the TWR_board. Manual configure your IP address (ex: IP address: 192.168.1.2, subnet mask: 255.255.255.0). Execute commands: ipconfig, ping, nestat.</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).<br />â€¢ Commands execute successful, can ping ip to PC, don't have any "Request timed out" in value replied.</td>
+				</tr>
+</table></div>
+</div></body></html>

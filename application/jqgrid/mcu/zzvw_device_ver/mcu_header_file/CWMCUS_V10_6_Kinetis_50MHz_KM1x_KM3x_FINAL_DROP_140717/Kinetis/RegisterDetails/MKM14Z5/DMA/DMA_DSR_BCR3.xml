@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>DMA_DSR_BCR3</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>DMA Status Register / Byte Count Register</description>
+  <bitfields>
+    <bitfield>
+      <name>BCR</name>
+      <bitrange>23:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>This field contains the number of bytes yet to be transferred for a given block. BCR must be written with a value equal to or less than 0F_FFFFh. After being written with a value in this range, bits 23-20 of BCR read back as 0000b. A write to BCR of a value greater than 0F_FFFFh causes a configuration error when the channel starts to execute. After being written with a value in this range, bits 23-20 of BCR read back as 0001b.</description>
+    </bitfield>
+    <bitfield>
+      <name>DONE</name>
+      <bitrange>24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transactions done</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>DMA transfer is not yet complete. Writing a 0 has no effect.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>DMA transfer completed. Writing a 1 to this bit clears all DMA status bits and should be used in an interrupt service routine to clear the DMA interrupt and error bits.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>BSY</name>
+      <bitrange>25</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Busy</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>DMA channel is inactive. Cleared when the DMA has finished the last transaction.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>BSY is set the first time the channel is enabled after a transfer is initiated.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>REQ</name>
+      <bitrange>26</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Request</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No request is pending or the channel is currently active. Cleared when the channel is selected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The DMA channel has a transfer remaining and the channel is not selected.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>27</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>BED</name>
+      <bitrange>28</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Bus error on destination</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No bus error occurred.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The DMA channel terminated with a bus error during the write portion of a transfer.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>BES</name>
+      <bitrange>29</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Bus error on source</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No bus error occurred.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The DMA channel terminated with a bus error during the read portion of a transfer.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CE</name>
+      <bitrange>30</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Configuration error</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No configuration error exists.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>A configuration error has occurred.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

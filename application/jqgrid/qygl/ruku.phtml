@@ -1,0 +1,21 @@
+<fieldset><legend><label><input type='checkbox' id='has_ruku'>入库</label></legend>	
+	<div id='div_ruku' style='display:none'>
+	<?php
+		$ces = array(
+			array('label'=>'质量等级', 'name'=>'zl_id', 'type'=>'select', 'DATA_TYPE'=>'int', 'editable'=>true, 'editoptions'=>array('value'=>$this->zl)),
+			// array('label'=>'主要缺陷', 'name'=>'defect_id', 'type'=>'select', 'DATA_TYPE'=>'int', 'editable'=>true, 'editoptions'=>array('value'=>$this->defect)),
+			array('label'=>'实入库量', 'name'=>'amount', 'type'=>'text', 'post'=>$this->wz['unit_name'], 'DATA_TYPE'=>'float', 'editable'=>true),
+			array('label'=>'仓库', 'name'=>'ck_id', 'type'=>'select', 'DATA_TYPE'=>'int', 'editable'=>true, 'editoptions'=>array('value'=>$this->ck)),
+			array('label'=>'位置', 'name'=>'ck_weizhi_id', 'type'=>'select', 'DATA_TYPE'=>'int', 'editable'=>true, 'editoptions'=>array('value'=>$this->ck_weizhi)),
+		);
+		$tool = toolFactory::get('kf');
+		$tool->multiRowEdit($ces, 'ruku');
+		$ces = array(
+			array('label'=>'总入库量', 'name'=>'ruku[amount]', 'id'=>'ruku_amount', 'type'=>'text', 'post'=>$this->wz['unit_name'], 'DATA_TYPE'=>'float', 'editable'=>false),
+			array('label'=>'入库员', 'name'=>'ruku[jbr_id]', 'id'=>'ruku_jbr_id', 'type'=>'select', 'DATA_TYPE'=>'int', 'editable'=>true, 'editoptions'=>array('value'=>$this->jbr)),
+			array('label'=>'入库日期', 'name'=>'ruku[happen_date]', 'id'=>'ruku_happen_date', 'type'=>'date', 'DATA_TYPE'=>'date', 'editable'=>true, 'defval'=>date('Y-m-d')),
+		);
+		$tool->cf($ces, true, null, 3, false, array(), true);
+	?>
+	</div>
+</fieldset>

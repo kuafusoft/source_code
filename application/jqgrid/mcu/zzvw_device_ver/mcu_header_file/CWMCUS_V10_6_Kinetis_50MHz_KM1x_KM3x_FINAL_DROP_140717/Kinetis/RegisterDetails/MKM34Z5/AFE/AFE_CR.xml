@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>AFE_CR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x40FA00</reset-value>
+  <description>Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>8:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>STRTUP_CNT</name>
+      <bitrange>15:9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Start up count</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>17:16</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>RESULT_FORMAT</name>
+      <bitrange>18</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Result Format</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Left justified 2&apos;s complement 32-bit : SVVVVVVVVVVVVVVVVVVVVVVV00000000 where (S= sign bit , V=valid result value, 0=zero)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Right justified 2&apos;s complement 32-bit : SSSSSSSSSVVVVVVVVVVVVVVVVVVVVVVV where (S= sign bit , V= valid result value, 0= zero)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>20:19</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>DLY_OK</name>
+      <bitrange>21</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Delay OK</description>
+    </bitfield>
+    <bitfield>
+      <name>RST_B</name>
+      <bitrange>22</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Software Reset</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>All ADCs, PGAs and Decimation filters are disabled. Clock Configuration bits will be reset.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>.= All ADCs, PGAs and Decimation filters are enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>24:23</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>LPM_EN</name>
+      <bitrange>25</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Low power Mode enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>AFE will be in normal mode</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>AFE will be in low power mode. Setting this bit reduce the current consumption of ADC and Buffer Amplifier , the max modulator clock frequency is below 1Mhz.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>26</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>SOFT_TRG3</name>
+      <bitrange>27</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Software Trigger3</description>
+    </bitfield>
+    <bitfield>
+      <name>SOFT_TRG2</name>
+      <bitrange>28</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Software Trigger2</description>
+    </bitfield>
+    <bitfield>
+      <name>SOFT_TRG1</name>
+      <bitrange>29</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Software Trigger1</description>
+    </bitfield>
+    <bitfield>
+      <name>SOFT_TRG0</name>
+      <bitrange>30</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Software Trigger0</description>
+    </bitfield>
+    <bitfield>
+      <name>MSTR_EN</name>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>AFE Master Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>All ADCs are disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>All ADCs and filters will get simultaneously enabled .</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

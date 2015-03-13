@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>WDOG_STCTRLL</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x1</reset-value>
+  <description>Watchdog Status and Control Register Low</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>14:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Do not modify this field value.</description>
+    </bitfield>
+    <bitfield>
+      <name>INTFLG</name>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt flag. It is set when an exception occurs. IRQRSTEN = 1 is a precondition to set this flag. INTFLG = 1 results in an interrupt being issued followed by a reset, WCT later. The interrupt can be cleared by writing 1 to this bit. It also gets cleared on a system reset.</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>LCD_FDCR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>LCD Fault Detect Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>FDPINID</name>
+      <bitrange>5:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Fault Detect Pin ID</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Fault detection for LCD_P0 pin.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Fault detection for LCD_P1 pin.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FDBPEN</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Fault Detect Back Plane Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Type of the selected pin under fault detect test is front plane.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Type of the selected pin under fault detect test is back plane.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FDEN</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Fault Detect Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disable fault detection.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enable fault detection.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name>FDSWW</name>
+      <bitrange>11:9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Fault Detect Sample Window Width</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Sample window width is 4 sample clock cycles.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Sample window width is 8 sample clock cycles.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FDPRS</name>
+      <bitrange>14:12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Fault Detect Clock Prescaler</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>1/1 bus clock.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>1/2 bus clock.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:16</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

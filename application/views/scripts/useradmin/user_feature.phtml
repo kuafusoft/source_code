@@ -1,0 +1,18 @@
+<?php
+    $auth = Zend_Auth::getInstance();
+    $logined = $auth->hasIdentity();
+    $nickName = 'Guest';
+    if ($logined){
+        $userInfo = $auth->getIdentity();
+        $nickName = $userInfo->nickname;
+    }
+    $this->placeholder('user_feature')->captureStart();
+    if($logined){
+        print_r($userInfo);
+    
+    }
+    else{
+        print_r("not logined");    
+    }
+    $this->placeholder('user_feature')->captureEnd();
+?>

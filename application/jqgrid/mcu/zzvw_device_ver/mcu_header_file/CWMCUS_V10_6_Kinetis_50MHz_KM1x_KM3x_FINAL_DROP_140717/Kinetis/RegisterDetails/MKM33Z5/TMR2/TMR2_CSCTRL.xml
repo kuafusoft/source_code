@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>TMR2_CSCTRL</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Timer Channel Comparator Status and Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>CL1</name>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Compare Load Control 1</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Never preload</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Load upon successful compare with the value in COMP1</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Load upon successful compare with the value in COMP2</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CL2</name>
+      <bitrange>3:2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Compare Load Control 2</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Never preload</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Load upon successful compare with the value in COMP1</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Load upon successful compare with the value in COMP2</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TCF1</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Compare 1 Interrupt Flag</description>
+    </bitfield>
+    <bitfield>
+      <name>TCF2</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Compare 2 Interrupt Flag</description>
+    </bitfield>
+    <bitfield>
+      <name>TCF1EN</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Compare 1 Interrupt Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>TCF2EN</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Compare 2 Interrupt Enable</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>UP</name>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Counting Direction Indicator</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The last count was in the DOWN direction.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The last count was in the UP direction.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TCI</name>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Triggered Count Initialization Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Stop counter upon receiving a second trigger event while still counting from the first trigger event.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Reload the counter upon receiving a second trigger event while still counting from the first trigger event.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ROC</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Reload on Capture</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Do not reload the counter on a capture event.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Reload the counter on a capture event.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ALT_LOAD</name>
+      <bitrange>12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Alternative Load Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Counter can be re-initialized only with the LOAD register.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Counter can be re-initialized with the LOAD or CMPLD2 registers depending on count direction.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FAULT</name>
+      <bitrange>13</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Fault Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Fault function disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Fault function enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DBG_EN</name>
+      <bitrange>15:14</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Debug Actions Enable</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Continue with normal operation during debug mode. (default)</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Halt TMR counter during debug mode.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Force TMR output to logic 0 (prior to consideration of SCTRL[OPS]).</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Both halt counter and force output to 0 during debug mode.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

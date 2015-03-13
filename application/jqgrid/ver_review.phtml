@@ -1,0 +1,28 @@
+<!--
+如果是一个新的Case，那么就显示该Case内容
+如果是基于某一个版本进行的修改，则列出基础版本和现版本的内容，进行对比
+
+
+
+-->
+<?php
+// print_r($this->vers);
+	echo $this->partial('ver_diff.phtml', array('vers'=>$this->vers, 'field_options'=>$this->edit_options));
+?>
+
+<?php
+	$ver = $this->vers['Current Version'];
+	if (!$this->task_finished && $ver['edit_status_id'] != EDIT_STATUS_PUBLISHED && $ver['edit_status_id'] != EDIT_STATUS_GOLDEN){
+?>
+<div id='review_comments'>
+<input type='hidden' id='task_id' value='<?php echo $this->task_id; ?>' >
+	<fieldset>
+		<legend>New Review Comment</legend>
+		<textarea style='width:100%' id='new_review_comments'><?php echo $this->review_comments;?></textarea>
+	</fieldset>
+</div>
+<?php
+}
+?>
+<input type='hidden' id='node_name' value='<?php echo $this->node_name;?>'>
+<input type='hidden' id='node_caption' value='<?php echo $this->node_caption;?>'>

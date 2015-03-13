@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART3_S2</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART Status Register 2</description>
+  <bitfields>
+    <bitfield>
+      <name>RAF</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Receiver Active Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>UART receiver idle/inactive waiting for a start bit.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>UART receiver active, RxD input not idle.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved.</description>
+    </bitfield>
+    <bitfield>
+      <name>BRK13</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Break Transmit Character Length</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Break character is 10, 11, or 12 bits long.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Break character is 13 or 14 bits long.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RWUID</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receive Wakeup Idle Detect</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>S1[IDLE] is not set upon detection of an idle character.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>S1[IDLE] is set upon detection of an idle character.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RXINV</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receive Data Inversion</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Receive data is not inverted.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Receive data is inverted.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>MSBF</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Most Significant Bit First</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>LSB (bit0) is the first bit that is transmitted following the start bit. Further, the first bit received after the start bit is identified as bit0.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>MSB (bit8, bit7 or bit6) is the first bit that is transmitted following the start bit, depending on the setting of C1[M] and C1[PE]. Further, the first bit received after the start bit is identified as bit8, bit7, or bit6, depending on the setting of C1[M] and C1[PE].</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RXEDGIF</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>RxD Pin Active Edge Interrupt Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No active edge on the receive pin has occurred.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>An active edge on the receive pin has occurred.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

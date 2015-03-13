@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>RNG_Layout</name>
+  <register-sets>
+    <register-set-descriptor>
+      <name>Random Number Generator Accelerator (RNG)</name>
+      <registers>
+        <register>
+          <name>RNG_CR</name>
+          <access>RW</access>
+          <register-details-file-name>RNG/RNG_CR.xml</register-details-file-name>
+          <offset>0</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0x40029000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>RNG_SR</name>
+          <access>R</access>
+          <register-details-file-name>RNG/RNG_SR.xml</register-details-file-name>
+          <offset>0x4</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0x40029000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>RNG_ER</name>
+          <access>W</access>
+          <register-details-file-name>RNG/RNG_ER.xml</register-details-file-name>
+          <offset>0x8</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0x40029000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>RNG_OR</name>
+          <access>R</access>
+          <register-details-file-name>RNG/RNG_OR.xml</register-details-file-name>
+          <offset>0xC</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0x40029000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+      </registers>
+    </register-set-descriptor>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

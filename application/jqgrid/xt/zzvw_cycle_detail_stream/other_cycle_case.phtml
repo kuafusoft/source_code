@@ -1,0 +1,86 @@
+<?php
+	$container = 'mainContent';
+	if (!empty($this->container))
+		$container = $this->container;
+	$base = $container.'_'.$this->db.'_'.$this->table;
+	$conditionId = $base.'_cond';
+	$hiddenId = $base.'_hidden';
+    $gridId = $base.'_list';
+    $pagerId = $base.'_pager';
+	$js = 'js/'.$this->db.'/'.$this->table.'.js';
+	$js_base = $this->db.'.'.$this->table;
+	$js_ready = $js_base.'.ready("'.$base.'")';
+//print_r($js_ready);	
+	$js_existed = false;
+	if (file_exists(JS_ROOT.'/'.$this->db.'/'.$this->table.'.js'))
+		$js_existed = true;
+?>
+<div id="<?php echo $conditionId; ?>" class="condition">
+<?php
+	if (!empty($this->cols)){
+//print_r($this->query);		
+		$advanced = '';
+		if (!empty($this->advanced)){
+//print_r($this->advanced);			
+			$advanced = "<input type='checkbox' id='{$base}_advanced' /><label for='{$base}_advanced'>Advanced Options</label>";
+		}
+		print_r("<fieldset><legend align='center'>Filter Condition $advanced </legend>");
+		$kf_tool = new KF_Tool();
+		$cs = count($this->cols);
+		if ($cs < 6)
+			$cols = 2;
+		elseif($cs < 10)
+			$cols = 3;
+		else
+			$cols = 4;
+		$kf_tool->cf($this->cols, true, null, $cols, true);
+		if (!empty($this->advanced)){
+			print_r("<div id='{$conditionId}_advanced' class='condition' style='display:none'>");
+			$kf_tool->cf($this->advanced, true, null, $cols, true);
+			print_r("</div>");
+		}
+		print_r("</fieldset>");
+		print_r("<button id='{$base}_query' onclick='XT.grid_query(\"$container\", \"{$this->db}\", \"{$this->table}\")' title='Query the {$this->table}' type='button' style='width:100px;height:30px' >Query</button>");
+		print_r("<button id='{$base}_query_reset' onclick='XT.grid_query_reset(\"$container\", \"{$this->db}\", \"{$this->table}\")' title='Reset the filters' type='button' style='width:100px;height:30px'>Reset</button>");
+		if($this->buttonFlag)
+			print_r("<button id='{$base}_query_add' onclick='XT.grid_query_add(\"$container\", \"{$this->db}\", \"{$this->table}\")' title='Create a new {$this->table}' type='button' style='width:100px;height:30px'>New</button>");
+	}
+?>
+</div>	
+<div id='<?php echo $hiddenId; ?>'>
+<?php
+if(!empty($this->hidden)){
+	foreach($this->hidden as $k=>$v){
+		print_r("<input type='hidden' id='$k' value='$v'>");
+	}
+}
+?>
+</div>
+<table id="<?php echo $gridId;?>" class="scroll"></table> 
+<div id="<?php echo $pagerId; ?>"></div> 
+
+<script type='text/javascript'>
+	$(function(){
+/*
+	var advancedCheckbox = "<?php echo '#'.$conditionId.' #'.$base.'_advanced';?>";
+		var advancedDiv = "<?php echo '#'.$conditionId.' #'.$conditionId.'_advanced';?>";
+XT.debug(advancedCheckbox);
+XT.debug($(advancedCheckbox));
+		$(advancedCheckbox).button().unbind('change').bind('change', function(){
+alert(advancedDiv);		
+			if (this.checked)
+				$(advancedDiv).show();
+			else
+				$(advancedDiv).hide();
+		});
+*/		
+		<?php
+		if ($js_existed){
+		?>
+			XT.loadFile('<?php echo $js;?>', 'js');
+			try{
+				<?php echo $js_ready; ?>;
+			}catch(e){};
+		<?php } ?>
+	});
+</script>

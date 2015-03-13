@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>I2C1_C2</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>I2C Control Register 2</description>
+  <bitfields>
+    <bitfield>
+      <name>AD</name>
+      <bitrange>2:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Slave Address</description>
+    </bitfield>
+    <bitfield>
+      <name>RMEN</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Range Address Matching Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Range mode disabled. No address match occurs for an address within the range of values of the A1 and RA registers.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Range mode enabled. Address matching occurs when a slave receives an address within the range of values of the A1 and RA registers.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SBRC</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Slave Baud Rate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The slave baud rate follows the master baud rate and clock stretching may occur</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Slave baud rate is independent of the master baud rate</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>HDRS</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>High Drive Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Normal drive mode</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>High drive mode</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ADEXT</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Address Extension</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>7-bit address scheme</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>10-bit address scheme</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>GCAEN</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>General Call Address Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enabled</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

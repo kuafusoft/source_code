@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<role_access>
+	<all>
+		<all value='0'/>
+	</all>
+	
+	<guest extends='all'>
+	</guest>
+	
+	<normal extends='guest'>
+		<refresh value='1' />
+		<export value='1' />
+		<index value='1' />
+		<query value='1' />
+		<list value='1' />
+		<information value='1' />
+		<update_information_page value='1' />
+		<tag value='1' />
+		<fetch_tag value='1' />
+		<modifyTask value='1' />
+	</normal>
+	
+	<Dev extends='normal' />
+	
+	<assistent_admin extends='Dev'>
+		<all value='1' />
+	</assistent_admin>
+
+	<admin extends='assistent_admin' />
+</role_access>

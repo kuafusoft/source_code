@@ -1,0 +1,54 @@
+﻿<html>
+	<head>
+		<meta content="no-cache" http-equiv="Cache-Control">
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="en-US" http-equiv="Content-Language">
+		<title>XiaoTian 3.0</title>
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/smoothness/jquery-ui-1.8.2.custom.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/layout.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/ui.jqgrid.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/jquery.contextMenu.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/kf_layout.css">
+		<script src="/js/lib/json.js" type="text/javascript"></script>
+		<script src="/js/lib/jquery-1.6.4.min.js" type="text/javascript"></script>
+		<script src="/js/lib/jquery-ui-1.8.4.custom.js" type="text/javascript"></script>
+		<script src="/js/lib/layout.jquery.js" type="text/javascript"></script>
+		<script src="/js/lib/jquery.contextMenu.js" type="text/javascript"></script>
+		<script src="/js/lib/jqgrid_3.8.2/js/i18n/grid.locale-en.js" type="text/javascript"></script>
+		<script src="/js/lib/jqgrid_3.8.2/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+		<script src="/js/xt.js" type="text/javascript"></script>
+		<script src="/js/xt.grid.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="new_page">
+			Loading......
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			//load into div#new_page
+			<?php
+				$url = "/jqgrid/jqgrid/db/{$this->params['db']}/table/{$this->params['table']}/oper/{$this->params['oper']}/element/{$this->params['element']}/parent/{$this->params['parent']}";
+				$ready_fun = $this->params['db'].'.'.$this->params['table'].'.'.$this->params['oper'].'_ready';
+				$js = '/js/'.$this->db.'/'.$this->table.'.js';
+			?>
+			var url = "<?php echo $url;?>";
+			var fun_ready = "<?php echo $ready_fun;?>";
+			var rowId = <?php echo $this->params['element']; ?>;
+			var parentId = <?php echo $this->params['parent']; ?>;
+			var action = "<?php echo $this->params['oper']; ?>";
+			var tabId = "<?php echo '#information_tabs_'.$this->params['db'].'_'.$this->params['table'].'_'.$this->params['element'];?>";
+			var js = "<?php echo '/js/'.$this->db.'/'.$this->table.'.js';?>";
+			$('#new_page').load("<?php echo $url;?>", function(data){
+				if (action == 'information')
+					XT.defaultActionForTab(tabId);
+				// 检查是否有db.table.oper_ready函数，如果有，则调用之
+				try{
+					XT.loadFile(js);
+					eval(fun_ready)(url, rowId, parentId);
+				}catch(e){
+				}
+			});
+		});
+	</script>
+</html>

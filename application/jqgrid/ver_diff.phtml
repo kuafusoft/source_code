@@ -1,0 +1,10 @@
+<?php
+	require_once('toolfactory.php');
+	$tool = toolFactory::get('kf');
+	if(!isset($this->fields))
+		$fields = array_keys(current($this->vers));
+	else
+		$fields = $this->fields;
+	// print_r($this->field_options);
+	$tool->showDiff($fields, $this->vers, $this->field_options);
+?>

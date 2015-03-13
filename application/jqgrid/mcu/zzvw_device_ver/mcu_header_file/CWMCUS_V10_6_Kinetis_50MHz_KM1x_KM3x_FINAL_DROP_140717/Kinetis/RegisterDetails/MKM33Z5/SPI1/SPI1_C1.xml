@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SPI1_C1</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0x4</reset-value>
+  <description>SPI control register 1</description>
+  <bitfields>
+    <bitfield>
+      <name>LSBFE</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LSB first (shifter direction)</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>SPI serial data transfers start with most significant bit</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>SPI serial data transfers start with least significant bit</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SSOE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Slave select output enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>When MODFEN is 0: In master mode, SS pin function is general-purpose I/O (not SPI). In slave mode, SS pin function is slave select input. When MODFEN is 1: In master mode, SS pin function is SS input for mode fault. In slave mode, SS pin function is slave select input.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>When MODFEN is 0: In master mode, SS pin function is general-purpose I/O (not SPI). In slave mode, SS pin function is slave select input. When MODFEN is 1: In master mode, SS pin function is automatic SS output. In slave mode: SS pin function is slave select input.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CPHA</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Clock phase</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>First edge on SPSCK occurs at the middle of the first cycle of a data transfer</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>First edge on SPSCK occurs at the start of the first cycle of a data transfer</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CPOL</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Clock polarity</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Active-high SPI clock (idles low)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Active-low SPI clock (idles high)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>MSTR</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Master/slave mode select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>SPI module configured as a slave SPI device</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>SPI module configured as a master SPI device</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPTIE</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI transmit interrupt enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupts from SPTEF inhibited (use polling)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>When SPTEF is 1, hardware interrupt requested</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPE</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI system enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>SPI system inactive</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>SPI system enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPIE</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI interrupt enable: for SPRF and MODF (when FIFO is not supported or not enabled) or for read FIFO (when FIFO is supported and enabled)</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupts from SPRF and MODF are inhibited-use polling (when FIFOMODE is not present or is 0) or Read FIFO Full Interrupts are disabled (when FIFOMODE is 1)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Request a hardware interrupt when SPRF or MODF is 1 (when FIFOMODE is not present or is 0) or Read FIFO Full Interrupts are enabled (when FIFOMODE is 1)</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

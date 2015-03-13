@@ -1,0 +1,37 @@
+<?php 
+    $this->placeholder('sidebar')->captureStart();
+
+    echo $this->placeholder('userAction');
+    $auth = Zend_Auth::getInstance();
+    $logined = $auth->hasIdentity();
+    $nickName = 'Guest';
+    if ($logined){
+        $userInfo = $auth->getIdentity();
+        $nickName = $userInfo->nickname;
+?>
+Welcome <a href='javascript:userAdmin_index()'><?php echo $userInfo->nickname;?></a>
+| <a href='javascript:userAdmin_changePassword()'> Change Password </a>
+| <a href='javascript:userAdmin_updateProfile()'> Update Profile </a>
+| <a href='javascript:userAdmin_logout()'> Logout | </a>
+<?php        
+    }
+    else{
+?>    
+<label for='useradmin_account'>Account:
+<input type='text' name='account' id='useradmin_account' value='account' 
+style='font-size:10px; height:12px; line-height:12px'
+onfocus='clearBox("#useradmin_account", "account")'
+onkeypress='return jumpTo(event, "#useradmin_password")' />
+<label for='useradmin_password'>Password:
+<input type='password' name='password' id='useradmin_password'
+style='font-size:10px; height:12px; line-height:12px'
+onkeypress='return triggerButton(event, "#useradmin_login")'/>
+<input type='button' name='login' id='useradmin_login' value='Login'
+style='height:18px; font-size:10px;'
+onclick='userAdmin_login()' />
+<a href='javascript:userAdmin_register()'> Register </a>
+<?php    
+}
+$this->placeholder('sidebar')->captureEnd();
+
+?>

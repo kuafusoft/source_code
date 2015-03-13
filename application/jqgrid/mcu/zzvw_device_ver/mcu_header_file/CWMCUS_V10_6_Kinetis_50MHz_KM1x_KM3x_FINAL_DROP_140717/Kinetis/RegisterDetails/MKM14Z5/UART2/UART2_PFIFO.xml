@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART2_PFIFO</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART FIFO Parameters</description>
+  <bitfields>
+    <bitfield>
+      <name>RXFIFOSIZE</name>
+      <bitrange>2:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Receive FIFO. Buffer Depth</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>Receive FIFO/Buffer depth = 1 dataword.</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>Receive FIFO/Buffer depth = 4 datawords.</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>Receive FIFO/Buffer depth = 8 datawords.</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>Receive FIFO/Buffer depth = 16 datawords.</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>Receive FIFO/Buffer depth = 32 datawords.</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>Receive FIFO/Buffer depth = 64 datawords.</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>Receive FIFO/Buffer depth = 128 datawords.</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>Reserved.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RXFE</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receive FIFO Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Receive FIFO is not enabled. Buffer is depth 1. (Legacy support)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Receive FIFO is enabled. Buffer is depth indicted by RXFIFOSIZE.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXFIFOSIZE</name>
+      <bitrange>6:4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Transmit FIFO. Buffer Depth</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>Transmit FIFO/Buffer depth = 1 dataword.</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>Transmit FIFO/Buffer depth = 4 datawords.</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>Transmit FIFO/Buffer depth = 8 datawords.</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>Transmit FIFO/Buffer depth = 16 datawords.</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>Transmit FIFO/Buffer depth = 32 datawords.</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>Transmit FIFO/Buffer depth = 64 datawords.</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>Transmit FIFO/Buffer depth = 128 datawords.</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>Reserved.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXFE</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit FIFO Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Transmit FIFO is not enabled. Buffer is depth 1. (Legacy support).</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Transmit FIFO is enabled. Buffer is depth indicated by TXFIFOSIZE.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

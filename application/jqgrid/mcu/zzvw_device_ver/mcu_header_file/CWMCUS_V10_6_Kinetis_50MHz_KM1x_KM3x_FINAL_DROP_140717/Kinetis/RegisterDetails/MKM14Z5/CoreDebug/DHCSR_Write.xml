@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>DHCSR_Write</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Debug Halting Control and Status Register</description>
+  <bitfields>
+    <bitfield>
+      <name>C_DEBUGEN</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Halting debug enable bit. If a debugger writes to DHCSR to change the value of this bit from 0 to 1, it must also write 0 to the C_MASKINTS bit, otherwise behavior is UNPREDICTABLE.&#10;This bit can only be set to 1 from the DAP, it cannot be set to 1 under software control.&#10;This bit is 0 after a Power-on reset.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>C_HALT</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Processor halt bit. &#10;This bit is UNKNOWN after a Power-on reset.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No effect.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Halt the processor.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>C_STEP</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Processor step bit.&#10;This bit is UNKNOWN after a Power-on reset.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No effect.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Step the processor.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>C_MASKINTS</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>C_MASKINTS bit. When debug is enabled, the debugger can write to this bit to mask PendSV, SysTick and external configurable interrupts. The effect of any attempt to change the value of this bit is UNPREDICTABLE unless both:&#10;- before the write to DHCSR, the value of the C_HALT bit is 1.&#10;- the write to the DHCSR that changes the C_MASKINTS bit also writes 1 to the C_HALT bit.&#10;This means that a single write to DHCSR cannot set the C_HALT to 0 and change the value of the C_MASKINTS bit.&#10;The bit does not affect NMI. When DHCSR.C_DEBUGEN is set to 0, the value of this bit is UNKNOWN.&#10;This bit is UNKNOWN after a Power-on reset.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Do not mask.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Mask PenSV, SysTick and external configurable interrupts.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>12</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>13</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name>DBGKEY</name>
+      <bitrange>31:16</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Debug key:&#10;Software must write 0xA05F to this field to enable write accesses to bits [15:0], otherwise the processor ignores the write access.</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

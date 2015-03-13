@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>PORTF_DFCR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Digital Filter Clock Register</description>
+  <bitfields>
+    <bitfield>
+      <name>CS</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Clock Source</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Digital filters are clocked by the bus clock.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Digital filters are clocked by the 1 kHz LPO clock.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

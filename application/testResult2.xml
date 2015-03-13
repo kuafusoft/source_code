@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<TestResult>
+		<testSuite tag="ForJB4.2_WeeklyTest.xml">
+			<testCase id="H264Dec_Conf_1080p_015" result="Fail">
+				<FailedScene message="['simple:Failed ']"/>
+				<trickMode result="Fail" tag="simple">
+					<FailedScene message="[&quot;E/memtrack( 4975): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 4975): failed to load memtrack module: -2\r\r', 'E/MediaPlayer( 4955): Should have subtitle controller already set\r\r', &quot;E/memtrack( 4992): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 4992): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5003): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5003): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5014): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5014): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5025): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5025): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5036): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5036): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5047): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5047): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5058): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5058): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5069): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5069): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5080): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5080): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5091): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5091): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5102): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5102): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5113): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5113): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5124): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5124): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5135): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5135): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5146): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5146): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5157): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5157): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5168): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5168): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5179): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5179): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5190): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5190): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5201): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5201): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5212): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5212): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5223): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5223): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5234): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5234): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5245): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5245): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5256): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5256): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5267): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5267): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5278): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5278): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5289): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5289): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5300): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5300): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5311): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5311): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5322): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5322): failed to load memtrack module: -2\r\r']"/>
+					<Operation result="Success" tag="open">
+						<Cmd action="OpenVideo" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="play">
+						<Cmd action="StartPlayback" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="seek">
+						<Cmd action="SeekToPercentage" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="pause">
+						<Cmd action="PausePlayback" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="resume">
+						<Cmd action="StartPlayback" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="seek">
+						<Cmd action="SeekToMsec" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="stop">
+						<Cmd action="StopPlayback" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="release">
+						<Cmd action="Release" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<FrameDropRate DropFrame="0" TotalFrame="0"/>
+					<CPUUsage busyCPUUsage="0%" iowaitCPUUsage="0%" irqCPUUsage="0%" systemCPUUsage="0%" userCPUUsage="0%"/>
+					<MEMUsed MEMUsed="[]" MEMUsedWhenPlay=""/>
+				</trickMode>
+			</testCase>
+			<testCase id="H264Dec_Conf_1080p_014" result="Fail">
+				<FailedScene message="['simple:Failed ']"/>
+				<trickMode result="Fail" tag="simple">
+					<FailedScene message="[&quot;E/memtrack( 5335): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5335): failed to load memtrack module: -2\r\r', 'E/MediaPlayer( 4955): Should have subtitle controller already set\r\r', &quot;E/memtrack( 5352): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5352): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5363): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5363): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5374): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5374): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5385): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5385): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5396): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5396): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5407): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5407): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5418): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5418): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5429): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5429): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5440): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5440): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5451): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5451): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5462): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5462): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5473): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5473): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5484): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5484): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5495): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5495): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5506): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5506): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5517): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5517): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5528): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5528): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5539): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5539): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5550): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5550): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5561): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5561): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5572): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5572): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5583): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5583): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5594): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5594): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5605): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5605): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5616): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5616): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5627): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5627): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5638): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5638): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5649): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5649): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5660): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5660): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5671): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5671): failed to load memtrack module: -2\r\r', &quot;E/memtrack( 5682): Couldn't load memtrack module (No such file or directory)\r\r&quot;, 'E/android.os.Debug( 5682): failed to load memtrack module: -2\r\r']"/>
+					<Operation result="Success" tag="open">
+						<Cmd action="OpenVideo" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="play">
+						<Cmd action="StartPlayback" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="seek">
+						<Cmd action="SeekToPercentage" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="pause">
+						<Cmd action="PausePlayback" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="resume">
+						<Cmd action="StartPlayback" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="seek">
+						<Cmd action="SeekToMsec" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="stop">
+						<Cmd action="StopPlayback" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<Operation result="Success" tag="release">
+						<Cmd action="Release" result="Success"/>
+						<Cmd action="Sleep" result="Success"/>
+						<Cmd action="GetAllErrors" result="Success"/>
+					</Operation>
+					<FrameDropRate DropFrame="0" TotalFrame="0"/>
+					<CPUUsage busyCPUUsage="0%" iowaitCPUUsage="0%" irqCPUUsage="0%" systemCPUUsage="0%" userCPUUsage="0%"/>
+					<MEMUsed MEMUsed="[]" MEMUsedWhenPlay=""/>
+				</trickMode>
+			</testCase>
+		</testSuite>
+	</TestResult>

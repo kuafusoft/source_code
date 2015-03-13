@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SIM_MISC_CTL</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x80000000</reset-value>
+  <description>Miscellaneous Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>XBARAFEMODOUTSEL</name>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>XBAR AFE Modulator Output Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Sigma Delta Modulator 0 data output</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Sigma Delta Modulator 1 data output</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Sigma Delta Modulator 2 data output</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Sigma Delta Modulator 3 data output</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DMADONESEL</name>
+      <bitrange>3:2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA Done select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>DMA0</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>DMA1</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>DMA2</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>DMA3</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>AFECLKSEL</name>
+      <bitrange>5:4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>AFE Clock Source Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>MCG PLL Clock selected</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>MCG FLL Clock selected</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>OSC Clock selected</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Disabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>AFECLKPADDIR</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>AFE Clock Pad Direction</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>AFE CLK PAD is input</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>AFE CLK PAD is output</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>UARTMODTYPE</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>UART Modulation Type</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>TypeA (ORed) Modulation selected for IRDA</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>TypeB (ANDed) Modulation selected for IRDA</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>UART0IRSEL</name>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>UART0 IRDA Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Pad RX input (PTD[0] or PTF[3], as selected in Pinmux control) selected for RX input of UART0 and UART0 TX signal is not used for modulation</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>UART0 selected for IRDA modulation. UART0 TX modulated by XBAR_OUT[14] and UART0 RX input connected to XBAR_OUT[13]</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>UART1IRSEL</name>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>UART1 IRDA Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Pad RX input (PTD[2] or PTI[0], as selected in Pinmux control) selected for RX input of UART1 and UART1 TX signal is not used for modulation</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>UART1 selected for IRDA modulation. UART1 TX modulated by XBAR_OUT[14] and UART1 RX input connected to XBAR_OUT[13]</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>UART2IRSEL</name>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>UART2 IRDA Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Pad RX input PTE[6] selected for RX input of UART2 and UART2 TX signal is not used for modulation</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>UART2 selected for IRDA modulation. UART2 TX modulated by XBAR_OUT[14] and UART2 RX input connected to XBAR_OUT[13].</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>UART3IRSEL</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>UART3 IRDA Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Pad RX input (PTC[3] or PTD[7], as selected in Pinmux control) selected for RX input of UART3 and UART3 TX signal is not used for modulation</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>UART3 selected for IRDA modulation. UART3 TX modulated by XBAR_OUT[14] and UART3 RX input connected to XBAR_OUT[13].</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>XBARPITOUTSEL</name>
+      <bitrange>13:12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>XBAR PIT Output select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>PIT0[0] (default)</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>PIT0[1]</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>PIT1[0]</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>PIT1[1]</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>EWMINSEL</name>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>External Watchdog Monitor Input Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Input from PAD (PTE[2] or PTE[4] as selected from Pinmux control )</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Peripheral Crossbar (XBAR) Output[32]</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TMR0PLLCLKSEL</name>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer CH0 PLL clock select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Selects Bus Clock as source for the Timer CH0</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Selects the PLL_AFE clock as the source for Timer CH0. The PLL_AFE clock source is itself selected using the MISC_CTL[5:4]</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TMR0SCSSEL</name>
+      <bitrange>16</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Quadtimer Channel0 Secondary Count Source Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Pad PTF1 or PTD5, depending upon PCTL configuration.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Peripheral Crossbar (XBAR) Output[5]</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TMR1SCSSEL</name>
+      <bitrange>17</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Quadtimer Channel1 Secondary Count Source Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Pad PTG0 or PTC6, depending upon PCTL configuration.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Peripheral Crossbar (XBAR) Output[6]</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TMR2SCSSEL</name>
+      <bitrange>18</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Quadtimer Channel2 Secondary Count Source Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Pad PTF7 or PTF0, depending upon PCTL configuration.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Peripheral Crossbar (XBAR) Output[7]</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TMR3SCSSEL</name>
+      <bitrange>19</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Quadtimer Channel3 Secondary Count Source Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Pad PTE5 or PTD1, depending upon PCTL configuration.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Peripheral Crossbar (XBAR) Output[8]</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TMR0PCSSEL</name>
+      <bitrange>21:20</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Quadtimer Channel0 Primary Count Source Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Bus Clock</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Peripheral Crossbar Output [9]</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Peripheral Crossbar Output [10]</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Disabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TMR1PCSSEL</name>
+      <bitrange>23:22</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Quadtimer Channel1 Primary Count Source Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Bus Clock</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Peripheral Crossbar Output [9]</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Peripheral Crossbar Output [10]</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Disabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TMR2PCSSEL</name>
+      <bitrange>25:24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Quadtimer Channel2 Primary Count Source Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Bus Clock</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Peripheral Crossbar Output [9]</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Peripheral Crossbar Output [10]</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Disabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TMR3PCSSEL</name>
+      <bitrange>27:26</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Quadtimer Channel3 Primary Count Source Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Bus Clock</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Peripheral Crossbar Output [9]</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Peripheral Crossbar Output [10]</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Disabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RTCCLKSEL</name>
+      <bitrange>28</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>RTC Clock select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>RTC OSC_32K clock selected</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>32K IRC Clock selected</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>VREFBUFOUTEN</name>
+      <bitrange>29</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>VrefBuffer Output Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Buffer does not drive PAD</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Buffer drives selected voltage (selected by vref_buffer_sel) on pad</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>VREFBUFINSEL</name>
+      <bitrange>30</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>VrefBuffer Input Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal Reference selected as Buffer Input</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>External Reference selected as Buffer Input</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>VREFBUFPD</name>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>VrefBuffer Power Down</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Buffer Enabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Buffer Powered Down</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

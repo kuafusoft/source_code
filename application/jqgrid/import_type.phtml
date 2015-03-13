@@ -1,0 +1,52 @@
+<form id='import_form' enctype="multipart/form-data" method='post' action='/jqgrid/jqgrid/oper/import/db/<?php echo $this->db;?>/table/<?php echo $this->table;?>' target='hidden_frame'>
+	<input type='hidden' id='db' value='<?php echo $this->db;?>'>
+	<input type='hidden' id='table' value='<?php echo $this->table;?>'>
+	<table>
+		<tr>
+			<td>
+				Please Select Type:
+			</td>
+			<td>
+				<select id="import_type" name='import_type'>
+				<?php
+					foreach($this->testcase_type as $id=>$name){
+						$import_type = strtolower(preg_replace('/\s/', '_', $name));
+						print_r("<option value='$import_type'>$name</option>");
+					}
+				?>
+				</select>
+			<td>
+		</tr> 
+		<tr>
+			<td>
+				Please Select Format:
+			</td>
+			<td>
+				<select id="testcase_format" name='testcase_format'>
+				<?php
+					foreach($this->testcase_type as $id=>$name){
+						print_r("<option value='$id'>$name</option>");
+					}
+				?>
+			</td> 
+		</tr> 
+		<tr>
+		<?php
+			$ce = array('name'=>'prj_ids', 'label'=>'Projects', 'DATA_TYPE'=>'int', 'editable'=>true, 'required'=>true, 'type'=>'cart', 'value'=>'', 'cart_db'=>'xt', 'cart_table'=>'prj');
+			$tool = toolFactory::get('kf');
+			$tool->ce($ce, '', 'new');
+		?>
+		</tr>
+		<tr>
+			<td class="e-pre" style="text-align:right">
+				<span>File</span>
+				<span style="color:red">*</span>:
+			</td>
+			<td class="cont-td">
+				<input id="uploaded_file" name="uploaded_file" prop_edit="readonly" class="ces" value="" editable="1" original_value="" required="1" style="width:99%" type="file">
+			</td>
+		</tr> 
+	</table> 
+	<input type="submit" id='upload_button' value="Upload" />
+</form>
+<iframe name='hidden_frame' id='hidden_frame' ></iframe>

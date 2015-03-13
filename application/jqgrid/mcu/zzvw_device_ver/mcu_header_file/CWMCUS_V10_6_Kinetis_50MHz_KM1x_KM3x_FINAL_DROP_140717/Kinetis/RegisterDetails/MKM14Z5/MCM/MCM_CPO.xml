@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MCM_CPO</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Compute Operation Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>CPOREQ</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Compute Operation request</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Request is cleared.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Request Compute Operation.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CPOACK</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Compute Operation acknowledge</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Compute operation entry has not completed or compute operation exit has completed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Compute operation entry has completed or compute operation exit has not completed.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CPOWOI</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Compute Operation wakeup on interrupt</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No effect.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>When set, the CPOREQ is cleared on any interrupt or exception vector fetch.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

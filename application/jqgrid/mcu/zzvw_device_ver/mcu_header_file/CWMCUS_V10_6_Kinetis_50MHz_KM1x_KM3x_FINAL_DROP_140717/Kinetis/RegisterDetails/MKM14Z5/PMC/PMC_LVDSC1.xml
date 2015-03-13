@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>PMC_LVDSC1</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0x10</reset-value>
+  <description>Low Voltage Detect Status And Control 1 register</description>
+  <bitfields>
+    <bitfield>
+      <name>LVDV</name>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Low-Voltage Detect Voltage Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Low trip point selected (V LVD = V LVDL )</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>High trip point selected (V LVD = V LVDH )</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>3:2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>LVDRE</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Low-Voltage Detect Reset Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>LVDF does not generate hardware resets</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Force an MCU reset when LVDF = 1</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LVDIE</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Low-Voltage Detect Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Hardware interrupt disabled (use polling)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Request a hardware interrupt when LVDF = 1</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LVDACK</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Low-Voltage Detect Acknowledge</description>
+    </bitfield>
+    <bitfield>
+      <name>LVDF</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Low-Voltage Detect Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Low-voltage event not detected</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Low-voltage event detected</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

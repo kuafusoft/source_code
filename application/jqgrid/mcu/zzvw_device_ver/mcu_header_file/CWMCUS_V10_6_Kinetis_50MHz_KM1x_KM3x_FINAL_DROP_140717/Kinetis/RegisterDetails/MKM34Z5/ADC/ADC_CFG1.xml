@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>ADC_CFG1</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>ADC Configuration Register 1</description>
+  <bitfields>
+    <bitfield>
+      <name>ADICLK</name>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Input Clock Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Bus clock</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>(Bus clock)/2</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Alternate clock (ALTCLK)</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Asynchronous clock (ADACK)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>MODE</name>
+      <bitrange>3:2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Conversion mode selection</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>It is single-ended 8-bit conversion.</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>It is single-ended 12-bit conversion .</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>It is single-ended 10-bit conversion.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>It is single-ended 16-bit conversion..</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ADLSMP</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Sample Time Configuration</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Short sample time.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Long sample time.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ADIV</name>
+      <bitrange>6:5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Clock Divide Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>The divide ratio is 1 and the clock rate is input clock.</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>The divide ratio is 2 and the clock rate is (input clock)/2.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>The divide ratio is 4 and the clock rate is (input clock)/4.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>The divide ratio is 8 and the clock rate is (input clock)/8.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ADLPC</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Low-Power Configuration</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Normal power configuration.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Low-power configuration. The power is reduced at the expense of maximum clock speed.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

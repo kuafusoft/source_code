@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>SysTick_Layout</name>
+  <register-sets>
+    <register-set-descriptor>
+      <name>System timer SysTick Registers</name>
+      <registers>
+        <register>
+          <name>SYST_CSR</name>
+          <access>RW</access>
+          <register-details-file-name>SysTick/SYST_CSR.xml</register-details-file-name>
+          <offset>0</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xE000E010</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>SYST_RVR</name>
+          <access>RW</access>
+          <register-details-file-name>SysTick/SYST_RVR.xml</register-details-file-name>
+          <offset>0x4</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xE000E010</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>SYST_CVR</name>
+          <access>RW</access>
+          <register-details-file-name>SysTick/SYST_CVR.xml</register-details-file-name>
+          <offset>0x8</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xE000E010</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>SYST_CALIB</name>
+          <access>R</access>
+          <register-details-file-name>SysTick/SYST_CALIB.xml</register-details-file-name>
+          <offset>0xC</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xE000E010</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+      </registers>
+    </register-set-descriptor>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

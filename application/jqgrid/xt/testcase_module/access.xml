@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<role_access>
+	<all>
+		<all value='0'/>
+	</all>
+	<tester extends='all'>
+		<add value='1' />
+		<view_edit_cloneit value='1' />
+		<view_edit_edit value='1' />
+		<view_edit_save value='1' />
+		<beforeSave value='1' />
+		<save value='1' />
+	</tester>
+	
+</role_access>

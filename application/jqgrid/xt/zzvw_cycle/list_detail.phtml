@@ -1,0 +1,11 @@
+<!--
+ 应该可以进行不同版本之间的对比
+-->
+<?php
+	$kf_tool = new KF_Tool();
+	$kf_tool->showTable(array(
+		'code',
+		'summary',
+		'result_type'=>array('label'=>'Result'), 
+		'finish_time'), $this->rows);
+?>

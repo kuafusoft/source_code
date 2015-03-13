@@ -1,0 +1,25 @@
+<?php
+require_once('toolfactory.php');
+
+$tool = toolFactory::get('kf');
+$prj_ids = array_keys($this->prjs);
+$cart_data = new stdClass;
+$filters = array(
+	'groupOp'=>'AND', 
+	'rules'=>array(
+		array("field"=>"isactive","op"=>"eq","data"=>1), 
+		array("field"=>"edit_status_id","op"=>"eq","data"=>1), 
+		array("field"=>"prj_id","op"=>"in","data"=>implode(',', $prj_ids))
+	)
+);
+$cart_data->filters = json_encode($filters);
+//print_r($cart_data->filters);
+//$cart_data->filters = '{"groupOp":"AND","rules":[{"field":"isactive","op":"eq","data":1}, {"field":"edit_status_id","op":"eq","data":1}, {"field":"prj_id","op":"in","data":"'.implode(',', $prj_ids).'"}]}';
+$es = array(
+	array('label'=>'SRS', 'name'=>'srs_node_ids', 'editable'=>true, 'DATA_TYPE'=>'text', 'editrules'=>array('required'=>true), 'type'=>'cart', 'cart_db'=>'xt', 'cart_table'=>'srs_node', 'cart_data'=>json_encode($cart_data)),
+	array('label'=>'Prjects', 'name'=>'prj_ids', 'editable'=>true, 'DATA_TYPE'=>'int', 'editrules'=>array('required'=>true), 'type'=>'checkbox', 'editoptions'=>array('value'=>$this->prjs))
+);
+print_r("<span style='font-size:16pt'> Please select SRS Items and Prjects to cover:</span>");
+$tool->cf($es, true, null, 1);
+
+?>

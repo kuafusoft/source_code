@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>DMA_DCR1</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>DMA Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>LCH2</name>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Link channel 2</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>DMA Channel 0</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>DMA Channel 1</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>DMA Channel 2</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>DMA Channel 3</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LCH1</name>
+      <bitrange>3:2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Link channel 1</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>DMA Channel 0</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>DMA Channel 1</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>DMA Channel 2</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>DMA Channel 3</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LINKCC</name>
+      <bitrange>5:4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Link channel control</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>No channel-to-channel linking</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Perform a link to channel LCH1 after each cycle-steal transfer followed by a link to LCH2 after the BCR decrements to zero</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Perform a link to channel LCH1 after each cycle-steal transfer</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Perform a link to channel LCH1 after the BCR decrements to zero</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>D_REQ</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Disable request</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>ERQ bit is not affected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>ERQ bit is cleared when the BCR is exhausted.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DMOD</name>
+      <bitrange>11:8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Destination address modulo</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>Buffer disabled</description>
+        </value>
+        <value>
+          <value>0b0001</value>
+          <description>Circular buffer size is 16 bytes</description>
+        </value>
+        <value>
+          <value>0b0010</value>
+          <description>Circular buffer size is 32 bytes</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>Circular buffer size is 64 bytes</description>
+        </value>
+        <value>
+          <value>0b0100</value>
+          <description>Circular buffer size is 128 bytes</description>
+        </value>
+        <value>
+          <value>0b0101</value>
+          <description>Circular buffer size is 256 bytes</description>
+        </value>
+        <value>
+          <value>0b0110</value>
+          <description>Circular buffer size is 512 bytes</description>
+        </value>
+        <value>
+          <value>0b0111</value>
+          <description>Circular buffer size is 1 KB</description>
+        </value>
+        <value>
+          <value>0b1000</value>
+          <description>Circular buffer size is 2 KB</description>
+        </value>
+        <value>
+          <value>0b1001</value>
+          <description>Circular buffer size is 4 KB</description>
+        </value>
+        <value>
+          <value>0b1010</value>
+          <description>Circular buffer size is 8 KB</description>
+        </value>
+        <value>
+          <value>0b1011</value>
+          <description>Circular buffer size is 16 KB</description>
+        </value>
+        <value>
+          <value>0b1100</value>
+          <description>Circular buffer size is 32 KB</description>
+        </value>
+        <value>
+          <value>0b1101</value>
+          <description>Circular buffer size is 64 KB</description>
+        </value>
+        <value>
+          <value>0b1110</value>
+          <description>Circular buffer size is 128 KB</description>
+        </value>
+        <value>
+          <value>0b1111</value>
+          <description>Circular buffer size is 256 KB</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SMOD</name>
+      <bitrange>15:12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Source address modulo</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>Buffer disabled</description>
+        </value>
+        <value>
+          <value>0b0001</value>
+          <description>Circular buffer size is 16 bytes</description>
+        </value>
+        <value>
+          <value>0b0010</value>
+          <description>Circular buffer size is 32 bytes</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>Circular buffer size is 64 bytes</description>
+        </value>
+        <value>
+          <value>0b0100</value>
+          <description>Circular buffer size is 128 bytes</description>
+        </value>
+        <value>
+          <value>0b0101</value>
+          <description>Circular buffer size is 256 bytes</description>
+        </value>
+        <value>
+          <value>0b0110</value>
+          <description>Circular buffer size is 512 bytes</description>
+        </value>
+        <value>
+          <value>0b0111</value>
+          <description>Circular buffer size is 1 KB</description>
+        </value>
+        <value>
+          <value>0b1000</value>
+          <description>Circular buffer size is 2 KB</description>
+        </value>
+        <value>
+          <value>0b1001</value>
+          <description>Circular buffer size is 4 KB</description>
+        </value>
+        <value>
+          <value>0b1010</value>
+          <description>Circular buffer size is 8 KB</description>
+        </value>
+        <value>
+          <value>0b1011</value>
+          <description>Circular buffer size is 16 KB</description>
+        </value>
+        <value>
+          <value>0b1100</value>
+          <description>Circular buffer size is 32 KB</description>
+        </value>
+        <value>
+          <value>0b1101</value>
+          <description>Circular buffer size is 64 KB</description>
+        </value>
+        <value>
+          <value>0b1110</value>
+          <description>Circular buffer size is 128 KB</description>
+        </value>
+        <value>
+          <value>0b1111</value>
+          <description>Circular buffer size is 256 KB</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>START</name>
+      <bitrange>16</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Start transfer</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>DMA inactive</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The DMA begins the transfer in accordance to the values in the TCDn. START is cleared automatically after one module clock and always reads as logic 0.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DSIZE</name>
+      <bitrange>18:17</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Destination size</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>32-bit</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>8-bit</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>16-bit</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved (generates a configuration error (DSRn[CE]) if incorrectly specified at time of channel activation)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DINC</name>
+      <bitrange>19</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Destination increment</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No change to the DAR after a successful transfer.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The DAR increments by 1, 2, 4 depending upon the size of the transfer.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SSIZE</name>
+      <bitrange>21:20</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Source size</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>32-bit</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>8-bit</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>16-bit</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved (generates a configuration error (DSRn[CE]) if incorrectly specified at time of channel activation)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SINC</name>
+      <bitrange>22</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Source increment</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No change to SAR after a successful transfer.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The SAR increments by 1, 2, 4 as determined by the transfer size.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>EADREQ</name>
+      <bitrange>23</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enable asynchronous DMA requests</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>UMNSM</name>
+      <bitrange>25:24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>User Mode, Nonsecure Mode</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Channel attributes are set to the current mode.</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>If the current mode is privileged and secure, then attributes are set to {privileged, secure}. Otherwise, writing this value terminates in an error.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>If the current mode is privileged and secure or if the current mode is user and secure, then attributes are set to {user, secure}. Otherwise, writing this value terminates in an error.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>If the current mode is privileged and secure, user and secure, or user and nonsecure, then attributes are set to {user, nonsecure}.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CHACR</name>
+      <bitrange>27:26</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Channel Access Control</description>
+    </bitfield>
+    <bitfield>
+      <name>AA</name>
+      <bitrange>28</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Auto-align</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Auto-align disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>If SSIZE indicates a transfer no smaller than DSIZE, source accesses are auto-aligned; otherwise, destination accesses are auto-aligned. Source alignment takes precedence over destination alignment. If auto-alignment is enabled, the appropriate address register increments, regardless of DINC or SINC.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CS</name>
+      <bitrange>29</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Cycle steal</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>DMA continuously makes read/write transfers until the BCR decrements to 0.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Forces a single read/write transfer per request.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ERQ</name>
+      <bitrange>30</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enable peripheral request</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Peripheral request is ignored.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enables peripheral request to initiate transfer. A software-initiated request (setting the START bit) is always enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>EINT</name>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enable interrupt on completion of transfer</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No interrupt is generated.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt signal is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

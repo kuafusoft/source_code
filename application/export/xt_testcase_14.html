@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Case Release</title><script type='text/javascript'>
+			function displayDiv(id){
+				var div = document.getElementById(id);
+				if (div){
+					var display = div.style.display;
+					if (display == 'none')
+						display = 'block';
+					else
+						display = 'none';
+					div.style.display = display;
+				}
+			}
+			</script><style type='text/css'>
+		<!--
+		a:link {
+			text-decoration: none;
+		}
+		a:visited {
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		a:active {
+			text-decoration: none;
+		}
+		div{
+			position:relative; left:30px;
+		}
+		.module{
+			background-color: #DDDDDD;
+			
+		}
+		.moduledesc{
+			background-color: #EEEEEE;
+		}
+		.case{
+			background-color: #DDDDDD;
+		}
+		-->
+		</style>
+		</head><body><a href='javascript:displayDiv("div_intro")'><strong>Introduction</strong></a><BR /><div id='div_intro' style='display:none'>Intro</div><a href='javascript:displayDiv("div_setup")'><strong>Setup Test Environment</strong></a><BR /><div id='div_setup' style='display:none'>Setup</div><BR /><a href='javascript:displayDiv("div_module_1")'><strong>demo_1</strong></a><BR /><div id='div_module_1' style='display:none'><p /><a href='javascript:displayDiv("div_case_1")'>Demo_havc_01:hvac</a><div id='div_case_1' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>asdf</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature<br />â€¢ And check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  LED4 always blink in all test time<br />2 Display all commands. (When excute "Fan" cammand (Fan on, Fan off), blink Led 1 on TWR_board)<br />3 Temperature decrease and LED3 light<br />4 Temperature increase and LED2 light<br />â€¢ Temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).)</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_2")'>Demo_Havc_02:hvac_error</a><div id='div_case_2' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>hvac_error</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ Nochange<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries successfully: bsp, psp, mfs, shell, rtcs, usbh.<br />2 Build and load project hvac<br />3 Type help command<br />4 See LED1 on the board and type "Fan on" for "Fan off"<br />5 See LED2,3 Type "hvac off" or "hvac cool" or "hvac heat" or "hvac auto"<br />â€¢ Type "hvac started" -> this is an incorrect command therefore expected result shout be a message inform user usage.<br />6 Type "scale f" for "scale c" to change the temperature scale<br />7 Type "temp 30" of "temp 15" to change desired temperature and check desired returned result<br />8 Press button1 on the board to increase desired temperature<br />9 Press button2 on the board to decrease desired temperature<br />10 Press button3 to turn on fan. And check desired returned result<br />11. Plug Internet cable from PC to the TWR_board. Manual configure your IP address (ex: IP address: 192.168.1.2, subnet mask: 255.255.255.0). Execute commands: ipconfig, ping, nestat.</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>â€¢ Same with hvac but temperature and fan can be controlled by button1 (increase temp), button2 (decrease temp), button3 (fan on).<br />â€¢ Commands execute successful, can ping ip to PC, don't have any "Request timed out" in value replied.</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_3")'>Demo_havc_03:web_hvac_ip4</a><div id='div_case_3' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>web_hvac_ip4</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ TWR-SER board:<br />â€¢ CLK_SEL 3-4                             CLKIN-SEL 2-3                             J12 9-10</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Plug Internet cable from PC to the TWR_board. Manual configure your IP address (ex: IP address: 192.168.1.2, subnet mask: 255.255.255.0)<br />â€¢ To see IP address open: <MQX_install_dir>/demo/web_hvac/HVAC.h, example: <br />â€¢ #define ENET_IPADDR  IPADDR(192,168,1,202) <br />â€¢ #define ENET_IPMASK  IPADDR(255,255,255,0) <br />2 Build all libraries (bsp, psp, rtcs, shell, mfs, usbh)<br />3 Build and load web_hvac project, run project. Access into the EVB board which is working as web server through network by:<br />â€¢ Open web-browsers access to http//<board net ip address>, example: http://192.168.1.202 <br />â€¢ Open terminal, type help command and execute commands was displayed. "fan on", "fan off", "hvac off", "hvac cool", "hvac heat", "hvac auto", "scale c", "scale f", "temp", "info")<br />â€¢ Press button1 on the board to increase desired temperature<br />â€¢ Press button2 on the board to decrease desired temperature<br />â€¢ Press button3 to turn on fan. And check desired returned result<br />Check infomation in web-browsers and see LED when type commands and press buttom<br />4 Copy all file on folder usb_webpages follow link: <MQX_install_dir>/demo/web_hvac/usb_webpages into USB Masstorage Device. Plug USB device into TWR_board via USB host. Open web-browsers access to http//<board net ip address>, example: http://192.168.1.202 <br />5 Type "log" command to see the HVAC log information<br />6 Open webpage about 5 minutes and open a lot of rtc page (about 20 pages).</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  Configure IP address successful<br />2 Build all library successfull<br />3  When typing "help" command on terminal all commands will be display. Commands are executed  successfully! When execute command you can inspect all changed information in web-browses and the LEDs is changed same hvac.<br />â€¢ Get information and change some setting of system on web-browsers.<br />4 View information on menu USB_Webpage are successfully.<br />5 Log is displayed correctly, file hvac_log.txt will be appeared in USB<br />6 Demo work well over 5 minutes</td>
+				</tr>
+</table></div>
+</div><BR /><a href='javascript:displayDiv("div_module_2")'><strong>mcc_examples</strong></a><BR /><div id='div_module_2' style='display:none'><p /><a href='javascript:displayDiv("div_case_4")'>MCC_pingpong_01:pingpong</a><div id='div_case_4' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>pingpong</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No Change<br />2 Jumper Setting<br />â€¢ Default Setting</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build mcc library of both A5, M4 board<br />2 Build pingpong project. Load and run project A5 code and then load and run M4 core. Once both core are running the A5 regulary printf out the appliation log. Check result on</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  Build library successfull<br />2 <br />â€¢ A5 Core: <br />â€¢ Creates a message pool and a message queue then sends a message to a queue on the second CPU (M4 Core). <br />â€¢ It waits for a return message, validating the message before sending a new message.<br />â€¢ M4 Core:<br />â€¢ Creates a message queue then waits for a message. Upon receiving the message the data is incremented before the message is returned to the sender.<br />â€¢ No error message was printed out.</td>
+				</tr>
+</table></div>
+</div><BR /><a href='javascript:displayDiv("div_module_3")'><strong>mfs_examples</strong></a><BR /><div id='div_module_3' style='display:none'><p /><a href='javascript:displayDiv("div_case_5")'>MFS_ftp_01:mfs_ftp</a><div id='div_case_5' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>mfs_ftp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No Change<br />2 Jumper Setting<br />â€¢ Default Setting</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Plug Internet cable from PC to the TWR_board. Manual configure your IP address (ex: IP address: 169 254 3 1, subnet mask: 255 255 0.0). To view IP address of TWR open source code of mfs_ftp project file demo.h (mfs_ftp/source/demo.h) like:<br />â€¢  #define ENET_IPADDR  IPADDR(169,254,3,3) <br />â€¢ #define ENET_IPMASK  IPADDR(255,255,0,0)<br />2 Build all libraries that mfs_ftp need to run: bsp, psp, rtcs, mfs, usbh.<br />3 Build and load project, run project. Plug USB Mass Storage device into TWR via USB port<br />4 Open command prompt to connect ftp via ip address of board (ex: ftp 169 254 1 3), then type help command and execute all command displayed.</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  Manual IP address successful<br />2 Build all libraries successfull<br />3 The file system is mounted successfully. The board will become a FTP server.<br />4 Check the FTP server functions is OK. All command executes successful</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_8")'>MFS_ramdisk_01:ramdisk</a><div id='div_case_8' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>ramdisk</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No Change<br />2 Jumper Setting<br />â€¢ Default Setting</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries: bsp, psp, mfs, shell.<br />2 Plug TWR_MEM to TWR (Depend on board test that request TWR_MEM or not), build and load project, run project.<br />3 Type format command first and then help command on terminal, execute commands were displayed (cd, copy, create, del, disect, dir, df, exit, format, help, mkdir, pwd, read, ren, rmdir, sh, type, write). Check result on terminal.<br />4 Write a file with size larger than size of Ramdisk.</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  Build all libraries successful<br />2 All commands are executed successfully!<br />3 When write a file is bigger then disk capability, should show error message out terminal<br />4 Diskfull message is print out, The file with size equal with size of ramdis wrote successful</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_9")'>MFS_sdcard_01:sdcard</a><div id='div_case_9' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>sdcard</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ #define BSPCFG_ENABLE_ESDHC      1<br />2 Jumper Setting<br />â€¢ Default Setting</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries: bsp, psp, mfs, shell.<br />2 Plug SD card to TWR (Depend on board test that request TWR_MEM to settup SD card or not, if board test need TWR_MEM to settup SD card, you must be plug TWR_MEM into TWR_board), build and load project, run project.<br />3 Type help command on terminal, execute format command first and then execute commands were displayed (cd, copy, create, del, disect, dir, df, exit, format, help, mkdir, pwd, read, ren, rmdir, sh, type, write). Check result on terminal.<br />4. Detach and re-attach sdcard several times (at least three time) then excute commands</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  Build all libraries successfull<br />2 Provide MFS file system on external SD card.<br />3 All commands are executed successfully.<br />4 Detach, re-atach and excute commands successful.</td>
+				</tr>
+</table></div>
+</div><BR /><a href='javascript:displayDiv("div_module_414")'><strong>mfs_usb1_examples</strong></a><BR /><div id='div_module_414' style='display:none'><p /><a href='javascript:displayDiv("div_case_6")'>MFS_usb_01:mfs_usb</a><div id='div_case_6' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>mfs_usb</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ Default Setting</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries: bsp, psp, mfs, shell.<br />2 Build and load project, run project. Plug USB Mass Storage device into TWR via USB port<br />3 Type help command and execute commands were displayed. (format, dir, write, read, mkdir, ren, copy, type, del, rmdir, disect, sh, cd, exit, pwd<br />4. Detach and re-attach usb several times (at least three time) then excute commands</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1 Build all libraries successfull<br />2 The file system is mounted successfully. <br />3 All commands are executed  successfully<br />4 Detach, re-atach and excute commands successful.</td>
+				</tr>
+</table></div>
+<p /><a href='javascript:displayDiv("div_case_7")'>MFS_usb_02:mfs_usb_hdd</a><div id='div_case_7' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>mfs_usb_hdd</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ Default Setting</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1  Build all libraries: bsp, psp, mfs, shell.<br />2 Build and load project, run project. Plug HDD device into TWR via USB port<br />3 Type help command and execute commands were displayed. (format, dir, write, read, mkdir, ren, copy, type, del, rmdir, disect, sh, cd, exit, pwd<br />4. Detach and re-attach hdd several times (at least three time) then excute commands</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1  Build all libraries successfull<br />2 The file system is mounted successfully. <br />3 All commands are executed  successfully<br />4 Detach, re-atach and excute commands successful.</td>
+				</tr>
+</table></div>
+</div><BR /><a href='javascript:displayDiv("div_module_4")'><strong>mqx_examples</strong></a><BR /><div id='div_module_4' style='display:none'><p /><a href='javascript:displayDiv("div_case_10")'>MQX_bechmark_01:benchmrk\Codezise</a><div id='div_case_10' style='display:none'><table border='1' bgcolor='#EEEEEE' width='100%'><tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Name:</td>
+				<td width='85%'>benchmrk\Codezise</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Category:</td>
+				<td width='85%'>Function</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Level:</td>
+				<td width='85%'>Manual</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Manual Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Auto Run Time:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Command:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Objective:</td>
+				<td width='85%'>&nbsp</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Environment:</td>
+				<td width='85%'>1 Memory tuning description<br />â€¢ No change<br />2 Jumper Setting<br />â€¢ Default Setting</td>
+				</tr>
+<tr style='background-color:#CCCCCC; color:blue'>
+				<td width='15%'>Steps:</td>
+				<td width='85%'>1. Run file make_<board name>.bat to build bsp, psp libraries anh application<br />2. Check file <board name>.<compiler>\<CODESIZE_CFG>_<CODESIZE_TARGET>\codesize.map in directory <MQX_install_dir>\mqx\examples\benchmrk\codesize\output\app <br />3. Used codesize.exe in tool folder to creates codesize report in <br />an HTML format<br />Usage examples:<br />    perl codesize.pl -c cwcf7 <MAP_file><br />    perl codesize.pl -M -c cwcf10 <MAP_file><br />    perl codesize.pl +MFS -PSP -BSP -c cwcf10 <MAP_file><br />    perl codesize.pl -c cwcf10 <MAP_file1> -c cwmpc9 <MAP_file2> ....<br />(Refer file readme.txt in codesize forder to get more information for tool supported and options)<br />4. Compare information on html file that is created at step 3 with result template in forder <MQX_install_dir>\mqx\examples\benchmrk\codesize\reports</td>
+				</tr>
+<tr style='background-color:#DDDDDD; color:blue'>
+				<td width='15%'>Expected Result:</td>
+				<td width='85%'>1. build libraries & application successful<br />2. All file codesize.map are created successful<br />3. File .html was created<br />4. Information displayed in .html is correct .</td>
+				</tr>
+</table></div>
+</div></body></html>

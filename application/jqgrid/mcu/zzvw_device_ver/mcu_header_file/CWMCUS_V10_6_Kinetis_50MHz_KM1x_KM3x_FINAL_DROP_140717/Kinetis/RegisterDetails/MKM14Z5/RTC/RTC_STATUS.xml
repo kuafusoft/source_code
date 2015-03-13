@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>RTC_STATUS</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x8</reset-value>
+  <description>RTC Status Register</description>
+  <bitfields>
+    <bitfield>
+      <name>INVAL_BIT</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Invalidate CPU read/write access bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Time /Date Counters can be read/written. Time /Date is valid.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Time /Date Counter values are changing or Time /Date is invalid and cannot be read or written.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WRITE_PROT_EN</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Write Protect Enable status bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Registers are unlocked and can be accessed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Registers are locked and in read-only mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CPU_LOW_VOLT</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>CPU Low Voltage Warning status bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>CPU in Normal Operating Voltage.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>CPU Voltage is below Normal Operating Voltage. RTC Registers in read-only mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RST_SRC</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reset Source bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Part was reset due to Standby Mode Exit (that is when VDD is powered up and VBAT was not powered down at all).</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Part was reset due to Power-On Reset (that is Power On Reset when both VBAT and VDD are powered up).</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>CMP_INT</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Compensation Interval bit.</description>
+    </bitfield>
+    <bitfield>
+      <name>WE</name>
+      <bitrange>7:6</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Write Enable bits.</description>
+      <values>
+        <value>
+          <value>0b10</value>
+          <description>Enable Write Protection - Registers are locked.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>BUS_ERR</name>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Error bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Read and Write accesses are normal.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Read or Write accesses occurred when INVAL_BIT was asserted.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>CMP_DONE</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Compensation Done bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Compensation busy or not enabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Compensation completed.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15:12</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

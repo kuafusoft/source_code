@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>FTFA_FPROT0</name>
+  <bitrange>7:0</bitrange>
+  <description>Program Flash Protection Registers</description>
+  <bitfields>
+    <bitfield>
+      <name>PROT</name>
+      <bitrange>7:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Program Flash Region Protect</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Program flash region is protected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Program flash region is not protected</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

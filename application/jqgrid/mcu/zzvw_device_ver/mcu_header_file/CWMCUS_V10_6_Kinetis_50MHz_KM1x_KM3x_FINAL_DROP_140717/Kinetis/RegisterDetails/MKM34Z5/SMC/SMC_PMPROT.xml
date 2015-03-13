@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SMC_PMPROT</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0x20</reset-value>
+  <description>Power Mode Protection register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>AVLLS</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Allow Very-Low-Leakage Stop Mode</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Any VLLSx mode is not allowed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Any VLLSx mode is allowed</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>AVLP</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Allow Very-Low-Power Modes</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>VLPR, VLPW and VLPS are not allowed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>VLPR, VLPW and VLPS are allowed</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

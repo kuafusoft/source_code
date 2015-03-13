@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>AIPS_PACRK</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Peripheral Access Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>AC7</name>
+      <bitrange>2:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute check</description>
+    </bitfield>
+    <bitfield>
+      <name>RO7</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read only</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to corresponding AC field are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to corresponding AC field are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>AC6</name>
+      <bitrange>6:4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute check</description>
+    </bitfield>
+    <bitfield>
+      <name>RO6</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read only</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to corresponding AC field are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to corresponding AC field are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>AC5</name>
+      <bitrange>10:8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute check</description>
+    </bitfield>
+    <bitfield>
+      <name>RO5</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read only</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to corresponding AC field are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to corresponding AC field are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>AC4</name>
+      <bitrange>14:12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute check</description>
+    </bitfield>
+    <bitfield>
+      <name>RO4</name>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read only</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to corresponding AC field are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to corresponding AC field are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>AC3</name>
+      <bitrange>18:16</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute check</description>
+    </bitfield>
+    <bitfield>
+      <name>RO3</name>
+      <bitrange>19</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read only</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to corresponding AC field are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to corresponding AC field are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>AC2</name>
+      <bitrange>22:20</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute check</description>
+    </bitfield>
+    <bitfield>
+      <name>RO2</name>
+      <bitrange>23</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read only</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to corresponding AC field are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to corresponding AC field are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>AC1</name>
+      <bitrange>26:24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute check</description>
+    </bitfield>
+    <bitfield>
+      <name>RO1</name>
+      <bitrange>27</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read only</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to corresponding AC field are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to corresponding AC field are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>AC0</name>
+      <bitrange>30:28</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute check</description>
+    </bitfield>
+    <bitfield>
+      <name>RO0</name>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read only</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to corresponding AC field are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to corresponding AC field are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

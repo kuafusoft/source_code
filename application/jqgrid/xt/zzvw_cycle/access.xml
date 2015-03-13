@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<role_access>
+	<all>
+		<all value='0' />
+	</all>
+	<admin>
+		<all value='1' />
+	</admin>
+	<row_owner extends='admin'>
+	
+	</row_owner>
+	<row_assistant_owner extends='admin'>
+	
+	</row_assistant_owner>
+	<tester extends='admin'>
+		<view_edit_edit value='0' />
+		<uploadfile value='0' />
+		<remove_combination value='0' />
+		<cases_not_exist value='0' />
+		<set_group value='0' />
+		<inside_freeze value='0' />
+		<unfreeze value='0' />
+	</tester>
+	<cycle_newer extends='tester'>
+		<view_edit_save value='1' />
+	</cycle_newer>
+	<row_tester extends='tester'>
+	
+	</row_tester>
+	<Dev extends='tester'>
+<!-- 		<query value='1' />
+		<query_reset value='1' />
+		<query_new value='1' />
+		<query_import value='1' />
+		<import value='1' />
+		<view_edit_export value='1' />
+		<export value='1' />
+		<view_edit_cancel value='1' />
+		<view_edit_cloneit value='1' />
+		<view_edit_edit value='1' />
+		<view_edit_save value='1' />
+		<beforeSave value='1' />
+		<save value='1' />
+ -->	
+	</Dev>
+
+</role_access>

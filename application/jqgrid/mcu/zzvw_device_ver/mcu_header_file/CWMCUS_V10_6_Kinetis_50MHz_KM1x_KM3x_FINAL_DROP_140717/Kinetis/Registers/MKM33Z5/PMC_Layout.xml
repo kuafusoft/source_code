@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>PMC_Layout</name>
+  <register-sets>
+    <register-set-descriptor>
+      <name>Power Management Controller (PMC)</name>
+      <registers>
+        <register>
+          <name>PMC_LVDSC1</name>
+          <access>RW</access>
+          <register-details-file-name>PMC/PMC_LVDSC1.xml</register-details-file-name>
+          <offset>0</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x4007D000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>PMC_LVDSC2</name>
+          <access>RW</access>
+          <register-details-file-name>PMC/PMC_LVDSC2.xml</register-details-file-name>
+          <offset>0x1</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x4007D000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>PMC_REGSC</name>
+          <access>RW</access>
+          <register-details-file-name>PMC/PMC_REGSC.xml</register-details-file-name>
+          <offset>0x2</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x4007D000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+      </registers>
+    </register-set-descriptor>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SIM_CTRL_REG</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>System Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>NMIDIS</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>NMI Disable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>NMI enabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>NMI disabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>PLL_VLP_EN</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>PLL VLP Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>PTC2_HD_EN</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>PTC2 HighDrive Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>SAR_TRG_CLK_SEL</name>
+      <bitrange>4:3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SAR ADC Trigger Clk Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Bus Clock (During Low Power Modes such as stop, the Bus clock is not available for conversion and should not be selected in case a conversion needs to be performed while in stop)</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>ADC asynchronous Clock</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>ERCLK32K</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>OSCCLK</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CLKOUTSEL</name>
+      <bitrange>7:5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Clock out Select</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>Disabled</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>Gated Core Clk</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>Bus/Flash Clk</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>LPO clock from PMC</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>IRC clock from MCG</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>Muxed 32Khz source (please refer SOPT1[19:18] for possible options)</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>MHz Oscillator external reference clock</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>PLL clock output from MCG</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

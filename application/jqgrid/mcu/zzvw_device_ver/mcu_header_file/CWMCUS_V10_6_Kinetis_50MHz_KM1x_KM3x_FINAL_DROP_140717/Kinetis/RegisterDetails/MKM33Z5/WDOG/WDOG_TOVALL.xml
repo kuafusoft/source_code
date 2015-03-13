@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>WDOG_TOVALL</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x4B40</reset-value>
+  <description>Watchdog Time-out Value Register Low</description>
+  <bitfields>
+    <bitfield>
+      <name>TOVALLOW</name>
+      <bitrange>15:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Defines the lower 16 bits of the 32-bit time-out value for the watchdog timer. It is defined in terms of cycles of the watchdog clock.</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

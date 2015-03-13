@@ -1,0 +1,27 @@
+<!-- 运输和装卸 -->
+<label for='yunshu_hzhb_id'>运输方：<select id='yunshu_hzhb_id' name='yunshu[hzhb_id]'>
+<?php
+    foreach($this->yunshu as $yunshu){
+        echo '<option value="'.$yunshu['id'].'">'.$yunshu['name'].'</option>'; 
+    }
+?>
+</select></label>
+<label for='yunshu_price'>单价：<input type='text' id='yunshu_price' name='yunshu[price]'></label>
+<BR />
+<?php
+    echo $this->partial('zf.phtml', array('type'=>'yunshu', 'title'=>'运输费', 'zjzh'=>$this->zjzh, 'jbr'=>$this->jbr));
+?>
+
+<label for='zhuangxie_hzhb_id'>装卸方：<select id='zhuangxie_hzhb_id' name='zhuangxie[hzhb_id]'>
+<?php
+    foreach($this->zhuangxie as $zhuangxie){
+        echo '<option value="'.$zhuangxie['id'].'">'.$zhuangxie['name'].'</option>'; 
+    }
+?>
+</select></label>
+<label for='zhuangxie_price'>单价：<input type='text' id='zhuangxie_price' name='zhuangxie[price]'></label>
+<BR />
+
+<?php
+    echo $this->partial('zf.phtml', array('type'=>'zhuangxie', 'title'=>'装卸费', 'zjzh'=>$this->zjzh, 'jbr'=>$this->jbr));
+?>

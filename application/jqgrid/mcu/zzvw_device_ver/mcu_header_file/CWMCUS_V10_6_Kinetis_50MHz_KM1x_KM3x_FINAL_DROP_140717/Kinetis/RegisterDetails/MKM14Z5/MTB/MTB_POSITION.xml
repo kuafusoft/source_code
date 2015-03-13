@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MTB_POSITION</name>
+  <bitrange>31:0</bitrange>
+  <description>MTB Position Register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>These bits must be treated as UNK/SBZP (unknown on reads, should-be-zero-or-preserved on writes).</description>
+    </bitfield>
+    <bitfield>
+      <name>WRAP</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>This field is set to 1 automatically when the POINTER value wraps as determined by the MTB_MASTER[MASK] field in the MASTER Trace Control Register. A debug agent might use the WRAP field to determine whether the trace information above and below the pointer address is valid.</description>
+    </bitfield>
+    <bitfield>
+      <name>POINTER</name>
+      <bitrange>31:3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Trace Packet Address Pointer[28:0]</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

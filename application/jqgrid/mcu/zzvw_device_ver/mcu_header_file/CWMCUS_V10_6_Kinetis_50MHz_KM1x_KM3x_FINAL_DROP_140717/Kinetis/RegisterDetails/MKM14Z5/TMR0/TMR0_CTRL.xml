@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>TMR0_CTRL</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Timer Channel Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>OUTMODE</name>
+      <bitrange>2:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Output Mode</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>Asserted while counter is active</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>Clear OFLAG output on successful compare</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>Set OFLAG output on successful compare</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>Toggle OFLAG output on successful compare</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>Toggle OFLAG output using alternating compare registers</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>Set on compare, cleared on secondary source input edge</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>Set on compare, cleared on counter rollover</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>Enable gated clock output while counter is active</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>COINIT</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Co-Channel Initialization</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Co-channel counter/timers cannot force a re-initialization of this counter/timer</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Co-channel counter/timers may force a re-initialization of this counter/timer</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DIR</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Count Direction</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Count up.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Count down.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LENGTH</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Count Length</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Roll over.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Count until compare, then re-initialize. If counting up, a successful compare occurs when the counter reaches a COMP1 value. If counting down, a successful compare occurs when the counter reaches a COMP2 value. When output mode $4 is used, alternating values of COMP1 and COMP2 are used to generate successful comparisons. For example, the counter counts until a COMP1 value is reached, re-initializes, counts until COMP2 value is reached, re-initializes, counts until COMP1 value is reached, and so on.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ONCE</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Count Once</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Count repeatedly.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Count until compare and then stop. If counting up, a successful compare occurs when the counter reaches a COMP1 value. If counting down, a successful compare occurs when the counter reaches a COMP2 value. When output mode $4 is used, the counter re-initializes after reaching the COMP1 value, continues to count to the COMP2 value, and then stops.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SCS</name>
+      <bitrange>8:7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Secondary Count Source</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Counter 0 input pin</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Counter 1 input pin</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Counter 2 input pin</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Counter 3 input pin</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>PCS</name>
+      <bitrange>12:9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Primary Count Source</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>Counter 0 input pin</description>
+        </value>
+        <value>
+          <value>0b0001</value>
+          <description>Counter 1 input pin</description>
+        </value>
+        <value>
+          <value>0b0010</value>
+          <description>Counter 2 input pin</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>Counter 3 input pin</description>
+        </value>
+        <value>
+          <value>0b0100</value>
+          <description>Counter 0 output</description>
+        </value>
+        <value>
+          <value>0b0101</value>
+          <description>Counter 1 output</description>
+        </value>
+        <value>
+          <value>0b0110</value>
+          <description>Counter 2 output</description>
+        </value>
+        <value>
+          <value>0b0111</value>
+          <description>Counter 3 output</description>
+        </value>
+        <value>
+          <value>0b1000</value>
+          <description>IP bus clock divide by 1 prescaler</description>
+        </value>
+        <value>
+          <value>0b1001</value>
+          <description>IP bus clock divide by 2 prescaler</description>
+        </value>
+        <value>
+          <value>0b1010</value>
+          <description>IP bus clock divide by 4 prescaler</description>
+        </value>
+        <value>
+          <value>0b1011</value>
+          <description>IP bus clock divide by 8 prescaler</description>
+        </value>
+        <value>
+          <value>0b1100</value>
+          <description>IP bus clock divide by 16 prescaler</description>
+        </value>
+        <value>
+          <value>0b1101</value>
+          <description>IP bus clock divide by 32 prescaler</description>
+        </value>
+        <value>
+          <value>0b1110</value>
+          <description>IP bus clock divide by 64 prescaler</description>
+        </value>
+        <value>
+          <value>0b1111</value>
+          <description>IP bus clock divide by 128 prescaler</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CM</name>
+      <bitrange>15:13</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Count Mode</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>No operation</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>Count rising edges of primary sourceRising edges are counted only when SCTRL[IPS] = 0. Falling edges are counted when SCTRL[IPS] = 1. If the primary count source is IP bus clock divide by 1, only rising edges are counted regardless of the value of SCTRL[IPS].</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>Count rising and falling edges of primary sourceIP bus clock divide by 1 cannot be used as a primary count source in edge count mode.</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>Count rising edges of primary source while secondary input high active</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>Quadrature count mode, uses primary and secondary sources</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>Count rising edges of primary source; secondary source specifies directionRising edges are counted only when SCTRL[IPS] = 0. Falling edges are counted when SCTRL[IPS] = 1.</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>Edge of secondary source triggers primary count until compare</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>Cascaded counter mode (up/down)The primary count source must be set to one of the counter outputs.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

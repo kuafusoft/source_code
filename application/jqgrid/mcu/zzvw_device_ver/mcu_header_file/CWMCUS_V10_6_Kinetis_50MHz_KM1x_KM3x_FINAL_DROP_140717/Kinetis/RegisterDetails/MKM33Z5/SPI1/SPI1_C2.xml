@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SPI1_C2</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>SPI control register 2</description>
+  <bitfields>
+    <bitfield>
+      <name>SPC0</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI pin control 0</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>SPI uses separate pins for data input and data output (pin mode is normal). In master mode of operation: MISO is master in and MOSI is master out. In slave mode of operation: MISO is slave out and MOSI is slave in.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>SPI configured for single-wire bidirectional operation (pin mode is bidirectional). In master mode of operation: MISO is not used by SPI; MOSI is master in when BIDIROE is 0 or master I/O when BIDIROE is 1. In slave mode of operation: MISO is slave in when BIDIROE is 0 or slave I/O when BIDIROE is 1; MOSI is not used by SPI.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPISWAI</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI stop in wait mode</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>SPI clocks continue to operate in wait mode</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>SPI clocks stop when the MCU enters wait mode</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RXDMAE</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receive DMA enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>DMA request for receive is disabled and interrupt from SPRF is allowed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>DMA request for receive is enabled and interrupt from SPRF is disabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>BIDIROE</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bidirectional mode output enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Output driver disabled so SPI data I/O pin acts as an input</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>SPI I/O pin enabled as an output</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>MODFEN</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Master mode-fault function enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Mode fault function disabled, master SS pin reverts to general-purpose I/O not controlled by SPI</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Mode fault function enabled, master SS pin acts as the mode fault input or the slave select output</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXDMAE</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit DMA enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>DMA request for transmit is disabled and interrupt from SPTEF is allowed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>DMA request for transmit is enabled and interrupt from SPTEF is disabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPIMODE</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI 8-bit or 16-bit mode</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>8-bit SPI shift register, match register, and buffers</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>16-bit SPI shift register, match register, and buffers</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPMIE</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI match interrupt enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupts from SPMF inhibited (use polling)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>When SPMF is 1, requests a hardware interrupt</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

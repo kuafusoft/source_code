@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>EWM_SERV</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Service Register</description>
+  <bitfields>
+    <bitfield>
+      <name>SERVICE</name>
+      <bitrange>7:0</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>The EWM service mechanism requires the CPU to write two values to the SERV register: a first data byte of 0xB4, followed by a second data byte of 0x2C. The EWM service is illegal if either of the following conditions is true. The first or second data byte is not written correctly. The second data byte is not written within a fixed number of peripheral bus cycles of the first data byte. This fixed number of cycles is called EWM_service_time.</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

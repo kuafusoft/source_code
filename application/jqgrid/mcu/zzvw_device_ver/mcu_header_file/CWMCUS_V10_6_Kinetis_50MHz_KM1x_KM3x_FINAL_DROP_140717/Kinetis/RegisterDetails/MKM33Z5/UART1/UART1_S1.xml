@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART1_S1</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0xC0</reset-value>
+  <description>UART Status Register 1</description>
+  <bitfields>
+    <bitfield>
+      <name>PF</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Parity Error Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No parity error detected since the last time this flag was cleared. If the receive buffer has a depth greater than 1, then there may be data in the receive buffer what was received with a parity error.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>At least one dataword was received with a parity error since the last time this flag was cleared.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Framing Error Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No framing error detected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Framing error.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>NF</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Noise Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No noise detected since the last time this flag was cleared. If the receive buffer has a depth greater than 1 then there may be data in the receiver buffer that was received with noise.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>At least one dataword was received with noise detected since the last time the flag was cleared.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>OR</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Receiver Overrun Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No overrun has occurred since the last time the flag was cleared.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Overrun has occurred or the overrun flag has not been cleared since the last overrun occured.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IDLE</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Idle Line Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Receiver input is either active now or has never become active since the IDLE flag was last cleared.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Receiver input has become idle or the flag has not been cleared since it last asserted.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RDRF</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Receive Data Register Full Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The number of datawords in the receive buffer is less than the number indicated by RXWATER.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The number of datawords in the receive buffer is equal to or greater than the number indicated by RXWATER at some point in time since this flag was last cleared.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TC</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Transmit Complete Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Transmitter active (sending data, a preamble, or a break).</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Transmitter idle (transmission activity complete).</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TDRE</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Transmit Data Register Empty Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The amount of data in the transmit buffer is greater than the value indicated by TWFIFO[TXWATER].</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The amount of data in the transmit buffer is less than or equal to the value indicated by TWFIFO[TXWATER] at some point in time since the flag has been cleared.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

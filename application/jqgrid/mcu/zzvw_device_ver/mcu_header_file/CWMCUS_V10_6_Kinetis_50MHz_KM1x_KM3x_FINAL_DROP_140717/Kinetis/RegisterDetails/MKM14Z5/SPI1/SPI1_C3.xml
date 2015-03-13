@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SPI1_C3</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>SPI control register 3</description>
+  <bitfields>
+    <bitfield>
+      <name>FIFOMODE</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>FIFO mode enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Buffer mode disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Data available in the receive data buffer</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RNFULLIEN</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receive FIFO nearly full interrupt enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No interrupt upon RNFULLF being set</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enable interrupts upon RNFULLF being set</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TNEARIEN</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit FIFO nearly empty interrupt enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No interrupt upon TNEAREF being set</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enable interrupts upon TNEAREF being set</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>INTCLR</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt clearing mechanism select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>These interrupts are cleared when the corresponding flags are cleared depending on the state of the FIFOs</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>These interrupts are cleared by writing the corresponding bits in the CI register</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RNFULLF_MARK</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receive FIFO nearly full watermark</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>RNFULLF is set when the receive FIFO has 48 bits or more</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>RNFULLF is set when the receive FIFO has 32 bits or more</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TNEAREF_MARK</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit FIFO nearly empty watermark</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>TNEAREF is set when the transmit FIFO has 16 bits or less</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>TNEAREF is set when the transmit FIFO has 32 bits or less</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7:6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,37 @@
+<!--
+Node--Ver结构的统一编辑样式
+-->
+<div id='div_view_edit'>
+	<input type='hidden' id='node_id' value='<?php echo isset($this->node['value']['id']) ? $this->node['value']['id'] : 0; ?>' />
+	<fieldset style='width:98%'><legend><?php echo $this->node['legend'];?></legend>
+	<?php
+// print_r($this->node);	
+		$node_view_file = $this->node['view_file'];
+		if (!empty($this->node['view_file_dir']))
+			$node_view_file = $this->node['view_file_dir'].'/'.$this->node['view_file'];
+		echo $this->partial($this->node['view_file'], $this->node);
+	?>
+	</fieldset>
+	<fieldset  style='width:98%'><legend><?php echo $this->detail['legend'];?></legend>
+		<div id="accordion">
+		<?php
+			$view_file = $this->detail['view_file'];
+			if (!empty($this->detail['view_file_dir']))
+				$view_file = $this->detail['view_file_dir'].'/'.$view_file;
+			$i = 1;
+			foreach($this->detail['items'] as $item){
+				echo $this->partial($view_file, array('count'=>$i, 'item'=>$item, 'params'=>$this->detail));
+				$i ++ ;
+			}
+		?>
+		</div>
+		<button id='add_new_item'>Add New Item</button>
+		<button id='del_items'>Delete Selected Items</button>
+	</fieldset>
+</div>
+
+<div id="div_button_edit" style="width:100%">
+	<?php
+	echo $this->partial('button.phtml', $this);
+	?>
+</div>

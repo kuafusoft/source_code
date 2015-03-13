@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MTB_MASTER</name>
+  <bitrange>31:0</bitrange>
+  <description>MTB Master Register</description>
+  <bitfields>
+    <bitfield>
+      <name>MASK</name>
+      <bitrange>4:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Mask</description>
+    </bitfield>
+    <bitfield>
+      <name>TSTARTEN</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Trace Start Input Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>TSTOPEN</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Trace Stop Input Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>SFRWPRIV</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Special Function Register Write Privilege</description>
+    </bitfield>
+    <bitfield>
+      <name>RAMPRIV</name>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>RAM Privilege</description>
+    </bitfield>
+    <bitfield>
+      <name>HALTREQ</name>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Halt Request</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>30:10</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>These bits must be treated as UNK/SBZP (unknown on reads, should-be-zero-or-preserved on writes).</description>
+    </bitfield>
+    <bitfield>
+      <name>EN</name>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Main Trace Enable</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

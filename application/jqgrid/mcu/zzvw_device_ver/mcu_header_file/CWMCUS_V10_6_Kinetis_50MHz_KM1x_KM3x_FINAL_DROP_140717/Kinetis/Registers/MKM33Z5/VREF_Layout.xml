@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>VREF_Layout</name>
+  <register-sets>
+    <register-set-descriptor>
+      <name>Voltage Reference (VREF)</name>
+      <registers>
+        <register>
+          <name>VREF_VREFH_TRM</name>
+          <access>RW</access>
+          <register-details-file-name>VREF/VREF_VREFH_TRM.xml</register-details-file-name>
+          <offset>0</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x4006F000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>VREF_VREFH_SC</name>
+          <access>RW</access>
+          <register-details-file-name>VREF/VREF_VREFH_SC.xml</register-details-file-name>
+          <offset>0x1</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x4006F000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>VREF_VREFL_TRM</name>
+          <access>RW</access>
+          <register-details-file-name>VREF/VREF_VREFL_TRM.xml</register-details-file-name>
+          <offset>0x5</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x4006F000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+      </registers>
+    </register-set-descriptor>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

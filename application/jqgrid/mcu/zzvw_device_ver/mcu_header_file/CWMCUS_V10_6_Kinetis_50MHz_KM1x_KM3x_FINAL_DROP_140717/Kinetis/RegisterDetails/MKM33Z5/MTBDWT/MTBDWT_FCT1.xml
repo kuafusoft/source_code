@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MTBDWT_FCT1</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>MTB_DWT Comparator Function Register 1</description>
+  <bitfields>
+    <bitfield>
+      <name>FUNCTION</name>
+      <bitrange>3:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Function</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>Disabled.</description>
+        </value>
+        <value>
+          <value>0b0100</value>
+          <description>Instruction fetch.</description>
+        </value>
+        <value>
+          <value>0b0101</value>
+          <description>Data operand read.</description>
+        </value>
+        <value>
+          <value>0b0110</value>
+          <description>Data operand write.</description>
+        </value>
+        <value>
+          <value>0b0111</value>
+          <description>Data operand (read + write).</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>23:4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>MATCHED</name>
+      <bitrange>24</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Comparator match</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No match.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Match occurred.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:25</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

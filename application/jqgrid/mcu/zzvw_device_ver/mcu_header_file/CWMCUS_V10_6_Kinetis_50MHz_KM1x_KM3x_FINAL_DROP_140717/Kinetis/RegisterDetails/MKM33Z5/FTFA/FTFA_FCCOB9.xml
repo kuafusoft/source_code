@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>FTFA_FCCOB9</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Flash Common Command Object Registers</description>
+  <bitfields>
+    <bitfield>
+      <name>CCOBn</name>
+      <bitrange>7:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>The FCCOB register provides a command code and relevant parameters to the memory controller. The individual registers that compose the FCCOB data set can be written in any order, but you must provide all needed values, which vary from command to command. First, set up all required FCCOB fields and then initiate the command&apos;s execution by writing a 1 to the FSTAT[CCIF] bit. This clears the CCIF bit, which locks all FCCOB parameter fields and they cannot be changed by the user until the command completes (CCIF returns to 1). No command buffering or queueing is provided; the next command can be loaded only after the current command completes. Some commands return information to the FCCOB registers. Any values returned to FCCOB are available for reading after the FSTAT[CCIF] flag returns to 1 by the memory controller. The following table shows a generic flash command format. The first FCCOB register, FCCOB0, always contains the command code. This 8-bit value defines the command to be executed. The command code is followed by the parameters required for this specific flash command, typically an address and/or data values. The command parameter table is written in terms of FCCOB Number (which is equivalent to the byte number). This number is a reference to the FCCOB register name and is not the register address. FCCOB Number Typical Command Parameter Contents [7:0] 0 FCMD (a code that defines the flash command) 1 Flash address [23:16] 2 Flash address [15:8] 3 Flash address [7:0] 4 Data Byte 0 5 Data Byte 1 6 Data Byte 2 7 Data Byte 3 8 Data Byte 4 9 Data Byte 5 A Data Byte 6 B Data Byte 7 FCCOB Endianness and Multi-Byte Access : The FCCOB register group uses a big endian addressing convention. For all command parameter fields larger than 1 byte, the most significant data resides in the lowest FCCOB register number. The FCCOB register group may be read and written as individual bytes, aligned words (2 bytes) or aligned longwords (4 bytes).</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,32 @@
+<!-- 回款 -->
+<label for ='<?php echo $type;?>_pay'>接收<?php echo $this->title;?>？
+	<input type='checkbox' id='<?php echo $type;?>_pay' name='<?php echo $this->type;?>[pay]' checked='false'>
+</label>
+<div>
+    <label for='<?php echo $type;?>_zjzh_id'>收入帐户:
+		<select id='<?php echo $type;?>_zjzh_id' name='<?php echo $type;?>[zjzh_id]'>
+		<?php
+			foreach($this->zjzh as $zjzh){
+				echo '<option value="'.$zjzh['id'].'">'.$zjzh['name'].'</option>'; 
+			}
+		?>
+		</select>
+	</label>
+    <label for='<?php echo $type;?>_pay_amount'>金额：
+		<input type='text' id='<?php echo $type;?>_pay_amount' name='<?php echo $type;?>[pay_amount]'>
+	</label>
+    <label for='<?php echo $this->type;?>_jbr_id'>经办人:
+		<select id='<?php echo $this->type;?>_jbr_id' name='<?php echo $this->type;?>[jbr_id]'>
+		<?php
+			foreach($this->jbr as $jbr){
+				echo '<option value="'.$jbr['id'].'">'.$jbr['name'].'</option>'; 
+			}
+		?>
+		</select>
+	</label>
+    <label for='<?php echo $this->type;?>_happen_date'>日期:
+		<input type='text' date='date' id='<?php echo $this->type;?>_happen_date' name='<?php echo $this->type;?>[_happen_date]'>
+	</label>
+	
+    <BR />
+</div>

@@ -1,0 +1,24 @@
+<fieldset><legend>Work Summary</legend>
+<?php
+	require_once('toolfactory.php');
+	$tool = toolFactory::get('kf');
+	$editing = isset($this->editing) ? $this->editing : false;
+	$cols = isset($this->cols) ? $this->cols : 2;
+	
+	$tool->cf($this->node['model'], $editing, $this->node['value'], $cols);
+?>
+</fieldset>
+<fieldset><legend>Items</legend>
+<?php
+	print_r("<div id='summary_items'>");
+	$i = 1;
+	foreach($this->daily_note as $item){
+		print_r("<h3>Item $i</h3>");
+		print_r("<div>");
+		print_r("<textarea id='content' style='width:100%'>{$item['content']}</textarea>");
+		print_r("</div>");
+		$i ++;
+	}
+	print_r("</div>");
+?>
+</fieldset>

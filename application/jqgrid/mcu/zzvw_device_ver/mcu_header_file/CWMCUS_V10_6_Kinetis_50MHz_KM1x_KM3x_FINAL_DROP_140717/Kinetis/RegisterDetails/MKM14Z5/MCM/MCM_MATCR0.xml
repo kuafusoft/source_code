@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MCM_MATCR0</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Master Attribute Configuration Register</description>
+  <bitfields>
+    <bitfield>
+      <name>ATC0</name>
+      <bitrange>2:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute Configuration Master n</description>
+      <values>
+        <value>
+          <value>0b00-</value>
+          <description>Master attributes are statically forced to {privileged, secure}.</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>Master attributes are statically forced to {user, secure}.</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>Master attributes are statically forced to {user, nonsecure}.</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>Enable master attribute {privileged or user} and statically force {secure}.</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>Enable master attribute {privileged or user} and statically force {nonsecure}.</description>
+        </value>
+        <value>
+          <value>0b11-</value>
+          <description>Enable master attribute {privileged or user, secure or nonsecure}</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>6:3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>RO0</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read-Only Master n</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to the ATCn are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to the ATCn are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15:8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>ATC2</name>
+      <bitrange>18:16</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Attribute Configuration Master n</description>
+      <values>
+        <value>
+          <value>0b00-</value>
+          <description>Master attributes are statically forced to {privileged, secure}.</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>Master attributes are statically forced to {user, secure}.</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>Master attributes are statically forced to {user, nonsecure}.</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>Enable master attribute {privileged or user} and statically force {secure}.</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>Enable master attribute {privileged or user} and statically force {nonsecure}.</description>
+        </value>
+        <value>
+          <value>0b11-</value>
+          <description>Enable master attribute {privileged or user, secure or nonsecure}</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>22:19</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>RO2</name>
+      <bitrange>23</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Read-Only Master n</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to the ATCn are allowed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to the ATCn are ignored.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:24</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

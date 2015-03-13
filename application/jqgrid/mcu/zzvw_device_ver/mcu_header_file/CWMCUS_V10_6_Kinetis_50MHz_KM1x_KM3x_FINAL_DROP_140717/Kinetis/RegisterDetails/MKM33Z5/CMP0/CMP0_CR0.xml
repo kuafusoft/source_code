@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>CMP0_CR0</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>CMP Control Register 0</description>
+  <bitfields>
+    <bitfield>
+      <name>HYSTCTR</name>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Comparator hard block hysteresis control</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Level 0</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Level 1</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Level 2</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Level 3</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>FILTER_CNT</name>
+      <bitrange>6:4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Filter Sample Count</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>Filter is disabled. If SE = 1, then COUT is a logic 0. This is not a legal state, and is not recommended. If SE = 0, COUT = COUTA.</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>One sample must agree. The comparator output is simply sampled.</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>2 consecutive samples must agree.</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>3 consecutive samples must agree.</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>4 consecutive samples must agree.</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>5 consecutive samples must agree.</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>6 consecutive samples must agree.</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>7 consecutive samples must agree.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

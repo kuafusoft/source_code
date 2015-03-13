@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>CRC_Layout</name>
+  <register-sets>
+    <register-set-descriptor>
+      <name>Cyclic Redundancy Check (CRC) Registers</name>
+      <registers>
+        <register>
+          <name>CRC_DATA</name>
+          <access>RW</access>
+          <register-details-file-name>CRC/CRC_DATA.xml</register-details-file-name>
+          <offset>0</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0x40034000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>CRC_GPOLY</name>
+          <access>RW</access>
+          <register-details-file-name>CRC/CRC_GPOLY.xml</register-details-file-name>
+          <offset>0x4</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0x40034000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>CRC_CTRL</name>
+          <access>RW</access>
+          <register-details-file-name>CRC/CRC_CTRL.xml</register-details-file-name>
+          <offset>0x8</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0x40034000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+      </registers>
+    </register-set-descriptor>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

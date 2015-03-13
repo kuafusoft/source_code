@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SYST_CALIB</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>SysTick Calibration Value Register</description>
+  <bitfields>
+    <bitfield>
+      <name>TENMS</name>
+      <bitrange>23:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reload value to use for 10ms timing</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>24</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>25</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>26</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>27</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>28</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>29</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>SKEW</name>
+      <bitrange>30</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Indicates whether the 10ms calibration value is exact</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>10ms calibration value is exact</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>10ms calibration value is inexact, because of the clock frequency</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>NOREF</name>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Indicates whether the IMPLEMENTATION DEFINED reference clock is implemented</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The reference clock is provided</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The reference clock is not provided</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

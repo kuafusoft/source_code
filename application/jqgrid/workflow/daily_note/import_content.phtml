@@ -1,0 +1,40 @@
+<ul>
+	<li><a href="#tabs-from-daily-note">From Daily Note</a></li>
+</ul>
+
+<div id='tabs-from-daily-note'>
+	<?php
+	echo $this->partial('index.phtml', array('container'=>'tabs-from-daily-note'));
+	?>
+</div>
+
+<table>
+	<tr>
+		<td>
+			<label for="import_from_daily_note">
+				<input type="radio" name="import_from" id="import_from_daily_note" value="from_daily_note"> 
+				Import content from daily note
+			</label>
+			<div id='div_for_import_from_daily_note_options' style='position:relative;left:40px'>
+				<select id='period_id'>
+					<?php
+						foreach($this->periods as $id=>$name){
+							print_r("<option value='$id'>$name</option>");
+						}
+					?>
+				</select>
+				<select id='levels'>
+					<option value='son-level' selected='selected'>Son-level Notes Only</option>
+					<option value='myself-level'>Myself Notes Only</option>
+					<option value='sub-level'>All Sub-level Notes</option>
+				</select>
+			</div>
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			
+		
+		</td>
+	</tr>
+</table> 

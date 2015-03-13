@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>OSC_CR</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>OSC Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>SC16P</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Oscillator 16 pF Capacitor Load Configure</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disable the selection.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Add 16 pF capacitor to the oscillator load.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SC8P</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Oscillator 8 pF Capacitor Load Configure</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disable the selection.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Add 8 pF capacitor to the oscillator load.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SC4P</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Oscillator 4 pF Capacitor Load Configure</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disable the selection.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Add 4 pF capacitor to the oscillator load.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SC2P</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Oscillator 2 pF Capacitor Load Configure</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disable the selection.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Add 2 pF capacitor to the oscillator load.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>EREFSTEN</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>External Reference Stop Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>External reference clock is disabled in Stop mode.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>External reference clock stays enabled in Stop mode if ERCLKEN is set before entering Stop mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>ERCLKEN</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>External Reference Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>External reference clock is inactive.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>External reference clock is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

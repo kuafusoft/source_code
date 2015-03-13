@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART3_C7816</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART 7816 Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>ISO_7816E</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>ISO-7816 Functionality Enabled</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>ISO-7816 functionality is turned off/not enabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>ISO-7816 functionality is turned on/enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TTYPE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transfer Type</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>T = 0 per the ISO-7816 specification.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>T = 1 per the ISO-7816 specification.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>INIT</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Detect Initial Character</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Normal operating mode. Receiver does not seek to identify initial character.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Receiver searches for initial character.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ANACK</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Generate NACK on Error</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No NACK is automatically generated.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>A NACK is automatically generated if a parity error is detected or if an invalid initial character is detected.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ONACK</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Generate NACK on Overflow</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The received data does not generate a NACK when the receipt of the data results in an overflow event.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>If the receiver buffer overflows, a NACK is automatically sent on a received character.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7:5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>
