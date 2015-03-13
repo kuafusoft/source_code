@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MPU_RGD4_WORD3</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Region Descriptor n, Word 3</description>
+  <bitfields>
+    <bitfield>
+      <name>VLD</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Valid</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Region descriptor is invalid</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Region descriptor is valid</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15:1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>PIDMASK</name>
+      <bitrange>23:16</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Process Identifier Mask</description>
+    </bitfield>
+    <bitfield>
+      <name>PID</name>
+      <bitrange>31:24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Process Identifier</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

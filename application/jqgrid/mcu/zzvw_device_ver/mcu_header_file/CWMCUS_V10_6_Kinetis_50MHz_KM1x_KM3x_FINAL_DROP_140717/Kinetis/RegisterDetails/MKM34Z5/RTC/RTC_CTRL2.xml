@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>RTC_CTRL2</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x80</reset-value>
+  <description>RTC Control 2 Register</description>
+  <bitfields>
+    <bitfield>
+      <name>TAMP_CFG_OVER</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Tamper Configuration Over</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Tamper filter processing disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Tamper filter processing enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>3:1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>WAKEUP_STATUS</name>
+      <bitrange>6:5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Status</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>The wakeup/hibernation pin is in HiZ mode.</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>The wakeup/hibernation pin is at logic 0. MCU is in sleep mode.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>The wakeup/ hibernation pin is at logic 1. MCU is in sleep mode.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WAKEUP_MODE</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Mode</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Tamper pin 0 is used as the tamper pin.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Tamper pin 0 is used as a wakeup/hibernation pin.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15:8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

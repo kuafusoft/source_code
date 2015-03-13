@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART0_C3</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART Control Register 3</description>
+  <bitfields>
+    <bitfield>
+      <name>PEIE</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Parity Error Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>PF interrupt requests are disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>PF interrupt requests are enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FEIE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Framing Error Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>FE interrupt requests are disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>FE interrupt requests are enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>NEIE</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Noise Error Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>NF interrupt requests are disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>NF interrupt requests are enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ORIE</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Overrun Error Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>OR interrupts are disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>OR interrupt requests are enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXINV</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit Data Inversion.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Transmit data is not inverted.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Transmit data is inverted.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXDIR</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmitter Pin Data Direction in Single-Wire mode</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>TXD pin is an input in single wire mode.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>TXD pin is an output in single wire mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>T8</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit Bit 8</description>
+    </bitfield>
+    <bitfield>
+      <name>R8</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Received Bit 8</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>I2C1_C1</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>I2C Control Register 1</description>
+  <bitfields>
+    <bitfield>
+      <name>DMAEN</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>All DMA signalling disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>DMA transfer is enabled and the following conditions trigger the DMA request: While FACK = 0, a data byte is received, either address or data is transmitted. (ACK/NACK automatic) While FACK = 0, the first byte received matches the A1 register or is general call address. If any address matching occurs, IAAS and TCF are set. If the direction of transfer is known from master to slave, then it is not required to check the SRW. With this assumption, DMA can also be used in this case. In other cases, if the master reads data from the slave, then it is required to rewrite the C1 register operation. With this assumption, DMA cannot be used. When FACK = 1, an address or a data byte is transmitted.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WUEN</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wakeup Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Normal operation. No interrupt generated when address matching in low power mode.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enables the wakeup function in low power mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RSTA</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Repeat START</description>
+    </bitfield>
+    <bitfield>
+      <name>TXAK</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit Acknowledge Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>An acknowledge signal is sent to the bus on the following receiving byte (if FACK is cleared) or the current receiving byte (if FACK is set).</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>No acknowledge signal is sent to the bus on the following receiving data byte (if FACK is cleared) or the current receiving data byte (if FACK is set).</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TX</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit Mode Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Receive</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Transmit</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>MST</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Master Mode Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Slave mode</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Master mode</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IICIE</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>I2C Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IICEN</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>I2C Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enabled</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>DHCSR_Read</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Debug Halting Control and Status Register</description>
+  <bitfields>
+    <bitfield>
+      <name>C_DEBUGEN</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Halting debug enable bit. If a debugger writes to DHCSR to change the value of this bit from 0 to 1, it must also write 0 to the C_MASKINTS bit, otherwise behavior is UNPREDICTABLE.&#10;This bit can only be set to 1 from the DAP, it cannot be set to 1 under software control.&#10;This bit is 0 after a Power-on reset.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>C_HALT</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Processor halt bit. &#10;This bit is UNKNOWN after a Power-on reset.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No effect.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Halt the processor.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>C_STEP</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Processor step bit.&#10;This bit is UNKNOWN after a Power-on reset.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No effect.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Step the processor.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>C_MASKINTS</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>C_MASKINTS bit. When debug is enabled, the debugger can write to this bit to mask PendSV, SysTick and external configurable interrupts. The effect of any attempt to change the value of this bit is UNPREDICTABLE unless both:&#10;- before the write to DHCSR, the value of the C_HALT bit is 1.&#10;- the write to the DHCSR that changes the C_MASKINTS bit also writes 1 to the C_HALT bit.&#10;This means that a single write to DHCSR cannot set the C_HALT to 0 and change the value of the C_MASKINTS bit.&#10;The bit does not affect NMI. When DHCSR.C_DEBUGEN is set to 0, the value of this bit is UNKNOWN.&#10;This bit is UNKNOWN after a Power-on reset.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Do not mask.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Mask PenSV, SysTick and external configurable interrupts.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>12</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>13</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name>S_REGRDY</name>
+      <bitrange>16</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>S_REGRDY bit. A handshake flag for transfers through the DCRDR:&#10;- Writing to DCRSR clears the bit to 0.&#10;- Completion of the DCRDR transfer then sets the bit to 1.&#10;This bit is valid only when the processor is in Debug state, otherwise the bit is UNKNOWN.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>There has been a write to the DCRDR, but the transfer is not complete.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The transfer to or from the DCRDR is complete.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>S_HALT</name>
+      <bitrange>17</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>S_HALT bit. Indicates whether the processor is in Debug state.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Not in Debug state.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>In Debug state.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>S_SLEEP</name>
+      <bitrange>18</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>S_SLEEP bit. Indicates whether the processor is sleeping.&#10;The debugger must set the C_HALT bit to 1 to gain control, or wait for an interrupt or other wakeup event to wakeup the system.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Not sleeping.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Sleeping.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>S_LOCKUP</name>
+      <bitrange>19</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>S_LOCKUP bit. Indicates whether the processor is locked up because of an unrecoverable exception.&#10;This bit can only be read as 1 by a remote debugger, using the DAP. The value of 1 indicates that the processor is running but locked up.&#10;The bit clears to 0 when the processor enters Debug state.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Not locked up</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Locked up</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>20</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>21</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>22</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>23</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name>S_RETIRE_ST</name>
+      <bitrange>24</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>S_RETIRE_ST bit. Indicates whether the processor has completed the execution of an instruction since the last read of DHCSR.&#10;This is a sticky bit, that clears to 0 on a read of DHCSR.&#10;A debugger can check this bit to determine if the processor is stalled on a load, store or fetch access.&#10;This bit is UNKNOWN after a Power-on or Local reset, but then is set to 1 as soon as the processor executes and retires an instruction.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No instruction retired since last DHCSR read.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>At least one instruction retired since last DHCSR read.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>S_RESET_ST</name>
+      <bitrange>25</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>S_RESET_ST bit. Indicates whether the processor has been reset since the last read of DHCSR.&#10;This is a sticky bit, that clears to 0 on a read of DHCSR.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No reset since last DHCSR read.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>At least one reset since last DHCSR read.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>26</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>27</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>28</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>29</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>30</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

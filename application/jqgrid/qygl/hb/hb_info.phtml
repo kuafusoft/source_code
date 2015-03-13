@@ -1,0 +1,20 @@
+<?php
+//<!-- 伙伴基本信息 -->
+    require_once('kf_tool.php');
+    $tool = new kf_tool();
+    $es = array(
+        array('type'=>'div', 'id'=>'div_hb'),
+            array('type'=>'fieldset', 'id'=>'hb_info', 'legend'=>'基本信息'),
+                array('type'=>'text', 'id'=>'name', 'name'=>'name', 'label'=>'名称'),
+                array('type'=>'text', 'id'=>'homepage', 'name'=>'homepage', 'label'=>'主页'),
+                array('type'=>'text', 'id'=>'identity_no', 'name'=>'identity_no', 'label'=>'编号'),
+                array('type'=>'text', 'id'=>'account_no', 'name'=>'account_no', 'label'=>'账号'),
+                array('type'=>'text', 'id'=>'mobile_no', 'name'=>'mobile_no', 'label'=>'手机'),
+                array('type'=>'text', 'id'=>'email', 'name'=>'email', 'label'=>'电邮'),
+                array('type'=>'select', 'id'=>'credit_level_id', 'name'=>'credit_level_id', 'label'=>'信用等级', $this->credit_level),
+                array('type'=>'text', 'id'=>'account_receivable', 'name'=>'account_receivable', 'label'=>'应收款'),
+            array('type'=>'/fieldset'),
+        array('type'=>'/div')
+    );
+    $tool->createElements($es);
+?>

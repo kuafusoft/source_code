@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SPI1_DL</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>SPI data register low</description>
+  <bitfields>
+    <bitfield>
+      <name>Bits</name>
+      <bitrange>7:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Data (low byte)</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

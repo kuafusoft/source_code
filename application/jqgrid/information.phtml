@@ -1,0 +1,108 @@
+﻿<?php
+	$tabId = 'information_tabs_'.$this->db.'_'.$this->table.'_'.$this->id;
+	if ($this->newpage){
+?>
+<html>
+	<head>
+		<meta content="no-cache" http-equiv="Cache-Control">
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="en-US" http-equiv="Content-Language">
+		<title>
+			<?php
+				$app = Zend_Controller_Front::getInstance()->getParam('bootstrap')->getOption('app');
+				print_r($app['name'].' '.$app['version']);
+			?>
+		</title>
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/smoothness/jquery-ui-1.8.2.custom.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/layout.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/ui.jqgrid.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/jquery.contextMenu.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/kf_layout.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/jquery.qtip.min.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/css/qtip_table.css">
+		<script src="/js/lib/json.js" type="text/javascript"></script>
+		<script src="/js/lib/jquery-1.6.4.min.js" type="text/javascript"></script>
+		<script src="/js/lib/jquery-ui-1.8.4.custom.js" type="text/javascript"></script>
+		<script src="/js/lib/layout.jquery.js" type="text/javascript"></script>
+		<script src="/js/lib/jquery.contextMenu.js" type="text/javascript"></script>
+		<script src="/js/lib/jqgrid_3.8.2/js/i18n/grid.locale-en.js" type="text/javascript"></script>
+		<script src="/js/lib/jqgrid_3.8.2/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+		<script src="/js/kf_tool.js" type="text/javascript"></script>
+		<script src="/js/kf_jq.js" type="text/javascript"></script>
+		<script src="/js/grid_factory.js" type="text/javascript"></script>
+
+		<script src="/js/prj_xt.js" type="text/javascript"></script>
+		<script src="/js/prj_qygl.js" type="text/javascript"></script>
+		<script src="/js/jquery.qtip.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+	<?php
+	}
+	?>
+<div id="<?php echo $tabId; ?>" class="information">
+	<div id="div_hidden">
+		<input type='hidden' id='db' value="<?php echo $this->db; ?>">
+		<input type='hidden' id='table' value="<?php echo $this->table; ?>">
+		<input type='hidden' id="id" value='<?php echo $this->id; ?>' />
+		<input type='hidden' id="element_id" value='<?php echo $this->id; ?>' />
+		<input type='hidden' id="parent_id" value='<?php echo isset($this->parent) ? $this->parent : 0; ?>' />
+		<input type='hidden' id="clone" value='false' />
+		<input type='hidden' id='info_tabs' value='<?php echo $this->default_list; ?>' />
+	</div>
+	<ul>
+	<?php
+	foreach($this->tabs as $key=>$tab){
+		$disabled = '';
+		if (!empty($tab['disabled']))
+			$disabled = "disabled='disabled'";
+		if (empty($tab['label']))
+			$tab['label'] = $key;
+		print_r("<li $disabled><a href='#$tabId #{$key}_{$this->id}'>{$tab['label']}</a></li>");
+	}
+	?>
+	</ul>
+
+	<?php
+	foreach($this->tabs as $key=>$tab){
+		$tab['db'] = $this->db;
+		$tab['table'] = $this->table;
+		print_r("<div id='{$key}_{$this->id}'>");
+		$phtml = $key.'.phtml';
+		if (!empty($tab['view_file']))
+			$phtml = $tab['view_file'];
+		if (!empty($tab['view_file_dir']))
+			$phtml = $tab['view_file_dir'].'/'.$phtml;		
+// print_r($phtml);			
+		echo $this->partial($phtml, $tab);
+		print_r("</div>");
+	}
+	?>
+</div>
+
+<?php 
+if ($this->newpage){
+	?>
+	</body>
+	<script>
+	$(function(){
+		var db = '<?php echo $this->db;?>';
+		var table = '<?php echo $this->table; ?>';
+		var container = '<?php echo $this->container;?>';
+		var tabId = '<?php echo $tabId;?>';
+		var rowId = <?php echo $this->id;?>;
+		var real_table = '<?php echo $this->real_table; ?>';
+		// var tool = new kf_tool();
+//alert("db = " + db + ", table = " + table + ", container = " + container);		
+		if (container == undefined || container == '')
+			container = 'mainContent';
+		var grid = grid_factory.get(db, table, {container:container, real_table:real_table});
+// tool.debug(grid);		
+		var grid_action = grid.getAction();
+		// tool.defaultActionForTab('#' + tabId);
+		return grid_action.information_open(tabId, rowId);
+	});
+	</script>
+</html>
+<?php 
+}
+?>

@@ -1,0 +1,76 @@
+<div id='div_view_edit'>
+	<div id='div_testcase_info'>
+	<?php
+		require_once('kf_tool.php');
+		$editing = isset($this->editing) ? $this->editing : false;
+		$tool = new KF_Tool();
+		print_r("<fieldset><legend>Testcase Info <span style='color:RED'>[Affect all Versions]</span></legend>");
+			$tool->cf($this->caseModels, $this->parent == 0, $this->caseValue, 2); // 如果Testcase_id非零，则Testcase的字段应不可编辑
+	print_r("</div>");			
+	print_r("</fieldset>");
+//		print_r("<div id='div_view_edit'>");
+		print_r("<fieldset><legend>Version Information</legend>");
+			$tool->cf($this->verModels, $editing, $this->value, 1);
+		print_r("</fieldset>");
+	?>
+</div>
+<div id="div_button_edit">
+<?php
+	if (!empty($this->editable)){
+		if (!isset($this->btn)){
+			$this->btn = array(
+				'cancel'=>array('onclick'=>'XT.view_edit_cancel(this)', 'label'=>'Cancel', 'style'=>'display:none;position:relative;float:right'),
+				'save'=>array('onclick'=>'XT.view_edit_save(this)', 'label'=>'Save', 'style'=>'display:none;position:relative;float:right'),
+				'cloneit'=>array('onclick'=>'XT.view_edit_clone(this)', 'label'=>'Clone', 'style'=>'display:none;position:relative;float:right'),
+				'edit'=>array('onclick'=>'XT.view_edit_edit(this)', 'label'=>'Edit', 'style'=>'dposition:relative;float:right'),
+			);
+		}
+		foreach($this->btn as $id=>$btn){
+			if (!isset($btn['type']))
+				$btn['type'] = 'button';
+			if (isset($btn['not_allowed']) && $btn['not_allowed'])
+				continue;
+			switch($btn['type']){
+				case 'button':
+					$str = "<button type='button' id='$id'";
+					if (isset($btn['onclick']))
+						$str .= " onclick='{$btn['onclick']}'";
+					if (isset($btn['style']))
+						$str .= " style='{$btn['style']}'";
+					$str .= ">";
+					if (!isset($btn['label']))
+						$btn['label'] = $id;
+					$str .= $btn['label'];
+					$str .= "</button>";
+					break;
+				case 'select':
+	//print_r($id);
+	//print_r($btn);
+					$str = "<select id='$id'";
+					if (isset($btn['style']))
+						$str .= " style='{$btn['style']}'";
+					$str .= ">";
+					foreach($btn['options'] as $k=>$v){
+						$str .= "<option value='$k'>$v</option>";
+					}
+					$str .= "</select>";
+					break;
+			}
+			print_r($str);
+		}
+	}
+?>
+</div>
+<?php
+if($this->id > 0){
+?>	
+<BR>
+<div style="width:100%">
+	<fieldset><legend>Test Steps</legend>
+		<table id='testcase_ver_steps_<?php echo $this->id;?>'></table>
+		<div id='testcase_ver_steps_<?php echo $this->id;?>_pager'></div>
+	</fieldset>
+</div>
+<?php
+}
+?>

@@ -1,0 +1,1 @@
+SELECT * FROM register_ver where 1 AND `register_id`='63' AND `dim_increment`=0 AND `dim_index`='' AND `description`='ADC Plus-Side General Calibration Value Register' AND `address_offset`=68 AND `size`='32' AND `access_id`='2' AND `reset_value`=10 AND `reset_mask`=4294967295 

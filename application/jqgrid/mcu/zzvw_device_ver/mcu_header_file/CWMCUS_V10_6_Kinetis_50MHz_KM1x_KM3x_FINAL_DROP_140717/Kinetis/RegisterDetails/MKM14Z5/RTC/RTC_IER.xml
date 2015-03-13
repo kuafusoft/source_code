@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>RTC_IER</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x1</reset-value>
+  <description>RTC Interrupt Enable Register</description>
+  <bitfields>
+    <bitfield>
+      <name>TAMPER_IE</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Tamper Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled (Default on reset).</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>ALM_IE</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Alarm Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DAY_IE</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Days Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>HOUR_IE</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Hours Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>MIN_IE</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Minutes Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IE_1HZ</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>1 Hz Interval Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IE_2HZ</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>2 Hz Interval Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IE_4HZ</name>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>4 Hz Interval Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IE_8HZ</name>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>8 Hz Interval Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IE_16HZ</name>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>16 Hz Interval Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IE_32HZ</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>32 Hz Interval Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IE_64HZ</name>
+      <bitrange>12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>64 Hz Interval Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IE_128HZ</name>
+      <bitrange>13</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>128 Hz Interval Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IE_256HZ</name>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>256 Hz Interval Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IE_512HZ</name>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>512 Hz Interval Interrupt Enable bit.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART3_IS7816</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART 7816 Interrupt Status Register</description>
+  <bitfields>
+    <bitfield>
+      <name>RXT</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receive Threshold Exceeded Interrupt</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The number of consecutive NACKS generated as a result of parity errors and buffer overruns is less than or equal to the value in ET7816[RXTHRESHOLD].</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The number of consecutive NACKS generated as a result of parity errors and buffer overruns is greater than the value in ET7816[RXTHRESHOLD].</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXT</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit Threshold Exceeded Interrupt</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The number of retries and corresponding NACKS does not exceed the value in ET7816[TXTHRESHOLD].</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The number of retries and corresponding NACKS exceeds the value in ET7816[TXTHRESHOLD].</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>GTV</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Guard Timer Violated Interrupt</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>A guard time (GT, CGT, or BGT) has not been violated.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>A guard time (GT, CGT, or BGT) has been violated.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>INITD</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Initial Character Detected Interrupt</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>A valid initial character has not been received.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>A valid initial character has been received.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>BWT</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Block Wait Timer Interrupt</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Block wait time (BWT) has not been violated.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Block wait time (BWT) has been violated.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CWT</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Character Wait Timer Interrupt</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Character wait time (CWT) has not been violated.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Character wait time (CWT) has been violated.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WT</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Wait Timer Interrupt</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Wait time (WT) has not been violated.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Wait time (WT) has been violated.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

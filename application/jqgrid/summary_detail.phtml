@@ -1,0 +1,14 @@
+<?php
+if($this->id > 0){
+	$container = isset($this->container) ? $this->container : 'detail';
+	$container .= '_'.$this->id;
+	$base = $container.'_'.$this->db.'_'.$this->detail_table;
+	$table_id = $base.'_list';
+	$pager_id = $base.'_pager';
+?>	
+<BR>
+<table style="width:100%" id='<?php echo $table_id; ?>'></table>
+<div id='<?php echo $pager_id;?>'></div>
+<?php
+}
+?>

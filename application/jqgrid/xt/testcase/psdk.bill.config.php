@@ -1,0 +1,41 @@
+<?php
+	$columnMap = array(
+		'default'=>array(
+			'start_row'=>3,
+			'columns'=>array(
+				'code'=>'A',
+				'testcase_priority_id'=>'B',
+				'summary'=>'C',
+				'testcase_module'=>'D',
+				'precondition'=>'E',
+				'steps'=>'F',
+				'expected_result'=>'G'
+			)
+		),
+		'PSDK_RTOS'=>array(
+			'start_row'=>3,
+			'columns'=>array(
+				'code'=>'A',
+				'testcase_priority_id'=>'B',
+				'summary'=>'C',
+				'testcase_module'=>'D',
+				'precondition'=>'E',
+				'steps'=>'F',
+				'expected_result'=>'G'
+			)
+		),
+		'PSDK_KPTK'=>array(
+			'start_row'=>3,
+			'columns'=>array(
+				'code'=>'A',
+				'testcase_priority_id'=>'B',
+				'summary'=>'C',
+				'testcase_module'=>'D',
+				'precondition'=>'E',
+				'steps'=>'F',
+				'expected_result'=>'G'
+			)
+		)
+		
+	);
+?>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SCB_CPUID</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x410CC600</reset-value>
+  <description>CPUID Base Register</description>
+  <bitfields>
+    <bitfield>
+      <name>REVISION</name>
+      <bitrange>3:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Indicates patch release: 0x0 = Patch 0</description>
+    </bitfield>
+    <bitfield>
+      <name>PARTNO</name>
+      <bitrange>15:4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Indicates part number</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>16</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>(Constant) Reads as 0</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>17</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>(Constant) Reads as 0</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>18</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>(Constant) Reads as 1</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>19</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>(Constant) Reads as 1</description>
+    </bitfield>
+    <bitfield>
+      <name>VARIANT</name>
+      <bitrange>23:20</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Indicates processor revision: 0x2 = Revision 2</description>
+    </bitfield>
+    <bitfield>
+      <name>IMPLEMENTER</name>
+      <bitrange>31:24</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Implementer code</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

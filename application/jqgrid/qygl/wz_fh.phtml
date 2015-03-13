@@ -1,0 +1,41 @@
+<?php
+    if ($this->from == 'wz'){ // 入口是物资，则物资名称是固定的，而供应商是可选的
+?>
+        <label for='fh_wz'>产品:<input type='text' name='fh[wz]' id='fh_wz' value="<?php echo $this->wz; ?>" /></label>
+        <label for='fh_hzhb_id'>客户:<select id='fh_hzbh_id' name='fh[hzhb_id]'> 
+        <?php
+            foreach($this->ht as $ht){
+                echo '<option value="'.$ht['hzhb_id'].'">'.$ht['hzhb'].'</option>'; 
+            }
+        ?>
+        </select></label><BR />
+<?php    
+    }
+    else if ($this->from = 'hzhb'){ // 入口是合作伙伴，则供应商是固定的，而物资名称是可选的
+?>
+        <label for='fh_hzhb'>客户:<input type='text' name='fh[hzhb]' id='fh_hzbh' value="<?php echo $this->hzhb; ?>" /></label>
+        <label for='fh_wz'>产品:<select id='fh_wz_id' name='fh[wz_id]'> 
+        <?php
+            foreach($this->ht as $ht){
+                echo '<option value="'.$ht['wz_id'].'">'.$ht['wz'].'</option>'; 
+            }
+        ?>
+        </select></label><BR />
+<?php    
+    }
+?>
+    <label for='fh_price'>单价：<input type='text' id='fh_price' name='fh[price]' /></label>
+    <label for='fh_amount'>数量：<input type='text' id='fh_amount' name='fh[amount]' /></label><?php echo $this->ht[0]['count_unit']; ?><BR />
+    
+    <label for ='fh_pay'>现在回款？<input type='checkbox' id='fh_pay' name='fh[pay]' checked='false'></label>
+    <div id='div_fh_pay'>
+        <?php
+        echo $this->partial('hk.phtml', array('type'=>'fh', 'title'=>'货款'));
+        ?>
+    </div>    
+    
+    <div id='div_chuku'>
+        <?php 
+            echo $this->partial('wz_rk.phtml');
+        ?>
+    </div>         

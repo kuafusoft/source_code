@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SPI1_S</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0x20</reset-value>
+  <description>SPI status register</description>
+  <bitfields>
+    <bitfield>
+      <name>RFIFOEF</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>SPI read FIFO empty flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Read FIFO has data. Reads of the DH:DL registers in 16-bit mode or the DL register in 8-bit mode will empty the read FIFO.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Read FIFO is empty.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXFULLF</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Transmit FIFO full flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Transmit FIFO has less than 8 bytes</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Transmit FIFO has 8 bytes of data</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TNEAREF</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Transmit FIFO nearly empty flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Transmit FIFO has more than 16 bits (when C3[5] is 0) or more than 32 bits (when C3[5] is 1) remaining to transmit</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Transmit FIFO has an amount of data equal to or less than 16 bits (when C3[5] is 0) or 32 bits (when C3[5] is 1) remaining to transmit</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RNFULLF</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Receive FIFO nearly full flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Receive FIFO has received less than 48 bits (when C3[4] is 0) or less than 32 bits (when C3[4] is 1)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Receive FIFO has received data of an amount equal to or greater than 48 bits (when C3[4] is 0) or 32 bits (when C3[4] is 1)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>MODF</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Master mode fault flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No mode fault error</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Mode fault error detected</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPTEF</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>SPI transmit buffer empty flag (when FIFO is not supported or not enabled) or SPI transmit FIFO empty flag (when FIFO is supported and enabled)</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>SPI transmit buffer not empty (when FIFOMODE is not present or is 0) or SPI FIFO not empty (when FIFOMODE is 1)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>SPI transmit buffer empty (when FIFOMODE is not present or is 0) or SPI FIFO empty (when FIFOMODE is 1)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPMF</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>SPI match flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Value in the receive data buffer does not match the value in the MH:ML registers</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Value in the receive data buffer matches the value in the MH:ML registers</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPRF</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>SPI read buffer full flag (when FIFO is not supported or not enabled) or SPI read FIFO FULL flag (when FIFO is supported and enabled)</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No data available in the receive data buffer (when FIFOMODE is not present or is 0) or Read FIFO is not full (when FIFOMODE is 1)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Data available in the receive data buffer (when FIFOMODE is not present or is 0) or Read FIFO is full (when FIFOMODE is 1)</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

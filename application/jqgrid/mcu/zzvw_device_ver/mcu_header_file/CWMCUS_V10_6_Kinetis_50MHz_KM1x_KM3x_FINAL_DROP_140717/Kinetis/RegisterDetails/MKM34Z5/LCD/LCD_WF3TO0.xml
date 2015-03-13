@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>LCD_WF3TO0</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>LCD Waveform register</description>
+  <bitfields>
+    <bitfield>
+      <name>WF0</name>
+      <bitrange>7:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Controls segments or phases connected to LCD_P0 as described above for WF3.</description>
+    </bitfield>
+    <bitfield>
+      <name>WF1</name>
+      <bitrange>15:8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Controls segments or phases connected to LCD_P1 as described above for WF3.</description>
+    </bitfield>
+    <bitfield>
+      <name>WF2</name>
+      <bitrange>23:16</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Controls segments or phases connected to LCD_P2 as described above for WF3.</description>
+    </bitfield>
+    <bitfield>
+      <name>WF3</name>
+      <bitrange>31:24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Segment-on front plane operation - Each bit turns on or off the segments associated with LCD_P3 in the following pattern: HGFEDCBA (most significant bit controls segment H and least significant bit controls segment A). Segment-on back plane operation - Each bit activates or deactivates the phases associated with LCD_P3 in the following pattern: HGFEDCBA (most significant bit controls phase H and least significant bit controls phase A). For each bit: 0 Segment off or phase deactivated 1 Segment on or phase activated</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

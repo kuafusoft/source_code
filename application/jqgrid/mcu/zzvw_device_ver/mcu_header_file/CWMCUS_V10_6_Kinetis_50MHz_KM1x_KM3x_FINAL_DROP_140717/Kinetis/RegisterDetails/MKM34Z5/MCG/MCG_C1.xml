@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MCG_C1</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0x44</reset-value>
+  <description>MCG Control 1 Register</description>
+  <bitfields>
+    <bitfield>
+      <name>IREFSTEN</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Internal Reference Stop Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal reference clock is disabled in Stop mode.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Internal reference clock is enabled in Stop mode if IRCLKEN is set or if MCG is in FEI, FBI, or BLPI modes before entering Stop mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IRCLKEN</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Internal Reference Clock Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>MCGIRCLK inactive.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>MCGIRCLK active.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IREFS</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Internal Reference Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>External reference clock is selected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The slow internal reference clock is selected.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FRDIV</name>
+      <bitrange>5:3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>FLL External Reference Divider</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>If RANGE 0 = 0 , Divide Factor is 1; for all other RANGE 0 values, Divide Factor is 32.</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>If RANGE 0 = 0 , Divide Factor is 2; for all other RANGE 0 values, Divide Factor is 64.</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>If RANGE 0 = 0 , Divide Factor is 4; for all other RANGE 0 values, Divide Factor is 128.</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>If RANGE 0 = 0 , Divide Factor is 8; for all other RANGE 0 values, Divide Factor is 256.</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>If RANGE 0 = 0 , Divide Factor is 16; for all other RANGE 0 values, Divide Factor is 512.</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>If RANGE 0 = 0 , Divide Factor is 32; for all other RANGE 0 values, Divide Factor is 1024.</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>If RANGE 0 = 0 , Divide Factor is 64; for all other RANGE 0 values, Divide Factor is 1280 .</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>If RANGE 0 = 0 , Divide Factor is 128; for all other RANGE 0 values, Divide Factor is 1536 .</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CLKS</name>
+      <bitrange>7:6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Clock Source Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Encoding 0 - Output of FLL or PLL is selected (depends on PLLS control bit).</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Encoding 1 - Internal reference clock is selected.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Encoding 2 - External reference clock is selected.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Encoding 3 - Reserved.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,16 @@
+<?php
+require_once('toolfactory.php');
+
+$tool = toolFactory::get('kf');
+$currentYear = date('Y');
+$years = array();
+for($i = 0; $i < 4; $i ++){
+	$years[$currentYear + $i] = $currentYear + $i;
+}
+$es = array(
+	array('label'=>'Year', 'name'=>'year', 'editable'=>true, 'DATA_TYPE'=>'text', 'type'=>'select', 'editoptions'=>array('value'=>$years)),
+	array('label'=>'Period', 'name'=>'period', 'editable'=>true, 'DATA_TYPE'=>'int', 'type'=>'checkbox', 'editrules'=>array('required'=>true),
+		'editoptions'=>array('value'=>array('week'=>'Week', 'month'=>'Month', 'season'=>'Season', 'half_year'=>'Half Year')))
+);
+$tool->cf($es, true, array('year'=>$currentYear, 'period'=>'week,month'), 1);
+?>

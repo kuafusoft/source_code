@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SPI0_BR</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>SPI baud rate register</description>
+  <bitfields>
+    <bitfield>
+      <name>SPR</name>
+      <bitrange>3:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI baud rate divisor</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>Baud rate divisor is 2</description>
+        </value>
+        <value>
+          <value>0b0001</value>
+          <description>Baud rate divisor is 4</description>
+        </value>
+        <value>
+          <value>0b0010</value>
+          <description>Baud rate divisor is 8</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>Baud rate divisor is 16</description>
+        </value>
+        <value>
+          <value>0b0100</value>
+          <description>Baud rate divisor is 32</description>
+        </value>
+        <value>
+          <value>0b0101</value>
+          <description>Baud rate divisor is 64</description>
+        </value>
+        <value>
+          <value>0b0110</value>
+          <description>Baud rate divisor is 128</description>
+        </value>
+        <value>
+          <value>0b0111</value>
+          <description>Baud rate divisor is 256</description>
+        </value>
+        <value>
+          <value>0b1000</value>
+          <description>Baud rate divisor is 512</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPPR</name>
+      <bitrange>6:4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI baud rate prescale divisor</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>Baud rate prescaler divisor is 1</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>Baud rate prescaler divisor is 2</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>Baud rate prescaler divisor is 3</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>Baud rate prescaler divisor is 4</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>Baud rate prescaler divisor is 5</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>Baud rate prescaler divisor is 6</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>Baud rate prescaler divisor is 7</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>Baud rate prescaler divisor is 8</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

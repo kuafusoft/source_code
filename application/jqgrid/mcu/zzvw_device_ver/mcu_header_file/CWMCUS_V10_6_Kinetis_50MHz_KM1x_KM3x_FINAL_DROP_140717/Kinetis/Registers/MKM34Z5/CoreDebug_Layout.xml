@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>CoreDebug_Layout</name>
+  <register-sets>
+    <register-set-descriptor>
+      <name>Core Debug Registers</name>
+      <registers>
+        <register>
+          <name>DFSR</name>
+          <access>RW</access>
+          <register-details-file-name>CoreDebug/DFSR.xml</register-details-file-name>
+          <offset>0xD30</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xE000E000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>DHCSR_Read</name>
+          <access>RW</access>
+          <register-details-file-name>CoreDebug/DHCSR_Read.xml</register-details-file-name>
+          <offset>0</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xE000EDF0</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>DHCSR_Write</name>
+          <access>RW</access>
+          <register-details-file-name>CoreDebug/DHCSR_Write.xml</register-details-file-name>
+          <offset>0</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xE000EDF0</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>DCRSR</name>
+          <access>W</access>
+          <register-details-file-name>CoreDebug/DCRSR.xml</register-details-file-name>
+          <offset>0x4</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xE000EDF0</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>DCRDR</name>
+          <access>RW</access>
+          <register-details-file-name>CoreDebug/DCRDR.xml</register-details-file-name>
+          <offset>0x8</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xE000EDF0</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>DEMCR</name>
+          <access>RW</access>
+          <register-details-file-name>CoreDebug/DEMCR.xml</register-details-file-name>
+          <offset>0xC</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xE000EDF0</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+      </registers>
+    </register-set-descriptor>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

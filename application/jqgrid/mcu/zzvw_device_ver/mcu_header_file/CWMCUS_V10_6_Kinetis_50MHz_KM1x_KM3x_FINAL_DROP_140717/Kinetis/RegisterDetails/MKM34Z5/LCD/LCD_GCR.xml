@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>LCD_GCR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x8310003</reset-value>
+  <description>LCD General Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>DUTY</name>
+      <bitrange>2:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LCD duty select</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>Use 1 BP (1/1 duty cycle).</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>Use 2 BP (1/2 duty cycle).</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>Use 3 BP (1/3 duty cycle).</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>Use 4 BP (1/4 duty cycle). (Default)</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>Use 5 BP (1/5 duty cycle).</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>Use 6 BP (1/6 duty cycle).</description>
+        </value>
+        <value>
+          <value>0b110</value>
+          <description>Use 7 BP (1/7 duty cycle).</description>
+        </value>
+        <value>
+          <value>0b111</value>
+          <description>Use 8 BP (1/8 duty cycle).</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LCLK</name>
+      <bitrange>5:3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LCD Clock Prescaler</description>
+    </bitfield>
+    <bitfield>
+      <name>SOURCE</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LCD Clock Source Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Selects the default clock as the LCD clock source.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Selects the alternate clock as the LCD clock source.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LCDEN</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LCD Driver Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>All front plane and back plane pins are disabled. The LCD controller system is also disabled, and all LCD waveform generation clocks are stopped. V LL3 is connected to V DD internally.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>LCD controller driver system is enabled, and front plane and back plane waveforms are generated. All LCD pins, LCD_Pn, enabled using the LCD Pin Enable register, output an LCD driver waveform. The back plane pins output an LCD driver back plane waveform based on the settings of DUTY[2:0]. Charge pump or resistor bias is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LCDSTP</name>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LCD Stop</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Allows the LCD driver, charge pump, resistor bias network, and voltage regulator to continue running during Stop mode.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Disables the LCD driver, charge pump, resistor bias network, and voltage regulator when MCU enters Stop mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LCDDOZE</name>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LCD Doze enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Allows the LCD driver, charge pump, resistor bias network, and voltage regulator to continue running during Doze mode.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Disables the LCD driver, charge pump, resistor bias network, and voltage regulator when MCU enters Doze mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name>ALTDIV</name>
+      <bitrange>13:12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LCD AlternateClock Divider</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Divide factor = 1 (No divide)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Divide factor = 8</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FDCIEN</name>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LCD Fault Detection Complete Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No interrupt request is generated by this event.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>When a fault is detected and FDCF bit is set, this event causes an interrupt request.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LCDIEN</name>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LCD Frame Frequency Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No interrupt request is generated by this event.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>When LCDIF bit is set, this event causes an interrupt request.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>16</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+    </bitfield>
+    <bitfield>
+      <name>VSUPPLY</name>
+      <bitrange>17</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Voltage Supply Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Drive VLL3 internally from VDD</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Drive VLL3 externally from VDD or drive VLL internally from vIREG</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>18</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>19</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name>LADJ</name>
+      <bitrange>21:20</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Load Adjust</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>22</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name>CPSEL</name>
+      <bitrange>23</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Charge Pump or Resistor Bias Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>LCD charge pump is disabled. Resistor network selected. (The internal 1/3-bias is forced.)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>LCD charge pump is selected. Resistor network disabled. (The internal 1/3-bias is forced.)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RVTRIM</name>
+      <bitrange>27:24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Regulated Voltage Trim</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>30:28</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name>RVEN</name>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Regulated Voltage Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Regulated voltage disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Regulated voltage enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

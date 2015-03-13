@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>XBAR_CTRL0</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Crossbar Control Register 0</description>
+  <bitfields>
+    <bitfield>
+      <name>DEN0</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA Enable for XBAR_OUT0</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>DMA disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>DMA enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IEN0</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Enable for XBAR_OUT0</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>EDGE0</name>
+      <bitrange>3:2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Active edge for edge detection on XBAR_OUT0</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>STS0 never asserts</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>STS0 asserts on rising edges of XBAR_OUT0</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>STS0 asserts on falling edges of XBAR_OUT0</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>STS0 asserts on rising and falling edges of XBAR_OUT0</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>STS0</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Edge detection status for XBAR_OUT0</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Active edge not yet detected on XBAR_OUT0</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Active edge detected on XBAR_OUT0</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15:5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

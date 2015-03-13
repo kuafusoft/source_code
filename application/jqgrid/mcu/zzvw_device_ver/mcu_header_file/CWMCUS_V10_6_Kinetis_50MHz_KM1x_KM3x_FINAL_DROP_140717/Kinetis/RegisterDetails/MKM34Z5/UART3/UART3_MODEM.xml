@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART3_MODEM</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART Modem Register</description>
+  <bitfields>
+    <bitfield>
+      <name>TXCTSE</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmitter clear-to-send enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>CTS has no effect on the transmitter.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enables clear-to-send operation. The transmitter checks the state of CTS each time it is ready to send a character. If CTS is asserted, the character is sent. If CTS is deasserted, the signal TXD remains in the mark state and transmission is delayed until CTS is asserted. Changes in CTS as a character is being sent do not affect its transmission.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXRTSE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmitter request-to-send enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The transmitter has no effect on RTS.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>When a character is placed into an empty transmitter data buffer , RTS asserts one bit time before the start bit is transmitted. RTS deasserts one bit time after all characters in the transmitter data buffer and shift register are completely sent, including the last stop bit. (FIFO) (FIFO)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXRTSPOL</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmitter request-to-send polarity</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Transmitter RTS is active low.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Transmitter RTS is active high.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RXRTSE</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receiver request-to-send enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The receiver has no effect on RTS.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>RTS is deasserted if the number of characters in the receiver data register (FIFO) is equal to or greater than RWFIFO[RXWATER]. RTS is asserted when the number of characters in the receiver data register (FIFO) is less than RWFIFO[RXWATER].</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7:4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

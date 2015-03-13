@@ -1,0 +1,22 @@
+<?php
+//<!-- 客户 -->
+    require_once('kf_tool.php');
+    $tool = new kf_tool();
+    $es = array(
+        array('type'=>'div', 'id'=>'div_customer'),
+            array('type'=>'div', 'id'=>'div_is_customer'),
+                array('type'=>'checkbox', 'id'=>'is_customer', 'name'=>'is_customer', 'label'=>'是否客户')，
+            array('type'=>'/div'),
+            //需求产品信息
+            array('type'=>'fieldset', 'id'=>'customer_zy', 'legend'=>'需求产品'),
+                array('type'=>'div', 'id'=>'customer_zy_inner'),
+                    array('type'=>'div', 'id'=>'customer_zy_temp'),
+                        array('type'=>'select', 'id'=>'customer_zy_id', 'name'=>'zy_id[]', 'label'=>'产品', 'option'=>$this->cp),
+                    array('type'=>'/div'),
+                array('type'=>'/div'),   
+                array('type'=>'button', 'id'=>'yg_add_skill', 'value'=>'+', 'onclick'=>"yg_addSkill('customer_zy_inner', 'customer_zy_temp')"),                     
+            array('type'=>'/fieldset'),
+        array('type'=>'/div')
+    );
+    $tool->createElements($es);
+?>

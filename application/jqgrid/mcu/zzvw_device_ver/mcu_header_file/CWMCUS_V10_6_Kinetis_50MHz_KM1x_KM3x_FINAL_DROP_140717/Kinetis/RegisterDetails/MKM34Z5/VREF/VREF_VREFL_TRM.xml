@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>VREF_VREFL_TRM</name>
+  <bitrange>7:0</bitrange>
+  <description>VREFL TRIM Register</description>
+  <bitfields>
+    <bitfield>
+      <name>VREFL_TRIM</name>
+      <bitrange>2:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>These bits trim the VREFL reference voltage in steps of 10 mV. The mid voltage of the trim range is 0.4 V at the trim value of 3&apos;b011. Value of VREFL_TRIM (default 011) is determined by ifr.</description>
+    </bitfield>
+    <bitfield>
+      <name>VREFL_EN</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>This bit enables the VREFL (0.4 V) reference buffer.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disable</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enable</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>VREFL_SEL</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>This bit selects between internal and external 1.2 V reference.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Internal reference</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>External reference</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7:5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

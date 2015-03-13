@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART2_C4</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART Control Register 4</description>
+  <bitfields>
+    <bitfield>
+      <name>BRFA</name>
+      <bitrange>4:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Baud Rate Fine Adjust</description>
+    </bitfield>
+    <bitfield>
+      <name>M10</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>10-bit Mode select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The parity bit is the ninth bit in the serial transmission.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The parity bit is the tenth bit in the serial transmission.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>MAEN2</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Match Address Mode Enable 2</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>All data received is transferred to the data buffer if MAEN1 is cleared.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>All data received with the most significant bit cleared, is discarded. All data received with the most significant bit set, is compared with contents of MA2 register. If no match occurs, the data is discarded. If a match occurs, data is transferred to the data buffer. This field must be cleared when C7816[ISO7816E] is set/enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>MAEN1</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Match Address Mode Enable 1</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>All data received is transferred to the data buffer if MAEN2 is cleared.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>All data received with the most significant bit cleared, is discarded. All data received with the most significant bit set, is compared with contents of MA1 register. If no match occurs, the data is discarded. If match occurs, data is transferred to the data buffer. This field must be cleared when C7816[ISO7816E] is set/enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,12 @@
+<form id='import_form' enctype="multipart/form-data" method='post' action='/jqgrid/jqgrid/oper/import/db/<?php echo $this->db;?>/table/<?php echo $this->table;?>' target='hidden_frame' >
+	<input  type="file"  name="uploaded_file" prop_edit="readonly" class="ces" value="" editable="1" original_value="" required="1" style="float:left;">
+	<input type="submit" id='upload_button' value="Upload" style="float:right" onclick='return XT.beginImportSubmit(this, "<?php echo $this->db; ?>", "<?php echo $this->table;?>", "hidden_frame", "uploaded_file");'/>
+</form>
+<iframe name='hidden_frame' id='hidden_frame' style='width:100%;clear:both' >
+</iframe>
+
+<script>
+	function endImport(db, table){
+		XT.endImportSubmit('#import_form #upload_button', db, table, 'hidden_frame', 'uploaded_file');
+	}
+</script>

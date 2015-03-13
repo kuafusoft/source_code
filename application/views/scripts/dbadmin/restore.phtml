@@ -1,0 +1,29 @@
+<div>
+	<label for="file_list">Please Select Backup File:</label>
+	<select id="file_list">
+		<?php
+		foreach($this->fileList as $file){
+			print_r("<option value='$file'>$file</option>");
+		}
+		?>
+	</select>
+	<br /><br/>
+	
+	<button id="btn_restore">Start Restore</button>
+</div>
+
+<script>
+	$('#btn_restore').click(function(){
+		var file_name = $('#file_list').val(), host = $('#host').val();
+		var tool = new kf_tool();
+		var dialog = tool.waitingDialog();
+		$.post('/dbadmin/restore/', {file_name:file_name}, function(data){
+			dialog.dialog('close');
+			if (data.errcode == 0)
+				alert("success to restore the " + data['msg']);
+			else
+				alert("Fail to restore for: " + data.msg);
+		}, 'json');
+	
+	});
+</script>

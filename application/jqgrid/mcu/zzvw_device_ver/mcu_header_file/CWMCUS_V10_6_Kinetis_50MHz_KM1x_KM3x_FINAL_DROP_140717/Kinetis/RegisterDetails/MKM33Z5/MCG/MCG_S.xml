@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MCG_S</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0x15</reset-value>
+  <description>MCG Status Register</description>
+  <bitfields>
+    <bitfield>
+      <name>IRCST</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Internal Reference Clock Status</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Source of internal reference clock is the slow clock (32 kHz IRC).</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Source of internal reference clock is the fast clock (4 MHz IRC).</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>OSCINIT0</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>OSC Initialization</description>
+    </bitfield>
+    <bitfield>
+      <name>CLKST</name>
+      <bitrange>3:2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Clock Mode Status</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Encoding 0 - Output of the FLL is selected (reset default).</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Encoding 1 - Internal reference clock is selected.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Encoding 2 - External reference clock is selected.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Encoding 3 - Output of the PLL is selected.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IREFST</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Internal Reference Status</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Source of FLL reference clock is the external reference clock.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Source of FLL reference clock is the internal reference clock.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>PLLST</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>PLL Select Status</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Source of PLLS clock is FLL clock.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Source of PLLS clock is PLL output clock.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LOCK0</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Lock Status</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>PLL is currently unlocked.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>PLL is currently locked.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LOLS</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Loss of Lock Status</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>PLL has not lost lock since LOLS 0 was last cleared.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>PLL has lost lock since LOLS 0 was last cleared.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

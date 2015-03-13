@@ -1,0 +1,44 @@
+<div id="testcase_rel_script">
+	<table>
+		<tr>
+			<td>
+				<label for="report_type_release">
+					<input type="radio" name="report_type" id="report_type_release" checked="checked" required="1" value="1"> 
+					Case Release: HTML Format Report 
+				</label> 
+			</td> 
+		</tr> 
+		<tr> 
+			<td>
+				<label for="report_type_cmd"> 
+					<input type="radio" name="report_type" id="report_type_cmd" value="2" required="1"> 
+					Command File For Linux BSP: testcaseid cmd_line 
+				</label> 
+			</td> 
+		</tr> 
+		<tr> 
+			<td>
+				<label for="report_type_codec_cmd"> 
+					<input type="radio" name="report_type" id="report_type_codec_cmd" value="3" required="1"> 
+					Command File For Codec: testcaseid cmd_line 
+				</label> 
+			</td> 
+		</tr> 
+		<tr> 
+			<td>
+				<label for="report_type_xml_cmd"> 
+					<input type="radio" name="report_type" id="report_type_xml_cmd" required="1" value="4"> 
+					XML Command File For Codec: <BR />
+					<pre>
+	&lt;playlist&gt
+		&lt;teststream id="testcaseid"&gt;
+			&lt;caseinfo &gt...&lt;/caseinfo&gt;
+			&lt;streaminfo&gt;...&lt;/streaminfo&gt;
+		&lt;/teststream&gt;
+	&lt;/playlist&gt;
+					</pre>
+				</label> 
+			</td> 
+		</tr> 
+	</table> 
+</div>

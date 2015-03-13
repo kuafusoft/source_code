@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>CMP1_DACCR</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>DAC Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>VOSEL</name>
+      <bitrange>5:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DAC Output Voltage Select</description>
+    </bitfield>
+    <bitfield>
+      <name>VRSEL</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Supply Voltage Reference Source Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>V is selected as resistor ladder network supply reference V. in1 in</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>V is selected as resistor ladder network supply reference V. in2 in</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DACEN</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DAC Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>DAC is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>DAC is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

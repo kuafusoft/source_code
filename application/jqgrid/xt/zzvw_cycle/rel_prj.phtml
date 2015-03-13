@@ -1,0 +1,19 @@
+﻿<!--
+ 应该可以进行不同版本之间的对比
+-->
+<p>Release List:</p>
+<?php
+	$kf_tool = new KF_Tool();
+	$kf_tool->showTable(array('rel_id'=>array('type'=>'checkbox'), 
+		'name', 
+		'category', 
+		'release_time'=>array('label'=>'Release Time'), 
+		), $this->rel);
+?>
+<p>Project List:</p>
+<?php
+	$kf_tool->showTable(array('prj_id'=>array('type'=>'checkbox'), 
+		'name', 'chip', 'compiler'
+		), $this->prj);
+?>
+	<button type='button' onclick='rel_prj_report()'>Show Detail Result</button>

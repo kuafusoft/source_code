@@ -1,0 +1,35 @@
+<!--
+Node--Ver结构的统一编辑样式
+-->
+<div id='div_view_edit'>
+	<input type='hidden' id='node_id' value='<?php echo isset($this->node['value']['id']) ? $this->node['value']['id'] : 0; ?>' />
+	<input type='hidden' id='ver_id' value='<?php echo isset($this->ver['value']['id']) ? $this->ver['value']['id'] : 0;?>' />
+	<?php if (!empty($this->node['value']['id'])){?>
+		<p style="font-size:16px">The <?php echo "{$this->node['caption']} [<span style='color:red'>{$this->node['value']['code']}</span>]"; ?> has total <span style="color:red">
+		<?php echo $this->node['totalVers']; ?></span> Versions, current is Version <span style="color:red"><?php echo $this->ver['value']['ver'];?></span></p>
+	<?php
+	}
+	?>
+	<fieldset style='width:98%'><legend><?php echo $this->node['legend'];?><span style='color:RED'>[Affect all Versions]</span></legend>
+	<?php
+		$node_view_file = $this->node['view_file'];
+		if (!empty($this->node['view_file_dir']))
+			$node_view_file = $this->node['view_file_dir'].'/'.$this->node['view_file'];
+		echo $this->partial($this->node['view_file'], $this->node);
+	?>
+	</fieldset>
+	<fieldset  style='width:98%'><legend>Version <?php echo $this->ver['value']['ver'];?></legend>
+	<?php
+		$ver_view_file = $this->ver['view_file'];
+		if (!empty($this->ver['view_file_dir']))
+			$ver_view_file = $this->ver['view_file_dir'].'/'.$this->ver['view_file'];
+		echo $this->partial($this->ver['view_file'], $this->ver);
+	?>
+	</fieldset>
+</div>
+
+<div id="div_button_edit" style="width:100%">
+	<?php
+	echo $this->partial('button.phtml', $this);
+	?>
+</div>

@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<menus>
+    <menu>
+        <user>
+            <login action="userAdmin_login" />
+            <home action="userAdmin_index" />
+            <logout action="userAdmin_logout" />
+            <changepassword action="userAdmin_changePassword" label="Change Password" />
+            <updateprofile action="userAdmin_updateProfile" label="Update Profile" />
+            <register action="userAdmin_register" />
+            <help action="index_help" />
+        </user>
+		
+        <test label="Test Management">
+            <testcase label="Testcase" action="tc_index" />
+            <testcycle action="cycle_index" label="Test Cycle" title="Manage the test cycles" />
+            <module action="module_index" label="Module" />
+            <testpoint action="testpoint_index" label="Testpoint" />
+			<test_env action="test_env_index" label="Test Environment" title="Manage the test environment" />
+        </test>
+       
+		<hengshan label="System Requirement">
+			<srs_module label="Req Module" action="srs_module_index" img="srs_category_index.gif" />
+			<srs label="Req Item" action="srs_index" img="requirement.jpg" />
+		</hengshan>
+		
+		<stream label="Stream Management">
+            <stream action="codec_stream_index" label="Stream" />
+			<stream_type action="codec_stream_type_index" label="Stream Type" />
+			<format action="codec_stream_format_index" label="Stream Format" />
+            <v4cc action='codec_v4cc_index' label="Video Codec" />
+            <a_codec action='codec_a_codec_index' label="Audio Codec" />
+			<stream_steps action='stream_steps_index' label="Stream Infomation" />
+            <stream_tools action='stream_tools_index' label="Stream Tools" />
+		</stream>
+        
+		<mcu label="MCU Management">
+			<device_ver action='mcu_device_ver_index' label='Device' />
+		</mcu>
+		
+		<qygl_wz label='物资管理' >
+
+		</qygl_wz>
+		<qygl_cw label='财务管理' >
+		
+		</qygl_cw>
+		<qygl_sc label='生产管理' >
+		
+		</qygl_sc>
+		<qygl_hb label='伙伴管理' >
+		
+		</qygl_hb>
+		
+		<qygl_op label='企业运营'>
+			<hb action='hb_index' label='合作伙伴' />
+			<wz action='wz_index' label='物资管理' />
+			<pici action='pici_index' label='批次' />
+			<yw action='yw_index' label='业务' />
+			<zjzh action='zjzh_index' label='资金账户管理' />
+			<zj_pj action='zj_pj_index' label='金融票据' />
+		</qygl_op>
+
+		<qygl_base label='基础数据' >
+			<wz_fl action='wz_fl_index' label='物资分类' />
+			<ck action='ck_index' label='仓库' />
+			<ck_weizhi action='ck_weizhi_index' label='仓位' />
+			<yw_fl action='yw_fl_index' label='业务分类' />
+			<skill action='skill_index' label='技能' />
+			<skill_grade action='skill_grade_index' label='技能等级' />
+			<credit_level action='credit_level_index' label='信用等级' />
+			<dept action='dept_index' label='部门' />
+			<position action='position_index' label='职位' />
+			<hb_fl action='hb_fl_index' label='伙伴类型' />
+			<work_type action='work_type_index' label='工种' />
+			<contact_method action='contact_method_index' label='联系方式' />
+			<zl action='zl_index' label='质量等级' />
+			<defect action='defect_index' label='缺陷' />
+			<gx action='gx_index' label='工序' />
+			<gx_fl action='gx_fl_index' label='工序分类' />
+			<gx_de action='gx_de_index' label='定额管理' />
+			<work_type action='work_type_index' label='工种管理' />
+			<zj_fl action='zj_fl_index' label='资金分类' />
+			<zj_cause action='zj_cause_index' label='资金变动原因' />
+			<jszb action='jszb_index' label='技术指标' />
+			<unit_fl action='unit_fl_index' label='单位分类' />
+			<unit action='unit_index' label='单位' />
+		</qygl_base>
+		
+		
+        <basetable label="Base Table">
+            <tc_type action="tc_type_index" label="Testcase Type" />
+            <tc_priority action="tc_priority_index" label="Testcase Priority" />
+            <tc_source action="tc_source_index" label="Testcase Source" />
+            <tc_category action="tc_category_index" label="Testcase Category" />
+            <cycle_type action="cycle_type_index" label="Cycle Type" />
+            <cycle_category action="cycle_category_index" label="Cycle Category" />
+            <test_result action="test_result_index" label="Test Result" />
+			<env_item_type action="env_item_type_index" label="Env Item Type" />
+			<test_env_item action="env_item_index" label="Test Env Item" title="Manage the test environment items" />
+			<build_target action='build_target_index' label='Build Target' />
+			<rel_category action='rel_category_index' label='Release Category' />
+        </basetable>
+    
+		<workflow label='Workflow'>
+            <customer action="workflow_customer_index" label="Customer" img="useradmin.png"/>
+            <prj action="workflow_prj" label="Project" img="useradmin.png"/>
+            <period action="workflow_period" label="Period" img="useradmin.png"/>
+            <daily_note action="workflow_daily_note" label="Daily Note" img="useradmin.png"/>
+            <work_summary action="workflow_work_summary" label="Work Summary" img="useradmin.png"/>
+            <ticket action="workflow_ticket_index" label="Ticket" img="useradmin.png"/>
+            <ticket_trace action="workflow_ticket_trace_index" label="Ticket Trace" img="useradmin.png"/>
+            <region action="workflow_region_index" label="Region" img="useradmin.png"/>
+            <family action="workflow_family_index" label="Family" img="useradmin.png"/>
+            <part action="workflow_part_index" label="Part" img="useradmin.png"/>
+            <prj_phase action="workflow_prj_phase_index" label="Prj Phase" img="useradmin.png"/>
+            <customer_phase action="workflow_customer_phase_index" label="Customer Phase" img="useradmin.png"/>
+		</workflow>
+
+		<other label="Others">
+			<tag action='tag_index' label='Tag Management' />
+		</other>
+
+        <admin label="Admin">
+            <company action="admin_company" label="Company" img="useradmin.png"/>
+            <user action="admin_user" label="User" img="useradmin.png"/>
+            <user_group action="admin_user_group" label="User Groups" img="useradmin.png"/>
+            <user_role action="admin_user_role" label="User Roles" img="useradmin.png"/>
+            <chip_type action="chip_type_index" label="Chip Type" />
+            <chip action="chip_index" label="Chip" />
+            <board_type action="board_type_index" label="Board Type" />
+            <os action="os_index" label="OS" img="os.jpg"/>
+            <project action="prj_index" label="Project" />
+            <release action='rel_index' label="Release" />
+			<compiler action='compiler_index' label='Compiler' />
+			
+        </admin>
+
+		<db_admin label="DB Admin">
+			<backup action="db_admin_backup" label="Backup" />
+			<restore action="db_admin_restore" label="Restore" />
+			<userlog action="db_admin_userlog" label="User Log" />
+		</db_admin>
+		
+    </menu>
+    
+    <guest extends="menu">
+        <user display="true">
+            <login display="true" />
+            <register display="false" />
+        </user>
+    </guest>
+    
+    <normal extends="guest">
+        <user display="true">
+            <login display="false" />
+            <home display="true" />
+            <logout display="true" />
+            <changepassword display="true" />
+            <updateprofile display="true" />
+            <register display="false" />
+        </user>
+
+		<other display="true">
+			<tag display="true" />
+		</other>
+        
+    </normal>
+    
+	<PM extends="normal">
+	
+	</PM>
+	
+	<Dev extends="normal">
+        <test display="true">
+            <testcase display="true" />
+            <module display="true" />
+            <testpoint display="true" />
+            <testcycle display="true" />
+			<test_env display="true" />
+        </test>
+		<stream display="true">
+            <stream display="true" />
+			<stream_type display="true" />
+			<format display="true" />
+            <v4cc display="true" />
+            <a_codec display="true" />
+			<stream_steps display="true" />
+            <stream_tools display="true" />
+		</stream>
+	</Dev>
+	
+    <tester extends="Dev">
+		<codec display="false" />
+		
+		<mcu display='true'>
+			<device_ver display='true' />
+		</mcu>
+    </tester>
+    
+    <srs extends="normal" >
+		<hengshan display="true">
+			<srs_module display="true" />
+			<srs display="true" />
+		</hengshan>
+	</srs>
+    
+	<coordinator extends="tester">
+	
+	</coordinator>
+	
+	<reviewer extends="tester">
+	
+	</reviewer>
+	
+	<qygl extends='normal'>
+		<qygl_op display='true'>
+			<hb display='true' />
+			<wz display='true' />
+			<pici display='true' />
+			<yw display='true' />
+			<zjzh display='true' />
+			<zj_pj display='true' />
+		</qygl_op>
+		
+		<qygl_base display='true' >
+			<yw_fl display='true' />
+			<skill display='true' />
+			<skill_grade display='true' />
+			<credit_level display='true' />
+			<dept display='true' />
+			<position display='true' />
+			<hb_fl display='true' />
+			<work_type display='true' />
+			<contact_method display='true' />
+			<gx display='true' />
+			<gx_fl display='true' />
+			<gx_de display='true' />
+			<work_type display='true' />
+			<zj_fl display='true' />
+			<zj_cause display='true' />
+			<jszb display='true' />
+			<wz_fl display='true' />
+			<ck display='true' />
+			<ck_weizhi display='true' />
+			<zl display='true' />
+			<defect display='true' />
+			<unit_fl display='true' />
+			<unit display='true' />
+		</qygl_base>
+	</qygl>
+		
+	<workflow extends='normal'>
+		<workflow display='true'>
+			<customer display='true' />
+            <prj display='true'/>
+            <period display='false'/>
+			<daily_note display='false'/>
+			<work_summary display='false'/>
+			<ticket display='true' />
+			<ticket_trace display='true' />
+			<region display='true' />
+			<family display='true' />
+			<part display='true' />
+			<prj_phase display='true' />
+			<customer_phase display='true' />
+		</workflow>
+	</workflow>
+	
+	<assistant_admin extends="coordinator">
+        <basetable display="true">
+            <tc_priority display="true" />
+            <tc_source display="true" />
+            <tc_category display="true" />
+            <cycle_type display="true" />
+			<cycle_category display="true" />
+            <test_result display="true" />
+			<env_item_type display="true" />
+			<test_env_item display="true" />
+			<build_target display='true' />
+			<rel_category display='true' />
+        </basetable>
+        
+        <admin display="true">
+            <project display="true" />
+			<release display="true" />
+            <board_type display="true" />
+			<chip_type display="true" />
+            <chip display="true" />
+            <os display="true" />
+			<compiler display='true' />
+        </admin>
+	</assistant_admin>
+	
+    <admin extends="assistant_admin">
+    	<basetable display="true">
+            <tc_type display="true" />
+        </basetable>
+		
+        <admin display="true">
+            <company display="true" />
+			<user display="true" />
+			<user_group display="true" />
+			<user_role display="true" />
+        </admin>
+
+		<db_admin display="true">
+			<backup  display="true" />
+			<restore  display="true" />
+			<userlog display="true" />
+		</db_admin>
+	</admin>
+	
+	<qygl_admin extends="admin,qygl">
+		<admin display='true'>
+			<wz_fl display='true' />
+		</admin>
+	</qygl_admin>
+</menus>
+

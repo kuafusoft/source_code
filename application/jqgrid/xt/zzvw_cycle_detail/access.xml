@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<role_access>
+	<all>
+		<all value='0' />
+	</all>
+	<admin>
+		<all value='1' />
+	</admin>
+	<row_owner extends='admin'>
+	
+	</row_owner>
+	<row_assistant_owner extends='admin'>
+	
+	</row_assistant_owner>
+	<row_tester extends='admin'>
+		<query_add value='0' />
+		<query_update value='0' />
+		<query_remove value='0' />
+		<set_tester value='0' />
+		<removecase value='0' />
+		<update_ver value='0' />
+		<add_del_env value='0' />
+		<add_del_trickmode value='0' />
+	</row_tester>
+	<tester extends='row_tester'>
+		<set_result value='0' />
+		<set_build_result value='0' />
+		<set_crid value='0' />
+		<view_edit_edit value='0' />
+		<view_edit_save value='0' />
+		<view_edit_cloneit value='0' />
+	</tester>
+	<Dev extends='tester'>
+<!-- 		<query value='1' />
+		<query_reset value='1' />
+		<view_edit_export value='1' />
+		<export value='1' />
+ -->	
+	</Dev>
+
+</role_access>

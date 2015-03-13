@@ -1,0 +1,11 @@
+<?php
+// print_r($this);
+if($this->id > 0){
+	$container = 'edit_history_'.$this->id;
+?>	
+<BR>
+<table style="width:100%" id='<?php echo $container;?>_<?php echo $this->db.'_'.$this->table;?>_list'></table>
+<div id='<?php echo $container;?>_<?php echo $this->db.'_'.$this->table;?>_pager'></div>
+<?php
+}
+?>

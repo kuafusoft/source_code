@@ -1,0 +1,21 @@
+<?php
+//<!-- 下单，可以是采购，也可以是销售 -->
+    require_once('kf_tool.php');
+    $tool = new kf_tool();
+    $es = array(
+            //员工技能信息
+            array('type'=>'fieldset', 'id'=>'xd', 'legend'=>"物资采购"),
+                array('type'=>'div', 'id'=>'xd_info'),
+                    array('type'=>'div', 'id'=>'yg_skill_temp'),
+                        array('type'=>'select', 'id'=>'zy_fl_id', 'name'=>'zy_fl_id', 'label'=>"物资类型", 'option'=>$this->zy_fl),
+                        array('type'=>'select', 'id'=>'zy_id', 'name'=>'zy_id', 'label'=>"物资", 'option'=>$this->zy),
+                        array('type'=>'select', 'id'=>'hb', 'name'=>'hb', 'label'=>"供应商", 'option'=>$this->hb),
+                        array('type'=>'text', 'id'=>'amount', 'name'=>'amount', 'label'=>'数量'),
+                    array('type'=>'/div'),
+                array('type'=>'/div'),   
+                array('type'=>'button', 'id'=>'yg_add_skill', 'value'=>'+', 'onclick'=>"yg_addSkill('yg_skill_inner', 'yg_skill_temp')"),                     
+            array('type'=>'/fieldset'),
+        array('type'=>'/div')
+    );
+    $tool->createElements($es);
+?>

@@ -1,0 +1,43 @@
+<?php
+	if (!empty($this->editable)){
+		if (!isset($this->btn)){
+			$this->btn = array(
+				'view_edit_cancel'=>array('label'=>'Cancel', 'style'=>'display:none;position:relative;float:right'),
+				'view_edit_save'=>array('label'=>'Save', 'style'=>'display:none;position:relative;float:right'),
+				'view_edit_saveandnew'=>array('label'=>'Save & New', 'style'=>'display:none;position:relative;float:right'),
+				'view_edit_cloneit'=>array('label'=>'Clone', 'style'=>'display:none;position:relative;float:right'),
+				'view_edit_edit'=>array('label'=>'Edit', 'style'=>'dposition:relative;float:right'),
+			);
+		}
+		foreach($this->btn as $id=>$btn){
+			if (!isset($btn['type']))
+				$btn['type'] = 'button';
+			if (isset($btn['not_allowed']) && $btn['not_allowed'])
+				continue;
+			switch($btn['type']){
+				case 'button':
+					if (!isset($btn['label']))
+						$btn['label'] = $id;
+					$str = "<input type='button' id='$id' value='{$btn['label']}'";
+					if (isset($btn['style']))
+						$str .= " style='{$btn['style']}'";
+					$str .= ">";
+					break;
+				case 'select':
+	//print_r($id);
+	//print_r($btn);
+					$str = "<select id='$id'";
+					if (isset($btn['style']))
+						$str .= " style='{$btn['style']}'";
+					$str .= ">";
+					foreach($btn['options'] as $k=>$v){
+						$str .= "<option value='$k'>$v</option>";
+					}
+					$str .= "</select>";
+					break;
+			}
+			print_r($str);
+		}
+	}
+?>
+<div style="clear:both"></div>

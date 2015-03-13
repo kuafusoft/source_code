@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>I2C1_FLT</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>I2C Programmable Input Glitch Filter register</description>
+  <bitfields>
+    <bitfield>
+      <name>FLT</name>
+      <bitrange>3:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>I2C Programmable Filter Factor</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No filter/bypass</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>STARTF</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>I2C Bus Start Detect Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No start happens on I2C bus</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Start detected on I2C bus</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SSIE</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>I2C Bus Stop or Start Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Stop or start detection interrupt is disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Stop or start detection interrupt is enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>STOPF</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>I2C Bus Stop Detect Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No stop happens on I2C bus</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Stop detected on I2C bus</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SHEN</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Stop Hold Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Stop holdoff is disabled. The MCU&apos;s entry to stop mode is not gated.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Stop holdoff is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>GPIOF_Layout</name>
+  <register-sets>
+    <register-set-descriptor>
+      <name>General Purpose Input/Output (GPIOF)</name>
+      <registers>
+        <register>
+          <name>GPIOF_PDOR</name>
+          <access>RW</access>
+          <register-details-file-name>GPIOF/GPIOF_PDOR.xml</register-details-file-name>
+          <offset>0</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x400FF041</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>GPIOF_PDIR</name>
+          <access>R</access>
+          <register-details-file-name>GPIOF/GPIOF_PDIR.xml</register-details-file-name>
+          <offset>0x10</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x400FF041</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>GPIOF_PDDR</name>
+          <access>RW</access>
+          <register-details-file-name>GPIOF/GPIOF_PDDR.xml</register-details-file-name>
+          <offset>0x14</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x400FF041</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>GPIOF_GACR</name>
+          <access>RW</access>
+          <register-details-file-name>GPIOF/GPIOF_GACR.xml</register-details-file-name>
+          <offset>0x1C</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x400FF041</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+      </registers>
+    </register-set-descriptor>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

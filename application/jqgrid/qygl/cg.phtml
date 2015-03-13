@@ -1,0 +1,71 @@
+<fieldset><legend>采购</legend>
+<?php
+	require_once('toolfactory.php');
+// print_r(">>>>from = {$this->from}<<<<");
+// print_r($this->wz[$this->wz_id]);
+    if ($this->from == 'wz'){ // 入口是物资，则物资名称是固定的，而供应商是可选的
+		$wz = $this->wz[$this->wz_id];
+// print_r($wz)		;
+		$ces = array(
+			array('name'=>'cg[wz_id]', 'id'=>'cg_wz_id', 'label'=>'物资', 'DATA_TYPE'=>'int', 'editable'=>false,
+				'type'=>'hidden', 'defval'=>$this->wz_id
+				),
+			array('name'=>'cg[wz_name]', 'id'=>'cg_wz_id', 'label'=>'物资', 'DATA_TYPE'=>'text', 'editable'=>false, 
+				'type'=>'text', 'defval'=>$wz['name']
+				),
+			array('name'=>'cg[hb_id]', 'id'=>'cg_hb_id', 'label'=>'供应商', 'DATA_TYPE'=>'int', 'editable'=>true, 
+				'editrules'=>array('required'=>true), 'type'=>'select', 'editoptions'=>array('value'=>$this->gys),
+				'defval'=>''
+				),
+			array('name'=>'cg[happen_date]', 'id'=>'cg_happen_date', 'label'=>'下单日期', 'DATA_TYPE'=>'date', 'editable'=>true, 
+				'editrules'=>array('required'=>true), 'type'=>'date', 'defval'=>date('Y-m-d')
+				),
+			array('name'=>'cg[amount]', 'id'=>'cg_amount', 'label'=>'数量', 'DATA_TYPE'=>'float', 'editable'=>true, 
+				'editrules'=>array('required'=>true), 'type'=>'text', 'defval'=>'', 'post'=>$wz['unit_name']
+				),
+			array('name'=>'cg[price]', 'id'=>'cg_price', 'label'=>'单价', 'DATA_TYPE'=>'float', 'editable'=>true, 
+				'editrules'=>array('required'=>true), 'type'=>'text', 'defval'=>$wz['default_price'], 'post'=>'元/'.$wz['unit_name']
+				),
+			array('label'=>'总价', 'name'=>'cg[total]', 'id'=>'cg_total', 'type'=>'text', 'post'=>'元', 'DATA_TYPE'=>'float', 'editable'=>false),
+			array('name'=>'cg[fh_fl_id]', 'id'=>'cg_fh_fl_id', 'label'=>'发货方式', 'DATA_TYPE'=>'int', 'editable'=>true, 
+				'editrules'=>array('required'=>true), 'type'=>'select', 'defval'=>'', 'editoptions'=>array('value'=>$this->fh_fl)
+				),
+			array('name'=>'cg[next_date]', 'id'=>'cg_next_date', 'label'=>'发货日期', 'DATA_TYPE'=>'date', 'editable'=>true, 
+				'editrules'=>array('required'=>true), 'type'=>'date', 'defval'=>date('Y-m-d')
+				),
+			array('name'=>'cg[jbr_id]', 'id'=>'cg_jbr_id', 'label'=>'经办人', 'DATA_TYPE'=>'int', 'editable'=>true, 
+				'editrules'=>array('required'=>false), 'type'=>'select', 'defval'=>0, 'editoptions'=>array('value'=>$this->jbr)
+				),
+			array('name'=>'cg[note]', 'id'=>'cg_note', 'label'=>'备注', 'DATA_TYPE'=>'text', 'editable'=>true, 
+				'editrules'=>array('required'=>false), 'type'=>'textarea', 'defval'=>'', 'colspan'=>5, 'rows'=>2
+				),
+		);
+	}
+	else{
+		$ces = array(
+			array('name'=>'cg[hb_id]', 'id'=>'cg_hb_id', 'label'=>'供应商', 'DATA_TYPE'=>'int', 'editable'=>false, 
+				'editrules'=>array('required'=>true), 'type'=>'select', 'editoptions'=>array('value'=>$this->gys),
+				'value'=>$this->gys_id
+				),
+			array('name'=>'cg[wz_id]', 'id'=>'cg_wz_id', 'label'=>'物资', 'DATA_TYPE'=>'int', 'editable'=>true, 
+				'type'=>'select', 'editoptions'=>array('value'=>$this->wz)
+				),
+			array('name'=>'cg[price]', 'id'=>'cg_price', 'label'=>'单价', 'DATA_TYPE'=>'float', 'editable'=>true, 
+				'editrules'=>array('required'=>true), 'type'=>'text', 'value'=>$this->price
+				),
+			array('name'=>'cg[amount]', 'id'=>'cg_amount', 'label'=>'数量', 'DATA_TYPE'=>'float', 'editable'=>true, 
+				'editrules'=>array('required'=>true), 'type'=>'text', 'value'=>''
+				),
+			array('name'=>'cg[happen_date]', 'id'=>'cg_happen_date', 'label'=>'采购日期', 'DATA_TYPE'=>'date', 'editable'=>true, 
+				'editrules'=>array('required'=>true), 'type'=>'date', 'defval'=>date('Y-m-d')
+				),
+		);
+	}
+	$tool = toolFactory::get('kf');
+// cf($colModels, $editable = false, $v = null, $columns = 1, $query = false, $params = array(), $new = false){
+	$tool->cf($ces, true, null, 3, false, array(), true);
+	
+    echo $this->partial('zf.phtml', array('type'=>'cg_zf', 'title'=>'采购', 'zjzh'=>$this->zjzh, 'jbr'=>$this->jbr));
+	
+?>
+</fieldset>

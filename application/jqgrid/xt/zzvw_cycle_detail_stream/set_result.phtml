@@ -1,0 +1,37 @@
+<div id='set_results'>
+	<label for='select_build_result'>Please Select Build Result:</label>
+	<select id='select_build_result'>
+		<?php
+		foreach($this->items as $id=>$v){
+			echo "<option id='{$v['id']}' value='{$v['id']}'>{$v['name']}</option>";
+		}
+		?>
+	</select>
+	<label for='select_result_type'>Please Select Test Result:</label>
+	<select id='select_result_type'>
+		<?php
+		foreach($this->items as $id=>$v){
+			echo "<option id='{$v['id']}' value='{$v['id']}'>{$v['name']}</option>";
+		}
+		?>
+	</select>
+	<?php
+		if (!empty($this->subcase)){
+		?>
+			<input type='hidden' id='subcase' value='<?php echo $this->subcase;?>'>
+			<div id='subcase_result'>
+				<label for='select_subcase'>Subcase:</label>
+				<select id='select_subcase'>
+				
+				</select>
+				<label for='select_sub_result'>Result:</label>
+				<select id='select_sub_result'>
+				
+				</select>
+				<table id='sub_result'></table>
+				<div id='sub_result_pager'></div>
+			</div>
+	<?php
+		}
+	?>
+</div>

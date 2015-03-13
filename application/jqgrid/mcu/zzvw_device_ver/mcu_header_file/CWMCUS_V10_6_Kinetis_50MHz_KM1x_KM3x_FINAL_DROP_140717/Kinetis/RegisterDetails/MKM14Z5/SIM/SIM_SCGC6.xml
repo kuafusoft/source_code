@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SIM_SCGC6</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0xC0000001</reset-value>
+  <description>System Clock Gating Control Register 6</description>
+  <bitfields>
+    <bitfield>
+      <name>FTFA</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>FTFA Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DMAMUX0</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA MUX0 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DMAMUX1</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA MUX1 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DMAMUX2</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA MUX2 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DMAMUX3</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA MUX3 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>8:5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>RNGA</name>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>RNGA Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>ADC</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SAR ADC Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>12</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>PIT0</name>
+      <bitrange>13</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>PIT0 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>PIT1</name>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>PIT1 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved.</description>
+    </bitfield>
+    <bitfield>
+      <name>AFE</name>
+      <bitrange>16</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>AFE Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>19:17</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Reserved for future expansion</description>
+    </bitfield>
+    <bitfield>
+      <name>CRC</name>
+      <bitrange>20</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Programmable CRC Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>27:21</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>LPTMR</name>
+      <bitrange>28</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LPTMR Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>29</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>SIM_LP</name>
+      <bitrange>30</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SIM_LP Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b1</value>
+          <description>Clock is enabled</description>
+        </value>
+        <value>
+          <value>0b0</value>
+          <description>Clock is disabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SIM_HP</name>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>SIM_HP Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b1</value>
+          <description>Clock is always enabled to SIM</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

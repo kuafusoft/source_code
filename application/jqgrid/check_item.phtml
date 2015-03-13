@@ -1,0 +1,9 @@
+<div id='div_checkbox_edit'>
+	<fieldset>
+	<?php
+		require_once('toolfactory.php');
+		$tool = toolFactory::get('kf');
+		$tool->cf($this->cols, true, null, 1, false, array(), true);
+	?>
+	</fieldset>
+</div>

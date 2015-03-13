@@ -1,0 +1,23 @@
+<?php
+	$columnMap = array(
+		'default'=>array(
+			'start_row'=>2,
+			'columns'=>array(
+				'testcase_module'=>'A',
+				'code'=>'B',
+				'summary'=>'C',
+				'precondition'=>'D',
+				'steps'=>'E',
+				'expected_result'=>'F',
+				'testcase_priority'=>'G',
+				'testcase_testpoint'=>'H',
+				'testcase_category'=>'I',
+				'MQX'=>'M',
+				'Linux'=>'N',
+				'testcase_source'=>'O',
+				'auto_level'=>'P',
+				'command'=>'Q',
+			)
+		)
+	);
+?>

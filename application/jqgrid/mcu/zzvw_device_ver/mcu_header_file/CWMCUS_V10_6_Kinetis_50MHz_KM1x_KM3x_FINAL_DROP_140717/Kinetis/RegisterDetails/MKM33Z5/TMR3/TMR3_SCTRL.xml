@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>TMR3_SCTRL</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x100</reset-value>
+  <description>Timer Channel Status and Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>OEN</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Output Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The external pin is configured as an input.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The OFLAG output signal is driven on the external pin. Other timer groups using this external pin as their input see the driven value. The polarity of the signal is determined by OPS.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>OPS</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Output Polarity Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>True polarity.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Inverted polarity.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FORCE</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Force OFLAG Output</description>
+    </bitfield>
+    <bitfield>
+      <name>VAL</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Forced OFLAG Value</description>
+    </bitfield>
+    <bitfield>
+      <name>EEOF</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enable External OFLAG Force</description>
+    </bitfield>
+    <bitfield>
+      <name>MSTR</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Master Mode</description>
+    </bitfield>
+    <bitfield>
+      <name>CAPTURE_MODE</name>
+      <bitrange>7:6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Input Capture Mode</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Capture function is disabled</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Load capture register on rising edge (when IPS=0) or falling edge (when IPS=1) of input</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Load capture register on falling edge (when IPS=0) or rising edge (when IPS=1) of input</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Load capture register on both edges of input</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>INPUT</name>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>External Input Signal</description>
+    </bitfield>
+    <bitfield>
+      <name>IPS</name>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Input Polarity Select</description>
+    </bitfield>
+    <bitfield>
+      <name>IEFIE</name>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Input Edge Flag Interrupt Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>IEF</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Input Edge Flag</description>
+    </bitfield>
+    <bitfield>
+      <name>TOFIE</name>
+      <bitrange>12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Overflow Flag Interrupt Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>TOF</name>
+      <bitrange>13</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Overflow Flag</description>
+    </bitfield>
+    <bitfield>
+      <name>TCFIE</name>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Compare Flag Interrupt Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>TCF</name>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Compare Flag</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

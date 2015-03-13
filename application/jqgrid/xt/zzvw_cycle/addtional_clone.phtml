@@ -1,0 +1,9 @@
+<div id='div_addtional<?php if(isset($this->fors))print_r('_'.$this->fors)?>_clone_edit'>
+	<fieldset>
+	<?php
+		require_once('toolfactory.php');
+		$tool = toolFactory::get('kf');
+		$tool->cf($this->cols, true, null, 1, false, array(), true);
+	?>
+	</fieldset>
+</div>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>WDOG_UNLOCK</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0xD928</reset-value>
+  <description>Watchdog Unlock register</description>
+  <bitfields>
+    <bitfield>
+      <name>WDOGUNLOCK</name>
+      <bitrange>15:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Writing the unlock sequence values to this register to makes the watchdog write-once registers writable again. The required unlock sequence is 0xC520 followed by 0xD928 within 20 bus clock cycles. A valid unlock sequence opens a window equal in length to the WCT within which you can update the registers. Writing a value other than the above mentioned sequence or if the sequence is longer than 20 bus cycles, resets the system or if IRQRSTEN is set, it interrupts and then resets the system. The unlock sequence is effective only if ALLOWUPDATE is set.</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

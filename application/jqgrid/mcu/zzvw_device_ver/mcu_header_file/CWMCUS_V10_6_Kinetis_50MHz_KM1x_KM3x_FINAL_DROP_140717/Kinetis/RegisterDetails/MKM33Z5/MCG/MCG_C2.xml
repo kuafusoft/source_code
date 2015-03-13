@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MCG_C2</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0x83</reset-value>
+  <description>MCG Control 2 Register</description>
+  <bitfields>
+    <bitfield>
+      <name>IRCS</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Internal Reference Clock Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Slow internal reference clock selected.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Fast internal reference clock selected.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LP</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Low Power Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>FLL or PLL is not disabled in bypass modes.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>FLL or PLL is disabled in bypass modes (lower power)</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>EREFS0</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>External Reference Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>External reference clock requested.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Oscillator requested.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>HGO0</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>High Gain Oscillator Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Configure crystal oscillator for low-power operation.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Configure crystal oscillator for high-gain operation.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RANGE0</name>
+      <bitrange>5:4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Frequency Range Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Encoding 0 - Low frequency range selected for the crystal oscillator .</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Encoding 1 - High frequency range selected for the crystal oscillator .</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>LOCRE0</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Loss of Clock Reset Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt request is generated on a loss of OSC0 external reference clock.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Generate a reset request on a loss of OSC0 external reference clock.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

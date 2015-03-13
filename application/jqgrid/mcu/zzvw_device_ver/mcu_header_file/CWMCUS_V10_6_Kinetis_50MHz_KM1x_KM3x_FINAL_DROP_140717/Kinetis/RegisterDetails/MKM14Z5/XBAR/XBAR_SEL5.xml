@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>XBAR_SEL5</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Crossbar Select Register 5</description>
+  <bitfields>
+    <bitfield>
+      <name>SEL10</name>
+      <bitrange>5:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Input (XBAR_INn) to be muxed to XBAR_OUT10 (refer to Functional Description section for input/output assignment)</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7:6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>SEL11</name>
+      <bitrange>13:8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Input (XBAR_INn) to be muxed to XBAR_OUT11 (refer to Functional Description section for input/output assignment)</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15:14</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

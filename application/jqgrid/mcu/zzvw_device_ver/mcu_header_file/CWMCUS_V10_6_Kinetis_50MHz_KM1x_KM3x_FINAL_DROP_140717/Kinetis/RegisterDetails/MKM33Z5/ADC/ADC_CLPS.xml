@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>ADC_CLPS</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x20</reset-value>
+  <description>ADC Plus-Side General Calibration Value Register</description>
+  <bitfields>
+    <bitfield>
+      <name>CLPS</name>
+      <bitrange>5:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Calibration Value</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

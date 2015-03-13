@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MCM_PLACR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x50</reset-value>
+  <description>Platform Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>8:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>ARB</name>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Arbitration select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Fixed-priority arbitration for the crossbar masters</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Round-robin arbitration for the crossbar masters</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CFCC</name>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Clear Flash Controller Cache</description>
+    </bitfield>
+    <bitfield>
+      <name>DFCDA</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Disable Flash Controller Data Caching</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Enable flash controller data caching</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Disable flash controller data caching.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DFCIC</name>
+      <bitrange>12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Disable Flash Controller Instruction Caching</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Enable flash controller instruction caching.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Disable flash controller instruction caching.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DFCC</name>
+      <bitrange>13</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Disable Flash Controller Cache</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Enable flash controller cache.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Disable flash controller cache.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>EFDS</name>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enable Flash Data Speculation</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disable flash data speculation.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enable flash data speculation.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DFCS</name>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Disable Flash Controller Speculation</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Enable flash controller speculation.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Disable flash controller speculation.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ESFC</name>
+      <bitrange>16</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Enable Stalling Flash Controller</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Disable stalling flash controller when flash is busy.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Enable stalling flash controller when flash is busy.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:17</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

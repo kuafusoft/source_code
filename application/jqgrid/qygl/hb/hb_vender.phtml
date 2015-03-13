@@ -1,0 +1,23 @@
+<?php
+//<!-- 供应商 -->
+    require_once('kf_tool.php');
+    $tool = new kf_tool();
+    $es = array(
+        array('type'=>'div', 'id'=>'div_vender'),
+            array('type'=>'div', 'id'=>'div_is_vender'),
+                array('type'=>'checkbox', 'id'=>'is_vender', 'name'=>'is_vender', 'label'=>'是否供应商')，
+            array('type'=>'/div'),
+            //可供应商品信息
+            array('type'=>'fieldset', 'id'=>'vender_zy', 'legend'=>'可供应商品'),
+                array('type'=>'div', 'id'=>'vender_zy_inner'),
+                    array('type'=>'div', 'id'=>'vender_zy_temp'),
+                        array('type'=>'select', 'id'=>'vender_zy_fl', 'name'=>'zy_fl[]', 'label'=>'物资类型', 'option'=>$this->zy_fl),
+                        array('type'=>'select', 'id'=>'vender_zy_id', 'name'=>'zy_id[]', 'label'=>'物资', 'option'=>$this->zy),
+                    array('type'=>'/div'),
+                array('type'=>'/div'),   
+                array('type'=>'button', 'id'=>'yg_add_skill', 'value'=>'+', 'onclick'=>"yg_addSkill('vender_zy_inner', 'vender_zy_temp')"),                     
+            array('type'=>'/fieldset'),
+        array('type'=>'/div')
+    );
+    $tool->createElements($es);
+?>

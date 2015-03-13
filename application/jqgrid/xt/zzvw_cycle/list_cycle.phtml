@@ -1,0 +1,16 @@
+﻿<!--
+ 应该可以进行不同版本之间的对比
+-->
+<?php
+	$kf_tool = new KF_Tool();
+	$kf_tool->showTable(array('id'=>array('type'=>'checkbox'), 
+		'name'=>array('type'=>'link', 'href'=>'javascript:get_detail("<%id%>")'), 
+		'prj'=>array('label'=>'Project'), 
+		'rel'=>array('label'=>'Release'), 
+		'cycle_status', 
+		'start_date', 'total_cases', 'total_pass', 'total_fail'), $this->rows);
+?>
+
+	<button type='button' onclick='sync_cycle()'>Sync</button>
+	
+	<button type='button' onclick='detail_report()'>Show Detail Result</button>

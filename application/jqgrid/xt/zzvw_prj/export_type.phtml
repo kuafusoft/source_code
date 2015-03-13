@@ -1,0 +1,53 @@
+<table width='80%'>
+	<tr>
+		<td>
+			<label for="export_type_default">
+				<input type="radio" name="export_type" id="export_type_default" checked="checked" value="excel"> 
+				Export the selected rows
+			</label> 
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="export_type_last_result">
+				<input type="radio" name="export_type" id="export_type_last_result" value="last_result"> 
+				Last Test Result for the selected projects
+				<div id='div_for_last_result_report_options' style='display:none;position:relative;left:40px'>
+				<?php
+					require_once('toolfactory.php');
+
+					$tool = toolFactory::get('kf');
+					$cart_data = new stdClass;
+//					$filters = array('groupOp'=>'AND', 'rules'=>array(array('field'=>'prj_id', 'op'=>'in', 'data'=>$this->id)));
+//					$cart_data = json_encode(array('filters'=>$filters));
+					$cart_data->filters = '{"groupOp":"AND","rules":[{"field":"prj_id","op":"in","data":"'.$this->id.'"}]}';
+					$es = array(
+						array('label'=>'Include Release', 'name'=>'rel_ids', 'editable'=>true, 'DATA_TYPE'=>'text', 'type'=>'cart', 'cart_db'=>'xt', 'cart_table'=>'rel', 'cart_data'=>json_encode($cart_data)),
+						array('label'=>'Include Coverage', 'name'=>'include_coverage', 'editable'=>true, 'DATA_TYPE'=>'int', 'type'=>'checkbox', 'editoptions'=>array('value'=>array(1=>'Yes'))),
+					);
+					$tool->cf($es, true, null, 1);
+				?>
+					<div id='div_coverage' style='display:none;'>
+						<fieldset><legend>Testcase Coverage</legend>
+						<?php
+							$es = array(
+								array('label'=>'Begin Date', 'name'=>'coverage_begin', 'editable'=>true, 'DATA_TYPE'=>'date', 'type'=>'date'),
+								array('label'=>'End Date', 'name'=>'coverage_end', 'editable'=>true, 'DATA_TYPE'=>'date', 'type'=>'date'),
+							);
+							$tool->cf($es, true, array('coverage_end'=>date('Y-m-d')), 1);
+						?>
+						</fieldset>
+					</div>
+				</div>
+			</label> 
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="report_type_srs">
+				<input type="radio" name="export_type" id="report_type_srs" value="srs"> 
+				SRS Report 
+			</label> 
+		</td> 
+	</tr> 
+</table> 

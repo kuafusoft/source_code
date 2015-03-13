@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SIM_SCGC4</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x78008070</reset-value>
+  <description>System Clock Gating Control Register 4</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>EWM</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>External Watchdog Monitor Clock gate control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>3:2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>MCG</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>MCG clock gate control.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved for Future Expansion.</description>
+    </bitfield>
+    <bitfield>
+      <name>OSC</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Oscillator (Mhz) Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>I2C0</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>I2C0 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>I2C1</name>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>I2C1 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>UART0</name>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>UART0 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>UART1</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>UART1 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>UART2</name>
+      <bitrange>12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>UART2 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>UART3</name>
+      <bitrange>13</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>UART3 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>VREF</name>
+      <bitrange>15</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>VREF Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>17:16</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>CMP0</name>
+      <bitrange>18</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>High Speed Comparator0 Clock Gate Control.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CMP1</name>
+      <bitrange>19</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>High Speed Comparator1 Clock Gate Control.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>20</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>SPI0</name>
+      <bitrange>21</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI0 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SPI1</name>
+      <bitrange>22</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>SPI1 Clock Gate Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Clock disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Clock enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>26:23</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>30:27</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

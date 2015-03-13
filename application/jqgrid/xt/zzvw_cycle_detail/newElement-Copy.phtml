@@ -1,0 +1,26 @@
+<form id='import_form' enctype="multipart/form-data" method='post' action='/jqgrid/jqgrid/oper/import/db/<?php echo $this->db;?>/table/<?php echo $this->table;?>' target='hidden_frame'>
+	<?php
+		require_once('tool_kf.php');
+	$tool = new tool_kf();
+	$params = isset($this->params) ? $this->params : array();
+	$ms = count($this->cols);
+	if ($ms < 8)
+		$cols = 1;
+	else
+		$cols = 1;
+	print_r("<fieldset><legend>{$this->legend}</legend>");
+		$tool->cf($this->cols, true, null, $cols, false, $params, true);
+	print_r("</fieldset>");
+	print_r("<div id=div_result_cr_summit_".$this->id."></div>");
+	?>
+</form>
+<?php
+	if(!isset($this->btn))
+		print_r('<iframe name="hidden_frame" id="hidden_frame" width="100%"></iframe>');
+	else if(!empty($this->btn)){
+		print_r('<iframe name="hidden_frame" id="hidden_frame" width="100%"></iframe>');
+		print_r("<button id='save' onclick='' title='Save' type='button' style='width:100px;height:30px;position:relative;float:right' >Save</button>");
+		print_r("<button id='cancel' onclick='' title='Cancel' type='button' style='width:100px;height:30px;position:relative;float:right'>Cancel</button>");	
+	}
+	
+?>

@@ -1,0 +1,14 @@
+<form id='import_form' enctype="multipart/form-data" method='post' action='/jqgrid/jqgrid/oper/import/db/<?php echo $this->db;?>/table/<?php echo $this->table;?>' target='hidden_frame'>
+	<?php
+		$ces = array(
+			array('name'=>'import_type', 'label'=>'Testcase Type', 'DATA_TYPE'=>'int', 'editable'=>true, 'editrules'=>array('required'=>true), 'type'=>'select', 'editoptions'=>array('value'=>$this->testcase_type)),
+			array('name'=>'import_type', 'label'=>'Testcase Type', 'DATA_TYPE'=>'int', 'editable'=>true, 'editrules'=>array('required'=>true), 'type'=>'select', 'editoptions'=>array('value'=>$this->testcase_type)),
+			array('name'=>'prj_ids', 'label'=>'Projects', 'DATA_TYPE'=>'int', 'editable'=>true, 'editrules'=>array('required'=>false), 'type'=>'cart', 'value'=>'', 'cart_db'=>'xt', 'cart_table'=>'prj'),
+			array('name'=>'uploaded_file', 'label'=>'File', 'DATA_TYPE'=>'int', 'editable'=>true, 'editrules'=>array('required'=>true), 'type'=>'file')
+		);
+		$tool = toolFactory::get('kf');
+		$tool->cf($ces, true, 'new');
+	?>
+	<iframe name='hidden_frame' id='hidden_frame' style='display:none'></iframe>
+</form>
+

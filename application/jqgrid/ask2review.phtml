@@ -1,0 +1,56 @@
+<fieldset><legend>Please select reviewer groups:</legend>
+	<div id='reviewer_groups'>
+		<table style='width:100%'>
+		<?php
+		$currentCol = 0;
+		$cols = 5;
+		foreach($this->reviewer_groups as $k=>$reviewer){
+			if($k == 0)
+				continue;
+			if($currentCol == 0)
+				print_r("<tr>");
+			print_r("<td><label><input type='checkbox' value='$k' name='reviewer_groups'>{$reviewer}</label><td>");
+			$currentCol ++;
+			if ($currentCol == $cols){
+				print_r("</tr>");
+				$currentCol = 0;
+			}
+		}
+		?>
+		</table>
+	</div>
+</fieldset>
+
+<fieldset><legend>Please select reviewers:</legend>
+	<div id='reviewers'>
+		<table style='width:100%'>
+		<?php
+		// $currentCol = 0;
+		// $cols = 5;
+		// foreach($this->reviewers as $k=>$reviewer){
+			// if($currentCol == 0)
+				// print_r("<tr>");
+			// print_r("<td><label><input type='checkbox' value='$k' name='reviewers'>{$reviewer}</label><td>");
+			// $currentCol ++;
+			// if ($currentCol == $cols){
+				// print_r("</tr>");
+				// $currentCol = 0;
+			// }
+		// }
+		?>
+		</table>
+	</div>
+</fieldset>
+
+<p>Please Select a main reviewer:<select id='main_reviewer'><option value='0'></option>
+<?php
+	// foreach($this->reviewers as $k=>$reviewer){
+		// print_r("<option value='$k'>$reviewer</option>");
+	// }
+?>
+</select></p>
+
+<div style="width:100%">
+	<label for="deadline">Please input the deadline:</label><input type='text' id='deadline' value='<?php echo date('Y-m-d', strtotime('+1 week'));?>'><BR><BR>
+	<label for="ask2review_comment">Please input the message:</label><textarea id='ask2review_comment' rows='5' cols='80'><?php echo $this->comment; ?></textarea>
+</div>

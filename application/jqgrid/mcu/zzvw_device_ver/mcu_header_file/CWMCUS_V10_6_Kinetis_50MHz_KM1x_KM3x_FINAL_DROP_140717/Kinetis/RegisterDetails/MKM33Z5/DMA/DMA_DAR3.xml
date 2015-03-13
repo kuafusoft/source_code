@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>DMA_DAR3</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Destination Address Register</description>
+  <bitfields>
+    <bitfield>
+      <name>DAR</name>
+      <bitrange>31:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Each DAR contains the byte address used by the DMA controller to write data. The DARn is typically aligned on a 0-modulo-dsize boundary-that is, on the natural alignment of the destination data. Bits 31-20 of this register must be written with one of only four allowed values. Each of these four allowed values corresponds to a valid region of the device&apos;s memory map. The allowed values are: 0x000x_xxxx 0x1FFx_xxxx 0x200x_xxxx 0x400x_xxxx After being written with one of the allowed values, bits 31-20 read back as the written value. After being written with any other value, bits 31-20 read back as an indeterminate value.</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

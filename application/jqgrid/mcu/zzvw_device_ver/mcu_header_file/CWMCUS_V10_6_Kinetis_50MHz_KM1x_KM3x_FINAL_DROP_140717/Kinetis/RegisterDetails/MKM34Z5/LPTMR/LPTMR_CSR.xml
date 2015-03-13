@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>LPTMR_CSR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Low Power Timer Control Status Register</description>
+  <bitfields>
+    <bitfield>
+      <name>TEN</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>LPTMR is disabled and internal logic is reset.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>LPTMR is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TMS</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Mode Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Time Counter mode.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Pulse Counter mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TFC</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Free-Running Counter</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>CNR is reset whenever TCF is set.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>CNR is reset on overflow.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TPP</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Pin Polarity</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Pulse Counter input source is active-high, and the CNR will increment on the rising-edge.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Pulse Counter input source is active-low, and the CNR will increment on the falling-edge.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TPS</name>
+      <bitrange>5:4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Pin Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Pulse counter input 0 is selected.</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Pulse counter input 1 is selected.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Pulse counter input 2 is selected.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Pulse counter input 3 is selected.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TIE</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Timer interrupt disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Timer interrupt enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TCF</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Compare Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The value of CNR is not equal to CMR and increments.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The value of CNR is equal to CMR and increments.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

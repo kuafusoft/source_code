@@ -1,0 +1,73 @@
+<!-- application/layouts/scripts/layout.phtml -->
+<?php 
+    echo $this->doctype(); 
+    $user = new Application_Model_Useradmin(null);
+    $userInfo = $user->getUserInfo();
+// print_r($userInfo->nickname);    
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <?php
+            echo $this->headMeta();
+            echo $this->headTitle();
+            echo $this->headStyle();
+            echo $this->headLink();
+            echo $this->headScript();
+        ?>
+        <script type='text/javascript'>
+            $(function(){
+				var tool = new kf_tool();
+				var userInfo = <?php echo json_encode($userInfo);?>;
+				XT.showUserMenus(userInfo);
+                XT.showNaviMenus(userInfo.menus);
+				var cookie_account = $.cookie('XT_Account') || '', cookie_password = $.cookie('XT_Password') || '', cookie_autoLogin = $.cookie('XT_AutoLogin') || false;
+				if(userInfo.id == 0 && cookie_autoLogin == 1 && cookie_account.length > 0 && cookie_password > 0){
+					XT.__userAdmin_login(cookie_account, cookie_password);
+				}
+                XT.layoutHomePage(userInfo);
+            });
+        </script>
+    </head>
+    <body>
+        <div id='main_top_div' class="ui-layout-north">
+			<ul class="toolbar" style='display:none'>
+				<li id="tbarToggleNorth" class="button-toggle button-toggle-north">
+			</ul>
+            <div id="kf_banner_wrapper">
+                <div id="kf_banner_logo">
+                	<a target="_blank" href="http://summit.freescale.net"><img alt="summit.Freescale.net" style="border: 0px none ;" src="img/freescale_logo.gif"/>	</a>
+                </div>
+                
+            	<div id="kf_banner_topbox">
+            		<div class="kf_banner_title"><?php echo $this->appInfo['name']; ?><span class="kf_banner_internal"><?php echo $this->appInfo['version'];?></span>
+            		</div>
+            		<div id="personalmenu" class="kf_banner_applinks">
+                    </div> 
+            	</div>
+            	<div id="kf_banner_bottombox">
+            	</div>
+            </div>
+        </div>
+        <div id="navPanel" class="ui-layout-west ui-widget ui-widget-content">
+			<div id="menuPanel">
+			</div>
+        </div>
+            
+        <div id="mainContent" class="mainContent">
+        	<ul>
+        		<li><a id='home' href="#ui-tabs-1"><?php echo $userInfo->nickname;?>'s Home</a></li>
+        	</ul>
+        	<div id="ui-tabs-1" style="font-size:12px;">
+        	<?php
+				echo $this->layout()->content; 
+			?>
+        	</div>
+        </div>
+        
+        <div id="copyright" class="ui-layout-south ui-widget ui-widget-content copyright">
+			Freescale Internal Use Only. © Copyright 2013 Freescale, Inc. All Rights Reserved. 
+            Administrator:<a href="mailto:b19268@freescale.com">b19268@freescale.com</a>. 
+            Suggest browser:<a href="http://www.mozilla.org/en-US/firefox/fx/"><span style="color:red">Firefox</span></a>.
+        </div>
+    </body>
+</html>

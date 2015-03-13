@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>PIT1_TCTRL1</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Timer Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>TEN</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Timer n is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Timer n is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TIE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Timer Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Interrupt requests from Timer n are disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt will be requested whenever TIF is set.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CHN</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Chain Mode</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Timer is not chained.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Timer is chained to previous timer. For example, for Channel 2, if this field is set, Timer 2 is chained to Timer 1.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

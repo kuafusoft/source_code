@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>LPTMR_PSR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Low Power Timer Prescale Register</description>
+  <bitfields>
+    <bitfield>
+      <name>PCS</name>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Prescaler Clock Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Prescaler/glitch filter clock 0 selected.</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Prescaler/glitch filter clock 1 selected.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Prescaler/glitch filter clock 2 selected.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Prescaler/glitch filter clock 3 selected.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>PBYP</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Prescaler Bypass</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Prescaler/glitch filter is enabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Prescaler/glitch filter is bypassed.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>PRESCALE</name>
+      <bitrange>6:3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Prescale Value</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>Prescaler divides the prescaler clock by 2; glitch filter does not support this configuration.</description>
+        </value>
+        <value>
+          <value>0b0001</value>
+          <description>Prescaler divides the prescaler clock by 4; glitch filter recognizes change on input pin after 2 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b0010</value>
+          <description>Prescaler divides the prescaler clock by 8; glitch filter recognizes change on input pin after 4 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>Prescaler divides the prescaler clock by 16; glitch filter recognizes change on input pin after 8 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b0100</value>
+          <description>Prescaler divides the prescaler clock by 32; glitch filter recognizes change on input pin after 16 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b0101</value>
+          <description>Prescaler divides the prescaler clock by 64; glitch filter recognizes change on input pin after 32 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b0110</value>
+          <description>Prescaler divides the prescaler clock by 128; glitch filter recognizes change on input pin after 64 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b0111</value>
+          <description>Prescaler divides the prescaler clock by 256; glitch filter recognizes change on input pin after 128 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b1000</value>
+          <description>Prescaler divides the prescaler clock by 512; glitch filter recognizes change on input pin after 256 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b1001</value>
+          <description>Prescaler divides the prescaler clock by 1024; glitch filter recognizes change on input pin after 512 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b1010</value>
+          <description>Prescaler divides the prescaler clock by 2048; glitch filter recognizes change on input pin after 1024 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b1011</value>
+          <description>Prescaler divides the prescaler clock by 4096; glitch filter recognizes change on input pin after 2048 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b1100</value>
+          <description>Prescaler divides the prescaler clock by 8192; glitch filter recognizes change on input pin after 4096 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b1101</value>
+          <description>Prescaler divides the prescaler clock by 16,384; glitch filter recognizes change on input pin after 8192 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b1110</value>
+          <description>Prescaler divides the prescaler clock by 32,768; glitch filter recognizes change on input pin after 16,384 rising clock edges.</description>
+        </value>
+        <value>
+          <value>0b1111</value>
+          <description>Prescaler divides the prescaler clock by 65,536; glitch filter recognizes change on input pin after 32,768 rising clock edges.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

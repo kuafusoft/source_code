@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>RCM_RPFC</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Reset Pin Filter Control register</description>
+  <bitfields>
+    <bitfield>
+      <name>RSTFLTSRW</name>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Reset Pin Filter Select in Run and Wait Modes</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>All filtering disabled</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Bus clock filter enabled for normal operation</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>LPO clock filter enabled for normal operation</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RSTFLTSS</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Reset Pin Filter Select in Stop Mode</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>All filtering disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>LPO clock filter enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7:3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>WDOG_REFRESH</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0xB480</reset-value>
+  <description>Watchdog Refresh register</description>
+  <bitfields>
+    <bitfield>
+      <name>WDOGREFRESH</name>
+      <bitrange>15:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Watchdog refresh register. A sequence of 0xA602 followed by 0xB480 within 20 bus clock cycles written to this register refreshes the WDOG and prevents it from resetting the system. Writing a value other than the above mentioned sequence or if the sequence is longer than 20 bus cycles, resets the system, or if IRQRSTEN is set, it interrupts and then resets the system.</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,25 @@
+<div id='div_view_edit'>
+	<fieldset>
+	<?php
+		echo $this->partial($this->node['view_file'], $this->node);
+	?>
+	</fieldset>
+</div>
+<div id="div_button_edit">
+<?php
+	echo $this->partial('button.phtml', $this);
+?>
+</div>
+<?php
+if($this->id > 0){
+?>	
+<BR>
+<div style="width:100%">
+	<fieldset><legend>Test Steps Result</legend>
+		<table id='div_information_xt_zzvw_cycle_detail_xt_zzvw_cycle_detail_step_list'></table>
+		<div id='div_information_xt_zzvw_cycle_detail_xt_zzvw_cycle_detail_step_list'></div>
+	</fieldset>
+</div>
+<?php
+}
+?>

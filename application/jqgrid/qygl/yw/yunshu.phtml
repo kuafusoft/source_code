@@ -1,0 +1,16 @@
+<?php
+	require_once('toolfactory.php');
+	$tool = toolFactory::get('kf');
+	$comp = array(
+		'prefix'=>'yunshu', 
+		'name'=>'yunshu',
+		'temp'=>$this->editFields,
+		'legend'=>'运输',
+		'editable'=>true,
+		'data_source_db'=>'qygl',
+		'data_source_table'=>'yw',
+		'value'=>array()
+		);
+	
+	print_r($tool->generateEmbed_table($comp));
+?>

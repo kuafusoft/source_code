@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>EWM_Layout</name>
+  <register-sets>
+    <register-set-descriptor>
+      <name>External Watchdog Monitor (EWM)</name>
+      <registers>
+        <register>
+          <name>EWM_CTRL</name>
+          <access>RW</access>
+          <register-details-file-name>EWM/EWM_CTRL.xml</register-details-file-name>
+          <offset>0</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x40061000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>EWM_SERV</name>
+          <access>W</access>
+          <register-details-file-name>EWM/EWM_SERV.xml</register-details-file-name>
+          <offset>0x1</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x40061000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>EWM_CMPL</name>
+          <access>RW</access>
+          <register-details-file-name>EWM/EWM_CMPL.xml</register-details-file-name>
+          <offset>0x2</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x40061000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>EWM_CMPH</name>
+          <access>RW</access>
+          <register-details-file-name>EWM/EWM_CMPH.xml</register-details-file-name>
+          <offset>0x3</offset>
+          <size>1</size>
+          <base>
+            <direct-base>
+              <base-address>0x40061000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+      </registers>
+    </register-set-descriptor>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

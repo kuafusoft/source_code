@@ -1,0 +1,13 @@
+<div id='div_hidden'>
+	<input type='hidden' id='db' value="<?php echo $this->db; ?>">
+	<input type='hidden' id='table' value="<?php echo $this->table; ?>">
+	<input type='hidden' id='id' value="<?php echo $this->id; ?>">
+</div>
+<div id="<?php echo $this->db.'_'.$this->table; ?>">
+	<div id="div_report_op">
+		<input type='button' id='generate_report' value='Generate Report'>
+	</div>
+	<label><?php echo $this->name; ?></label>
+	<table id='table_reports' />
+	<div id='div_reports_pager' />
+</div>

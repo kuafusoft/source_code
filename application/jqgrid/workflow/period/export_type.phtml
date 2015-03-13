@@ -1,0 +1,25 @@
+<table>
+	<tr>
+		<td>
+			<label for="export_type_default">
+				<input type="radio" name="export_type" id="export_type_default" checked="checked" value="excel"> 
+				Export the selected rows
+			</label> 
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="export_type_summary_report">
+				<input type="radio" name="export_type" id="export_type_summary_report" value="summary_report"> 
+				Summary Report
+			</label>
+			<div id='div_for_summary_report_options' style='display:none;position:relative;left:40px'>
+				<select id='levels'>
+					<option value='myself-level' selected='selected'>Myself Notes Only</option>
+					<option value='son-level'>Son-level Notes Only</option>
+					<option value='sub-level'>All Sub-level Notes</option>
+				</select>
+			</div>
+		</td> 
+	</tr> 
+</table> 

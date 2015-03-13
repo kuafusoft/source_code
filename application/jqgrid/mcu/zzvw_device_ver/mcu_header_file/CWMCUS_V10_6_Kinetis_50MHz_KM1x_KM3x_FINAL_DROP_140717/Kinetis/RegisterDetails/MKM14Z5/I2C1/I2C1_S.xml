@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>I2C1_S</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0x80</reset-value>
+  <description>I2C Status register</description>
+  <bitfields>
+    <bitfield>
+      <name>RXAK</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Receive Acknowledge</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Acknowledge signal was received after the completion of one byte of data transmission on the bus</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>No acknowledge signal detected</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IICIF</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No interrupt pending</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Interrupt pending</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SRW</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Slave Read/Write</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Slave receive, master writing to slave</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Slave transmit, master reading from slave</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RAM</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Range Address Match</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Not addressed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Addressed as a slave</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ARBL</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Arbitration Lost</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Standard bus operation.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Loss of arbitration.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>BUSY</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Bus Busy</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Bus is idle</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bus is busy</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>IAAS</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Addressed As A Slave</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Not addressed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Addressed as a slave</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TCF</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Transfer Complete Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Transfer in progress</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Transfer complete</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

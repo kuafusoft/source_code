@@ -1,0 +1,10 @@
+<!--
+ 应该可以进行不同版本之间的对比
+-->
+<?php
+	$kf_tool = new KF_Tool();
+	$field = array('rel'=>array('label'=>'Release'));
+	foreach($this->prj as $prj)
+		$field[] = $prj;
+	$kf_tool->showTable($field, $this->rows);
+?>

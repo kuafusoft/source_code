@@ -1,0 +1,26 @@
+<?php
+//<!-- 下单，可以是采购，也可以是销售 -->
+    require_once('kf_tool.php');
+    $tool = new kf_tool();
+    $legend = "客户订单"
+    $hb = "客户";
+    if ($this->type == '采购'){
+        $legend = "物资采购";
+        $hb = "供应商";
+    }
+        
+    $es = array(
+            //员工技能信息
+            array('type'=>'fieldset', 'id'=>'xd', 'legend'=>$legend),
+                array('type'=>'div', 'id'=>'xd_info'),
+                    array('type'=>'div', 'id'=>'yg_skill_temp'),
+                        array('type'=>'select', 'id'=>'hb', 'name'=>'hb', 'label'=>$hb, 'option'=>$this->hb),
+                        array('type'=>'select', 'id'=>'yg_grade', 'name'=>'grade[]', 'label'=>'熟练程度', 'option'=>$this->grade),
+                    array('type'=>'/div'),
+                array('type'=>'/div'),   
+                array('type'=>'button', 'id'=>'yg_add_skill', 'value'=>'+', 'onclick'=>"yg_addSkill('yg_skill_inner', 'yg_skill_temp')"),                     
+            array('type'=>'/fieldset'),
+        array('type'=>'/div')
+    );
+    $tool->createElements($es);
+?>

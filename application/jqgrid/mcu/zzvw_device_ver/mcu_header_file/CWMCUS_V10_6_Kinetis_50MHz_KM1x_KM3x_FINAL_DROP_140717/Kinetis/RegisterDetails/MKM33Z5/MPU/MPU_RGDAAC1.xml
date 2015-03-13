@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MPU_RGDAAC1</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Region Descriptor Alternate Access Control n</description>
+  <bitfields>
+    <bitfield>
+      <name>M0UM</name>
+      <bitrange>2:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 0 User Mode Access Control</description>
+    </bitfield>
+    <bitfield>
+      <name>M0SM</name>
+      <bitrange>4:3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 0 Supervisor Mode Access Control</description>
+    </bitfield>
+    <bitfield>
+      <name>M0PE</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 0 Process Identifier Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>M1UM</name>
+      <bitrange>8:6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 1 User Mode Access Control</description>
+    </bitfield>
+    <bitfield>
+      <name>M1SM</name>
+      <bitrange>10:9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 1 Supervisor Mode Access Control</description>
+    </bitfield>
+    <bitfield>
+      <name>M1PE</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 1 Process Identifier Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>M2UM</name>
+      <bitrange>14:12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 2 User Mode Access Control</description>
+    </bitfield>
+    <bitfield>
+      <name>M2SM</name>
+      <bitrange>16:15</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 2 Supervisor Mode Access Control</description>
+    </bitfield>
+    <bitfield>
+      <name>M2PE</name>
+      <bitrange>17</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 2 Process Identifier Enable</description>
+    </bitfield>
+    <bitfield>
+      <name>M3UM</name>
+      <bitrange>20:18</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 3 User Mode Access Control</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>An attempted access of that mode may be terminated with an access error (if not allowed by another descriptor) and the access not performed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Allows the given access type to occur</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M3SM</name>
+      <bitrange>22:21</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 3 Supervisor Mode Access Control</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>r/w/x; read, write and execute allowed</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>r/x; read and execute allowed, but no write</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>r/w; read and write allowed, but no execute</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Same as User mode defined in M3UM</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M3PE</name>
+      <bitrange>23</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 3 Process Identifier Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Do not include the process identifier in the evaluation</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Include the process identifier and mask (RGDn.RGDAAC) in the region hit evaluation</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M4WE</name>
+      <bitrange>24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 4 Write Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Bus master 4 writes terminate with an access error and the write is not performed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bus master 4 writes allowed</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M4RE</name>
+      <bitrange>25</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 4 Read Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Bus master 4 reads terminate with an access error and the read is not performed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bus master 4 reads allowed</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M5WE</name>
+      <bitrange>26</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 5 Write Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Bus master 5 writes terminate with an access error and the write is not performed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bus master 5 writes allowed</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M5RE</name>
+      <bitrange>27</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 5 Read Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Bus master 5 reads terminate with an access error and the read is not performed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bus master 5 reads allowed</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M6WE</name>
+      <bitrange>28</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 6 Write Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Bus master 6 writes terminate with an access error and the write is not performed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bus master 6 writes allowed</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M6RE</name>
+      <bitrange>29</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 6 Read Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Bus master 6 reads terminate with an access error and the read is not performed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bus master 6 reads allowed</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M7WE</name>
+      <bitrange>30</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 7 Write Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Bus master 7 writes terminate with an access error and the write is not performed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bus master 7 writes allowed</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M7RE</name>
+      <bitrange>31</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Bus Master 7 Read Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Bus master 7 reads terminate with an access error and the read is not performed</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bus master 7 reads allowed</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

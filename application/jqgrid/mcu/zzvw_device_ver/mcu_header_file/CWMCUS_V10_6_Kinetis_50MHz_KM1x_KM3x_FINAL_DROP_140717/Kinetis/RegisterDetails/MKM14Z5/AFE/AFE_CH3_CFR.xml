@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>AFE_CH3_CFR</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Channel3 Configuration Register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>8:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>HW_TRG</name>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Hardware Trigger Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Software trigger select</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Hardware trigger select</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DEC_CLK_INP_SEL</name>
+      <bitrange>10</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Decimator Clock Input Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>On the chip modulator clock will be used.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>External clock will be used.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DEC_CLK_EDGE_SEL</name>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Decimator Clock Edge Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Posedge will be used.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Negedge will be used.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CC</name>
+      <bitrange>12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Continuous Conversion/Single Conversion Mode Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>One conversion following a triggering event</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Continuous conversions following a triggering event.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DEC_EN</name>
+      <bitrange>13</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Decimation Filter enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Decimation filter is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Decimation filter is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SD_MOD_EN</name>
+      <bitrange>14</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Sigma Delta Modulator enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>SD ADC3 is disabled</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>SD ADC3 is enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>16:15</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>BYP_MODE</name>
+      <bitrange>17</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>AFE Channel3 bypass mode</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Normal mode</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bypass mode where ADC and PGA of channel3 are disabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>28:18</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>DEC_OSR</name>
+      <bitrange>31:29</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Decimator OverSampling Ratio select</description>
+      <values>
+        <value>
+          <value>0b000</value>
+          <description>64</description>
+        </value>
+        <value>
+          <value>0b001</value>
+          <description>128</description>
+        </value>
+        <value>
+          <value>0b010</value>
+          <description>256</description>
+        </value>
+        <value>
+          <value>0b011</value>
+          <description>512</description>
+        </value>
+        <value>
+          <value>0b100</value>
+          <description>1024</description>
+        </value>
+        <value>
+          <value>0b101</value>
+          <description>2048</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

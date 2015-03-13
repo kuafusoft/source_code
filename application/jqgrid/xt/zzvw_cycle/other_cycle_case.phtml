@@ -1,0 +1,38 @@
+<?php
+// print_r($this->query);
+	$container = 'mainContent';
+	if (!empty($this->container))
+		$container = $this->container;
+	$base = $container.'_'.$this->db.'_'.$this->table;
+	$conditionId = $base.'_cond';
+	$optionId = $base.'_option';
+	$hiddenId = $base.'_hidden';
+    $gridId = $base.'_list';
+    $pagerId = $base.'_pager';
+?>
+<div id="<?php echo $conditionId; ?>" class="condition">
+<?php
+	echo $this->partial('query.phtml', $this->options);
+?>
+</div>	
+<div id="<?php echo $optionId; ?>" >
+	<input type='hidden' id='gridoptions' value='<?php echo json_encode($this->options); ?>'>
+</div>
+<div id='<?php echo $hiddenId; ?>'>
+<?php
+if(!empty($this->hidden)){
+	foreach($this->hidden as $k=>$v){
+		print_r("<input type='hidden' id='$k' value='$v'>");
+	}
+}
+?>
+</div>
+<table id="<?php echo $gridId;?>" class="scroll"></table> 
+<div id="<?php echo $pagerId; ?>"></div> 
+
+<script type='text/javascript'>
+$(function(){
+	var grid = grid_factory.get('<?php echo $this->db;?>', '<?php echo $this->table;?>', {container:'<?php echo $container;?>'});
+	grid.ready();
+});
+</script>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART3_ET7816</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART 7816 Error Threshold Register</description>
+  <bitfields>
+    <bitfield>
+      <name>RXTHRESHOLD</name>
+      <bitrange>3:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receive NACK Threshold</description>
+    </bitfield>
+    <bitfield>
+      <name>TXTHRESHOLD</name>
+      <bitrange>7:4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit NACK Threshold</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>TXT asserts on the first NACK that is received.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>TXT asserts on the second NACK that is received.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

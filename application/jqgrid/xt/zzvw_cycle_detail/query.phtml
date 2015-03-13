@@ -1,0 +1,46 @@
+<?php
+	if (empty($this->query)){
+print_r('no query');
+		return;}
+	require_once('toolfactory.php');
+	$tool = toolFactory::get('kf');
+	$container = 'mainContent';
+	if (!empty($this->container))
+		$container = $this->container;
+	$base = $container.'_'.$this->db.'_'.$this->table;
+	$conditionId = $base.'_cond';
+	$advanced = '';
+	if (!empty($this->query['advanced']))
+		$advanced = "<input type='checkbox' id='{$base}_advanced' /><label for='{$base}_advanced'>Advanced Options</label>";
+	print_r("<fieldset><legend align='center'>Filter Condition $advanced </legend>");
+	if (!empty($this->query['normal'])){
+		if(!empty($this->query['cols']))
+			$cols = $this->query['cols'];
+		else{
+			$cs = count($this->query['normal']);
+			if ($cs < 6)
+				$cols = 2;
+			elseif($cs < 10)
+				$cols = 3;
+			else
+				$cols = 4;
+		}
+		$tool->cf($this->query['normal'], true, $this->queryValue, $cols, true);
+	}
+	if (!empty($this->query['advanced'])){
+		print_r("<div id='{$conditionId}_advanced' class='condition' style='display:none'>");
+		$tool->cf($this->query['advanced'], true, $this->queryValue, $cols, true);
+		print_r("</div>");
+	}
+	print_r("</fieldset>");
+	print_r("<button id='query' title='Query the {$this->table}' type='button' style='width:100px;height:30px' >Query</button>");
+	print_r("<button id='query_reset' title='Reset the filters' type='button' style='width:100px;height:30px'>Reset</button>");
+	if(!empty($this->query['buttons'])){
+		foreach($this->query['buttons'] as $key=>$button){
+?>	
+<button id='<?php echo 'query_'.$key;?>' title='<?php echo $button['title'];?>' type='button' style='width:120px;height:30px'><?php echo $button['label'];?></button>
+<?php			
+		}
+	}
+
+?>

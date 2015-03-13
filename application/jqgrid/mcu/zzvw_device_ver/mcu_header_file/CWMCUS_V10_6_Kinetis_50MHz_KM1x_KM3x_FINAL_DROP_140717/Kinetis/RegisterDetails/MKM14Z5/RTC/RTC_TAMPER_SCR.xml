@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>RTC_TAMPER_SCR</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x80F</reset-value>
+  <description>RTC Tamper Status and Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>TMPR_EN</name>
+      <bitrange>3:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Tamper Control</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7:4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>TMPR_STS</name>
+      <bitrange>11:8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Tamper Status Bit</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>15:12</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

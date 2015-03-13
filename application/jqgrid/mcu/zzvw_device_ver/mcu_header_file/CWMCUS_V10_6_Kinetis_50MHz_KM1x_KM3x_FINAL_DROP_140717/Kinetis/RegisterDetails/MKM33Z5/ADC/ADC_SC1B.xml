@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>ADC_SC1B</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x1F</reset-value>
+  <description>ADC Status and Control Registers 1</description>
+  <bitfields>
+    <bitfield>
+      <name>ADCH</name>
+      <bitrange>4:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Input channel select</description>
+      <values>
+        <value>
+          <value>0b00000</value>
+          <description>AD0 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b00001</value>
+          <description>AD1 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b00010</value>
+          <description>AD2 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b00011</value>
+          <description>AD3 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b00100</value>
+          <description>AD4 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b00101</value>
+          <description>AD5 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b00110</value>
+          <description>AD6 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b00111</value>
+          <description>AD7 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b01000</value>
+          <description>AD8 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b01001</value>
+          <description>AD9 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b01010</value>
+          <description>AD10 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b01011</value>
+          <description>AD11 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b01100</value>
+          <description>AD12 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b01101</value>
+          <description>AD13 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b01110</value>
+          <description>AD14 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b01111</value>
+          <description>AD15 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b10000</value>
+          <description>AD16 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b10001</value>
+          <description>AD17 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b10010</value>
+          <description>AD18 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b10011</value>
+          <description>AD19 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b10100</value>
+          <description>AD20 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b10101</value>
+          <description>AD21 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b10110</value>
+          <description>AD22 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b10111</value>
+          <description>AD23 is selected as input.</description>
+        </value>
+        <value>
+          <value>0b11000</value>
+          <description>Reserved.</description>
+        </value>
+        <value>
+          <value>0b11001</value>
+          <description>Reserved.</description>
+        </value>
+        <value>
+          <value>0b11010</value>
+          <description>Temp Sensor (single-ended) is selected as input.</description>
+        </value>
+        <value>
+          <value>0b11011</value>
+          <description>Bandgap (single-ended) is selected as input.</description>
+        </value>
+        <value>
+          <value>0b11100</value>
+          <description>Reserved.</description>
+        </value>
+        <value>
+          <value>0b11101</value>
+          <description>VREFSH is selected as input. Voltage reference selected is determined by SC2[REFSEL].</description>
+        </value>
+        <value>
+          <value>0b11110</value>
+          <description>VREFSL is selected as input. Voltage reference selected is determined by SC2[REFSEL].</description>
+        </value>
+        <value>
+          <value>0b11111</value>
+          <description>Module is disabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>This reserved bit should not be changed.</description>
+    </bitfield>
+    <bitfield>
+      <name>AIEN</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Conversion complete interrupt is disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Conversion complete interrupt is enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>COCO</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Conversion Complete Flag</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Conversion is not completed.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Conversion is completed.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>CRC_CTRL</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>CRC Control register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>23:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>TCRC</name>
+      <bitrange>24</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Width of CRC protocol.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>16-bit CRC protocol.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>32-bit CRC protocol.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WAS</name>
+      <bitrange>25</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Write CRC Data Register As Seed</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Writes to the CRC data register are data values.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Writes to the CRC data register are seed values.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FXOR</name>
+      <bitrange>26</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Complement Read Of CRC Data Register</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No XOR on reading.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Invert or complement the read value of the CRC Data register.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>27</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>TOTR</name>
+      <bitrange>29:28</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Type Of Transpose For Read</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>No transposition.</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Bits in bytes are transposed; bytes are not transposed.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Both bits in bytes and bytes are transposed.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Only bytes are transposed; no bits in a byte are transposed.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TOT</name>
+      <bitrange>31:30</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Type Of Transpose For Writes</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>No transposition.</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Bits in bytes are transposed; bytes are not transposed.</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Both bits in bytes and bytes are transposed.</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Only bytes are transposed; no bits in a byte are transposed.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SIM_CLKDIV1</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0x8000000</reset-value>
+  <description>System Clock Divider Register 1</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>26:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>SYSCLKMODE</name>
+      <bitrange>27</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>System Clock Mode</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>1:1:1</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>2:1:1</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SYSDIV</name>
+      <bitrange>31:28</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>System Clock divider</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>Divide by 1</description>
+        </value>
+        <value>
+          <value>0b0001</value>
+          <description>Divide by 2</description>
+        </value>
+        <value>
+          <value>0b0010</value>
+          <description>Divide by 3</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>Divide by 4 and so on..... If FOPT[0] is 0, the divider is set to div-by-8 after system reset is deasserted (after completion of system initialization sequence)</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

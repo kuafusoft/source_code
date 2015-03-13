@@ -1,0 +1,24 @@
+Please select the Rempve Cases type:
+<table>
+	<tr>
+		<td>
+			<label for="query_remove_all">
+				<input type="radio" name="case_query_remove_type" id="query_remove_all" checked="checked" value="remove_all"> 
+				Remove All Cases From Current Cycle
+			</label> 
+		</td> 
+	</tr> 
+	<tr>
+		<td>
+			<label for="query_remove_cond">
+				<input type="radio" name="case_query_remove_type" id="query_remove_cond" value="remove_cond"> 
+				Remove Certain Prj + Compiler + Target Cases From Current Cycle
+				<div id='div_for_query_remove_cond'>
+					<?php
+						echo $this->partial('detail_query_remove_cond.phtml', $this);
+					?>
+				</div>
+			</label> 
+		</td> 
+	</tr>
+</table> 

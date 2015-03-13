@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>WDOG_WINL</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x10</reset-value>
+  <description>Watchdog Window Register Low</description>
+  <bitfields>
+    <bitfield>
+      <name>WINLOW</name>
+      <bitrange>15:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Defines the lower 16 bits of the 32-bit window for the windowed mode of operation of the watchdog. It is defined in terms of cycles of the pre-scaled watchdog clock. In this mode, the watchdog can be refreshed only when the timer reaches a value greater than or equal to this window length value. A refresh outside of this window resets the system or if IRQRSTEN is set, it interrupts and then resets the system.</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

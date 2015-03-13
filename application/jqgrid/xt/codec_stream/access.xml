@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<role_access>
+	<all>
+		<all value='0'/>
+	</all>
+	
+	<Dev extends='all'>
+		<query_report value='1' />
+		<view_edit_edit value='0' />
+		<view_edit_cancel value='0' />
+		<view_edit_save value='0' />
+		<view_edit_saveandnew value='0' />
+		<view_edit_cloneit value='0' />
+	</Dev>
+	
+	<tester extends='Dev'>
+		<link2prj value='1' />
+		<unlinkfromprj value='1' />
+		<publish value='1' />
+		<change_owner value='1' />
+		<view_edit_edit value='1' />
+		<view_edit_cancel value='1' />
+		<view_edit_save value='1' />
+		<view_edit_saveandnew value='1' />
+	</tester>
+
+	<row_owner extends='tester'>
+		<view_edit_publish value='1' />
+		<publish value='1' />
+		<view_edit_edit value='1' />
+		<view_edit_abort value='1' />
+		<abort value='1' />
+	</row_owner>
+	
+	<row_ver_newer extends='Dev'>
+		<view_edit_edit value='1' />
+		<view_edit_save value='1' />
+		<view_edit_cancel value='1' />
+	</row_ver_newer>
+	
+</role_access>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-collection-file>
+<register-collection-file xmlns="http://www.freescale.com/schema/ddd/1.0/regdata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/regdata RegisterData.xsd">
+
+<register-collection>
+  <name>MCM_Layout</name>
+  <register-sets>
+    <register-set-descriptor>
+      <name>Core Platform Miscellaneous Control Module (MCM)</name>
+      <registers>
+        <register>
+          <name>MCM_PLASC</name>
+          <access>R</access>
+          <register-details-file-name>MCM/MCM_PLASC.xml</register-details-file-name>
+          <offset>0x8</offset>
+          <size>2</size>
+          <base>
+            <direct-base>
+              <base-address>0xF0003000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>MCM_PLAMC</name>
+          <access>R</access>
+          <register-details-file-name>MCM/MCM_PLAMC.xml</register-details-file-name>
+          <offset>0xA</offset>
+          <size>2</size>
+          <base>
+            <direct-base>
+              <base-address>0xF0003000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>MCM_PLACR</name>
+          <access>RW</access>
+          <register-details-file-name>MCM/MCM_PLACR.xml</register-details-file-name>
+          <offset>0xC</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xF0003000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>MCM_PID</name>
+          <access>RW</access>
+          <register-details-file-name>MCM/MCM_PID.xml</register-details-file-name>
+          <offset>0x30</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xF0003000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>MCM_CPO</name>
+          <access>RW</access>
+          <register-details-file-name>MCM/MCM_CPO.xml</register-details-file-name>
+          <offset>0x40</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xF0003000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+        <register>
+          <name>MCM_MATCR0</name>
+          <access>RW</access>
+          <register-details-file-name>MCM/MCM_MATCR0.xml</register-details-file-name>
+          <offset>0x80</offset>
+          <size>4</size>
+          <base>
+            <direct-base>
+              <base-address>0xF0003000</base-address>
+              <base-memory-space>1</base-memory-space>
+            </direct-base>
+          </base>
+        </register>
+      </registers>
+    </register-set-descriptor>
+  </register-sets>
+</register-collection>
+
+</register-collection-file>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART0_CFIFO</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART FIFO Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>RXUFE</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receive FIFO Underflow Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>RXUF flag does not generate an interrupt to the host.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>RXUF flag generates an interrupt to the host.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXOFE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Transmit FIFO Overflow Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>TXOF flag does not generate an interrupt to the host.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>TXOF flag generates an interrupt to the host.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RXOFE</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receive FIFO Overflow Interrupt Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>RXOF flag does not generate an interrupt to the host.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>RXOF flag generates an interrupt to the host.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>5:3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>RXFLUSH</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Receive FIFO/Buffer Flush</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No flush operation occurs.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>All data in the receive FIFO/buffer is cleared out.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>TXFLUSH</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>Transmit FIFO/Buffer Flush</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>No flush operation occurs.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>All data in the transmit FIFO/Buffer is cleared out.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SIM_SOPT1_CFG</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>SOPT1 Configuration Register</description>
+  <bitfields>
+    <bitfield>
+      <name>LPTMR1SEL</name>
+      <bitrange>1:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LP timer Channel1 Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Pad PTE4</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Pad PTF4</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Pad PTG1</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LPTMR2SEL</name>
+      <bitrange>3:2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LP timer Channel2 Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Pad PTD6</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Pad PTF3</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Pad PTG5</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>LPTMR3SEL</name>
+      <bitrange>5:4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LP timer Channel3 Select</description>
+      <values>
+        <value>
+          <value>0b00</value>
+          <description>Pad PTD5</description>
+        </value>
+        <value>
+          <value>0b01</value>
+          <description>Pad PTG0</description>
+        </value>
+        <value>
+          <value>0b10</value>
+          <description>Pad PTG6</description>
+        </value>
+        <value>
+          <value>0b11</value>
+          <description>Reserved</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>CMPOLPTMR0SEL</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Comparator output selection for LPTMR channel0</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>CMP[1] output selected as LPTMR input[0]</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>CMP[0] output selected as LPTMR input[0]</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>RAMSBDIS</name>
+      <bitrange>8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Disable source bias of System SRAM arrays during VLPR and VLPW modes.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Source bias of System SRAM enabled during VLPR and VLPW modes.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Source bias of System SRAM disabled during VLPR and VLPW modes.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RAMBPEN</name>
+      <bitrange>9</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>RAM Bitline Precharge Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Bitline precharge of system SRAM disabled during VLPR and VLPW modes.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Bitline precharge of system SRAM enabled during VLPR and VLPW modes.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>31:10</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

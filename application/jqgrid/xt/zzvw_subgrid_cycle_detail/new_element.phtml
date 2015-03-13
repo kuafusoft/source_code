@@ -1,0 +1,14 @@
+<?php
+	require_once('kf_tool.php');
+	$tool = new KF_Tool();
+	$params = isset($this->params) ? $this->params : array();
+	$ms = count($this->cols);
+	if ($ms < 8)
+		$cols = 1;
+	else
+		$cols = 1;
+	print_r("<fieldset><legend>{$this->legend}</legend>");
+		$tool->cf($this->cols, true, null, $cols, false, $params, true);
+	print_r("</fieldset>");
+	print_r("<div id=div_result_cr_summit_{$this->id}></div>");
+?>

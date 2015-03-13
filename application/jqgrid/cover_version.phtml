@@ -1,0 +1,39 @@
+There're some EDITING versions for your selected projects, please make your decision:<BR />
+<BR />
+<fieldset>
+	<legend>New Or Cover</legend>
+<table>
+	<tr>
+		<td>
+			<label for='ver_id_0'><input id='ver_id_0' type='radio' name='ver_id' value='0' checked='checked'>Create a New Version</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span style="color:red">OR Select a version to <strong>COVER</strong></span>:
+		</td>
+	</tr>
+<?php
+foreach($this->rows as $row){
+	$id = $row['id'];
+	$ver = 'Version '.$row['ver'];
+	$updated = $row['updated'];
+	$prj = $row['prj_name'];
+?>
+	<tr>
+		<td>
+			<label for='ver_id_<?php echo $id; ?>'><input id='ver_id_<?php echo $id;?>' type='radio' name='ver_id' value='<?php echo $id;?>'>
+				<?php echo $ver." linked $prj [Updated at $updated]";?>
+			</label>
+		</td>
+	</tr>
+<?php	
+}
+?>
+</table>
+</fieldset>

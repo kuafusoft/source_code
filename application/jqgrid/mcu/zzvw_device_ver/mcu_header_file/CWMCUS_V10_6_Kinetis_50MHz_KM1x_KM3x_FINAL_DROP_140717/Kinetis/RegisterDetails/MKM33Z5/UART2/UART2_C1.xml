@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART2_C1</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART Control Register 1</description>
+  <bitfields>
+    <bitfield>
+      <name>PT</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Parity Type</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Even parity.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Odd parity.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>PE</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Parity Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Parity function disabled.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Parity function enabled.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ILT</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Idle Line Type Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Idle character bit count starts after start bit.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Idle character bit count starts after stop bit.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>WAKE</name>
+      <bitrange>3</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receiver Wakeup Method Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Idle line wakeup.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Address mark wakeup.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>M</name>
+      <bitrange>4</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>9-bit or 8-bit Mode Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Normal-start + 8 data bits (MSB/LSB first as determined by MSBF) + stop.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Use-start + 9 data bits (MSB/LSB first as determined by MSBF) + stop.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>RSRC</name>
+      <bitrange>5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Receiver Source Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Selects internal loop back mode. The receiver input is internally connected to transmitter output.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Single wire UART mode where the receiver input is connected to the transmit pin input signal.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved.</description>
+    </bitfield>
+    <bitfield>
+      <name>LOOPS</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Loop Mode Select</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Normal operation.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Loop mode where transmitter output is internally connected to receiver input. The receiver input is determined by RSRC.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

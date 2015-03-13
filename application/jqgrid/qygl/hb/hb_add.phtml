@@ -1,0 +1,7 @@
+<?php
+//<!-- 伙伴信息 -->
+    echo $this->partial('hb_info.phtml', array('credit_level'=>$this->credit_level));
+    echo $this->partial('hb_yg.phtml', array('salary_class'=>$this->salary_class, 'gx'=>$this->gx, 'grade'=>$this->grade));
+    echo $this->partial('hb_vender.phtml', array('zy_fl'=>$this->zy_fl, 'zy'=>$this->zy));
+    echo $this->partial('hb_customer.phtml', array('cp'=>$this->zy_cp));
+?>

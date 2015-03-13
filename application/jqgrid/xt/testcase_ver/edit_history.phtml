@@ -1,0 +1,25 @@
+﻿<!--
+ 应该可以进行不同版本之间的对比
+-->
+<div id="testcase">
+	<fieldset>
+		<legend>Testcase Information</legend>
+		<?php
+			$kf_tool = new KF_Tool();
+			$fields = array("code", 'summary', 'testcase_testpoint'=>'Testpoint', 'testcase_type'=>'Type', 'testcase_category'=>'Category', 'testcase_source'=>'Source');
+			$kf_tool->showInfo($fields, $this->testcase_ver, 3);
+		?>
+	</fieldset>
+</div>
+<div id="edit_his">
+	<fieldset>
+		<legend>Edit History</legend>
+		<?php
+			$kf_tool->showTable(array('id'=>array('type'=>'checkbox'), 'ver'=>array('type'=>'link', 'href'=>'javascript:XT.information("xt_zzvw_testcase_ver_list", "<%id%>")'), 'edit_status', 'prjs', 'created'), $this->edit_history);
+		?>
+	</fieldset>
+</div>
+
+<div id="btn">
+	<button id='diff' type='button'>Diff</button>
+</div>

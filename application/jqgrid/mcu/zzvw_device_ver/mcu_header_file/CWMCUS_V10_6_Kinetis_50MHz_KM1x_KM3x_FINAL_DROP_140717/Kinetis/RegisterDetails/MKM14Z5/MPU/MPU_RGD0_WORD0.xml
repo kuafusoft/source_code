@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>MPU_RGD0_WORD0</name>
+  <bitrange>31:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Region Descriptor n, Word 0</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>4:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>SRTADDR</name>
+      <bitrange>31:5</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Start Address</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

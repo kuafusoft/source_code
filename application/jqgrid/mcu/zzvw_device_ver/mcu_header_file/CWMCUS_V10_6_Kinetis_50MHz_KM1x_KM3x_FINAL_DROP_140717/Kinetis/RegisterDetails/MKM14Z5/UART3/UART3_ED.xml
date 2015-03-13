@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>UART3_ED</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>UART Extended Data Register</description>
+  <bitfields>
+    <bitfield>
+      <name/>
+      <bitrange>5:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>PARITYE</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>The current received dataword contained in D and C3[R8] was received with a parity error.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The dataword was received without a parity error.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The dataword was received with a parity error.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>NOISY</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>The current received dataword contained in D and C3[R8] was received with noise.</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>The dataword was received without noise.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>The data was received with noise.</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

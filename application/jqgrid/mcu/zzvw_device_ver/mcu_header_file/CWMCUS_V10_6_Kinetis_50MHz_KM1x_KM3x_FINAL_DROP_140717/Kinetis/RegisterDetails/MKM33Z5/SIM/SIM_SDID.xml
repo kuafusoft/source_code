@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>SIM_SDID</name>
+  <bitrange>31:0</bitrange>
+  <description>System Device Identification Register</description>
+  <bitfields>
+    <bitfield>
+      <name>PINID</name>
+      <bitrange>3:0</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Pincount identification</description>
+      <values>
+        <value>
+          <value>0b0011</value>
+          <description>44-pin</description>
+        </value>
+        <value>
+          <value>0b0100</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b0101</value>
+          <description>64-pin</description>
+        </value>
+        <value>
+          <value>0b0110</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b0111</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b1000</value>
+          <description>100-pin</description>
+        </value>
+        <value>
+          <value>0b1001</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b1010</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b1011</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b1100</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b1101</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b1110</value>
+          <description>Reserved</description>
+        </value>
+        <value>
+          <value>0b1111</value>
+          <description>Reserved</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>DIEID</name>
+      <bitrange>7:4</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Die ID</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>First cut</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>REVID</name>
+      <bitrange>11:8</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Revision ID</description>
+      <values>
+        <value>
+          <value>0b0001</value>
+          <description>Second Cut</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SRAMSIZE</name>
+      <bitrange>15:12</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>SRAM Size</description>
+      <values>
+        <value>
+          <value>0b0101</value>
+          <description>16kB SRAM</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ATTR</name>
+      <bitrange>19:16</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Attribute ID</description>
+      <values>
+        <value>
+          <value>0b0000</value>
+          <description>M0+ core</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SERIESID</name>
+      <bitrange>23:20</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Series ID</description>
+      <values>
+        <value>
+          <value>0b0011</value>
+          <description>Metering Series</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>SUBFAMID</name>
+      <bitrange>27:24</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Sub-Family ID</description>
+      <values>
+        <value>
+          <value>0b0010</value>
+          <description>Device derivatives with 2 AFE enabled (AFE Channels 0 and 2 are enabled)</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>Device derivatives with 3 AFE enabled (AFE Channels 0, 1, and 2 are enabled)</description>
+        </value>
+        <value>
+          <value>0b0100</value>
+          <description>Device derivatives with 4 AFE enabled</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>FAMID</name>
+      <bitrange>31:28</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Metering family ID</description>
+      <values>
+        <value>
+          <value>0b0001</value>
+          <description>Device derivatives without LCD</description>
+        </value>
+        <value>
+          <value>0b0011</value>
+          <description>Device derivatives with LCD</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

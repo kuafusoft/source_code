@@ -1,0 +1,65 @@
+<?php
+	// print_r($this->options);
+	
+	$container = 'mainContent';
+	if (!empty($this->container))
+		$container = $this->container;
+	$base = $container.'_'.$this->db.'_'.$this->table;
+	$conditionId = $base.'_cond';
+	$optionId = $base.'_option';
+	$hiddenId = $base.'_hidden';
+    $gridId = $base.'_list';
+    $pagerId = $base.'_pager';
+
+	print_r("<a name='{$base}_top' href='#{$base}_top'></a>");
+?>
+
+<div style='clear:both' id="<?php echo $conditionId; ?>" class="condition">
+<?php
+// print_r($container);
+// print_r($this->options);
+	$this->options['container'] = $container;
+	echo $this->partial('/jqgrid/query.phtml', $this->options);
+?>
+</div>	
+<div style='clear:both' id="<?php echo $optionId; ?>" >
+	<input type='hidden' id='gridoptions' value='<?php echo htmlentities(json_encode($this->options), ENT_QUOTES); ?>'>
+	<input type='hidden' id='subgridoptions' value=''>
+</div>
+<div id='<?php echo $hiddenId; ?>'>
+	<input type='hidden' id='sql'>
+	<input type='hidden' id='sqls'>
+<?php
+if(!empty($this->hidden)){
+	foreach($this->hidden as $k=>$v){
+		print_r("<input type='hidden' id='$k' value='$v'>");
+	}
+}
+?>
+</div>
+<table id="<?php echo $gridId;?>" class="scroll"></table> 
+<div id="<?php echo $pagerId; ?>"></div> 
+
+<div id="<?php echo $gridId;?>_help" class="grid_help_pager">
+	<ul>
+		<li id='grid_help_top' title='go top'>
+			<a href='#<?php echo $base;?>_top' id='grid_help_top' title="go top"></a>
+		</li>
+		<li id='grid_help_prepage' title='Previous page'></li>
+		<li id='grid_help_nextpage' title='Next page'></li>
+		<li id='grid_help_column' title="Display/Hide Columns"></li>
+		<li id='grid_help_select_all' title="Toggle Select"></li>
+		<li id='grid_help_unselect_all' title="unSelect All"></li>
+		<li id='grid_help_export' title="Export the selected rows"></li>
+		<li id='grid_help_bottom' title='go end'>
+			<a href='#<?php echo $base;?>_bottom' id='grid_help_bottom' title="go end"></a>
+		</li>
+	</ul>
+</div>
+<a name='<?php echo $base;?>_bottom' href='#<?php echo $base;?>_bottom'></a>
+<script type='text/javascript'>
+$(function(){
+	var grid = grid_factory.get('<?php echo $this->db;?>', '<?php echo $this->table;?>', {container:'<?php echo $container;?>'});
+	// grid.ready();
+});
+</script>

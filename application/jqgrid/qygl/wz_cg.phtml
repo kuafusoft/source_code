@@ -1,0 +1,7 @@
+<?php
+	$params = array('from'=>$this->from, 'wz_id'=>$this->id, 'wz'=>$this->wz, 'gys'=>$this->gys, 'zjzh'=>$this->zjzh, 'fh_fl'=>$this->fh_fl, 'jbr'=>$this->jbr);
+	echo $this->partial('cg.phtml', $params);
+	echo $this->partial('yunshu.phtml', array('cyr'=>$this->cyr, 'zjzh'=>$this->zjzh, 'jbr'=>$this->jbr)); //承运人
+	echo $this->partial('zhuangxie.phtml', array('zxr'=>$this->zxr, 'zjzh'=>$this->zjzh, 'jbr'=>$this->jbr)); //装卸人
+	echo $this->partial('ruku.phtml', array('zl'=>$this->zl, 'ck'=>$this->ck, 'ruku'=>$this->ruku, 'wz'=>$this->wz[$this->id], 'jbr'=>$this->jbr));
+?>

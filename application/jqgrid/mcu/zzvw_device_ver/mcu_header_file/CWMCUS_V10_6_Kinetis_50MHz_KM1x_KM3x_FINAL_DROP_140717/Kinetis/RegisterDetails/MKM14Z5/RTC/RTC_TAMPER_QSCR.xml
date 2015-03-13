@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>RTC_TAMPER_QSCR</name>
+  <bitrange>15:0</bitrange>
+  <reset-value>0x2</reset-value>
+  <description>Tamper Queue Status and Control Register</description>
+  <bitfields>
+    <bitfield>
+      <name>Q_FULL</name>
+      <bitrange>0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Tamper Queue full status bit.</description>
+    </bitfield>
+    <bitfield>
+      <name>Q_FULL_INT_EN</name>
+      <bitrange>1</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Queue full interrupt enable bit.</description>
+    </bitfield>
+    <bitfield>
+      <name>Q_CLEAR</name>
+      <bitrange>2</bitrange>
+      <format>binary</format>
+      <access>write</access>
+      <description>This field when set clears the Tamper Queue. This is an auto clear bit. It gets cleared in the next cycle.</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7:3</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+    <bitfield>
+      <name>LFSR_CLK_SEL</name>
+      <bitrange>10:8</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>This field defines the clock selection for LFSR module. This value should be the same for all the active tamper filter clock selects (defined for the input pin). LFSR is only enabled if user defines atleast one of the tamper pins as ACTIVE.</description>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>11</bitrange>
+      <format>binary</format>
+      <access>read</access>
+      <description>Reserved</description>
+    </bitfield>
+    <bitfield>
+      <name>LFSR_DURATION</name>
+      <bitrange>15:12</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>LFSR Filter duration period:- Denotes the LFSR clocks after which the LFSR shifts its value. This value should be the same value used for all the Active tamper filter duration period (defined for the input pin).</description>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

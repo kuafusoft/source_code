@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>RCM_RPFW</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Reset Pin Filter Width register</description>
+  <bitfields>
+    <bitfield>
+      <name>RSTFLTSEL</name>
+      <bitrange>4:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>Reset Pin Filter Bus Clock Select</description>
+      <values>
+        <value>
+          <value>0b00000</value>
+          <description>Bus clock filter count is 1</description>
+        </value>
+        <value>
+          <value>0b00001</value>
+          <description>Bus clock filter count is 2</description>
+        </value>
+        <value>
+          <value>0b00010</value>
+          <description>Bus clock filter count is 3</description>
+        </value>
+        <value>
+          <value>0b00011</value>
+          <description>Bus clock filter count is 4</description>
+        </value>
+        <value>
+          <value>0b00100</value>
+          <description>Bus clock filter count is 5</description>
+        </value>
+        <value>
+          <value>0b00101</value>
+          <description>Bus clock filter count is 6</description>
+        </value>
+        <value>
+          <value>0b00110</value>
+          <description>Bus clock filter count is 7</description>
+        </value>
+        <value>
+          <value>0b00111</value>
+          <description>Bus clock filter count is 8</description>
+        </value>
+        <value>
+          <value>0b01000</value>
+          <description>Bus clock filter count is 9</description>
+        </value>
+        <value>
+          <value>0b01001</value>
+          <description>Bus clock filter count is 10</description>
+        </value>
+        <value>
+          <value>0b01010</value>
+          <description>Bus clock filter count is 11</description>
+        </value>
+        <value>
+          <value>0b01011</value>
+          <description>Bus clock filter count is 12</description>
+        </value>
+        <value>
+          <value>0b01100</value>
+          <description>Bus clock filter count is 13</description>
+        </value>
+        <value>
+          <value>0b01101</value>
+          <description>Bus clock filter count is 14</description>
+        </value>
+        <value>
+          <value>0b01110</value>
+          <description>Bus clock filter count is 15</description>
+        </value>
+        <value>
+          <value>0b01111</value>
+          <description>Bus clock filter count is 16</description>
+        </value>
+        <value>
+          <value>0b10000</value>
+          <description>Bus clock filter count is 17</description>
+        </value>
+        <value>
+          <value>0b10001</value>
+          <description>Bus clock filter count is 18</description>
+        </value>
+        <value>
+          <value>0b10010</value>
+          <description>Bus clock filter count is 19</description>
+        </value>
+        <value>
+          <value>0b10011</value>
+          <description>Bus clock filter count is 20</description>
+        </value>
+        <value>
+          <value>0b10100</value>
+          <description>Bus clock filter count is 21</description>
+        </value>
+        <value>
+          <value>0b10101</value>
+          <description>Bus clock filter count is 22</description>
+        </value>
+        <value>
+          <value>0b10110</value>
+          <description>Bus clock filter count is 23</description>
+        </value>
+        <value>
+          <value>0b10111</value>
+          <description>Bus clock filter count is 24</description>
+        </value>
+        <value>
+          <value>0b11000</value>
+          <description>Bus clock filter count is 25</description>
+        </value>
+        <value>
+          <value>0b11001</value>
+          <description>Bus clock filter count is 26</description>
+        </value>
+        <value>
+          <value>0b11010</value>
+          <description>Bus clock filter count is 27</description>
+        </value>
+        <value>
+          <value>0b11011</value>
+          <description>Bus clock filter count is 28</description>
+        </value>
+        <value>
+          <value>0b11100</value>
+          <description>Bus clock filter count is 29</description>
+        </value>
+        <value>
+          <value>0b11101</value>
+          <description>Bus clock filter count is 30</description>
+        </value>
+        <value>
+          <value>0b11110</value>
+          <description>Bus clock filter count is 31</description>
+        </value>
+        <value>
+          <value>0b11111</value>
+          <description>Bus clock filter count is 32</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name/>
+      <bitrange>7:5</bitrange>
+      <format>binary</format>
+      <access>read</access>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

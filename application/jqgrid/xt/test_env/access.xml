@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<role_access>
+	<all>
+		<all value='0' />
+	</all>
+	<guest extends='all'/>
+	<normal extends='guest'>
+		<all value='1' />
+	</normal>
+	<Dev extends='normal' />
+	<tester extends='Dev' />
+	<admin extends='tester'>
+	</admin>
+</role_access>

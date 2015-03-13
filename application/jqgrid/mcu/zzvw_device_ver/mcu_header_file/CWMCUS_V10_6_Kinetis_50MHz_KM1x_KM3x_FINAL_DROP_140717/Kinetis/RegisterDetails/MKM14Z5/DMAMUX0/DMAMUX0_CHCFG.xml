@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE register-details-file>
+<register-details-file xmlns="http://www.freescale.com/schema/ddd/1.0/detail" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.freescale.com/schema/ddd/1.0/detail RegisterDetails.xsd">
+
+<register-details>
+  <name>DMAMUX0_CHCFG</name>
+  <bitrange>7:0</bitrange>
+  <reset-value>0</reset-value>
+  <description>Channel Configuration register</description>
+  <bitfields>
+    <bitfield>
+      <name>SOURCE</name>
+      <bitrange>5:0</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA Channel Source (Slot)</description>
+    </bitfield>
+    <bitfield>
+      <name>TRIG</name>
+      <bitrange>6</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA Channel Trigger Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>Triggering is disabled. If triggering is disabled and the ENBL bit is set, the DMA Channel will simply route the specified source to the DMA channel. (Normal mode)</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>Triggering is enabled. If triggering is enabled and the ENBL bit is set, the DMAMUX is in Periodic Trigger mode.</description>
+        </value>
+      </values>
+    </bitfield>
+    <bitfield>
+      <name>ENBL</name>
+      <bitrange>7</bitrange>
+      <format>binary</format>
+      <access>readwrite</access>
+      <description>DMA Channel Enable</description>
+      <values>
+        <value>
+          <value>0b0</value>
+          <description>DMA channel is disabled. This mode is primarily used during configuration of the DMAMux. The DMA has separate channel enables/disables, which should be used to disable or reconfigure a DMA channel.</description>
+        </value>
+        <value>
+          <value>0b1</value>
+          <description>DMA channel is enabled</description>
+        </value>
+      </values>
+    </bitfield>
+  </bitfields>
+</register-details>
+
+</register-details-file>

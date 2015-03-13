@@ -1,0 +1,33 @@
+<div>
+	<label for="host">Please Select Host:</label>
+	<select id="host">
+		<option value="localhost">Local Host</option>
+		<option value="10.192.244.49">10.192.244.49</option>
+	</select>
+	<br /><br />
+	<label for="db_name">Please Select DB: </label>
+	<select id="db_name">
+		<option value="xt">XT</option>
+		<option value="workflow">Workflow</option>
+		<option value="useradmin">User Admin</option>
+	</select>
+	
+	<br /><br />
+	<button id="btn_backup" value="Start to Backup">Start Backup</button>
+</div>
+
+<script>
+	$('#btn_backup').click(function(){
+		var db_name = $('#db_name').val(), host = $('#host').val();
+		var tool = new kf_tool();
+		var dialog = tool.waitingDialog();
+		$.post('/dbadmin/backup/', {db_name:db_name, host:host}, function(data){
+			dialog.dialog('close');
+			if (data.errcode == 0)
+				alert("success to backup the " + db_name + " and the backupfile is " + data.msg);
+			else
+				alert("Fail to backup the " + db_name + ", msg: " + data.msg);
+		}, 'json');
+	
+	});
+</script>
