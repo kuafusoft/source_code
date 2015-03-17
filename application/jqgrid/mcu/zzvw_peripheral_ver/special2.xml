@@ -347,6 +347,10 @@
 				<item>DAR\d=>DAR</item>
 				<item>DSR_BCR\d=>DSR_BCR</item>
 				<item>DCR\d=>DCR</item>
+				<item>CHC1=>C1</item>
+				<item>CHS=>S</item>
+				<item>CHDLY0=>DLY</item>
+				<item>CHDLY1=>DLY</item>
 			</MKM34Z7>
 			
 		</rename>
@@ -551,8 +555,9 @@
 				<EAR>1</EAR>
 				<EDR></EDR>
 				
-				<CHDLY0>1</CHDLY0>
-				<CHDLY1>1</CHDLY1>
+				<C1>1</C1>
+				<S>1</S>
+				<DLY>1</DLY>
 			</MKM34Z7>
 			
 		</reg_data_ignore>
