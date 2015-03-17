@@ -550,6 +550,9 @@
 				
 				<EAR>1</EAR>
 				<EDR></EDR>
+				
+				<CHDLY0>1</CHDLY0>
+				<CHDLY1>1</CHDLY1>
 			</MKM34Z7>
 			
 		</reg_data_ignore>
