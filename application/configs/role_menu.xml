@@ -102,19 +102,26 @@
         </basetable>
     
 		<workflow label='Workflow'>
+            <daily_note action="workflow_daily_note" label="Daily Note" img="useradmin.png"/>
+            <work_report action="workflow_work_summary" label="Work Summary" img="useradmin.png"/>
+            <customer_support_ticket action="workflow_customer_support_ticket_index" label="Customer Support" img="useradmin.png"/>
+            <cqi_ticket action="workflow_cqi_ticket_index" label="CQI Ticket" img="useradmin.png"/>
+            <npi_ticket action="workflow_npi_ticket_index" label="NPI Ticket" img="useradmin.png"/>
+            <reference_design_ticket action="workflow_reference_design_ticket_index" label="Reference Design" img="useradmin.png"/>
+		</workflow>
+
+		<workflow_base label='Workflow Base'>
             <customer action="workflow_customer_index" label="Customer" img="useradmin.png"/>
             <prj action="workflow_prj" label="Project" img="useradmin.png"/>
             <period action="workflow_period" label="Period" img="useradmin.png"/>
-            <daily_note action="workflow_daily_note" label="Daily Note" img="useradmin.png"/>
-            <work_summary action="workflow_work_summary" label="Work Summary" img="useradmin.png"/>
-            <ticket action="workflow_ticket_index" label="Ticket" img="useradmin.png"/>
-            <ticket_trace action="workflow_ticket_trace_index" label="Ticket Trace" img="useradmin.png"/>
             <region action="workflow_region_index" label="Region" img="useradmin.png"/>
             <family action="workflow_family_index" label="Family" img="useradmin.png"/>
             <part action="workflow_part_index" label="Part" img="useradmin.png"/>
-            <prj_phase action="workflow_prj_phase_index" label="Prj Phase" img="useradmin.png"/>
+            <prj_phase action="workflow_prj_phase_index" label="Project Phase" img="useradmin.png"/>
             <customer_phase action="workflow_customer_phase_index" label="Customer Phase" img="useradmin.png"/>
-		</workflow>
+            <module action="workflow_module_index" label="Module" img="useradmin.png"/>
+            <question_type action="workflow_question_type_index" label="Question Type" img="useradmin.png"/>
+		</workflow_base>
 
 		<other label="Others">
 			<tag action='tag_index' label='Tag Management' />
@@ -251,19 +258,25 @@
 		
 	<workflow extends='normal'>
 		<workflow display='true'>
+			<daily_note display='false'/>
+			<work_report display='false'/>
+			<customer_support_ticket display='true' />
+			<cqi_ticket display='true' />
+			<npi_ticket display='true' />
+			<reference_design_ticket display='true' />
+		</workflow>
+		<workflow_base display='true'>
 			<customer display='true' />
             <prj display='true'/>
-            <period display='false'/>
-			<daily_note display='false'/>
-			<work_summary display='false'/>
-			<ticket display='true' />
-			<ticket_trace display='true' />
+            <period display='true'/>
 			<region display='true' />
 			<family display='true' />
 			<part display='true' />
 			<prj_phase display='true' />
 			<customer_phase display='true' />
-		</workflow>
+			<module display='true' />
+			<question_type display='true' />
+		</workflow_base>
 	</workflow>
 	
 	<assistant_admin extends="coordinator">
