@@ -1012,12 +1012,32 @@ XT = XT || {};
 		return this.grid_index('workflow', 'work_summary', 'Work Report');
 	}
 
-	this.workflow_ticket_index = function(){
-		return this.grid_index('workflow', 'ticket', 'Ticket');
+	this.workflow_customer_support_ticket_index = function(){
+		return this.grid_index('workflow', 'ticket', 'Customer Support Ticket');
+	}
+
+	this.workflow_cqi_ticket_index = function(){
+		return this.grid_index('workflow', 'cqi_ticket', 'CQI Ticket');
+	}
+
+	this.workflow_npi_ticket_index = function(){
+		return this.grid_index('workflow', 'npi_ticket', 'NPI Ticket');
+	}
+
+	this.workflow_reference_design_ticket_index = function(){
+		return this.grid_index('workflow', 'reference_design_ticket', 'Reference Design Ticket');
 	}
 
 	this.workflow_ticket_trace_index = function(){
 		return this.grid_index('workflow', 'ticket_trace', 'Ticket Trace');
+	}
+
+	this.workflow_module_index = function(){
+		return this.grid_index('workflow', 'module', 'Module');
+	}
+
+	this.workflow_question_type_index = function(){
+		return this.grid_index('workflow', 'question_type', 'Question Type');
 	}
 
 	this.workflow_customer_index = function(){
@@ -1042,6 +1062,10 @@ XT = XT || {};
 
 	this.workflow_customer_phase_index = function(){
 		return this.grid_index('workflow', 'customer_phase', 'Customer Phase');
+	}
+
+	this.workflow_ticket_status_index = function(){
+		return this.grid_index('workflow', 'ticket_status', 'Ticket Status');
 	}
 
 	this.db_admin_backup = function(){
