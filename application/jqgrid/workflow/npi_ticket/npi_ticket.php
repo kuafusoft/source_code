@@ -1,7 +1,7 @@
 <?php
 require_once('table_desc.php');
 
-class workflow_ticket extends table_desc{
+class workflow_npi_ticket extends table_desc{
     public function init($db, $table, $params = array()){
 		parent::init($db, $table, $params);
 		//给module添加searchoptions
