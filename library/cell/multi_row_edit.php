@@ -65,58 +65,37 @@ class kf_multi_row_edit extends kf_cell{
 	}
 	
 	protected function displayData($params){
-		
-			$ret[] = "<div style='clear:both;'><table id='{$prefix}_values' border='1' cellspacing='1' style='width:100%;background-color:#a0c6e5;'><tbody>";
-			$ret[] = "<tr id='{$prefix}_header' >";
-			$ret[] = "<th id='del' width='20px'>X</th>";
-			foreach($temp as $e){
-				if(empty($e['id'])) $e['id'] = $e['name'];
-				$label = $e['label'];
-				if(!empty($e['post']))
-					$label .= "({$e['post']})";
-				$ret[] = "<th id='{$e['id']}'>$label</th>";
-			}
-			$ret[] = "</tr>";
-			
-			
+		$ret = array();
+		$ret[] = "<div style='clear:both;'><table id='{$prefix}_values' border='1' cellspacing='1' style='width:100%;background-color:#a0c6e5;'><tbody>";
+		$ret[] = "<tr id='{$prefix}_header' >";
+		$ret[] = "<th id='del' width='20px'>X</th>";
+		foreach($temp as $e){
+			if(empty($e['id'])) $e['id'] = $e['name'];
+			$label = $e['label'];
+			if(!empty($e['post']))
+				$label .= "({$e['post']})";
+			$ret[] = "<th id='{$e['id']}'>$label</th>";
 		}
+		$ret[] = "</tr>";
 		//如果有数据，则显示数据
-		
-		
-		$params = $this->params;
-		if($this->params['init_type'] == 'single'){
-			unset($params['single_multi']);
-			$ret[] = "<div id='cart_div_{$this->params['name']}' current_state='{$this->params['init_type']}'".
-				" single_multi='".json_encode($this->params['single_multi'])."'";
-			if($display_status ==  DISPLAY_STATUS_EDIT){
-				$ret[] = " onmouseout='XT.hideCartButton(\"cart_div_{$this->params['name']}\")' onmouseover='XT.showCartButton(\"cart_div_{$this->params['name']}\")'";
+		$values = $params['value'];
+		if(!empty($values)){
+			$p = array();
+			$strP = json_encode($p);
+			foreach($values as $vp){
+				$ret[] = "<tr><td id='del'><a editable='1' disabled='true' prop_edit='disabled' onclick='javascript:XT.deleteSelfRow(this)' href='javascript:void(0)'>X</a></td>";
+				foreach($temp as $k=>$model){
+					$e = $this->model2e($model, $vp, 'view', false);
+					$e['editable'] = 0;
+					$ret[] = $this->generateInput($e, $strP, 'view');
+				}
+				$ret[] = "</tr>";
 			}
-			$ret[] = ">";
-			$params['type'] = 'select';
 		}
-		else{
-			$params['type'] = 'cart';
-		}
-		$select = cellFactory::get($params);
-		$ret[] = $select->display($display_status);
-
-		if($this->params['init_type'] == 'single'){
-			$ret[] = "</div>";
-		}
-		$ret[] = "</fieldset>";
+		$ret[] = "</tbody></table></div>";			
 		return implode("\n", $ret);
 	}
-	
-	protected function displayTemp(){
-		
-		
-	}
-	
-	protected function displayData(){
-		
-		
-	}
-	
+
 	function multiRowEdit($comp){//}$temp, $prefix, $legend, $values = array(), $edit = true){ //用模板生成多行编辑界面
 		if(empty($comp['temp']))
 			return 'No Detail Yet';
