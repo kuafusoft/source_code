@@ -39,19 +39,7 @@ class kf_single_multi extends kf_cell{
 		}
 		$select = cellFactory::get($params);
 		$ret .= $select->display($display_status);
-		// $ret .= parent::display($display_status);
-		// if($display_status == DISPLAY_STATUS_EDIT && $this->params['init_type'] == 'multi'){
-			// $display = "style='display: none;'";
-			// $ret .= "<div id='cart_button' $display>";
-			// if (empty($this->params['cart_data']))
-				// $this->params['cart_data'] = '{}';
-			// $addParams = array('type'=>'button', 'id'=>'cart_add_'.$this->params['name'], 'value'=>'Add '.$this->params['name'], 'onclick'=>"XT.selectToCart(\"{$this->params['name']}\", \"{$this->params['cart_db']}\", \"{$this->params['cart_table']}\", \"{$this->params['label']}\", {$this->params['cart_data']})");
-			// $resetParams = array('type'=>'button', 'id'=>'cart_reset_'.$this->params['name'], 'value'=>'Reset '.$this->params['name'], 'onclick'=>"XT.resetCart(\"{$this->params['name']}\", \"{$this->params['cart_db']}\", \"{$this->params['cart_table']}\", \"{$this->params['label']}\", {$this->params['cart_data']})");
-			// $addButton = cellFactory::get($addParams);
-			// $resetButton = cellFactory::get($resetParams);
-			// $ret .= $addButton->display(DISPLAY_STATUS_EDIT).$resetButton->display(DISPLAY_STATUS_EDIT);
-			// $ret .= "</div>";
-		// }
+
 		if($this->params['init_type'] == 'single'){
 			$ret .= "</div>";
 		}
