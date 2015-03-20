@@ -622,8 +622,13 @@ class tool_db extends tool_kf{
 					if(!isset($item['isactive']) || $item['isactive'] == ISACTIVE_ACTIVE)
 						$addoptions[$id] = $item;
 				}
+// if($columnDef['name'] == 'period_id'){				
+// print_r("\n>>>>>>name = {$columnDef['name']}\n");
+// print_r($columnDef['addoptions']);	
+// }
                 // if ($columnDef['edittype'] == 'select'){
                     if (empty($columnDef['addoptions']['value'])){
+// print_r(">>>>>>>>>{$columnDef['name']}>>>>>>>>>>>>>>>");						
 						$columnDef['addoptions']['value'] = $addoptions;
                     }
                     if (empty($columnDef['editoptions']['value'])){
@@ -640,6 +645,10 @@ class tool_db extends tool_kf{
                     $columnDef['searchoptions']['value'] = $searchOptionsValue;
 //                    $columnDef['searchoptions']['dataUrl'] = "/jqgrid/jqgrid/oper/getSelectList/db/$db/table/$table";
                 }
+// if($columnDef['name'] == 'period_id'){				
+// print_r($columnDef['addoptions']);	
+// print_r("<<<<<<<<<<<<<<<<<<<<BR>\n");
+// }				
             }
         }
     }

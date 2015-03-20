@@ -206,7 +206,7 @@ class table_desc{
 // print_r($params);
 // print_r($this->options);	
 		$this->config($trimed, $params);
-// print_r($options);
+// print_r($this->options);
 // $this->tool->p_t("Before table_desc getOptions");
 		return $this->options;
 	}
@@ -233,6 +233,7 @@ class table_desc{
 		$this->options['list'] = $this->getListFields($params, $displayField);
 		$this->options['edit'] = $this->getEditFields($params, $displayField);
 		$this->options['add'] = $this->getAddFields($params, $displayField);
+// print_r($this->options);		
 		$this->options['queryValue'] = array();
 		if (!empty($this->options['query'])){
 			$this->options['query']['normal'][] = '__interTag';
@@ -243,7 +244,7 @@ class table_desc{
 		}			
 		foreach($this->options['list'] as $field=>$model)
 			$this->options['gridOptions']['colModel'][] = $model;
-		$this->options['colModel'] = $this->colModels;
+		// $this->options['colModel'] = $this->colModels;
 		
 		if ($trimed)	// 调整Column的前后次序
 			$this->options['gridOptions']['colModel'] = $this->trimColModel($this->options['gridOptions']['colModel']);
@@ -442,7 +443,7 @@ class table_desc{
 				$this->options['add'] = array_keys($this->options['list']);
 		}
 		$this->options['add'] = $this->modelFields($this->options['add'], $params);
-		unset($this->options['edit']['id']);
+		unset($this->options['add']['id']);
 		return $this->options['add'];
 	}
 	
@@ -677,6 +678,7 @@ class table_desc{
 			'editable'=>isset($column['IDENTITY']) ? !$column['IDENTITY'] : false,
 			'edittype'=>isset($column['edittype']) ? $column['edittype'] : '',
 			'editoptions'=>array('defaultValue'=>isset($column['DEFAULT'])?$column['DEFAULT'] : ''),
+			'addoptions'=>array('defaultValue'=>isset($column['DEFAULT'])?$column['DEFAULT'] : ''),
 			'editrules'=>array('edithidden'=>true, 'required'=>isset($column['NULLABLE']) ? !$column['NULLABLE'] : false),
 			'search'=>true,
 			'stype'=>isset($column['stype']) ? $column['stype'] : 'text',
@@ -685,6 +687,8 @@ class table_desc{
 			'data_source_table'=>isset($column['data_source_table']) ? $column['data_source_table'] : '',
 			'search_field'=>isset($column['search_field']) ? $column['search_field'] : '',
 		);
+		$columnDef = $this->tool->array_extends($columnDef, $column);
+		
 // if($column['COLUMN_NAME'] == 'owner_id'){
 // // print_r($columnDef);
 // // print_r($column);
@@ -966,7 +970,7 @@ class table_desc{
 				if($this->tool->tableExist($columnDef['data_source_table'], $columnDef['data_source_db'])){
 					$t = tableDescFactory::get($columnDef['data_source_db'], $columnDef['data_source_table'], array());
 					$columnDef['limit'] = $t->getLimit();
-// if($column['COLUMN_NAME'] == 'owner_id')					
+// if($column['COLUMN_NAME'] == 'period_id')					
 // print_r($columnDef);
 					if(!isset($this->params['fill']) || $this->params['fill'] == true)
 						$this->tool->fillOptions($columnDef);

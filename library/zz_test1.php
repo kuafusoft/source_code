@@ -47,7 +47,7 @@
 		),
 	);
 	
-	$form = new kf_form($elements, array('gender'=>'1', 'gender1'=>"1,2", 'role'=>'1,2,3'), DISPLAY_STATUS_QUERY);
+	$form = new kf_form($elements, array('gender'=>'1', 'gender1'=>"1,2", 'role'=>'1,2,3'), DISPLAY_STATUS_VIEW);
 	// $form = new kf_form($elements, array('gender'=>'1', 'gender1'=>"1,2", 'role'=>'1,2,3'), DISPLAY_STATUS_VIEW);
 	$ret = $form->display(1);
 	print_r($ret);

@@ -29,14 +29,14 @@ class kf_multi_row_edit extends kf_cell{
 		if($display_status == DISPLAY_STATUS_EDIT){
 			$onMouseOut = "onmouseout='XT.hideMultiRowTemp(\"$prefix\")'";
 			$onMouseOver = "onmouseover='XT.showMultiRowTemp(\"$prefix\")'";
-			$ret[] = " $onmouseout $onmouseover ";
+			$ret[] = " $onMouseOut $onMouseOver ";
 		}
 		$ret[] = ">";
 		if(!empty($params['legend']))
-			$ret .= "<legend>{$params['legend']}</legend>";
+			$ret[] = "<legend>{$params['legend']}</legend>";
 		$ret[] = "<div multirowedit='multirowedit' id='{$prefix}' >";
 		if($display_status == DISPLAY_STATUS_EDIT){ //如果是编辑状态，则需要显示模板
-			$ret[] = $this->displayTemp($temp, $prefix);
+			$ret[] = $this->displayTemp($params);//$temp, $prefix);
 		}
 		if(!empty($params['value'])){
 			$ret[] = $this->displayData($params);
@@ -44,14 +44,16 @@ class kf_multi_row_edit extends kf_cell{
 		$ret[] = "</div>";
 		$ret[] = "</fieldset>";
 		return implode("\n", $ret);
-	};
+	}
 	
-	protected function displayTemp($temp, $prefix){
+	protected function displayTemp($params){//}$temp, $prefix){
 		$ret = array();
+		$temp = $params['temp'];
+		$prefix = $params['prefix'];
 		foreach($temp as $k=>$e){ //将模板置上ignored属性
 			$temp[$k]['ignored'] = 'ignored';
 		}
-		$temp_form = new kf_form($temp, $params['value'], $display_status);
+		$temp_form = new kf_form($temp, $params['value'], DISPLAY_STATUS_EDIT);
 
 		$ret[] = "<div id='{$prefix}_temp' style='display:none;'>";
 			$ret[] = "<div ignored='ignored' style='float:left;width:90%;'>";
@@ -66,6 +68,8 @@ class kf_multi_row_edit extends kf_cell{
 	
 	protected function displayData($params){
 		$ret = array();
+		$prefix = $params['prefix'];
+		$temp = $params['temp'];
 		$ret[] = "<div style='clear:both;'><table id='{$prefix}_values' border='1' cellspacing='1' style='width:100%;background-color:#a0c6e5;'><tbody>";
 		$ret[] = "<tr id='{$prefix}_header' >";
 		$ret[] = "<th id='del' width='20px'>X</th>";

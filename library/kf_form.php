@@ -8,19 +8,18 @@ class kf_form{
 	protected $value = array();
 	protected $display_status = DISPLAY_STATUS_VIEW;
 	protected $tool = null;
-	function __construct($elements, $value = array(), $display_status = DISPLAY_STATUS_VIEW){
+	function __construct($elements, $value = array(), $display_status = ''){
 		$this->init($elements, $value, $display_status);
 	}
 	
 	function init($elements, $value, $display_status){
-		$this->display_status = $display_status;
+// print_r("displayStatus = $display_status");		
+		$this->display_status = empty($display_status) ? DISPLAY_STATUS_EDIT : $display_status;
 		$this->value = $value;
 		$this->tool = toolFactory::get('kf');
 		foreach($elements as $k=>$cell){
 			$this->elements[$k] = $this->model2e($cell);
 		}
-		if($display_status != DISPLAY_STATUS_VIEW)
-			$this->display_status = DISPLAY_STATUS_EDIT;
 	}
 	
 	function model2e($model){
@@ -212,6 +211,10 @@ class kf_form{
 		$normal = array("<table id='normal_elements' class='ces' style='width:100%'>");
 		$currentCol = 0;
 		$evenRow = true;
+		$display_status = $this->display_status;
+		if($display_status != DISPLAY_STATUS_VIEW)
+			$display_status = DISPLAY_STATUS_EDIT;
+// print_r($this->elements);		
 		foreach($this->elements as $k=>$cell){
 			if($cell['type'] == 'hidden'){
 				$hidden[] = "<td><input type='hidden' name='{$cell['name']}' id='{$cell['id']}' value='{$cell['value']}'></td>";
@@ -225,13 +228,12 @@ class kf_form{
 				
 				$e = cellFactory::get($cell, $this->value);//new kf_cell($cell);
 				$params = $e->getParams();
-				
 				$normal[] = "<td id='td_label_{$params['id']}' class='pre-td'>";
-				$normal[] = $e->pre($this->display_status);
+				$normal[] = $e->pre($display_status);
 				$normal[] = "</td>";
 				$width = '';
 				$hasPost = false;
-				if(!empty($params['post']) && ($this->display_status == DISPLAY_STATUS_EDIT || $params['post']['type'] == 'text')){
+				if(!empty($params['post']) && ($display_status == DISPLAY_STATUS_EDIT || $params['post']['type'] == 'text')){
 					$hasPost = true;
 				}
 				if($hasPost){
@@ -239,12 +241,12 @@ class kf_form{
 					$width = "style='width:100%;'";
 				}
 				$normal[] = "<td id='td_{$params['id']}' class='cont-td' $width>";
-				$normal[] = $e->display($this->display_status);
+				$normal[] = $e->display($display_status);
 				$normal[] = "</td>";
 				// display the post
 				if($hasPost){
 					$normal[] = "<td id='post_{$params['id']}' class='post-td' style='width:auto' style='white-space: nowrap' nowrap='nowrap'>";
-					$normal[] = $e->post($this->display_status);
+					$normal[] = $e->post($display_status);
 					$normal[] = "</td>";
 					$normal[] = "</tr></table></td>";
 				}

@@ -220,9 +220,14 @@ class tool_kf{
 				$year = $currentYear - 1;
 			}
 			if ($j < 10)
-				$refData[$i] = $year.'WK0'.$j;
+				$week = $year.'WK0'.$j;
 			else
-				$refData[$i] = $year.'WK'.$j;
+				$week = $year.'WK'.$j;
+			$refData[$week] = $week;
+			// if ($j < 10)
+				// $refData[$i] = $year.'WK0'.$j;
+			// else
+				// $refData[$i] = $year.'WK'.$j;
 		}
 		return $refData;
 	}
@@ -902,7 +907,12 @@ class tool_kf{
 	}
 
 	function cf($colModels, $editable = false, $v = null, $columns = 1, $query = false, $params = array(), $new = false){
-		$form = new kf_form($colModels, $v, DISPLAY_STATUS_QUERY);
+		$display_status = DISPLAY_STATUS_VIEW;
+		if($new)
+			$display_status = DISPLAY_STATUS_NEW;
+		elseif($query)
+			$display_status = DISPLAY_STATUS_QUERY;
+		$form = new kf_form($colModels, $v, $display_status);
 		$str = $form->display($columns);
 	
 		// $str = $this->_cf($colModels, $editable, $v, $columns, $query, $params, $new);
@@ -1072,8 +1082,8 @@ class tool_kf{
 		$db = $comp['data_source_db'];
 		$table=$comp['data_source_table'];
 		
-		$onMouseOut = "XT.hide(\"#{$prefix}_temp\")";
-		$onMouseOver = "onmouseover='XT.show(\"#{$prefix}_temp\")'";
+		// $onMouseOut = "XT.hide(\"#{$prefix}_temp\")";
+		// $onMouseOver = "onmouseover='XT.show(\"#{$prefix}_temp\")'";
 		$str = array();
 		$cols = count($temp);
 		foreach($temp as $k=>$e){
