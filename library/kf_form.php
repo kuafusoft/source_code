@@ -205,7 +205,7 @@ class kf_form{
 		return $e;
 	}
 	
-	function display($colsInRow = 1){
+	function display($colsInRow = 1, $colWidth = array()){
 // $this->tool->p_t("Before display");
 		$hidden = array("<table id='hidden_elements'><tr>");
 		$normal = array("<table id='normal_elements' class='ces' style='width:100%'>");

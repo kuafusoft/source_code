@@ -225,12 +225,14 @@ class action_list extends action_jqgrid{
                             break;
                         }
 						$colModel = array();
+// print_r($this->colModelMap);						
+// print_r($k);						
 						if(isset($this->options['query']['normal'][$k]))
 							$colModel = $this->options['query']['normal'][$k];
 						elseif(isset($this->options['query']['advanced'][$k]))
 							$colModel = $this->options['query']['advanced'][$k];
 						elseif(isset($this->colModelMap[$k])){
-// print_r($k);						
+// print_r($this->options['gridOptions']);
 							$colModel = $this->options['gridOptions']['colModel'][$this->colModelMap[$k]];
 						}
                         try{

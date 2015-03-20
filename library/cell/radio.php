@@ -16,14 +16,15 @@ class kf_radio extends kf_cell{
 			$props['checked'] = "checked";
 		$v = $this->params['editoptions']['value'][$k];
 		if(is_array($v)){
-			$label = $v[$displayField];
-			$props = array_extends($v, $props);
+			$label = isset($v['label']) ? $v['label'] : (isset($v['value']) ? $v['value'] : (isset($v['id']) ? $v['id'] : '[unknown]'));
+			// $label = $v[$displayField];
+			$props = $this->tool->array_extends($v, $props);
 		}
 		else{
 			$label = $v;
 		}
 		$strProps = $this->propStr($props, false);
-		$ret = "<label for='{$props['id']}'>{$label}<input {$strProps}></label>";
+		$ret = "<label for='{$props['id']}'><input {$strProps}>{$label}</label>";
 		return $ret;
 	}
 }

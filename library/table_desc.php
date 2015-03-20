@@ -216,6 +216,7 @@ class table_desc{
 		if (!empty($this->configed[$this->actionName]))
 			return;
 			
+print_r($this->actionName);			
 		switch($this->actionName){
 			case 'index':
 			case 'getGridOptions':
