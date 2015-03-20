@@ -143,7 +143,7 @@ class action_list extends action_jqgrid{
         }
 
 		//把所有的limit写入SearchConditions
-		$colModel = $this->options['colModel'];
+		$colModel = $this->options['gridOptions']['colModel'];
 		$list_fields = array_keys($this->options['list']);
 		$normal_query_fields = array();
 		$advanced_query_fields = array();
@@ -231,7 +231,7 @@ class action_list extends action_jqgrid{
 							$colModel = $this->options['query']['advanced'][$k];
 						elseif(isset($this->colModelMap[$k])){
 // print_r($k);						
-							$colModel = $this->options['colModel'][$this->colModelMap[$k]];
+							$colModel = $this->options['gridOptions']['colModel'][$this->colModelMap[$k]];
 						}
                         try{
 							if(!empty($colModel)){
