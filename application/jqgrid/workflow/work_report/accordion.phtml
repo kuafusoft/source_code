@@ -1,0 +1,21 @@
+<div class="group" value="<?php echo $this->item['id']; ?>">
+	<h3 style="width:95%">
+	<?php
+		require_once('toolfactory.php');
+		$tool = toolFactory::get('kf');
+		$ces = array();
+		$fields = array('prj_id', 'item_prop_id', 'content');
+		$ces = $tool->extractItems($fields, $this->params['model']);
+		$ces['content']['type'] = 'text';
+		array_unshift($ces, array('type'=>'checkbox', 'name'=>'sel', 'label'=>'', 'editable'=>true, 'editoptions'=>array('value'=>array(1=>''))));
+		$v = $this->item;
+		$v['content'] = substr($v['content'], 0, 80);
+// print_r($ces);
+// print_r($this->item);		
+		$tool->cf($ces, false, $this->item, 4);
+	?>
+	</h3>
+	<div>
+		<textarea style="width:96%"><?php print_r($this->item['content']);?></textarea>
+	</div>
+</div>
