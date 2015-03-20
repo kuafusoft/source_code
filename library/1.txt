@@ -86,7 +86,7 @@
 <label class=''>Prj_id:</label>
 </td>
 <td id='td_prj_id' class='cont-td' >
-<input type='hidden' id=prj_id'><input type='text' id='auto_complete_prj_id' name='auto_complete_prj_id' ignored='ignored'   editable='1' value=''   class='' style='width:100%;'       original_value='' auto_complete='auto_complete' db='xt' table='prj' >
+<input type='hidden' id=prj_id'><input type='text' id='auto_complete_prj_id' name='auto_complete_prj_id' ignored='ignored'   editable='1' value=''   class='' style='width:100%;'       original_value='' auto_complete='auto_complete' db='xt' table='prj' real_id='prj_id' >
 </td>
 </tr>
 </table>

@@ -51,27 +51,29 @@ class table_desc{
 // $this->tool->p_t("Step 1");
 // print_r($this->userInfo);		
 		
-		$this->params = $params;
-		if(!empty($this->params['self_action'])){
-			$this->action = $this->params['self_action'];
-			$this->actionName = $this->action->getActionName();
-			unset($this->params['self_action']);
-		}
+		// $this->params = $params;
+		// if(!empty($this->params['self_action'])){
+			// $this->action = $this->params['self_action'];
+			// $this->actionName = $this->action->getActionName();
+			// unset($this->params['self_action']);
+		// }
 // $this->tool->p_t("Step 2");
-        if (!empty($params['filters'])){
-            $json_filters = json_decode($params['filters'], true);
-            if(is_array($json_filters)){
-				$gopr = strtolower($json_filters['groupOp']);
-				$rules = $json_filters['rules'];
-				$this->params['searchConditions'] = $this->tool->generateFilterConditions($rules);
-				foreach($this->params['searchConditions'] as $k=>$cond){
-					$this->params['condMap'][$cond['field']] = $cond;
-				}
-			}
-		}
-// $this->tool->p_t("Step 3");
+		$this->setParams($params);
+		
+        // if (!empty($params['filters'])){
+            // $json_filters = json_decode($params['filters'], true);
+            // if(is_array($json_filters)){
+				// $gopr = strtolower($json_filters['groupOp']);
+				// $rules = $json_filters['rules'];
+				// $this->params['searchConditions'] = $this->tool->generateFilterConditions($rules);
+				// foreach($this->params['searchConditions'] as $k=>$cond){
+					// $this->params['condMap'][$cond['field']] = $cond;
+				// }
+			// }
+		// }
+// // $this->tool->p_t("Step 3");
+		// $this->handleFillOptionCondition();
 		$this->setSubGrid();
-		$this->handleFillOptionCondition();
 // print_r($this->params);		
 // $this->tool->p_t("After $table table_desc init");
 	}
@@ -81,6 +83,8 @@ class table_desc{
 // print_r($this->params);		
 		if(!empty($this->params['self_action'])){
 			$this->action = $this->params['self_action'];
+			$this->actionName = $this->action->getActionName();
+			unset($this->params['self_action']);
 		}
         if (!empty($params['filters'])){
             $json_filters = json_decode($params['filters'], true);
