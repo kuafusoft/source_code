@@ -197,7 +197,7 @@ class action_information extends action_jqgrid{
 		$left_display = $left_style;
 		$left_hide = $left_style.';display:none';
 		$right_display = $right_style;
-		$right_hide = $right_style.';display:none';
+		$right_hide = $right_style;//.';display:none';
 		
 		$view_buttons = array(
 			'view_edit_cancel'=>array('label'=>'Cancel', 'style'=>$params['id'] ? $right_hide:$right_display),
@@ -243,6 +243,15 @@ class action_information extends action_jqgrid{
 						break;
 				}
 			}
+		}
+		if($params['display_status'] == DISPLAY_STATUS_VIEW){
+			unset($view_buttons['view_edit_cancel']);
+			unset($view_buttons['view_edit_save']);
+			unset($view_buttons['view_edit_saveandnew']);
+		}
+		else{
+			unset($view_buttons['view_edit_edit']);
+			unset($view_buttons['view_edit_cloneit']);
 		}
 		return $view_buttons;
 	}	

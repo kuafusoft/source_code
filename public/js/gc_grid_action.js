@@ -734,7 +734,7 @@ gc_grid_action.prototype.information_open = function(divId, rowId, pageName){
 			// }
 		// });
 	}
-tool.debug(gridsLoad);
+// tool.debug(gridsLoad);
 	$.each(gridsLoad, function(i, n){
 // tool.debug(n);	
 		var tab = n['tab'] || n['container'], db = n['db'] || $this.getParams('db'), table = n['table'], params = n['params'] || {};
@@ -792,25 +792,25 @@ gc_grid_action.prototype.view_edit_edit = function(p){
 	var divId = p.divId;
 	var dialog = $('#' + divId);
 	var node_id = $('#' + divId + ' #div_hidden #id').val();
-tool.debug(['#' + divId + ' #div_hidden #id', node_id]);	
+// tool.debug(['#' + divId + ' #div_hidden #id', node_id]);	
 	var ver_id = $('#' + divId + ' #div_view_edit #ver_id').val() || 0;
 	this.updateInformationPage(ver_id, node_id, 'view_edit', 2);
 	// dialog.find('#div_view_edit [editable="1"]').each(function(i){
 		// var prop_edit = $(this).attr('prop_edit');
 		// $(this).attr(prop_edit, false);
 	// });	
-	dialog.find('#div_button_edit #view_edit_cloneit,#view_edit_edit,#view_edit_ask2review,#view_edit_publish').hide();
-	dialog.find('#div_button_edit #view_edit_save,#view_edit_saveandnew,#view_edit_cancel').show();
-	dialog.find('#div_hidden #saved').val('false');
-	dialog.find('#div_hidden #clone').val('false');
+	// dialog.find('#div_button_edit #view_edit_cloneit,#view_edit_edit,#view_edit_ask2review,#view_edit_publish').hide();
+	// dialog.find('#div_button_edit #view_edit_save,#view_edit_saveandnew,#view_edit_cancel').show();
+	// dialog.find('#div_hidden #saved').val('false');
+	// dialog.find('#div_hidden #clone').val('false');
 	
-	if (node_id != 0)
-		dialog.find('#img_unique_check').attr('src', '/img/aCheck.png').show();
-	else
-		dialog.find('#img_unique_check').attr('src', '/img/aHelp.png').show();
+	// if (node_id != 0)
+		// dialog.find('#img_unique_check').attr('src', '/img/aCheck.png').show();
+	// else
+		// dialog.find('#img_unique_check').attr('src', '/img/aHelp.png').show();
 	
-	dialog.find('div#cart_button').show();
-	dialog.find(':input:enabled[type!=hidden]')[0].focus();
+	// dialog.find('div#cart_button').show();
+	// dialog.find(':input:enabled[type!=hidden]')[0].focus();
 	return dialog;
 };
 
@@ -821,26 +821,29 @@ gc_grid_action.prototype.view_edit_cancel = function(p){
 	if (node_id == '0' || node_id == 0)
 		$(dialog).dialog('close');
 	else{
-		dialog.find('#div_view_edit [editable="1"]').each(function(i){
-			var orig_val = $(this).attr('original_value');
-			var type = $(this).attr('type');
-			var prop_edit = $(this).attr('prop_edit');
-			if (type == 'button')
-				return;
-			if (type == 'checkbox'){
-				if(orig_val == '1' || orig_val == true || orig_val == 'true')
-					$(this).attr('checked', true);
-				else
-					$(this).attr('checked', false);
-			}
-			else
-				$(this).val($(this).attr('original_value'));
-			$(this).attr(prop_edit, true);
-		});
-		dialog.find('#div_button_edit #view_edit_cancel,#view_edit_save,#view_edit_saveandnew').hide();
-		dialog.find('#div_button_edit #view_edit_edit,#view_edit_cloneit,#view_edit_ask2review,#view_edit_publish').show();
-		dialog.find('#img_unique_check').hide();
-		dialog.find('div#cart_button').hide();
+		var ver_id = $('#' + divId + ' #div_view_edit #ver_id').val() || 0;
+		this.updateInformationPage(ver_id, node_id, 'view_edit', 1);
+		
+		// dialog.find('#div_view_edit [editable="1"]').each(function(i){
+			// var orig_val = $(this).attr('original_value');
+			// var type = $(this).attr('type');
+			// var prop_edit = $(this).attr('prop_edit');
+			// if (type == 'button')
+				// return;
+			// if (type == 'checkbox'){
+				// if(orig_val == '1' || orig_val == true || orig_val == 'true')
+					// $(this).attr('checked', true);
+				// else
+					// $(this).attr('checked', false);
+			// }
+			// else
+				// $(this).val($(this).attr('original_value'));
+			// $(this).attr(prop_edit, true);
+		// });
+		// dialog.find('#div_button_edit #view_edit_cancel,#view_edit_save,#view_edit_saveandnew').hide();
+		// dialog.find('#div_button_edit #view_edit_edit,#view_edit_cloneit,#view_edit_ask2review,#view_edit_publish').show();
+		// dialog.find('#img_unique_check').hide();
+		// dialog.find('div#cart_button').hide();
 	}
 	return dialog;
 };
