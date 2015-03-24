@@ -64,8 +64,10 @@
 
 	<?php
 	foreach($this->tabs as $key=>$tab){
+// print_r($tab);		
 		$tab['db'] = $this->db;
 		$tab['table'] = $this->table;
+		// $tab['id'] = $this->id;
 		print_r("<div id='{$key}_{$this->id}'>");
 		$phtml = $key.'.phtml';
 		if (!empty($tab['view_file']))

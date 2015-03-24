@@ -3,5 +3,8 @@
 	$tool = toolFactory::get('kf');
 	$editing = isset($this->editing) ? $this->editing : false;
 	$cols = isset($this->cols) ? $this->cols : 1;
-	$tool->cf($this->model, $editing, $this->value, $cols);
+// print_r($cols);	
+	$display_status = isset($this->display_status) ? $this->display_status : DISPLAY_STATUS_VIEW;
+	$tool->cf2($this->model, $this->value, $cols, $display_status);
+	// $tool->cf($this->model, $editing, $this->value, $cols);
 ?>

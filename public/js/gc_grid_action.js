@@ -8,14 +8,15 @@ tool.extend(gc_grid_action, gc_kf);
 
 gc_grid_action.prototype.previousTag = 0;
 
-gc_grid_action.prototype.updateInformationPage = function(verId, nodeId, pageName){
+gc_grid_action.prototype.updateInformationPage = function(verId, nodeId, pageName, display_status){
+	display_status = display_status || 1;
 	var $this = this;
 	var p = this.getParams(['db', 'table', 'container']);
 	var tabId = 'information_tabs_' + p.db + '_' + p.table + '_' + nodeId;
 	var page = pageName + '_' + nodeId;
-	var real_node_id = $('#' + tabId + ' #div_view_edit #node_id').val();// 如果是New Case，那么nodeId = 0，但真正的id是real_node_id
+	var real_node_id = $('#' + tabId + ' #div_view_edit #node_id').val() || nodeId;// 如果是New Case，那么nodeId = 0，但真正的id是real_node_id
 // tool.debug([verId, nodeId, pageName, tabId, page, real_node_id]);
-	$('#' + tabId + ' #' + page).load('/jqgrid/jqgrid/db/' + p.db + '/table/' + p.table + '/oper/update_information_page/page/' + pageName + '/element/' + real_node_id + '/ver/' + verId, function(data){
+	$('#' + tabId + ' #' + page).load('/jqgrid/jqgrid/db/' + p.db + '/table/' + p.table + '/oper/update_information_page/page/' + pageName + '/element/' + real_node_id + '/ver/' + verId + '/display_status/' + display_status, function(data){
 		$('#' + tabId).tabs('enabled', page);
 		$('#' + tabId).tabs('option', 'selected', page);
 		$this.information_open(tabId, verId, pageName);
@@ -653,8 +654,9 @@ gc_grid_action.prototype.getGridsForInfo = function(divId){
 	return grids;
 }
 
-gc_grid_action.prototype.information = function(rowId, newpage, ver){
+gc_grid_action.prototype.information = function(rowId, newpage, ver, display_status){
 	newpage = newpage || 0;
+	display_status = display_status || 1; //DISPLAY_STATUS_VIEW
 	var $this = this;
 	var gridId = this.grid.getParams('gridId'), db = this.grid.getParams('db'), table = this.grid.getParams('table'), 
 		p_id = this.grid.getParams('p_id'), p_db = this.grid.getParams('p_db'), p_table = this.grid.getParams('p_table'), 
@@ -662,8 +664,10 @@ gc_grid_action.prototype.information = function(rowId, newpage, ver){
 	var information_div = 'div_information_' + db + '_' + table;
 	var caption = this.information_getCaption();
 	var title = "Detail Information for " + caption;
-	if (rowId == 0)
+	if (rowId == 0){
 		title = 'New ' + caption;
+		display_status = 3;// DISPLAY_STATUS_NEW
+	}
 	
 	var dialog_params = {
 		ok:'close', 
@@ -684,7 +688,7 @@ gc_grid_action.prototype.information = function(rowId, newpage, ver){
 		tabId: "#information_tabs_" + db + '_' + table + '_' + rowId
 	};
 //tool.debug(dialog_params);	
-	var url = '/jqgrid/jqgrid/newpage/' + newpage + '/db/' + db + '/table/' + table + '/oper/information/element/' + rowId;
+	var url = '/jqgrid/jqgrid/newpage/' + newpage + '/db/' + db + '/table/' + table + '/oper/information/element/' + rowId + '/display_status/' + display_status;
 	if(ver != undefined)
 		url += '/ver/' + ver;
 	if (p_db != undefined)
@@ -783,14 +787,18 @@ gc_grid_action.prototype.information_getCaption = function(){
 	return this.getParams('table');
 }
 
+//如果改成view和edit界面分开，则应从后台取回界面直接替换
 gc_grid_action.prototype.view_edit_edit = function(p){
 	var divId = p.divId;
 	var dialog = $('#' + divId);
 	var node_id = $('#' + divId + ' #div_hidden #id').val();
-	dialog.find('#div_view_edit [editable="1"]').each(function(i){
-		var prop_edit = $(this).attr('prop_edit');
-		$(this).attr(prop_edit, false);
-	});	
+tool.debug(['#' + divId + ' #div_hidden #id', node_id]);	
+	var ver_id = $('#' + divId + ' #div_view_edit #ver_id').val() || 0;
+	this.updateInformationPage(ver_id, node_id, 'view_edit', 2);
+	// dialog.find('#div_view_edit [editable="1"]').each(function(i){
+		// var prop_edit = $(this).attr('prop_edit');
+		// $(this).attr(prop_edit, false);
+	// });	
 	dialog.find('#div_button_edit #view_edit_cloneit,#view_edit_edit,#view_edit_ask2review,#view_edit_publish').hide();
 	dialog.find('#div_button_edit #view_edit_save,#view_edit_saveandnew,#view_edit_cancel').show();
 	dialog.find('#div_hidden #saved').val('false');

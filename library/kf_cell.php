@@ -244,6 +244,7 @@ class kf_cell{
 	
 	protected function oneView($value, $props){
 // print_r("value = $value\n");
+// print_r($this->params['editoptions']);
 		if(!empty($this->params['editoptions']['value'][$value]))
 			$value = $this->params['editoptions']['value'][$value];
 // print_r("value = $value\n");			

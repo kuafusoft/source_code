@@ -15,6 +15,7 @@ class kf_radio extends kf_cell{
 		if($k == $this->params['value'])
 			$props['checked'] = "checked";
 		$v = $this->params['editoptions']['value'][$k];
+		$props['value'] = $k;
 		if(is_array($v)){
 			$label = isset($v['label']) ? $v['label'] : (isset($v['value']) ? $v['value'] : (isset($v['id']) ? $v['id'] : '[unknown]'));
 			// $label = $v[$displayField];
@@ -23,6 +24,7 @@ class kf_radio extends kf_cell{
 		else{
 			$label = $v;
 		}
+// print_r($props);		
 		$strProps = $this->propStr($props, false);
 		$ret = "<label for='{$props['id']}'><input {$strProps}>{$label}</label>";
 		return $ret;

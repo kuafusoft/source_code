@@ -1009,7 +1009,7 @@ XT = XT || {};
 	}
 
 	this.workflow_work_summary = function(){
-		return this.grid_index('workflow', 'work_summary', 'Work Report');
+		return this.grid_index('workflow', 'work_report', 'Work Report');
 	}
 
 	this.workflow_customer_support_ticket_index = function(){

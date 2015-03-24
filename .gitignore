@@ -1,0 +1,10 @@
+*.bak
+*.xls
+*.xlsx
+*.xlsm
+application/db_backup/
+~*.*
+application/export/
+application/upload/svd/
+application/upload/
+public/tools/

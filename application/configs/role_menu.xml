@@ -259,7 +259,7 @@
 	<workflow extends='normal'>
 		<workflow display='true'>
 			<daily_note display='false'/>
-			<work_report display='false'/>
+			<work_report display='true'/>
 			<customer_support_ticket display='true' />
 			<cqi_ticket display='true' />
 			<npi_ticket display='true' />

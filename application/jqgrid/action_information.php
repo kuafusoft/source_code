@@ -53,7 +53,7 @@ class action_information extends action_jqgrid{
 		$ret = array();
 		$ver = array();
 		$verInfo = array();
-		$nodeInfo = $this->tool->extractItems(array('id', 'parent', 'db', 'table'), $view_params); //array('id'=>!empty($view_params['id']) ? $view_params['id'] : 0, 'parent'=>)
+		$nodeInfo = $this->tool->extractItems(array('id', 'parent', 'db', 'table', 'display_status'), $view_params); //array('id'=>!empty($view_params['id']) ? $view_params['id'] : 0, 'parent'=>)
 		$node = $this->getNodeParamsForViewEdit($view_params);//$nodeInfo);
 		$view_file = 'view_edit.phtml';
 		$view_file_dir = '';
@@ -152,6 +152,7 @@ class action_information extends action_jqgrid{
 		else
 			$cols = 2;
 		$node['cols'] = 1;//$cols;
+		$node['display_status'] = $view_params['display_status'];
 		$node['legend'] = $table_desc->getCaption();
 		return $node;
 	}

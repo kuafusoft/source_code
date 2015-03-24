@@ -31,7 +31,7 @@ class svd_parse extends xml_parse{
 // $this->data = array();
 // return;
 		$ret = $this->checkDevice($root);
-		if(count($ret) < 2){
+		if(1 || count($ret) < 2){
 			$device_ver_id = $this->addDevice($root, $ret);
 			if(!empty($cpu))
 				$cpu_id = $this->addCPU($cpu, $device_ver_id);

@@ -6,13 +6,13 @@ class workflow_work_report_detail extends table_desc{
 		parent::init($db, $table, $params);
 		$this->options['list'] = array(
 			'id', 
-			'work_report_id'=>array('hidden'=>true, 'hidedlg'=>true, 'editable'=>false),
+			'work_report_id'=>array('hidden'=>true, 'hidedlg'=>true, 'editable'=>false, 'width'=>100),
 			'prj_id'=>array('label'=>'Project'),
 			'item_prop_id'=>array('label'=>'Property'),
 			'content',
 			'comment'
 		);
-		$this->options['edit'] = array('work_report_id', 'prj_id', 'content', 'item_prop_id');
+		$this->options['edit'] = array('prj_id', 'item_prop_id', 'content');
 
 		$this->options['gridOptions']['label'] = 'Work Report Items';
 		$this->options['navOptions']['del'] = true;

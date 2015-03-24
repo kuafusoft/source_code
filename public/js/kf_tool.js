@@ -405,14 +405,15 @@ kf_tool.prototype = {
 	},
 	
 	getAllInput : function(divSelector, ignored){
-//this.debug($(divSelector));	
+		var $this = this;
+// this.debug($(divSelector));	
 		if(ignored == undefined)
 			ignored = true;
 		var $this = this;
-		var params = {};
+		var params = {}, text = {};
 		var passed = [];
 		var inputName, label, input_id;
-		var checkboxes = {};
+		var checkboxes = {}, checkboxes_text = {};
 		var checkRequired = {};
 		var img = $(divSelector + ' #img_unique_check');
 		var uniqTd = img.parent().next();//.children('input;);
@@ -436,10 +437,11 @@ kf_tool.prototype = {
 		var selector = divSelector + " :input";
 		if(ignored)
 			selector += "[ignored!='ignored']";
+this.debug(selector);		
 		$.each($(selector), function(i, n){
 			var required = n.required;//$(n).attr('required');
 			var disabled = $(n).attr('disabled');
-//debug([i,n]);			
+$this.debug([i,$(n).attr('type'), n]);			
 			if ($(n).attr('name') !== undefined)
 				inputName = $(n).attr('name');
 			else if ($(n).attr('id') !== undefined)
@@ -458,7 +460,8 @@ kf_tool.prototype = {
 				label = $('#' + input_id + '_label').html();
 			else
 				label = $(n).parents('.cont-td').prev('td.e-pre').children('span:first').html();
-			switch($(n).attr('type')){
+			var n_type = $(n).attr('type');
+			switch(n_type){
 				case 'button':
 					//检查是否Cart Button
 					var cartTable = $(n).attr('cart');
@@ -469,8 +472,10 @@ kf_tool.prototype = {
 						if (required)
 							checkRequired[cartTable] = 1;
 						$.each($('table_cart_' + cartTable + ' :checkbox'), function(j, m){
-							if(m.checked)
+							if(m.checked){
 								checkboxes[cartTable].push($(m).val());
+								checkboxes_text[cartTable].push($(m).text());
+							}
 						});
 					}
 					break;
@@ -482,15 +487,26 @@ kf_tool.prototype = {
 						checkRequired[inputName] = 1;
 					if (n.checked){//$(n).attr('checked')){
 						checkboxes[inputName].push($(n).val());
+						checkboxes_text[inputName].push(($n).text());
 					}
 					break;
 				case 'radio':
 					params[inputName] = $(':radio[name=' + inputName + ']:checked').val();
+					text[inputName] = $(':radio[name=' + inputName + ']:checked').attr('label') || $(n).parent('label').text();
 					break;
 				default:
+					
 					params[inputName] = $(n).val();
+					text[inputName] = $(n).text();
+					if(n_type == 'select'){
+						text[inputName] = $(n).find("option:selected").text();
+					}
+					else if(n_type == 'textarea'){
+						text[inputName] = $(n).val();
+					}
 					if($(n).val() == null || params[inputName] == '' || params[inputName] == undefined || (params[inputName] == 0 && $(n).attr('type') == 'select')){
 						params[inputName] = '';
+						text[inputName] = '';
 						if (required && disabled == undefined){
 							passed.push(inputName);// = false;
 							tips.push(label + ' is required');
@@ -540,6 +556,7 @@ kf_tool.prototype = {
 	//debug(params);    	
 		for(i in checkboxes){
 			params[i] = checkboxes[i];
+			text[i] = checkboxes_text[i];
 			// 需要检查Checkbox是否required
 			var fieldset = $("fieldset#fieldset_" + i);
 			label = $(fieldset).parents('td.cont-td').prev('td.e-pre').children('span:first').html();
@@ -570,7 +587,7 @@ kf_tool.prototype = {
 			params[prefix] = params[prefix] || {};
 			params[prefix]['data'] = values;
 		});
-		return {passed:passed, data:params, tips:tips};
+		return {passed:passed, data:params, tips:tips, text:text};
 	},
 	
 	getHidden : function(divSelector){
@@ -1335,16 +1352,27 @@ this.debug(div);
 	},
 	
 	addNewRowForMulti : function(prefix){
+		var $this = this;
 		var temp = '#' + prefix + '_temp', valuesTable = '#' + prefix + '_values';
 		var data = tool.getAllInput(temp, false);
 		var row, id, td = [];
 		row = $("<tr><td id='del'><a onclick='javascript:XT.deleteSelfRow(this)' href='javascript:void(0)'>X</a></td></tr>");
-		$(temp + ' td.cont-td').each(function(i){
-			var input = $(this).children()[0];
-			var input_val = $(input).val();
-			tool.debug(" i = " + i + ", value = " + $(input).val());
-			var td = $(this).clone();
-			$(td.children()[0]).val(input_val);
+		var vs = this.getAllInput(temp, false);
+// this.debug(vs);		
+		$(valuesTable + " tr#" + prefix + "_header th").each(function(i){
+// $this.debug($(this));
+			var id = $(this).attr('id');
+			if(id == 'del')
+				return;
+// $this.debug(id);			
+			var v =vs['data'][id], t = vs['text'][id];
+			var td = "<td><input type='hidden' value='" + v + "' id='" + id + "'>" + t + "</td>";
+			// var input = $(this).children()[0];
+			// var input_val = $(input).val();
+			// // var td = "<td><input type='hidden' value='" + input_val + "' id="
+			// // tool.debug(" i = " + i + ", value = " + $(input).val());
+			// var td = $(this).clone();
+			// $(td.children()[0]).val(input_val);
 			row.append(td);
 		})
 		if(data.passed.length > 0){
