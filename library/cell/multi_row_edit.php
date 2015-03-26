@@ -43,7 +43,7 @@ class kf_multi_row_edit extends kf_cell{
 		$ret[] = $this->displayHeader($params);
 		
 		if(!empty($params['value'])){
-			$ret[] = $this->displayData($params);
+			$ret[] = $this->displayData($params, $display_status);
 		}
 		$ret[] = "</tbody></table></div>";			
 
@@ -96,7 +96,7 @@ class kf_multi_row_edit extends kf_cell{
 		return implode("\n", $ret);
 	}
 	
-	protected function displayData($params){
+	protected function displayData($params, $display_status){
 		$ret = array();
 		$temp = $params['temp'];
 		//如果有数据，则显示数据
@@ -107,11 +107,13 @@ class kf_multi_row_edit extends kf_cell{
 			foreach($values as $vp){
 				$ret[] = "<tr>";
 				$ret[] = "<td id='del'>";
-					// $ret[] = "<a editable='1' disabled='true' prop_edit='disabled' onclick='javascript:XT.deleteSelfRow(this)' href='javascript:void(0)'>X</a>";
+				if($display_status == DISPLAY_STATUS_EDIT)
+					$ret[] = "<a editable='1'  prop_edit='disabled' onclick='javascript:XT.deleteSelfRow(this)' href='javascript:void(0)'>X</a>";
 				$ret[] = "</td>";
 				foreach($temp as $k=>$model){
 					$ret[] = "<td>";
 					$e_params = $this->tool->model2e2($model, $vp, DISPLAY_STATUS_VIEW);
+					$ret[] = "<input type='hidden' id='{$e_params['id']}' value='{$e_params['value']}'>"; //先保存值
 					$e = cellFactory::get($e_params);
 					$ret[] = $e->display(DISPLAY_STATUS_VIEW);
 					$ret[] = "</td>";

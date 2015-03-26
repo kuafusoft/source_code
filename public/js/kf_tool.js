@@ -437,11 +437,11 @@ kf_tool.prototype = {
 		var selector = divSelector + " :input";
 		if(ignored)
 			selector += "[ignored!='ignored']";
-this.debug(selector);		
+// this.debug(selector);		
 		$.each($(selector), function(i, n){
 			var required = n.required;//$(n).attr('required');
 			var disabled = $(n).attr('disabled');
-$this.debug([i,$(n).attr('type'), n]);			
+// $this.debug([i,$(n).attr('type'), n]);			
 			if ($(n).attr('name') !== undefined)
 				inputName = $(n).attr('name');
 			else if ($(n).attr('id') !== undefined)
