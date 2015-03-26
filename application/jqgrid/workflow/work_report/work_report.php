@@ -6,15 +6,23 @@ class workflow_work_report extends table_desc{
 		parent::init($db, $table, $params);
 		//获取最近的10个period
 		$period_list = $this->tool->getWeekList(10, 1);
+		//获取project list用来检索
+		$soptions = array(0=>' ');
+		$res = $this->db->query("SELECT * FROM prj");
+		while($row = $res->fetch()){
+			$soptions[$row['id']] = $row['name'];
+		}
 // print_r($period_list);		
 		$this->options['list'] = array(
 			'id',
 			'period'=>array('edittype'=>'select', 'editoptions'=>array('value'=>$period_list), 'addoptions'=>array('value'=>$period_list)),
+			'creater_id'=>array('label'=>'Creater'),
 			'work_report_detail'=>array('label'=>'Items', 'editable'=>true, 'data_source_db'=>'workflow', 
-				// 'search'=>true, 'stype'=>'select', 'searchoptions'=>array('value'=>$this->tool->array2str($soptions)), 
+				'search'=>true, 'stype'=>'select', 'searchoptions'=>array('value'=>$this->tool->array2str($soptions)), 
 				'data_source_table'=>'work_report_detail', 'from'=>'workflow.work_report_detail',
-				'formatter'=>'multi_row_edit', 'formatoptions'=>array('subformat'=>'temp', 'temp'=>'[%(prj_id)s]:[%(item_prop_id)s]: %(content)s'), 
+				'formatter'=>'multi_row_edit', 'formatoptions'=>array('subformat'=>'temp', 'temp'=>'[<span class="prop_color_%(item_prop_id)s">%(item_prop_id)s</span>]:[%(prj_id)s]: %(content)s'), 
 				'legend'=>'Items'),
+			'created'
 			// '*'
 		);
 // print_r($period_list);		

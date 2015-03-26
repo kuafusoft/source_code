@@ -134,3 +134,7 @@ span.ui-icon-columns{background-position:-112px -112px;}
 
 .readed-message{background-image:url("images/check.png");background-repeat:no-repeat;display:block;margin-left:20px;background-position:-20px 0;}
 .ui-jqgrid .ui-jqgrid-toppager,.ui-jqgrid-pager {height:50px !important;}
+
+.prop_color_Issue{color:red}
+.prop_color_Normal{color:blue}
+.prop_color_Highlight{color:purple}

@@ -28,11 +28,11 @@ class kf_multi_row_edit extends kf_cell{
 		$temp = $params['temp'];
 		$prefix = $params['prefix'];
 		$ret = array("<fieldset ");
-		if($display_status == DISPLAY_STATUS_EDIT){
-			$onMouseOut = "onmouseout='XT.hideMultiRowTemp(\"$prefix\")'";
-			$onMouseOver = "onmouseover='XT.showMultiRowTemp(\"$prefix\")'";
-			$ret[] = " $onMouseOut $onMouseOver ";
-		}
+		// if($display_status == DISPLAY_STATUS_EDIT){
+			// $onMouseOut = "onmouseout='XT.hideMultiRowTemp(\"$prefix\")'";
+			// $onMouseOver = "onmouseover='XT.showMultiRowTemp(\"$prefix\")'";
+			// $ret[] = " $onMouseOut $onMouseOver ";
+		// }
 		$ret[] = ">";
 		if(!empty($params['legend']))
 			$ret[] = "<legend>{$params['legend']}</legend>";
@@ -63,7 +63,7 @@ class kf_multi_row_edit extends kf_cell{
 		}
 		$temp_form = new kf_form($temp, $params['value'], DISPLAY_STATUS_EDIT);
 
-		$ret[] = "<div id='{$prefix}_temp' style='display:none;'>";
+		$ret[] = "<div id='{$prefix}_temp' >";
 			$ret[] = "<div ignored='ignored' style='float:left;width:90%;'>";
 				$ret[] = $temp_form->display(count($temp));
 			$ret[] = "</div>";

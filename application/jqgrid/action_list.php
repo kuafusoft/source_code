@@ -157,11 +157,12 @@ class action_list extends action_jqgrid{
 // _P($colModel);
 		foreach($lists as $field){
 			$index = $this->colModelMap[$field];
-			$fieldColModel = $colModel[$index];
-			if(!empty($fieldColModel['notfill'])){
-				// $ret = $this->tool->fillOptions($fieldColModel);
-				// $colModel[$index]['limit'] = array_keys($ret['options']);
-			}
+// print_r("field = $field, index = $index");			
+			// $fieldColModel = $colModel[$index];
+			// if(!empty($fieldColModel['notfill'])){
+				// // $ret = $this->tool->fillOptions($fieldColModel);
+				// // $colModel[$index]['limit'] = array_keys($ret['options']);
+			// }
 // if($field == 'testcase_module_id'){
 // print_r("field = $field, limit = ");
 // print_r($colModel[$index]);
