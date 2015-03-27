@@ -68,7 +68,7 @@ class kf_cell{
 					$data[$k] = $v;
 				}
 			}
-			else{
+			elseif(!empty($this->params['editoptions']['value'])){
 				$data = $this->params['editoptions']['value'];
 			}
 		}
@@ -247,6 +247,10 @@ class kf_cell{
 // print_r($this->params['editoptions']);
 		if(!empty($this->params['editoptions']['value'][$value]))
 			$value = $this->params['editoptions']['value'][$value];
+// if($this->params['name'] == 'prj_id'){
+	// print_r($value);
+	// print_r($this->params);
+// }		
 // print_r("value = $value\n");			
 		$label = array('type'=>'label', 'value'=>$value, 'class'=>$this->params['class'], 'editoptions'=>isset($this->params['editoptions']) ? $this->params['editoptions'] : array());
 // print_r("label = ");

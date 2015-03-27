@@ -619,7 +619,7 @@ class tool_db extends tool_kf{
 				
 				$addoptions = array();
 				foreach($options as $id=>$item){
-					if(!isset($item['isactive']) || $item['isactive'] == ISACTIVE_ACTIVE)
+					if(!isset($item['isactive']) || $item['isactive'] == ISACTIVE_ACTIVE || $item['isactive'] == 0)
 						$addoptions[$id] = $item;
 				}
 // if($columnDef['name'] == 'period_id'){				

@@ -29,7 +29,7 @@ class workflow_ticket extends table_desc{
 				'formatter'=>'multi_row_edit', 'formatoptions'=>array('subformat'=>'temp', 'temp'=>'Module[%(module_id)s] has %(question_type_id)s question'), 'legend'=>'Modules'),
 			'ticket_trace'=>array('label'=>'Progress Record', 'data_source_table'=>'ticket_trace', 'data_source_db'=>'workflow', 'from'=>'workflow.ticket_trace', 
 				'search'=>false, 
-				'formatter'=>'multi_row_edit', 'formatoptions'=>array('subformat'=>'temp', 'temp'=>'[%(creater_id)s] updated on [%(update_date)s]: <BR />%(content)s'), 'legend'=>'Records'),
+				'formatter'=>'multi_row_edit', 'formatoptions'=>array('subformat'=>'temp', 'temp'=>'[%(creater_id)s updated on %(update_date)s]: <BR />%(content)s<BR>'), 'legend'=>'Records'),
 				'*'=>array('hidden'=>true)
 		);
 		$this->options['edit'] = array('input_source_id'=>array('editable'=>false), 'input_person'=>array('editable'=>false), 

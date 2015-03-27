@@ -434,7 +434,7 @@ kf_tool.prototype = {
 				tips.push(uniqText + ' is Not unique');
 			}
 		}
-		var selector = divSelector + " :input";
+		var selector = divSelector + " :input[multi_row_edit!='multi_row_edit']";
 		if(ignored)
 			selector += "[ignored!='ignored']";
 // this.debug(selector);		
@@ -1366,7 +1366,7 @@ this.debug(div);
 				return;
 // $this.debug(id);			
 			var v =vs['data'][id], t = vs['text'][id];
-			var td = "<td><input type='hidden' value='" + v + "' id='" + id + "'>" + t + "</td>";
+			var td = "<td><input type='hidden' value='" + v + "' id='" + id + "' multi_row_edit='multi_row_edit'>" + t + "</td>";
 			// var input = $(this).children()[0];
 			// var input_val = $(input).val();
 			// // var td = "<td><input type='hidden' value='" + input_val + "' id="

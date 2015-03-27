@@ -113,7 +113,7 @@ class kf_multi_row_edit extends kf_cell{
 				foreach($temp as $k=>$model){
 					$ret[] = "<td>";
 					$e_params = $this->tool->model2e2($model, $vp, DISPLAY_STATUS_VIEW);
-					$ret[] = "<input type='hidden' id='{$e_params['id']}' value='{$e_params['value']}'>"; //先保存值
+					$ret[] = "<input type='hidden' id='{$e_params['id']}' value='{$e_params['value']}' multi_row_edit='multi_row_edit'>"; //先保存值
 					$e = cellFactory::get($e_params);
 					$ret[] = $e->display(DISPLAY_STATUS_VIEW);
 					$ret[] = "</td>";

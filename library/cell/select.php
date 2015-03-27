@@ -8,14 +8,14 @@ class kf_select extends kf_cell{
 		$str = "<select {$this->strProps}>\n";
 		if(!empty($this->params['editoptions']['value'])){
 			foreach($this->params['editoptions']['value'] as $k=>$v){
-				$str .= $this->displayOption($k, $v);
+				$str .= $this->displayOption($k, $v, $value);
 			}
 		}
 		$str .= "</select>";
 		return $str;
 	}
 	
-	protected function displayOption($k, $v){
+	protected function displayOption($k, $v, $value){
 		$props = array('value'=>$k);
 		if(is_array($v)){
 			$label = isset($v['label']) ? $v['label'] : (isset($v['value']) ? $v['value'] : (isset($v['id']) ? $v['id'] : '[unknown]'));
@@ -23,6 +23,8 @@ class kf_select extends kf_cell{
 		}
 		else
 			$label = $v;
+		if($k == $value)
+			$props['selected'] = 'selected';
 // print_r($props);			
 		$strProps = $this->propStr($props);
 		$str = "<option $strProps>$label</option>\n";

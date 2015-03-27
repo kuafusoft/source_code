@@ -974,6 +974,8 @@ class tool_kf{
 			'cart_db'=>'', 'cart_table'=>'', 'cart_data'=>array(),
 			);
 		$e = $this->array_extends($p, $model);
+// if($e['name'] == 'hw_ae_id')		
+	// print_r($e);
 		if(empty($e['id']) && !empty($e['name']))
 			$e['id'] = $e['name'];
 		if(empty($e['name']) && !empty($e['id']))
@@ -985,20 +987,31 @@ class tool_kf{
 		if(empty($e['prefix']) && !empty($e['id']))
 			$e['prefix'] = $e['id'];
 			
+$l = 0;
 		if($display_status == DISPLAY_STATUS_NEW && !empty($model['addoptions'])){
-			$e['editoptions'] = $e['addoptions'];
+$l = 1;			
+			$e['editoptions'] = $model['addoptions'];
 		}
 		elseif($display_status == DISPLAY_STATUS_QUERY && !empty($model['searchoptions'])){
+$l = 2;			
 			$e['editoptions'] = $model['searchoptions'];
 		}
-		else
-			$e['editoptions'] = isset($model['editoptions']) ? $model['editoptions'] : array();
-			
+		else{
+$l = 3;			
+			$e['editoptions'] = isset($model['editoptions']) ? $model['editoptions'] : 
+			(isset($model['addoptions']) ? $model['addoptions'] : 
+				(isset($model['formatoptions']) ? $model['formatoptions'] : array())
+			);
+		}
+// if($e['name'] == 'prj_id'){
+	// print_r($l);
+	// print_r($model);
+	// print_r($e);
+// }
+
 		if(!empty($e['editoptions']['value']) && is_string($e['editoptions']['value'])){
 			$e['editoptions']['value'] = $this->str2Array($e['editoptions']['value']);
 		}
-// if($model['name'] == 'owner_id')
-// print_r($e);
 		if (empty($e['type'])){
 			if($display_status == DISPLAY_STATUS_QUERY && !empty($model['queryoptions']['querytype']))
 				$e['type'] = $model['queryoptions']['querytype'];
@@ -1009,8 +1022,6 @@ class tool_kf{
 			else
 				$e['type'] = 'text';
 		}
-// if($model['name'] == 'owner_id')
-// print_r(">>>type = {$e['type']}<<<");		
 		switch($e['type']){
 			case 'textarea':
 				if($display_status == DISPLAY_STATUS_QUERY)
@@ -1018,7 +1029,9 @@ class tool_kf{
 				break;
 			case 'select':
 				if($display_status != DISPLAY_STATUS_QUERY){
-					$cc = count($e['editoptions']['value']);
+					$cc = 0;
+					if(!empty($e['editoptions']['value']))
+						$cc = count($e['editoptions']['value']);
 					if(!empty($e['editoptions']['multiple'])){
 						if($cc < 10 || empty($e['cart_db']) || empty($e['cart_table']))
 							$e['type'] = 'checkbox';
@@ -1139,6 +1152,16 @@ class tool_kf{
 		if(!empty($e['post'])){
 			if(!isset($e['post']['type']))
 				$e['post']['type'] = 'text';
+		}
+		if($e['DATA_TYPE'] == 'date' || $e['DATA_TYPE'] == 'date_time'){
+			$e['type'] = 'date';
+			if($display_status == DISPLAY_STATUS_EDIT || $display_status == DISPLAY_STATUS_NEW){
+				if(empty($e['post']['value']))
+					$e['post']['value'] = '(yyyy-mm-dd)';
+				if(empty($e['post']['type']))
+					$e['post']['type'] = 'text';
+			}
+			$e['date'] = 'date';
 		}
 // print_r($e);			
 		return $e;
