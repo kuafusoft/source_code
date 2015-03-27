@@ -27,6 +27,18 @@ class kf_form{
 // $this->tool->p_t("Before display");
 		$hidden = array("<table id='hidden_elements'><tr>");
 		$normal = array("<table id='normal_elements' class='ces' style='width:100%'>");
+		$normal[] = "<tr>";
+		$w1 = 25 / $colsInRow;
+		$w2 = 75 / $colsInRow;
+		if($colsInRow == 1){
+			$w1 = 10;
+			$w2 = 90;
+		}
+		for($i = 0; $i < $colsInRow; $i ++){
+			$normal[] = "<th class='ces' style='width:$w1%' /><th class='ces' style='width:$w2%' />";
+		}
+		$normal[] = "</tr>";
+		
 		$currentCol = 0;
 		$evenRow = true;
 		$display_status = $this->display_status;
@@ -39,8 +51,8 @@ class kf_form{
 			}
 			else{
 				if($currentCol ++ == 0){
-					$evenRowClass = $evenRow ? 'evenRow' : 'oddRow';
-					$normal[] = "<tr id='ces_tr_{$cell['id']}' 'class='ces $evenRowClass'>";
+					$rowClass = $evenRow ? 'evenRow' : 'oddRow';
+					$normal[] = "<tr id='ces_tr_{$cell['id']}' class='ces $rowClass'>";
 					$evenRow = !$evenRow;
 				}
 				

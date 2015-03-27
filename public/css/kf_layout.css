@@ -138,3 +138,11 @@ span.ui-icon-columns{background-position:-112px -112px;}
 .prop_color_Issue{color:red}
 .prop_color_Normal{color:blue}
 .prop_color_Highlight{color:purple}
+
+table.ces{border-width: 1px;	border-color: #999999;	border-collapse: collapse; cellspacing:2px;}
+.evenRow{background-color:#FFFFFF;}
+.oddRow{background-color:#DDDDDD;}
+
+table.ces td{height:30px;}
+
+.pre-td{text-align:right}

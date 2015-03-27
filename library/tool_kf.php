@@ -987,17 +987,17 @@ class tool_kf{
 		if(empty($e['prefix']) && !empty($e['id']))
 			$e['prefix'] = $e['id'];
 			
-$l = 0;
+// $l = 0;
 		if($display_status == DISPLAY_STATUS_NEW && !empty($model['addoptions'])){
-$l = 1;			
+// $l = 1;			
 			$e['editoptions'] = $model['addoptions'];
 		}
 		elseif($display_status == DISPLAY_STATUS_QUERY && !empty($model['searchoptions'])){
-$l = 2;			
+// $l = 2;			
 			$e['editoptions'] = $model['searchoptions'];
 		}
 		else{
-$l = 3;			
+// $l = 3;			
 			$e['editoptions'] = isset($model['editoptions']) ? $model['editoptions'] : 
 			(isset($model['addoptions']) ? $model['addoptions'] : 
 				(isset($model['formatoptions']) ? $model['formatoptions'] : array())
@@ -1038,9 +1038,9 @@ $l = 3;
 						else
 							$e['type'] = 'cart';
 					}
-					elseif($cc < 4){
-						$e['type'] = 'radio';
-					}
+					// elseif($cc < 4){
+						// $e['type'] = 'radio';
+					// }
 				}
 				break;
 			case 'single_multi':
