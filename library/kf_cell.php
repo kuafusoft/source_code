@@ -128,10 +128,9 @@ class kf_cell{
 	}
 	
 	function pre($display_status){
-		$label = array('type'=>'label', 'id'=>'label_'.$this->params['id'], 'value'=>$this->params['label'].':', 'class'=>$this->params['class']);
+		$label = array('type'=>'label', 'id'=>$this->params['id'].'_label', 'value'=>$this->params['label'].':', 'class'=>$this->params['class']);
 		$e = cellFactory::get($label);
 		return $e->display(DISPLAY_STATUS_VIEW, true);
-			// "<span id='label_{$this->params['id']}'>{$this->params['label']}</span>";
 	}
 	
 	function post($display_status){
@@ -254,7 +253,12 @@ class kf_cell{
 // print_r("value = $value\n");			
 		$label = array('type'=>'label', 'value'=>$value, 'class'=>$this->params['class'], 'editoptions'=>isset($this->params['editoptions']) ? $this->params['editoptions'] : array());
 // print_r("label = ");
-// print_r($label);
+// print_r($label['class']);
+		$required_index = array_search('required', $label['class']);
+		if($required_index !== false){
+// print_r('required_index = '.$required_index);			
+			unset($label['class'][$required_index]);
+		}
 		if(!empty($this->params['id']))
 			$label['id'] = $this->params['id'];
 		

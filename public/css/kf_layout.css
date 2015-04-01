@@ -137,12 +137,16 @@ span.ui-icon-columns{background-position:-112px -112px;}
 
 .prop_color_Issue{color:red}
 .prop_color_Normal{color:blue}
-.prop_color_Highlight{color:purple}
+.prop_color_Highlight{color:purple;text-decoration:blink;}
 
-table.ces{border-width: 1px;	border-color: #999999;	border-collapse: collapse; cellspacing:2px;}
+table.ces{border-collapse: collapse; cellspacing:2px;}
 .evenRow{background-color:#FFFFFF;}
-.oddRow{background-color:#DDDDDD;}
+.oddRow{background-color:#EEEEFF;}
 
-table.ces td{height:30px;}
+table.ces td{height:30px;border:2px outset #DDDDDD;padding-right:5px;}
 
 .pre-td{text-align:right}
+
+label.required {background-image: url("images/required_field.png"); background-position: top right; background-repeat: no-repeat; padding-right: 10px;}
+
+table#normal_elements{background-color:#EEFFEE;}

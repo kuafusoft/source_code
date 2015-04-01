@@ -14,20 +14,20 @@ class workflow_work_report_detail extends table_desc{
 		);
 		$this->options['edit'] = array('prj_id', 'item_prop_id', 'content');
 
-		$this->options['gridOptions']['label'] = 'Work Report Items';
-		$this->options['navOptions']['del'] = true;
+		// $this->options['gridOptions']['label'] = 'Work Report Items';
+		// $this->options['navOptions']['del'] = true;
 		
-		$this->parent_field = 'work_report_id';
+		// $this->parent_field = 'work_report_id';
     } 
 	
-	protected function getButtons(){
-		$buttons = array();
-		$buttons['import_note'] = array('caption'=>'Import Note', 'buttonimg'=>'', 'title'=>'Import Content From Daily Note');
-		$buttons = array_merge($buttons, parent::getButtons());
-		unset($buttons['subscribe']);
-		unset($buttons['tag']);
-		unset($buttons['export']);
+	// protected function getButtons(){
+		// $buttons = array();
+		// $buttons['import_note'] = array('caption'=>'Import Note', 'buttonimg'=>'', 'title'=>'Import Content From Daily Note');
+		// $buttons = array_merge($buttons, parent::getButtons());
+		// unset($buttons['subscribe']);
+		// unset($buttons['tag']);
+		// unset($buttons['export']);
 	
-		return $buttons;
-	}
+		// return $buttons;
+	// }
 }

@@ -35,13 +35,18 @@ class workflow_cqi_ticket extends table_desc{
 				'formatter'=>'multi_row_edit', 'formatoptions'=>array('subformat'=>'temp', 'temp'=>'Module[%(module_id)s] has %(question_type_id)s question'), 'legend'=>'Modules'),
 			'cqi_ticket_trace'=>array('label'=>'Progress Record', 'data_source_table'=>'cqi_ticket_trace', 'data_source_db'=>'workflow', 'from'=>'workflow.cqi_ticket_trace', 
 				'search'=>false, 
-				'formatter'=>'multi_row_edit', 'formatoptions'=>array('subformat'=>'temp', 'temp'=>'[%(creater_id)s] updated on [%(update_date)s]: <BR />%(content)s'), 'legend'=>'Records'),
+				'formatter'=>'multi_row_edit', 'formatoptions'=>array('subformat'=>'temp', 'temp'=>'[%(creater_id)s updated on %(update_date)s]: <BR />%(content)s'), 'legend'=>'Records'),
 			'hw_ae_id'=>array('hidden'=>true, 'label'=>'HW AE', 
 				'formatter'=>'select', 'formatoptions'=>array('value'=>$userList), 
 				'edittype'=>'select', 'editoptions'=>array('value'=>$userList),
 				'addoptions'=>array('value'=>$userList)
 				),
 			'sw_ae_id'=>array('hidden'=>true, 'label'=>'SW AE', 
+				'formatter'=>'select', 'formatoptions'=>array('value'=>$userList), 
+				'edittype'=>'select', 'editoptions'=>array('value'=>$userList),
+				'addoptions'=>array('value'=>$userList)
+				),
+			'soc_ae_id'=>array('hidden'=>true, 'label'=>'SOC AE', 
 				'formatter'=>'select', 'formatoptions'=>array('value'=>$userList), 
 				'edittype'=>'select', 'editoptions'=>array('value'=>$userList),
 				'addoptions'=>array('value'=>$userList)
@@ -88,7 +93,7 @@ class workflow_cqi_ticket extends table_desc{
 		$this->linkTables = array(
 			'one2m'=>array(
 				'cqi_ticket_trace'=>array('link_table'=>'cqi_ticket_trace', 'self_link_field'=>'cqi_ticket_id'),
-				'cqi_ticket_module'=>array('link_table'=>'cqi_ticket_module', 'self_link_field'=>'cqi_ticket_idticket_id')
+				'cqi_ticket_module'=>array('link_table'=>'cqi_ticket_module', 'self_link_field'=>'cqi_ticket_id')
 			)
 		);
     } 

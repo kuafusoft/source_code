@@ -1154,13 +1154,13 @@ class tool_kf{
 				$e['post']['type'] = 'text';
 		}
 		if($e['DATA_TYPE'] == 'date' || $e['DATA_TYPE'] == 'date_time'){
-			$e['type'] = 'date';
-			if($display_status == DISPLAY_STATUS_EDIT || $display_status == DISPLAY_STATUS_NEW){
-				if(empty($e['post']['value']))
-					$e['post']['value'] = '(yyyy-mm-dd)';
-				if(empty($e['post']['type']))
-					$e['post']['type'] = 'text';
-			}
+			// $e['type'] = 'date';
+			// if($display_status == DISPLAY_STATUS_EDIT || $display_status == DISPLAY_STATUS_NEW){
+				// if(empty($e['post']['value']))
+					// $e['post']['value'] = '(yyyy-mm-dd)';
+				// if(empty($e['post']['type']))
+					// $e['post']['type'] = 'text';
+			// }
 			$e['date'] = 'date';
 		}
 // print_r($e);			

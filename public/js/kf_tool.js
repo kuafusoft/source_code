@@ -461,6 +461,7 @@ kf_tool.prototype = {
 			else
 				label = $(n).parents('.cont-td').prev('td.e-pre').children('span:first').html();
 			var n_type = $(n).attr('type');
+// $this.debug(n_type);			
 			switch(n_type){
 				case 'button':
 					//检查是否Cart Button
@@ -495,15 +496,18 @@ kf_tool.prototype = {
 					text[inputName] = $(':radio[name=' + inputName + ']:checked').attr('label') || $(n).parent('label').text();
 					break;
 				default:
-					
 					params[inputName] = $(n).val();
 					text[inputName] = $(n).text();
+// $this.debug(params);
+// $this.debug(text);					
 					if(n_type == 'select'){
 						text[inputName] = $(n).find("option:selected").text();
 					}
 					else if(n_type == 'textarea'){
 						text[inputName] = $(n).val();
 					}
+					else if(n_type == 'text')
+						text[inputName] = $(n).val();
 					if($(n).val() == null || params[inputName] == '' || params[inputName] == undefined || (params[inputName] == 0 && $(n).attr('type') == 'select')){
 						params[inputName] = '';
 						text[inputName] = '';
@@ -1354,11 +1358,10 @@ this.debug(div);
 	addNewRowForMulti : function(prefix){
 		var $this = this;
 		var temp = '#' + prefix + '_temp', valuesTable = '#' + prefix + '_values';
-		var data = tool.getAllInput(temp, false);
 		var row, id, td = [];
 		row = $("<tr><td id='del'><a onclick='javascript:XT.deleteSelfRow(this)' href='javascript:void(0)'>X</a></td></tr>");
 		var vs = this.getAllInput(temp, false);
-// this.debug(vs);		
+this.debug(vs);		
 		$(valuesTable + " tr#" + prefix + "_header th").each(function(i){
 // $this.debug($(this));
 			var id = $(this).attr('id');
@@ -1375,8 +1378,8 @@ this.debug(div);
 			// $(td.children()[0]).val(input_val);
 			row.append(td);
 		})
-		if(data.passed.length > 0){
-			alert(data.tips.join('\n'));
+		if(vs.passed.length > 0){
+			alert(vs.tips.join('\n'));
 		}
 		else{
 			$(valuesTable).append(row);//"<tr>" + td.join() + "</tr>");

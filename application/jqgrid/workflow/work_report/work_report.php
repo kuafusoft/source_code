@@ -26,7 +26,7 @@ class workflow_work_report extends table_desc{
 			// '*'
 		);
 // print_r($period_list);		
-		$this->options['edit'] = array('period', 'work_report_detail');
+		$this->options['edit'] = array('period'=>array('editable'=>false), 'work_report_detail');
 		$this->options['add'] = array('period', 'work_report_detail');
 		$this->options['displayField'] = 'period';
 		
