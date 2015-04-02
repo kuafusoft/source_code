@@ -1107,7 +1107,7 @@ class tool_kf{
 		if(empty($e['unique']))
 			unset($e['unique']);
 		else
-			$e['class'][] = 'unique';
+			$e['class'][] = 'unique_unknown';
 			
 		// invalidChar
 		if(empty($e['invalidChar'])){

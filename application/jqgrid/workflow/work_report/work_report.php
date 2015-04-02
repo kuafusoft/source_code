@@ -26,7 +26,8 @@ class workflow_work_report extends table_desc{
 			// '*'
 		);
 // print_r($period_list);		
-		$this->options['edit'] = array('period'=>array('editable'=>false), 'work_report_detail');
+// print_r($this->params);
+		$this->options['edit'] = array('period'=>array('editable'=>(isset($this->params['cloneit']) && $this->params['cloneit'] == 'false') ? false : true), 'work_report_detail');
 		$this->options['add'] = array('period', 'work_report_detail');
 		$this->options['displayField'] = 'period';
 		

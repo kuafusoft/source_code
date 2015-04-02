@@ -147,6 +147,8 @@ table.ces td{height:30px;border:2px outset #DDDDDD;padding-right:5px;}
 
 .pre-td{text-align:right}
 
+input.unique_unknown {background-image: url("images/unique_unknown.png"); background-size:16px 16px; background-position: center right; background-repeat: no-repeat; padding-right: -10px;}
+input.unique_checked {background-image: url("images/unique_checked.png"); background-size:16px 16px; background-position: center right; background-repeat: no-repeat; padding-right: -10px;}
 label.required {background-image: url("images/required_field.png"); background-position: top right; background-repeat: no-repeat; padding-right: 10px;}
 
 table#normal_elements{background-color:#EEFFEE;}

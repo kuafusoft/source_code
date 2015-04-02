@@ -8,15 +8,21 @@ tool.extend(gc_grid_action, gc_kf);
 
 gc_grid_action.prototype.previousTag = 0;
 
-gc_grid_action.prototype.updateInformationPage = function(verId, nodeId, pageName, display_status){
+gc_grid_action.prototype.updateInformationPage = function(verId, nodeId, pageName, display_status, cloneit){
 	display_status = display_status || 1;
+	cloneit = cloneit || 'false';
 	var $this = this;
 	var p = this.getParams(['db', 'table', 'container']);
 	var tabId = 'information_tabs_' + p.db + '_' + p.table + '_' + nodeId;
 	var page = pageName + '_' + nodeId;
-	var real_node_id = $('#' + tabId + ' #div_view_edit #node_id').val() || nodeId;// 如果是New Case，那么nodeId = 0，但真正的id是real_node_id
-// tool.debug([verId, nodeId, pageName, tabId, page, real_node_id]);
-	$('#' + tabId + ' #' + page).load('/jqgrid/jqgrid/db/' + p.db + '/table/' + p.table + '/oper/update_information_page/page/' + pageName + '/element/' + real_node_id + '/ver/' + verId + '/display_status/' + display_status, function(data){
+	var real_node_id = $('#' + tabId + ' #div_hidden #id').val(); 
+	
+	verId = $('#' + tabId + ' #div_hidden #ver_id').val();// 如果是New Case，那么nodeId = 0，但真正的id是real_node_id
+tool.debug([verId, nodeId, pageName, tabId, page, real_node_id]);
+	$('#' + tabId + ' #' + page).load('/jqgrid/jqgrid/db/' + p.db + '/table/' + p.table + 
+		'/oper/update_information_page/page/' + pageName + '/element/' + real_node_id + '/ver/' + verId + 
+		'/display_status/' + display_status + '/cloneit/' + cloneit, function(data){
+tool.debug(data);			
 		$('#' + tabId).tabs('enabled', page);
 		$('#' + tabId).tabs('option', 'selected', page);
 		$this.information_open(tabId, verId, pageName);
@@ -294,16 +300,10 @@ gc_grid_action.prototype.infoBtnActions = function(action, p){
 
 		case 'view_edit_ask2review':
 			this.view_edit_ask2review(p);
-			// testcase_id = $('#' + p['divId'] + ' #div_view_edit #node_id').val();
-			// ver_id = $('#' + p['divId'] + ' #div_view_edit #ver_id').val();
-			// this.comm_action._ask2review(testcase_id, ver_id);
 			break;
 			
 		case 'view_edit_publish':
 			this.view_edit_publish(p);
-			// testcase_id = $('#' + p['divId'] + ' #div_view_edit #node_id').val();
-			// ver_id = $('#' + p['divId'] + ' #div_view_edit #ver_id').val();
-			// this.comm_action._publish(testcase_id, ver_id, 'testcase_ver');
 			break;
 				
 	}
@@ -443,7 +443,8 @@ gc_grid_action.prototype.buttonActions = function(action, p){
 							},
 							'Tag': function() {
 								var t = $(this);
-								$.post('/jqgrid/jqgrid', {db:db, table:table, oper:'tag', element:element, tag:t.find('#tag').val(), isPublic:t.find('#public').attr('checked')}, 
+								$.post('/jqgrid/jqgrid', 
+									{db:db, table:table, oper:'tag', element:element, tag:t.find('#tag').val(), isPublic:t.find('#public').attr('checked')}, 
 									function(data, status){
 										if(tool.handleRequestFail(data))return;
 			//xt.debug(data);
@@ -703,36 +704,13 @@ gc_grid_action.prototype.information = function(rowId, newpage, ver, display_sta
 };
 
 gc_grid_action.prototype.information_open = function(divId, rowId, pageName){
-	var $this = this, this_table = this.getParams('table'), this_id = $('#' + divId + ' #div_hidden #id').val();
-// tool.debug([divId, this_table, this_id]);	
-	// // //调整view_edit界面的显示比例
-	// var t = $('#' + divId + " #div_view_edit table.ces");
-	// var div_width = $('#' + divId).width();
-// tool.debug(div_width);
-	// t.each(function(i){
-		// var th1 = $(this).find("th.ces:first");
-		// var th1_width = th1.width();
-		// if(div_width * th1_width / 100 > 120){
-			// th1_width = 120;
-// tool.debug(th1_width)			;
-			// $(th1).width(th1_width + 'px');
-		// }
-	// });
+	var $this = this, this_table = this.getParams('table'), this_id = $('#' + divId + ' #div_hidden #origin_id').val();
 	
 	tool.defaultActionForTab('#' + divId);
 	var gridsLoad = this.getGridsForInfo(divId);
 	pageName = pageName || 'all';
 	if(pageName == 'all' || pageName == 'view_edit'){
 		gridsLoad.unshift({tab:'view_edit', table:this_table});
-		// $('#' + divId + ' :button').each(function(i){
-			// $(this).button();
-			// if ($(this).attr('onclick') == undefined){
-				// $(this).unbind('click').bind('click', function(){
-					// var id = $(this).attr('id');
-					// $this.infoBtnActions(id, {divId:divId, item:this});
-				// });
-			// }
-		// });
 	}
 // tool.debug(gridsLoad);
 	$.each(gridsLoad, function(i, n){
@@ -791,10 +769,11 @@ gc_grid_action.prototype.information_getCaption = function(){
 gc_grid_action.prototype.view_edit_edit = function(p){
 	var divId = p.divId;
 	var dialog = $('#' + divId);
-	var node_id = $('#' + divId + ' #div_hidden #id').val();
+	var node_id = $('#' + divId + ' #div_hidden #origin_id').val();
 // tool.debug(['#' + divId + ' #div_hidden #id', node_id]);	
-	var ver_id = $('#' + divId + ' #div_view_edit #ver_id').val() || 0;
-	this.updateInformationPage(ver_id, node_id, 'view_edit', 2);
+	var ver_id = $('#' + divId + ' #div_hidden #ver_id').val() || 0;
+	var cloneit = $('#' + divId + ' #div_hidden #clone').val() || 'false';
+	this.updateInformationPage(ver_id, node_id, 'view_edit', 2, cloneit);
 	// dialog.find('#div_view_edit [editable="1"]').each(function(i){
 		// var prop_edit = $(this).attr('prop_edit');
 		// $(this).attr(prop_edit, false);
@@ -817,33 +796,14 @@ gc_grid_action.prototype.view_edit_edit = function(p){
 gc_grid_action.prototype.view_edit_cancel = function(p){
 	var divId = p.divId;
 	var dialog = $('#' + divId);
+	var origin_id = dialog.find('div#div_hidden #origin_id').val();
 	var node_id = dialog.find('div#div_hidden #id').val();
+	var ver_id = $('#' + divId + ' #div_hidden #ver_id').val() || 0;
+	$('#' + divId + ' #div_hidden #clone').val('false');
 	if (node_id == '0' || node_id == 0)
 		$(dialog).dialog('close');
 	else{
-		var ver_id = $('#' + divId + ' #div_view_edit #ver_id').val() || 0;
-		this.updateInformationPage(ver_id, node_id, 'view_edit', 1);
-		
-		// dialog.find('#div_view_edit [editable="1"]').each(function(i){
-			// var orig_val = $(this).attr('original_value');
-			// var type = $(this).attr('type');
-			// var prop_edit = $(this).attr('prop_edit');
-			// if (type == 'button')
-				// return;
-			// if (type == 'checkbox'){
-				// if(orig_val == '1' || orig_val == true || orig_val == 'true')
-					// $(this).attr('checked', true);
-				// else
-					// $(this).attr('checked', false);
-			// }
-			// else
-				// $(this).val($(this).attr('original_value'));
-			// $(this).attr(prop_edit, true);
-		// });
-		// dialog.find('#div_button_edit #view_edit_cancel,#view_edit_save,#view_edit_saveandnew').hide();
-		// dialog.find('#div_button_edit #view_edit_edit,#view_edit_cloneit,#view_edit_ask2review,#view_edit_publish').show();
-		// dialog.find('#img_unique_check').hide();
-		// dialog.find('div#cart_button').hide();
+		this.updateInformationPage(ver_id, origin_id, 'view_edit', 1);
 	}
 	return dialog;
 };
@@ -868,20 +828,21 @@ gc_grid_action.prototype.view_edit_save = function(p, newNext){
 					$(this).attr('original_value', $(this).val());//.attr('disabled', true);
 				$(this).attr(prop_edit, true);
 			});
-			dialog.find('#div_button_edit #view_edit_save,#view_edit_saveandnew,#view_edit_cancel').hide();
-			dialog.find('#div_button_edit #view_edit_edit,#view_edit_cloneit,#view_edit_ask2review,#view_edit_publish').show();
+			// dialog.find('#div_button_edit #view_edit_save,#view_edit_saveandnew,#view_edit_cancel').hide();
+			// dialog.find('#div_button_edit #view_edit_edit,#view_edit_cloneit,#view_edit_ask2review,#view_edit_publish').show();
 			dialog.find('#div_hidden #saved').val('true');
 			dialog.find('#div_hidden #clone').val('false');
 			
-			dialog.find('#img_unique_check').hide();
-			dialog.find('div#cart_button').hide();
+			// dialog.find('#img_unique_check').hide();
+			// dialog.find('div#cart_button').hide();
 		}
 		
 		var sendSaveCommand = function(db, table, parent_id, id, oper, inputData){
 			var isclone = (oper == 'cloneit');
 			var wait_dialog = tool.waitingDialog();
-tool.debug(wait_dialog);
-			$.post('/jqgrid/jqgrid/db/' + db + '/table/' + table + '/parent/' + parent_id + '/element/' + id + '/oper/save/cloneit/' + isclone, inputData, function(data, textStatus){
+// tool.debug(wait_dialog);
+			$.post('/jqgrid/jqgrid/db/' + db + '/table/' + table + '/parent/' + parent_id + '/element/' + id + '/oper/save/cloneit/' + isclone, 
+				inputData, function(data, textStatus){
 				wait_dialog.dialog('close');
 				if(tool.handleRequestFail(data))return;
 				if (data['code'] != 0){
@@ -891,8 +852,8 @@ tool.debug(wait_dialog);
 				else{
 		//alert(divId);		
 					if (newNext){
-						$('#' + divId + ' #div_hidden #id,#element_id').val(0);
-						$('#' + divId + ' #div_view_edit #node_id').val(0);
+						$('#' + divId + ' #div_hidden #id,#element_id,#origin_id').val(0);
+						// $('#' + divId + ' #div_view_edit #node_id').val(0);
 					}
 					else{
 						//需要分析data['msg'], 是否node:ver格式
@@ -900,12 +861,12 @@ tool.debug(wait_dialog);
 // tool.debug(node_ver);						
 						if (node_ver.length > 1){
 							$('#' + divId + ' #div_hidden #id,#element_id').val(node_ver[0]);
-							$('#' + divId + ' #div_view_edit #node_id').val(node_ver[0]);
-							$('#' + divId + ' #div_view_edit #ver_id').val(node_ver[1]);
+							// $('#' + divId + ' #div_view_edit #node_id').val(node_ver[0]);
+							$('#' + divId + ' #div_hidden #ver_id').val(node_ver[1]);
 						}
 						else{
 							$('#' + divId + ' #div_hidden #id,#element_id').val(data['msg']);
-							$('#' + divId + ' #div_view_edit #node_id').val(data['msg']);
+							// $('#' + divId + ' #div_view_edit #node_id').val(data['msg']);
 						}
 					}
 // tool.debug([divId, id, parent_id, data]);
@@ -916,9 +877,11 @@ tool.debug(wait_dialog);
 		};
 
 		var db = $(dialog_id + ' #div_hidden #db').val(), table = $(dialog_id + ' #div_hidden #table').val(), 
-			id=$(dialog_id + ' #div_hidden #id').val(), parent_id = $(dialog_id + ' #div_hidden #parent_id').val(), oper = (cloneit == "true") ? 'cloneit':'save';
+			id=$(dialog_id + ' #div_hidden #id').val(), parent_id = $(dialog_id + ' #div_hidden #parent_id').val(), 
+			oper = (cloneit == "true") ? 'cloneit':'save';
 		if (oper == 'save'){
-			$("<div id='div_cover_version'>").load('/jqgrid/jqgrid/db/' + db + '/table/' + table + '/parent/' + parent_id + '/element/' + id + '/oper/beforeSave', inputs['data'], function(data, textStatus){
+			$("<div id='div_cover_version'>").load('/jqgrid/jqgrid/db/' + db + '/table/' + table + '/parent/' + parent_id + '/element/' + id + '/oper/beforeSave', 
+				inputs['data'], function(data, textStatus){
 				if(tool.handleRequestFail(data) == false){
 					if (data != ''){
 						var dialog_param = tool.defaultDialogParams();
@@ -959,6 +922,7 @@ tool.debug(wait_dialog);
 };
 
 gc_grid_action.prototype.view_edit_publish = function(p){
+	var origin_id = $('#' + p['divId'] + ' #div_view_edit #origin_id').val();
 	var node_id = $('#' + p['divId'] + ' #div_view_edit #node_id').val();
 	var ver_id = $('#' + p['divId'] + ' #div_view_edit #ver_id').val();
 	var db = $('#' + p['divId'] + ' #div_hidden #db').val(), table = $('#' + p['divId'] + ' #div_hidden #table').val();
@@ -971,7 +935,7 @@ gc_grid_action.prototype.view_edit_publish = function(p){
 		return (data.data['note'] != '');
 	};
 	var complete = function(){
-		$this.updateInformationPage(ver_id, node_id, 'view_edit');
+		$this.updateInformationPage(ver_id, origin_id, 'view_edit');
 	}
 	var params = {
 		height: 400,
@@ -987,8 +951,9 @@ gc_grid_action.prototype.view_edit_publish = function(p){
 };
 
 gc_grid_action.prototype.view_edit_ask2review = function(p){
-	var node_id = $('#' + p['divId'] + ' #div_view_edit #node_id').val();
-	var ver_id = $('#' + p['divId'] + ' #div_view_edit #ver_id').val();
+	var origin_id = $('#' + p['divId'] + ' #div_hidden #origin_id').val();
+	var node_id = $('#' + p['divId'] + ' #div_hidden #id').val();
+	var ver_id = $('#' + p['divId'] + ' #div_hidden #ver_id').val();
 	var dialog = $('#' + p['divId']);
 	var dialog_id = '#' + dialog.attr('id');
 	var db = $(dialog_id + ' #div_hidden #db').val(), table = $(dialog_id + ' #div_hidden #table').val();
@@ -1033,7 +998,7 @@ gc_grid_action.prototype.view_edit_ask2review = function(p){
 	};
 	
 	tool.actionDialog(dialog_params, url, checkReviewer, function(){
-		$this.updateInformationPage(ver_id, node_id, 'view_edit');
+		$this.updateInformationPage(ver_id, origin_id, 'view_edit');
 		var grid = grid_factory.get(db, table + '_ver', {container:'edit_history_' + node_id});
 		var gridId = grid.getParams('gridSelector');
 		$(gridId).trigger('reloadGrid');
@@ -1049,24 +1014,31 @@ gc_grid_action.prototype.view_edit_afterSave = function(divId, id, p_id, data){
 	var gridId = this.getParams('gridSelector');
 	var gridOptions = $(gridId).getGridParam();
 	$(gridId).trigger('reloadGrid');
-	var ver_id = $('#' + divId + " #div_view_edit #ver_id").val();
+	var node_id = $('#' + divId + ' #div_hidden #id').val();
+	var origin_id = $('#' + divId + ' #div_hidden #origin_id').val();
+	var ver_id = $('#' + divId + " #div_hidden #ver_id").val();
+	
+	$('#' + divId + ' #div_hidden #clone').val('false');
+	
 // tool.debug(data);
 // tool.debug(ver_id);
-	if(ver_id){ //有版本管理
-		var node_id = $('#' + divId + ' #node_id').val();
-		var node_ver = data['msg'].split(':'), oper = data.oper;
-// tool.debug([node_ver, oper]);
-		if(id == 0 || oper == 'cloneit'){//更新整个页面，重定向
-			location.href = "/jqgrid/jqgrid/newpage/1/oper/information/db/" + db + "/table/" + table + "/element/" + node_ver[0] + "/parent/0/ver/" + node_ver[1];
-		}
-		else{ 
-			this.updateInformationPage(ver_id, id, 'view_edit');
-			//刷新edit_history
-			var grid = grid_factory.get(db, table, {container:'edit_history_' + id});
-			var gridId = grid.getParams('gridSelector');
-			$(gridId).trigger('reloadGrid');
-		}
-	}
+	// if(ver_id){ //有版本管理
+		// var oper = data.oper;
+// // tool.debug([node_ver, oper]);
+		// if(id == 0 || oper == 'cloneit'){//更新整个页面，重定向
+			// location.href = "/jqgrid/jqgrid/newpage/1/oper/information/db/" + db + "/table/" + table + "/element/" + node_id + "/parent/0/ver/" + ver_id;
+		// }
+		// else{ 
+			// this.updateInformationPage(ver_id, origin_id, 'view_edit');
+			// //刷新edit_history
+			// var grid = grid_factory.get(db, table, {container:'edit_history_' + id});
+			// var gridId = grid.getParams('gridSelector');
+			// $(gridId).trigger('reloadGrid');
+		// }
+		
+	// }
+	// else
+		this.updateInformationPage(ver_id, origin_id, 'view_edit');
 };
 
 gc_grid_action.prototype.view_edit_abort = function(p){
@@ -1077,11 +1049,13 @@ gc_grid_action.prototype.view_edit_abort = function(p){
 };
 
 gc_grid_action.prototype.view_edit_cloneit = function(p){
-	this.view_edit_edit(p);
-	
 	var divId = p.divId;
 	var dialog = $('#' + divId);
 
+	dialog.find('#div_hidden #clone').val('true');
+	dialog.find('#img_unique_check').attr('src', '/img/aHelp.png');	
+	this.view_edit_edit(p);
+	
 	dialog.find('#div_hidden #clone').val('true');
 	dialog.find('#img_unique_check').attr('src', '/img/aHelp.png');	
 	// 将Name类标志性字段内容加_clone

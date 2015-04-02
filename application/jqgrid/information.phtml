@@ -45,6 +45,8 @@
 		<input type='hidden' id='table' value="<?php echo $this->table; ?>">
 		<input type='hidden' id="id" value='<?php echo $this->id; ?>' />
 		<input type='hidden' id="element_id" value='<?php echo $this->id; ?>' />
+		<input type='hidden' id="ver_id" value='<?php isset($this->ver_id) ? $this->ver_id : '0'; ?>' />
+		<input type='hidden' id="origin_id" value='<?php echo $this->id; ?>' />
 		<input type='hidden' id="parent_id" value='<?php echo isset($this->parent) ? $this->parent : 0; ?>' />
 		<input type='hidden' id="clone" value='false' />
 		<input type='hidden' id='info_tabs' value='<?php echo $this->default_list; ?>' />
