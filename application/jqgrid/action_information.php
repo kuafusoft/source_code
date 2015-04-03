@@ -11,6 +11,8 @@ class action_information extends action_jqgrid{
 	
 	protected function getViewParams($params){
 		$this->getOptions();
+		if(!isset($params['display_status']))
+			$params['display_status'] = DISPLAY_STATUS_VIEW;
 		
 // print_r($params);	
 		$view_params = $this->getDefaultParamsForView($params);
@@ -53,7 +55,7 @@ class action_information extends action_jqgrid{
 		$ret = array();
 		$ver = array();
 		$verInfo = array();
-		$nodeInfo = $this->tool->extractItems(array('id', 'parent', 'db', 'table', 'display_status'), $view_params); //array('id'=>!empty($view_params['id']) ? $view_params['id'] : 0, 'parent'=>)
+		$nodeInfo = $this->tool->extractItems(array('id', 'parent', 'db', 'table', 'display_status'=>DISPLAY_STATUS_VIEW), $view_params); //array('id'=>!empty($view_params['id']) ? $view_params['id'] : 0, 'parent'=>)
 		$node = $this->getNodeParamsForViewEdit($view_params);//$nodeInfo);
 		$view_file = 'view_edit.phtml';
 		$view_file_dir = '';
@@ -74,6 +76,7 @@ class action_information extends action_jqgrid{
 			$verInfo['id'] = $vers[0];
 			$verInfo['db'] = $linkInfo['db'];
 			$verInfo['table'] = $linkInfo['table'];
+			$verInfo['display_status'] = $view_params['display_status'];
 			// $verInfo['ver_table'] = $linkInfo['table'];
 			$ver = $this->getNodeParamsForViewEdit($verInfo);
 // print_r($ver['model']);			
@@ -163,7 +166,7 @@ class action_information extends action_jqgrid{
 // print_r($view_params);
 		$v = array();
 		if(!empty($view_params['id'])){
-			$params = array('db'=>$view_params['db'], 'table'=>$view_params['table'], 'id'=>$view_params['id']);
+			$params = array('db'=>$view_params['db'], 'table'=>$view_params['table'], 'id'=>$view_params['id'], 'rows'=>1);
 // print_r($params);
 			$action_list = actionFactory::get(null, /*$this->controller,*/ 'list', $params);
 			// $action_list->setParams($params);

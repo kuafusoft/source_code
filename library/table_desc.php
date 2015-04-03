@@ -98,6 +98,7 @@ class table_desc{
 			}
 		}
 		$this->handleFillOptionCondition();
+// print_r($this->actionName);		
 	}
 	
 	protected function setSubGrid(){
