@@ -667,7 +667,6 @@ class table_desc{
 		}
 		// if(empty($column['type']))
 			// $column['type'] = 'text';
-			
 		$columnDef = array(
 			'hidedlg'=>false, 
 			'hidden'=>false, 
@@ -676,7 +675,7 @@ class table_desc{
 			'formatter'=>isset($column['formatter']) ? $column['formatter'] : '',               
 			'formatoptions'=>array(),
 			'formoptions'=>array(), //???
-			'label'=>ucwords(isset($column['COLUMN_NAME']) ? $column['COLUMN_NAME'] : ''),
+			'label'=>ucwords(isset($column['COLUMN_NAME']) ? str_replace('_', ' ', $column['COLUMN_NAME']) : ''),
 			'name' =>$key, //$column['COLUMN_NAME'],
 			'index'=>$key, //$column['COLUMN_NAME'],
 			'defval'=>isset($column['DEFAULT']) ? $column['DEFAULT'] : '',
@@ -893,7 +892,7 @@ class table_desc{
 						if(!empty($column['data_source_condition']))$columnDef['data_source_condition'] = $column['data_source_condition'];
 						$columnDef['data_source_blank_item'] = isset($column['data_source_blank_item']) ? $column['data_source_blank_item'] : false;
 						$columnDef['data_source_all_fields'] = isset($column['data_source_all_fields']) ? $column['data_source_all_fields'] : true;
-						$columnDef['label'] = ucwords($matches[1]);
+						$columnDef['label'] = ucwords(str_replace('_', ' ', $matches[1]));
 						if(empty($column['formatter'])){
 							$columnDef['edittype'] = $columnDef['stype'] = 'select';
 							$columnDef['formatter'] = 'select';//'select_showlink';
