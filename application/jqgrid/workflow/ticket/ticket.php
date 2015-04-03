@@ -16,7 +16,7 @@ class workflow_ticket extends table_desc{
 			'manager_id'=>array('label'=>'Team'),
 			'open_date'=>array('label'=>'Open Date'),
 			'close_date'=>array('label'=>'Close Date', 'hidden'=>true),
-			'effort'=>array('label'=>'Effort(Man-Days)'),
+			'effort'=>array('label'=>'Effort', 'post'=>array('value'=>'(Man-Days)')),
 			'customer_id',
 			'prj_id'=>array('label'=>'Project'),
 			'content',
