@@ -22,7 +22,7 @@ class workflow_cqi_ticket extends table_desc{
 			'manager_id'=>array('label'=>'Team'),
 			'open_date'=>array('label'=>'Open Date'),
 			'close_date'=>array('label'=>'Close Date', 'hidden'=>true),
-			'effort'=>array('label'=>'Effort(Man-Days)'),
+			'effort'=>array('label'=>'Effort', 'post'=>array('type'=>'text', 'value'=>'(Man-Days)')),
 			'customer_id',
 			'prj_id'=>array('label'=>'Project'),
 			'content',
@@ -80,12 +80,13 @@ class workflow_cqi_ticket extends table_desc{
 		);
 		$this->options['edit'] = array('input_source_id'=>array('editable'=>false), 'input_person'=>array('editable'=>false), 
 			'customer_id'=>array('editable'=>false), 'prj_id'=>array('editable'=>false), 
-			'ticket_status_id'=>array('editable'=>true), 'cqi_ticket_module', 'content', 
+			'ticket_status_id'=>array('editable'=>true), 'cqi_ticket_module', 'content', 'effort',
 			'community_thread_number', 'community_link', 'linked_ct_number', 'root_cause_id', 'close_date', 
 			'hw_ae_id', 'sw_ae_id', 'soc_ae_id', 'pe_id', 'te_id', 'fqe_id', 'cqe_id', 'fae_id', 'point_of_failure',
 			'cqi_ticket_trace'
 			);
-		$this->options['add'] = array('input_source_id', 'input_person', 'customer_id', 'prj_id'=>array('editable'=>true), 'ticket_status_id', 'cqi_ticket_module', 'content', 
+		$this->options['add'] = array('input_source_id', 'input_person', 'customer_id', 'prj_id'=>array('editable'=>true), 'ticket_status_id', 
+			'cqi_ticket_module', 'content', 'effort',
 			'community_thread_number', 'community_link', 'Linked_ct_number', 'root_cause_id', 'open_date',
 			'hw_ae_id', 'sw_ae_id', 'soc_ae_id', 'pe_id', 'te_id', 'fqe_id', 'cqe_id', 'fae_id', 'point_of_failure', 
 			'cqi_ticket_trace');

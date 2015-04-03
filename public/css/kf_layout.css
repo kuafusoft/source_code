@@ -143,6 +143,7 @@ table.ces{border-collapse: collapse; cellspacing:2px;}
 .evenRow{background-color:#FFFFFF;}
 .oddRow{background-color:#EEEEFF;}
 
+table.ces .post-td{height:30px;border:2px none #DDDDDD;padding-right:5px;}
 table.ces td{height:30px;border:2px outset #DDDDDD;padding-right:5px;}
 
 .pre-td{text-align:right}

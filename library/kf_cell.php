@@ -146,6 +146,7 @@ class kf_cell{
 			$post['class'] = array('e-post');
 		else
 			$post['class'][] = 'e-post';
+		$post['id'] = $this->params['id'].'_post';
 		$e = cellFactory::get($post);
 		return $e->display($display_status, true);
 	}

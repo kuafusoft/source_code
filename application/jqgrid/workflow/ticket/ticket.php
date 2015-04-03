@@ -33,9 +33,9 @@ class workflow_ticket extends table_desc{
 				'*'=>array('hidden'=>true)
 		);
 		$this->options['edit'] = array('input_source_id'=>array('editable'=>false), 'input_person'=>array('editable'=>false), 
-			'customer_id'=>array('editable'=>false), 'prj_id'=>array('editable'=>false), 'ticket_status_id'=>array('editable'=>true), 'module_ticket', 'content', 
+			'customer_id'=>array('editable'=>false), 'prj_id'=>array('editable'=>false), 'ticket_status_id'=>array('editable'=>true), 'module_ticket', 'content', 'effort',
 			'community_thread_number', 'community_link', 'linked_ct_number', 'root_cause_id', 'close_date', 'ticket_trace');
-		$this->options['add'] = array('input_source_id', 'input_person', 'customer_id', 'prj_id', 'ticket_status_id', 'module_ticket', 'content', 
+		$this->options['add'] = array('input_source_id', 'input_person', 'customer_id', 'prj_id', 'ticket_status_id', 'module_ticket', 'content', 'effort',
 			'community_thread_number', 'community_link', 'Linked_ct_number', 'root_cause_id', 'open_date', 'ticket_trace');
 		
 		$this->linkTables = array(

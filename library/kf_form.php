@@ -66,16 +66,18 @@ class kf_form{
 				if(!empty($params['post']) && ($display_status == DISPLAY_STATUS_EDIT || $params['post']['type'] == 'text')){
 					$hasPost = true;
 				}
+				$postClass = '';
 				if($hasPost){
 					$normal[] = "<td><table style='width:100%'><tr style='width:100%'>";
 					$width = "style='width:100%;'";
+					$postClass = 'post-td';
 				}
-				$normal[] = "<td id='td_{$params['id']}' class='cont-td' $width>";
+				$normal[] = "<td id='td_{$params['id']}' class='$postClass cont-td' $width>";
 				$normal[] = $e->display($display_status);
 				$normal[] = "</td>";
 				// display the post
 				if($hasPost){
-					$normal[] = "<td id='post_{$params['id']}' class='post-td' style='width:auto' style='white-space: nowrap' nowrap='nowrap'>";
+					$normal[] = "<td id='post_{$params['id']}' class='$postClass' style='width:auto' style='white-space: nowrap' nowrap='nowrap'>";
 					$normal[] = $e->post($display_status);
 					$normal[] = "</td>";
 					$normal[] = "</tr></table></td>";
