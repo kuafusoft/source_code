@@ -1043,6 +1043,7 @@ $this.debug(data['html']);
 
 	generateOptions : function(select, data, value, title, blankItem, currentVal){
 		var existed = false;
+		var $this = this;
 		value = value || 'id';
 		title = title || 'name';
 		blankItem = blankItem || false;
@@ -1056,7 +1057,7 @@ $this.debug(data['html']);
 			if(currentVal && currentVal == n[value])
 				existed = true;
 			//可以将data里的所有字段都打包到option里
-			select.append(this.generateOptionStr(n, value, title));
+			select.append($this.generateOptionStr(n, value, title));
 			
 			// var optionProp = [];
 			// for(f in n){

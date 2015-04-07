@@ -10,6 +10,9 @@
 				<item>LPTMR0=>LPTMR</item>
 				<item>LPUART\d=>LPUART</item>
 				<item>FTFA_FlashConfig=>NV</item>
+				<item>FTFL_FlashConfig=>NV</item>
+				<item>FTFE_FlashConfig=>NV</item>
+				<item>CAN\d=>CAN</item>
 				<item>UART\d=>UART</item>
 				<item>I2C\d=>I2C</item>
 				<item>ACMP\d=>ACMP</item>
@@ -23,48 +26,22 @@
 			<MKV10Z7>
 				<item>SPI\d=>SPI</item>
 			</MKV10Z7>
-			<MK22F12810>
-				<item>LPUART\d=>LPUART</item>
-			</MK22F12810>
-			<MK24F12>
-				<item>FTFE_FlashConfig=>NV</item>
-				<item>CAN\d=>CAN</item>
-			</MK24F12>
-			<MK63F12>
-				<item>FTFE_FlashConfig=>NV</item>
-				<item>CAN\d=>CAN</item>
-			</MK63F12>
-			<MK64F12>
-				<item>FTFE_FlashConfig=>NV</item>
-				<item>CAN\d=>CAN</item>
-			</MK64F12>
-			<MKW21D5WS>
-				<item>FTFL_FlashConfig=>NV</item>
-				<item>CAN\d=>CAN</item>
-			</MKW21D5WS>
-			<MKW21D5>
-				<item>FTFL_FlashConfig=>NV</item>
-				<item>CAN\d=>CAN</item>
-			</MKW21D5>
-			<MKW22D5>
-				<item>FTFL_FlashConfig=>NV</item>
-				<item>CAN\d=>CAN</item>
-			</MKW22D5>
-			<MKW22D5WS>
-				<item>FTFL_FlashConfig=>NV</item>
-				<item>CAN\d=>CAN</item>
-			</MKW22D5WS>
-			<MKW24D5>
-				<item>FTFL_FlashConfig=>NV</item>
-				<item>CAN\d=>CAN</item>
-			</MKW24D5>
-			<MKW24D5WS>
-				<item>FTFL_FlashConfig=>NV</item>
-				<item>CAN\d=>CAN</item>
-			</MKW24D5WS>
 			<MKE17F15>
 				<item>LPIT0=>LPIT</item>
 			</MKE17F15>
+			<MK80F25615>
+				<item>LTC0=>LTC</item>
+				<item>FLEXIO0=>FLEXIO</item>
+				<item>TRNG0=>TRNG</item>
+				<item>QuadSPI0=>QuadSPI</item>
+				<item>TSI0=>TSI</item>
+			</MK80F25615>
+			<MK81F25615>
+				<item>LTC0=>LTC</item>
+				<item>FLEXIO0=>FLEXIO</item>
+				<item>TRNG0=>TRNG</item>
+				<item>QuadSPI0=>QuadSPI</item>
+			</MK81F25615>
 		</rename>
 	</peripherals>
 
@@ -88,11 +65,24 @@
 				<item>DACINT=>INT</item>
 				<item>DACINTC%s=>INTC</item>
 				<item>DACINT%s=>INT</item>
+				<item>CHDLY\d=>DLY</item>
+				<item>CHC1=>C1</item>
+				<item>CHS=>S</item>
+				
+				<item>CAU_DIRECT\d{1,2}=>DIRECT</item>
+				<item>CAU_(.*?)DR_(.*?)\d?=>\1DR_\2</item>
+				<item>CAU_(.*?)OR_(.*?)\d?=>\1OR_\2</item>
+				<item>CAU_ROTL_(.*?)\d?=>ROTL_\1</item>
+				<item>CAU_AESC_(.*?)\d?=>AESC_\1</item>
+				<item>CAU_AESIC_(.*?)\d?=>AESIC_\1</item>
+				<item>CAU_STR_(.*?)\d?=>STR_\1</item>
 
+				<item>WORD(\d)\d{1,2}=>WORD\1</item>
+				
+				<item>CMDRSP\d=>CMDRSP</item>
 			</common>
 			
 			<MKM33Z5>
-				<item>CH\d_(.*)=>\1</item>
 				<item>WF\d*TO\d*=>WF</item>
 				<item>WF\d{1,2}=>WF8B</item>
 				<item>FCT\d=>FCT</item>
@@ -100,7 +90,6 @@
 			</MKM33Z5>
 			
 			<MKM34Z5>
-				<item>CH\d_(.*)=>\1</item>
 				<item>WF\d*TO\d*=>WF</item>
 				<item>WF\d{1,2}=>WF8B</item>
 				<item>FCT\d=>FCT</item>
@@ -108,7 +97,6 @@
 			</MKM34Z5>
 
 			<MKM14Z5>
-				<item>CH\d_(.*)=>\1</item>
 				<item>WF\d*TO\d*=>WF</item>
 				<item>WF\d{1,2}=>WF8B</item>
 				<item>FCT\d=>FCT</item>
@@ -116,7 +104,6 @@
 			</MKM14Z5>
 
 			<MKM33ZA5>
-				<item>CH\d_(.*)=>\1</item>
 				<item>WF\d*TO\d*=>WF</item>
 				<item>WF\d{1,2}=>WF8B</item>
 				<item>FCT\d=>FCT</item>
@@ -124,7 +111,6 @@
 			</MKM33ZA5>				
 
 			<MKM34ZA5>
-				<item>CH\d_(.*)=>\1</item>
 				<item>WF\d*TO\d*=>WF</item>
 				<item>WF\d{1,2}=>WF8B</item>
 				<item>FCT\d=>FCT</item>
@@ -132,7 +118,6 @@
 			</MKM34ZA5>		
 
 			<MKM14ZA5>
-				<item>CH\d_(.*)=>\1</item>
 				<item>WF\d*TO\d*=>WF</item>
 				<item>WF\d{1,2}=>WF8B</item>
 				<item>FCT\d=>FCT</item>
@@ -146,23 +131,9 @@
 				<item>FCT\d=>FCT</item>
 			</MKL17Z644>
 			<MKV10Z7>
-				<item>DACINTC=>INTC</item>
-				<item>DACINT=>INT</item>
 				<item>SPI\d=>SPI</item>
 				<item>DAC\d=>DAC</item>
 			</MKV10Z7>
-			<MK22F12810>
-				<item>DACINTC=>INTC</item>
-				<item>DACINT=>INT</item>
-			</MK22F12810>
-			<MK22F25612>
-				<item>DACINTC=>INTC</item>
-				<item>DACINT=>INT</item>
-			</MK22F25612>
-			<MK22F51212>
-				<item>DACINTC%s=>INTC</item>
-				<item>DACINT%s=>INT</item>
-			</MK22F51212>
 			<MK24F12>
 				<item>CAU_DIRECT\d{1,2}=>DIRECT_CAU</item>
 				<item>CAU_(.*?)DR_(.*?)\d?=>\1DR_\2</item>
@@ -347,11 +318,14 @@
 				<item>DAR\d=>DAR</item>
 				<item>DSR_BCR\d=>DSR_BCR</item>
 				<item>DCR\d=>DCR</item>
-				<item>CHC1=>C1</item>
-				<item>CHS=>S</item>
-				<item>CHDLY0=>DLY</item>
-				<item>CHDLY1=>DLY</item>
 			</MKM34Z7>
+			<MK80F25615>
+				<item>TRNG0_(.*)=>\1</item>
+			</MK80F25615>
+			<MK81F25615>
+				<item>LTC0_(.*)=>\1</item>
+				<item>TRNG0_(.*)=>\1</item>
+			</MK81F25615>
 			
 		</rename>
 		<expand>
@@ -386,6 +360,13 @@
 				<FTFL.FCCOB>1</FTFL.FCCOB>
 				<FTFL.FPROT>1</FTFL.FPROT>
 			</MKW21D5WS>
+			<MK80F25615>
+				<AXBS.MGPCR>1</AXBS.MGPCR>
+			</MK80F25615>
+			<MK81F25615>
+				<AXBS.MGPCR>1</AXBS.MGPCR>
+			</MK81F25615>
+
 		</expand>
 		
 		<reg_data_ignore>
@@ -559,7 +540,38 @@
 				<S>1</S>
 				<DLY>1</DLY>
 			</MKM34Z7>
-			
+			<MK80F25615>
+				<AC>1</AC>
+				<CM>1</CM>
+				<INTC>1</INTC>
+				<INT>1</INT>
+				<C1>1</C1>
+				<PRS>1</PRS>
+				<CRS>1</CRS>
+				
+				<CSAR>1</CSAR>
+				<CSMR>1</CSMR>
+				<CSCR>1</CSCR>
+				
+				<EAR>1</EAR>
+				<EDR>1</EDR>
+			</MK80F25615>
+			<MK81F25615>
+				<AC>1</AC>
+				<CM>1</CM>
+				<INTC>1</INTC>
+				<INT>1</INT>
+				<C1>1</C1>
+				<PRS>1</PRS>
+				<CRS>1</CRS>
+				
+				<CSAR>1</CSAR>
+				<CSMR>1</CSMR>
+				<CSCR>1</CSCR>
+				
+				<EAR>1</EAR>
+				<EDR>1</EDR>
+			</MK81F25615>
 		</reg_data_ignore>
 	</registers>
 	
@@ -598,73 +610,5 @@
 				<item>CAU_DIRECT(\d{1,2})=>DIRECT\1</item>
 			</MKW21D5>
 		</rename>
-<!-- 		<merge>
-			<common>
-				<item>LCD_WF0_BP.*?LCD0=>LCD_WF0_WF0</item>
-				<item>LCD_WF1_BP.*?LCD1=>LCD_WF1_WF1</item>
-				<item>LCD_WF2_BP.*?LCD2=>LCD_WF2_WF2</item>
-				<item>LCD_WF3_BP.*?LCD3=>LCD_WF3_WF3</item>
-				<item>LCD_WF4_BP.*?LCD4=>LCD_WF4_WF4</item>
-				<item>LCD_WF5_BP.*?LCD5=>LCD_WF5_WF5</item>
-				<item>LCD_WF6_BP.*?LCD6=>LCD_WF6_WF6</item>
-				<item>LCD_WF7_BP.*?LCD7=>LCD_WF7_WF7</item>
-				<item>LCD_WF8_BP.*?LCD8=>LCD_WF8_WF8</item>
-				<item>LCD_WF9_BP.*?LCD9=>LCD_WF9_WF9</item>
-				<item>LCD_WF10_BP.*?LCD10=>LCD_WF10_WF10</item>
-				<item>LCD_WF11_BP.*?LCD11=>LCD_WF11_WF11</item>
-				<item>LCD_WF12_BP.*?LCD12=>LCD_WF12_WF12</item>
-				<item>LCD_WF13_BP.*?LCD13=>LCD_WF13_WF13</item>
-				<item>LCD_WF14_BP.*?LCD14=>LCD_WF14_WF14</item>
-				<item>LCD_WF15_BP.*?LCD15=>LCD_WF15_WF15</item>
-				<item>LCD_WF16_BP.*?LCD16=>LCD_WF16_WF16</item>
-				<item>LCD_WF17_BP.*?LCD17=>LCD_WF17_WF17</item>
-				<item>LCD_WF18_BP.*?LCD18=>LCD_WF18_WF18</item>
-				<item>LCD_WF19_BP.*?LCD19=>LCD_WF19_WF19</item>
-				<item>LCD_WF20_BP.*?LCD20=>LCD_WF20_WF20</item>
-				<item>LCD_WF21_BP.*?LCD21=>LCD_WF21_WF21</item>
-				<item>LCD_WF22_BP.*?LCD22=>LCD_WF22_WF22</item>
-				<item>LCD_WF23_BP.*?LCD23=>LCD_WF23_WF23</item>
-				<item>LCD_WF24_BP.*?LCD24=>LCD_WF24_WF24</item>
-				<item>LCD_WF25_BP.*?LCD25=>LCD_WF25_WF25</item>
-				<item>LCD_WF26_BP.*?LCD26=>LCD_WF26_WF26</item>
-				<item>LCD_WF27_BP.*?LCD27=>LCD_WF27_WF27</item>
-				<item>LCD_WF28_BP.*?LCD28=>LCD_WF28_WF28</item>
-				<item>LCD_WF29_BP.*?LCD29=>LCD_WF29_WF29</item>
-				<item>LCD_WF30_BP.*?LCD30=>LCD_WF30_WF30</item>
-				<item>LCD_WF31_BP.*?LCD31=>LCD_WF31_WF31</item>
-				<item>LCD_WF32_BP.*?LCD32=>LCD_WF32_WF32</item>
-				<item>LCD_WF33_BP.*?LCD33=>LCD_WF33_WF33</item>
-				<item>LCD_WF34_BP.*?LCD34=>LCD_WF34_WF34</item>
-				<item>LCD_WF35_BP.*?LCD35=>LCD_WF35_WF35</item>
-				<item>LCD_WF36_BP.*?LCD36=>LCD_WF36_WF36</item>
-				<item>LCD_WF37_BP.*?LCD37=>LCD_WF37_WF37</item>
-				<item>LCD_WF38_BP.*?LCD38=>LCD_WF38_WF38</item>
-				<item>LCD_WF39_BP.*?LCD39=>LCD_WF39_WF39</item>
-				<item>LCD_WF40_BP.*?LCD40=>LCD_WF40_WF40</item>
-				<item>LCD_WF41_BP.*?LCD41=>LCD_WF41_WF41</item>
-				<item>LCD_WF42_BP.*?LCD42=>LCD_WF42_WF42</item>
-				<item>LCD_WF43_BP.*?LCD43=>LCD_WF43_WF43</item>
-				<item>LCD_WF44_BP.*?LCD44=>LCD_WF44_WF44</item>
-				<item>LCD_WF45_BP.*?LCD45=>LCD_WF45_WF45</item>
-				<item>LCD_WF46_BP.*?LCD46=>LCD_WF46_WF46</item>
-				<item>LCD_WF47_BP.*?LCD47=>LCD_WF47_WF47</item>
-				<item>LCD_WF48_BP.*?LCD48=>LCD_WF48_WF48</item>
-				<item>LCD_WF49_BP.*?LCD49=>LCD_WF49_WF49</item>
-				<item>LCD_WF50_BP.*?LCD50=>LCD_WF50_WF50</item>
-				<item>LCD_WF51_BP.*?LCD51=>LCD_WF51_WF51</item>
-				<item>LCD_WF52_BP.*?LCD52=>LCD_WF52_WF52</item>
-				<item>LCD_WF53_BP.*?LCD53=>LCD_WF53_WF53</item>
-				<item>LCD_WF54_BP.*?LCD54=>LCD_WF54_WF54</item>
-				<item>LCD_WF55_BP.*?LCD55=>LCD_WF55_WF55</item>
-				<item>LCD_WF56_BP.*?LCD56=>LCD_WF56_WF56</item>
-				<item>LCD_WF57_BP.*?LCD57=>LCD_WF57_WF57</item>
-				<item>LCD_WF58_BP.*?LCD58=>LCD_WF58_WF58</item>
-				<item>LCD_WF59_BP.*?LCD59=>LCD_WF59_WF59</item>
-				<item>LCD_WF60_BP.*?LCD60=>LCD_WF60_WF60</item>
-				<item>LCD_WF61_BP.*?LCD61=>LCD_WF61_WF61</item>
-				<item>LCD_WF62_BP.*?LCD62=>LCD_WF62_WF62</item>
-				<item>LCD_WF63_BP.*?LCD63=>LCD_WF63_WF63</item>
-			</common>
-		</merge> -->
 	</fields>
 </special>

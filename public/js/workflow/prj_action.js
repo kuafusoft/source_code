@@ -32,7 +32,7 @@
 			}
 		};
 		var url = '/jqgrid/jqgrid/db/workflow/table/prj/oper/export/element/' + prj_id;
-		$this.tool.actionDialog(dialog_params, url, undefined, function(data){
+		tool.actionDialog(dialog_params, url, undefined, function(data){
 			location.href = "/download.php?filename=" + encodeURIComponent(data) + "&remove=1";
 		});
 	};
@@ -71,7 +71,7 @@
 
 		switch(action){
 			case 'export':
-				if (this.tool.checkSelectedRows(selectedRows, {min:1, max:1})){
+				if (tool.checkSelectedRows(selectedRows, {min:1, max:1})){
 					_export(selectedRows);
 				};
 				break;
@@ -82,7 +82,7 @@
 			*/
 				var prj_id = p.attr('id');
 				var url = '/jqgrid/jqgrid/db/workflow/table/prj/oper/collect_note/element/' + prj_id;
-				this.tool.actionDialog({div_id:'collect_note_div', width:600, height:400, title:'Collect Notes'}, url, undefined, function(data){
+				tool.actionDialog({div_id:'collect_note_div', width:600, height:400, title:'Collect Notes'}, url, undefined, function(data){
 				alert(data);
 //							location.href = "/download.php?filename=" + encodeURIComponent(data) + "&remove=1";
 				});

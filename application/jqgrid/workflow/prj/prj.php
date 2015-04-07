@@ -14,24 +14,17 @@ class workflow_prj extends tree_table_desc{
 			'segment_id',
 			'part_id',
 			'tool_id',
-			'begin_from'=>array('label'=>'Begin From'),
+			'begin_from'=>array('label'=>'Begin From', 'hidden'=>true),
 			'prj_phase_id'=>array('label'=>'Current Phase'),
-			'progress'=>array('hidden'=>true),
-		
-			// 'prj_prj_property'=>array('label'=>'Detail', 'formatter'=>'multi_row_edit', 
-				// 'formatoptions'=>array('subformat'=>'nv', 'name_field'=>'prj_property_id', 'value_field'=>'content')),
-			// 'prj_type_id'=>array('label'=>'Project Type'),
-			// 'begin_from'=>array('label'=>'Begin From', 'hidden'=>true), 
-			// 'duration'=>array('label'=>'Duration', 'hidden'=>true),
-			// 'unit_id'=>array('label'=>'Time Unit', 'hidden'=>true),
 			'manager_id',
 			'customer_prj'=>array('label'=>'Customer', 'editable'=>true, 'formatter'=>'multi_row_edit', 'legend'=>'Customer',
-				'formatoptions'=>array('subformat'=>'temp', 'temp'=>'Current phase is [%(customer_phase_id)s], MP date is [%(mp_date)s]')),
+				'formatoptions'=>array('subformat'=>'temp', 
+				'temp'=>'[<span style="color:red">%(customer_id)s</span>] current phase is [<span style="color:red">%(customer_phase_id)s</span>], MP date is [<span style="color:red">%(mp_date)s</span>]')),
 			'isactive',
 			// '*'=>array('hidden'=>true)
 		);
 		$this->options['real_table'] = 'prj';
-		$this->options['edit'] = array('prj_type_id', 'name', 'description', 'segment_id', 'family_id', 'part_id', 'tool_id', 'begin_from', 'prj_phase_id', 'progress', 'customer_prj', 'manager_id');//, 'prj_type_id');//, 'from', 'duration', 'unit_id', 'progress');
+		$this->options['edit'] = array('prj_type_id', 'name', 'description', 'segment_id', 'family_id', 'part_id', 'tool_id', 'begin_from', 'prj_phase_id', 'customer_prj', 'manager_id');//, 'prj_type_id');//, 'from', 'duration', 'unit_id', 'progress');
 
 		$this->options['gridOptions']['label'] = 'Project';
 		// $this->options['parent'] = array('table'=>'prj', 'field'=>'pid');

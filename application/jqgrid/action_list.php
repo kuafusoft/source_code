@@ -39,8 +39,10 @@ class action_list extends action_jqgrid{
         $rownum = $this->params['limit']['rows'];
 		if ($rownum == 0)
 			$rownum = 'ALL';
-        $cookie = array('type'=>'rowNum', 'name'=>$this->db_name.'_'.$this->table_name, 'content'=>json_encode(array('rowNum'=>$rownum)));
-        $this->saveCookie($cookie);
+		if($rownum != 1){ //rownum = 1 往往是information传过来的，不要保存到cookie
+			$cookie = array('type'=>'rowNum', 'name'=>$this->db_name.'_'.$this->table_name, 'content'=>json_encode(array('rowNum'=>$rownum)));
+			$this->saveCookie($cookie);
+		}
 		$sqls = $this->calcSqlComponents($this->params, true);
 		$mainFields = $sqls['main']['fields'];
 		$sqls['main']['fields'] = "`{$this->table_desc->get('table')}`.`id`"; //在table_desc里可能更改table
