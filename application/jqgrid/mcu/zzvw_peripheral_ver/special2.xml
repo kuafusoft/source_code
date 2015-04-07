@@ -37,6 +37,7 @@
 				<item>TSI0=>TSI</item>
 			</MK80F25615>
 			<MK81F25615>
+				<item>TSI0=>TSI</item>
 				<item>LTC0=>LTC</item>
 				<item>FLEXIO0=>FLEXIO</item>
 				<item>TRNG0=>TRNG</item>
@@ -323,6 +324,10 @@
 				<item>TRNG0_(.*)=>\1</item>
 			</MK80F25615>
 			<MK81F25615>
+				<item>LTC0_CTXR_\d*=>CTX</item>
+				<item>LTC0_KEYR_\d*=>KEY</item>
+				<item>LTC0_(PK.)R_\d{1,2}=>\1</item>
+				<item>LTC0_(PK.\d)R_\d{1,2}=>\1</item>
 				<item>LTC0_(.*)=>\1</item>
 				<item>TRNG0_(.*)=>\1</item>
 			</MK81F25615>
@@ -571,6 +576,40 @@
 				
 				<EAR>1</EAR>
 				<EDR>1</EDR>
+				
+				<CTX_KEY_W0>1</CTX_KEY_W0>
+				<CTX_KEY_W1>1</CTX_KEY_W1>
+				<CTX_KEY_W2>1</CTX_KEY_W2>
+				<CTX_KEY_W3>1</CTX_KEY_W3>
+				<CTX_CTR_W0>1</CTX_CTR_W0>
+				<CTX_CTR_W1>1</CTX_CTR_W1>
+				<CTX_RGD_W0>1</CTX_RGD_W0>
+				<CTX_RGD_W1>1</CTX_RGD_W1>
+				
+				<MD>1</MD>
+				<MDPK>1</MDPK>
+				
+				<PKA>1</PKA>
+				<PKB>1</PKB>
+				<PKN>1</PKN>
+				<PKE>1</PKE>
+				
+				<PKA0>1</PKA0>
+				<PKA1>1</PKA1>
+				<PKA2>1</PKA2>
+				<PKA3>1</PKA3>
+				<PKB0>1</PKB0>
+				<PKB1>1</PKB1>
+				<PKB2>1</PKB2>
+				<PKB3>1</PKB3>
+				<PKN0>1</PKN0>
+				<PKN1>1</PKN1>
+				<PKN2>1</PKN2>
+				<PKN3>1</PKN3>
+				<PKE0>1</PKE0>
+				<PKE1>1</PKE1>
+				<PKE2>1</PKE2>
+				<PKE3>1</PKE3>
 			</MK81F25615>
 		</reg_data_ignore>
 	</registers>
