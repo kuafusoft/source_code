@@ -36,10 +36,10 @@ class workflow_reference_design_ticket extends table_desc{
 		$this->options['edit'] = array('input_source_id'=>array('editable'=>false), 'input_person'=>array('editable'=>false), 
 			'customer_id'=>array('editable'=>false), 'prj_id'=>array('editable'=>false), 'ticket_status_id'=>array('editable'=>true), 
 			'module_reference_design_ticket', 'content', 'effort',
-			'community_thread_number', 'community_link', 'linked_ct_number', 'root_cause_id', 'close_date', 'reference_design_ticket_trace');
+			'root_cause_id', 'close_date', 'reference_design_ticket_trace');
 		$this->options['add'] = array('input_source_id', 'input_person', 'customer_id', 'prj_id', 'ticket_status_id', 
 			'module_reference_design_ticket', 'content', 'effort',
-			'community_thread_number', 'community_link', 'Linked_ct_number', 'root_cause_id', 'open_date', 'reference_design_ticket_trace');
+			'root_cause_id', 'open_date', 'reference_design_ticket_trace');
 		
 		$this->linkTables = array(
 			'one2m'=>array(
