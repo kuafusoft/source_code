@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<role_access>
+	<all>
+		<all value='1'/>
+	</all>
+
+	<normal extends='all'>
+		<diff value='1' />
+		<his_diff value='1' />
+		<ver_diff value='1' />
+	</normal>
+	
+</role_access>

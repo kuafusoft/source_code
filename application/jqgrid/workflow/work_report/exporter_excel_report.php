@@ -18,7 +18,7 @@ class workflow_work_report_exporter_excel_report extends exporter_excel{
 	
 	protected function getData($table_desc, $searchConditions = array(), $order = array()){
 		$data = array();
-		$prjs = array();
+		$prjs = array(0=>'For General');
 		$res = $this->tool->query("SELECT id, name FROM prj");
 		while($row = $res->fetch()){
 			$prjs[$row['id']] = $row['name'];

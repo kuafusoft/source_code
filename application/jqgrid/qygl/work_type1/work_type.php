@@ -2,7 +2,7 @@
 require_once('table_desc.php');
 require_once('const_def_qygl.php');
 //工种管理
-class qygl_work_type extends table_desc{
+class qygl_work_type1 extends table_desc{
 	protected function init($db, $table, $params = array()){
 // print_r($params);
 		parent::init($db, $table, $params);

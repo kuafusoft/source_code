@@ -491,6 +491,7 @@ jQuery.extend($.fn.fmatter , {
 		}
 // tool.debug(rows);		
 		var showRow = function(row, labels){
+// tool.debug(row);			
 			var cont = '';
 			switch(opt.colModel.formatoptions.subformat){
 				case 'temp':
@@ -512,7 +513,7 @@ jQuery.extend($.fn.fmatter , {
 			}
 			return '<li>' + cont + '</li>';
 		};
-		
+// tool.debug(rows);		
 		for(var i in rows){
 			ret.push(showRow(rows[i], labels));
 		}

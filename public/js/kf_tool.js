@@ -475,6 +475,8 @@ kf_tool.prototype = {
 						$.each($('table_cart_' + cartTable + ' :checkbox'), function(j, m){
 							if(m.checked){
 								checkboxes[cartTable].push($(m).val());
+								if(checkboxes_text[cartTable] == undefined)
+									checkboxes_text[cartTable] = [];
 								checkboxes_text[cartTable].push($(m).text());
 							}
 						});
@@ -482,13 +484,16 @@ kf_tool.prototype = {
 					break;
 					
 				case 'checkbox':
+// $this.debug(inputName);
 					if (checkboxes[inputName] == undefined)
 						checkboxes[inputName] = [];
 					if (required)
 						checkRequired[inputName] = 1;
 					if (n.checked){//$(n).attr('checked')){
 						checkboxes[inputName].push($(n).val());
-						checkboxes_text[inputName].push(($n).text());
+						if(checkboxes_text[inputName] == undefined)
+							checkboxes_text[inputName] = [];
+						checkboxes_text[inputName].push($(n).text());
 					}
 					break;
 				case 'radio':
