@@ -20,9 +20,9 @@
 		$('tr#ces_tr_work_type_id,tr#ces_tr_dept_id,tr#ces_tr_position_id,tr#ces_tr_salary_fl_id,tr#ces_tr_base_salary,tr#ces_tr_ticheng_ratio,tr#ces_tr_hb_skill,tr#ces_tr_kh_wz_id,tr#ces_tr_gys_wz_id').hide();
 		var hideFields = function(cb){
 			var hb_fl_id = parseInt($(cb).val()), cb_type = $(cb).attr('type');
-// tool.debug($(cb));			
-// tool.debug(cb_type);
-// tool.debug(hb_fl_id);			
+tool.debug($(cb));			
+tool.debug(cb_type);
+tool.debug(hb_fl_id);			
 			switch(hb_fl_id){
 				case 1: //员工
 					if(cb_type == 'hidden' || cb.checked){
@@ -50,7 +50,7 @@
 		}
 		//事件绑定
 		//伙伴类型绑定可操作区域
-		$("fieldset#fieldset_hb_fl_id input[name='hb_fl_id[]']").each(function(i){
+		$("input[name='hb_fl_id[]']").each(function(i){
 			hideFields(this);
 			$(this).unbind('change').bind('change', function(){
 				hideFields(this);
