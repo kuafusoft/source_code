@@ -17,27 +17,31 @@
 	$table.prototype.information_open = function(divId, element_id, pageName){
 		pageName = pageName || 'all';
 		$table.supr.prototype.information_open.call(this, divId, element_id, pageName);
+		$('tr#ces_tr_work_type_id,tr#ces_tr_dept_id,tr#ces_tr_position_id,tr#ces_tr_salary_fl_id,tr#ces_tr_base_salary,tr#ces_tr_ticheng_ratio,tr#ces_tr_hb_skill,tr#ces_tr_kh_wz_id,tr#ces_tr_gys_wz_id').hide();
 		var hideFields = function(cb){
-			var hb_fl_id = parseInt($(cb).val());
+			var hb_fl_id = parseInt($(cb).val()), cb_type = $(cb).attr('type');
+// tool.debug($(cb));			
+// tool.debug(cb_type);
+// tool.debug(hb_fl_id);			
 			switch(hb_fl_id){
 				case 1: //员工
-					if(cb.checked){
-						$('tr#ces_tr_hb_yg').show();
+					if(cb_type == 'hidden' || cb.checked){
+						$('tr#ces_tr_work_type_id,tr#ces_tr_dept_id,tr#ces_tr_position_id,tr#ces_tr_salary_fl_id,tr#ces_tr_base_salary,tr#ces_tr_ticheng_ratio').show();
 						$('tr#ces_tr_hb_skill').show();
 					}
 					else{
-						$('tr#ces_tr_hb_yg').hide();
+						$('tr#ces_tr_work_type_id,tr#ces_tr_dept_id,tr#ces_tr_position_id,tr#ces_tr_salary_fl_id,tr#ces_tr_base_salary,tr#ces_tr_ticheng_ratio').hide();
 						$('tr#ces_tr_hb_skill').hide();
 					}
 					break;
 				case 2: //客户
-					if(cb.checked)
+					if(cb_type == 'hidden' || cb.checked)
 						$('tr#ces_tr_kh_wz_id').show();
 					else
 						$('tr#ces_tr_kh_wz_id').hide();
 					break;
 				case 3: //供应商
-					if(cb.checked)
+					if(cb_type == 'hidden' || cb.checked)
 						$('tr#ces_tr_gys_wz_id').show();
 					else
 						$('tr#ces_tr_gys_wz_id').hide();

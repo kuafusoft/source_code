@@ -88,7 +88,13 @@ class kf_cell{
 			$needFieldSet = true;
 		}
 		if($needFieldSet){//用fieldset围起来
-			$ret[] = "<fieldset>";
+			$ret[] = "<fieldset id='fieldset_{$this->params['id']}'>";
+			// if($display_status == DISPLAY_STATUS_VIEW){
+				// $values = $this->params['value'];
+				// if(is_array($values))
+					// $values = implode(",", $values);
+				// $ret[] = "<input type='hidden' name='{$this->params['id']}[]' value='{$values}'>";
+			// }
 			$ret[] = "<table style='width:100%'>";
 		}
 // print_r($data);		

@@ -13,9 +13,12 @@ class kf_checkbox extends kf_cell{
 	}
 	
 	protected function oneView($v, $props){
-		$ret = parent::oneView($v, $props);
+		$ret = array();
+		$ret[] = parent::oneView($v, $props);
+		$ret[] = "<input type='hidden' name='{$this->params['id']}[]' value='$v'>";
+// print_r($v);		
 // print_r($ret);
-		return $ret;
+		return implode("\n", $ret);
 	}
 	
 	protected function oneEdit($k, $props){

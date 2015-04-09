@@ -20,12 +20,12 @@ class qygl_hb extends table_desc{
 				'formatoptions'=>array('subformat'=>'temp', 'temp'=>'%(contact_method_id)s:%(content)s'), 'from'=>'qygl.hb_contact_method'
 			),
 			'hb_fl_id'=>array('label'=>'类型', 'search'=>true, 'editable'=>true, 'editrules'=>array('required'=>true)),
-			'work_type_id'=>array('label'=>'工种', 'from'=>'hb_yg'),
-			'dept_id'=>array('label'=>'部门', 'from'=>'hb_yg'),
-			'position_id'=>array('label'=>'职位', 'from'=>'hb_yg'),
-			'salary_fl_id'=>array('label'=>'工资类型', 'from'=>'hb_yg'),
-			'base_salary'=>array('label'=>'基本工资', 'from'=>'hb_yg'),
-			'ticheng_ratio'=>array('label'=>'提成比例', 'from'=>'hb_yg'),
+			'work_type_id'=>array('label'=>'工种', 'editable'=>true, 'from'=>'hb_yg'),
+			'dept_id'=>array('label'=>'部门', 'editable'=>true, 'from'=>'hb_yg'),
+			'position_id'=>array('label'=>'职位', 'editable'=>true, 'from'=>'hb_yg'),
+			'salary_fl_id'=>array('label'=>'工资类型', 'editable'=>true, 'from'=>'hb_yg'),
+			'base_salary'=>array('label'=>'基本工资', 'editable'=>true, 'from'=>'hb_yg'),
+			'ticheng_ratio'=>array('label'=>'提成比例', 'editable'=>true, 'from'=>'hb_yg'),
 			'hb_skill'=>array('label'=>'员工技能', 'from'=>'qygl.hb_skill', 'formatter'=>'multi_row_edit',
 				'formatoptions'=>array('subformat'=>'temp', 'temp'=>'%(skill_id)s:%(skill_grade_id)s')
 			),

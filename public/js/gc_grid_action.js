@@ -18,11 +18,11 @@ gc_grid_action.prototype.updateInformationPage = function(verId, nodeId, pageNam
 	var real_node_id = $('#' + tabId + ' #div_hidden #id').val(); 
 	
 	verId = $('#' + tabId + ' #div_hidden #ver_id').val();// 如果是New Case，那么nodeId = 0，但真正的id是real_node_id
-tool.debug([verId, nodeId, pageName, tabId, page, real_node_id]);
+// tool.debug([verId, nodeId, pageName, tabId, page, real_node_id]);
 	$('#' + tabId + ' #' + page).load('/jqgrid/jqgrid/db/' + p.db + '/table/' + p.table + 
 		'/oper/update_information_page/page/' + pageName + '/element/' + real_node_id + '/ver/' + verId + 
 		'/display_status/' + display_status + '/cloneit/' + cloneit, function(data){
-tool.debug(data);			
+// tool.debug(data);			
 		$('#' + tabId).tabs('enabled', page);
 		$('#' + tabId).tabs('option', 'selected', page);
 		$this.information_open(tabId, verId, pageName);

@@ -4,8 +4,10 @@ require_once('kf_cell.php');
 class kf_label extends kf_cell{
 	protected function oneView($v, $props){
 		$class = $this->params['class'];
-if(empty($this->params['id']))		
-	print_r($this->params);
+// if($this->params['id'] == 'hb_fl_id'){
+	// print_r($this->params);
+	// print_r($v);
+// }
 		$id = $this->params['id'];
 		$strClass = implode(' ', $class);
 		$ret = '';
