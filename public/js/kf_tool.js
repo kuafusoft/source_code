@@ -1022,15 +1022,13 @@ $this.debug(data['html']);
 				data: {oper:'checkUnique', db:db, table:table, field:field, value:value, id:id},
 				success:function(data){
 //alert("data = " + data);				
-					$(e).removeClass('unique_unknown');
-					$(e).removeClass('unique_unchecked');
-					$(e).removeClass('unique_checked')
+					$(e).removeClass('unique_unknown unique_unchecked unique_checked unique_error');
 					if (data == '1'){
 						$(e).addClass('unique_checked')
 						// img.src = '/img/aCheck.png';
 					}
 					else{
-						$(e).addClass('unique_unchecked');
+						$(e).addClass('unique_unchecked unique_error');
 						// img.src = '/img/b_drop.png';
 					}
 					return true;
