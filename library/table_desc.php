@@ -715,6 +715,7 @@ class table_desc{
 				if(empty($columnDef['edittype'])){
 					$columnDef['edittype'] = 'textarea';
 					$columnDef['editoptions']['rows'] = 3;
+					$columnDef['editrules']['required'] = false;
 				}
 				break;
 			case 'int':
