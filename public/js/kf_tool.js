@@ -415,25 +415,20 @@ kf_tool.prototype = {
 		var inputName, label, input_id;
 		var checkboxes = {}, checkboxes_text = {};
 		var checkRequired = {};
-		var img = $(divSelector + ' #img_unique_check');
-		var uniqTd = img.parent().next();//.children('input;);
-		var uniqText = img.parent().children('span:first').html();//find('input').attr('id');
-		var inputAfterImg = uniqTd.find('input');
+		var uniqueClass = $(divSelector + ' .unique_unchecked'), uniq_id = uniqueClass.attr('id'), uniqText = $(divSelector + ' #' + uniq_id + '_label').html();
+		// var uniqTd = uniqueClass.parent().pre();//.children('input;);
+		// var uniqText = uniqueClass.parent().children('span:first').html();//find('input').attr('id');
 //$this.debug(uniqText);		
 		var tips = [];
 //$this.debug(img);
 //$this.debug(inputAfterImg);		
-		if (img.length > 0/* && inputAfterImg.attr('readonly') != 'readonly'*/){
-			if (img.attr('src') == '/img/aHelp.png'){
-//alert("checkUnique");			
-				this.checkUnique(inputAfterImg, {});
-			}
-			if(img.attr('src') != '/img/aCheck.png'){
-				passed.push('unique');
-				$(uniqText).addClass('required_error');
-				tips.push(uniqText + ' is Not unique');
-			}
+		$(uniqueClass).removeClass('unique_error');
+		if (uniqueClass.length > 0/* && inputAfterImg.attr('readonly') != 'readonly'*/){
+			passed.push('unique');
+			tips.push(uniqText + ' is Not unique');
+			$(uniqueClass).addClass('unique_error');
 		}
+
 		var selector = divSelector + " :input[multi_row_edit!='multi_row_edit']";
 		if(ignored)
 			selector += "[ignored!='ignored']";

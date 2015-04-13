@@ -81,6 +81,7 @@ fieldset [editable!='editable'] {color:#FF0000}
 input:checked{background-color:red}
 
 .required_error {border-color:#FF0000;}
+.unique_error {border-color:#FF0000;}
 
 input:focus,select:focus,textarea:focus{background-color:yellow;} 
 
