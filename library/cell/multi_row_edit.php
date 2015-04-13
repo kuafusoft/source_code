@@ -65,7 +65,10 @@ class kf_multi_row_edit extends kf_cell{
 
 		$ret[] = "<div id='{$prefix}_temp' >";
 			$ret[] = "<div ignored='ignored' style='float:left;width:90%;'>";
-				$ret[] = $temp_form->display(count($temp));
+			$cc = count($temp);
+			if($cc > 2) //如果列太多，则直排显示
+				$cc = 1;
+			$ret[] = $temp_form->display($cc);
 			$ret[] = "</div>";
 			
 			$onclick = "javascript:XT.addNewRowForMulti(\"$prefix\")";
