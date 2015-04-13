@@ -2,6 +2,15 @@
 require_once('kf_cell.php');
 
 class kf_select extends kf_cell{
+	protected function oneView($v, $props){
+		$ret = array();
+		$ret[] = "<input type='hidden' id='{$this->params['id']}' value='$v'>";
+		$ret[] = parent::oneView($v, $props);
+// print_r($v);		
+// print_r($ret);
+		return implode("\n", $ret);
+	}
+	
 	protected function oneEdit($value, $props){
 // if($this->params['name'] == 'owner_id')	
 // print_r($this->params);	

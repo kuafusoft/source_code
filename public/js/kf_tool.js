@@ -1003,10 +1003,11 @@ $this.debug(data['html']);
 	checkUnique : function(e, params){
 //$this.debug("This is checkUnique");	
 		if (!$(e).attr('unique')) return true;
+		params = params || {};
 		var field = $(e).attr('id');
-		var img = $(e).parent().siblings('td:has(img)').find('img#img_unique_check')[0];
+		// var img = $(e).parent().siblings('td:has(img)').find('img#img_unique_check')[0];
 		var value = $(e).val();
-		img.src = '/img/aHelp.png';
+		// img.src = '/img/aHelp.png';
 //$this.debug(e);		
 		if (value != undefined && value != '' && value != null){
 			var div = $(e).parents('div:has(#div_hidden)')[0];
@@ -1026,10 +1027,16 @@ $this.debug(data['html']);
 				data: {oper:'checkUnique', db:db, table:table, field:field, value:value, id:id},
 				success:function(data){
 //alert("data = " + data);				
-					if (data == '1')
-						img.src = '/img/aCheck.png';
+					$(e).removeClass('unique_unknown');
+					$(e).removeClass('unique_unchecked');
+					$(e).removeClass('unique_checked')
+					if (data == '1'){
+						$(e).addClass('unique_checked')
+						// img.src = '/img/aCheck.png';
+					}
 					else{
-						img.src = '/img/b_drop.png';
+						$(e).addClass('unique_unchecked');
+						// img.src = '/img/b_drop.png';
 					}
 					return true;
 				}

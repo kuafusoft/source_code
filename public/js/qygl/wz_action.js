@@ -20,20 +20,20 @@
 		$table.supr.prototype.information_open.call(this, divId, element_id, pageName);
 		var hidefields = function(){
 			var wz_fl_id = parseInt($('#' + divId + ' #wz_fl_id').val()), hide_fields = [], disp_fields = [];
-			var zuhe = parseInt($('#' + divId + ' input[name="zuhe"]:checked').val());
+			var zuhe = parseInt($('#' + divId + ' #zuhe').val());
 		// $this->options['edit'] = array('wz_fl_id', 'name', 'unit_fl_id'=>array('label'=>'计量单位类型'), 
 			// 'unit_id', 'default_price', 
 			// 'min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'wh_days',
-			// 'midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'gys_ids', 'kh_ids', 'pic', 'note', 'isactive'
+			// 'midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'gys_id', 'kh_id', 'pic', 'note', 'isactive'
 		// );
 			switch(wz_fl_id){
 				case 0: //没有选中
 					hide_fields = ['min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'wh_days', 
-						'midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'gys_ids', 'kh_ids', 'pic'];
+						'midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'gys_id', 'kh_id', 'pic'];
 					break;
 				case 3: //产品
-					disp_fields = ['min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'kh_ids', 'pic'];
-					hide_fields = ['midu', 'wh_days', 'gys_ids'];
+					disp_fields = ['min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'kh_id', 'pic'];
+					hide_fields = ['midu', 'wh_days', 'gys_id'];
 					if(zuhe == 2)
 						disp_fields.push('wz_cp_zuhe');
 					else
@@ -41,25 +41,25 @@
 					break;
 				case 2: //设备
 				case 7: //维修用品
-					disp_fields = ['min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'wh_days', 'gys_ids'];
-					hide_fields = ['midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'kh_ids'];
+					disp_fields = ['min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'wh_days', 'gys_id'];
+					hide_fields = ['midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'kh_id'];
 					break;
 				case 4: //服务
-					hide_fields = ['midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'wh_days', 'kh_ids', 
+					hide_fields = ['midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'wh_days', 'kh_id', 
 						'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'min_kc', 'max_kc', 'remained', 'pd_days', 'pd_last', 'jy_days', 'wh_days', 'pic'];
-					disp_fields = ['gys_ids'];
+					disp_fields = ['gys_id'];
 					break;
 				case 8: //能源
 				case 5: //劳保用品
 				case 6: //办公用品
-					hide_fields = ['midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'wh_days', 'kh_ids'];
-					disp_fields = ['min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'gys_ids'];
+					hide_fields = ['midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'wh_days', 'kh_id'];
+					disp_fields = ['min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'gys_id'];
 					break;
 				case 1: //原材料
 				case 9: // 其他
 				default:
-					hide_fields = ['tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'wh_days', 'gx_wz_zl_detail', 'kh_ids'];
-					disp_fields = ['min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'midu', 'gys_ids'];
+					hide_fields = ['tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'wh_days', 'gx_wz_zl_detail', 'kh_id'];
+					disp_fields = ['min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'midu', 'gys_id'];
 					break;
 			}
 			for(var i in disp_fields){

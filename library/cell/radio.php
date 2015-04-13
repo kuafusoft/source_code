@@ -8,6 +8,15 @@ class kf_radio extends kf_cell{
 		$this->multi_value = false;
 	}
 	
+	protected function oneView($v, $props){
+		$ret = array();
+		$ret[] = "<input type='hidden' id='{$this->params['id']}' value='$v'>";
+		$ret[] = parent::oneView($v, $props);
+// print_r($v);		
+// print_r($ret);
+		return implode("\n", $ret);
+	}
+	
 	protected function oneEdit($k, $props){
 		$ret = '';
 		unset($props['checked']);

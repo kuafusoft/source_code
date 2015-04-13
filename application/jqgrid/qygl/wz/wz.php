@@ -40,10 +40,10 @@ class qygl_wz extends table_desc{
 				'stype'=>'select', 'searchoptions'=>array('value'=>array(0=>'', 1=>'单个零件', 2=>'组合产品')), 
 				'edittype'=>'radio', 'editoptions'=>array('value'=>array(1=>'单个零件', 2=>'组合产品'))
 			),
-			'wz_cp_zuhe'=>array('from'=>'wz_cp_zuhe', 'label'=>'组合情况', 'legend'=>'零部件组合', 'data_source_table'=>'wz_cp_zuhe', 'formatter'=>'multi_row_edit', 'hidden'=>true),
-			'jszb_wz'=>array('from'=>'jszb_wz', 'label'=>'技术指标', 'legend'=>'详细技术指标要求', 'data_source_table'=>'jszb_wz', 'formatter'=>'multi_row_edit', 'hidden'=>true),
-			// 'defect_gx_wz'=>array('from'=>'defect_gx_wz', 'label'=>'缺陷', 'legend'=>'可能出现的缺陷', 'data_source_table'=>'defect_gx_wz', 'formatter'=>'multi_row_edit', 'hidden'=>true),
-			// 'gx_wz_zl_detail'=>array('label'=>'单价等信息', 'legend'=>'默认的单价，存放位置等', 'data_source_table'=>'gx_wz_zl_detail', 'formatter'=>'multi_row_edit', 'hidden'=>true),
+			'wz_cp_zuhe'=>array('from'=>'wz_cp_zuhe', 'label'=>'组合情况', 'legend'=>'零部件组合', 'data_source_table'=>'wz_cp_zuhe', 'formatter'=>'multi_row_edit', 'hidden'=>true, 'formatoptions'=>array('subformat'=>'temp', 'temp'=>'%(input_wz_id)s: %(amount)s')),
+			'jszb_wz'=>array('from'=>'jszb_wz', 'label'=>'技术指标', 'legend'=>'详细技术指标要求', 'data_source_table'=>'jszb_wz', 'formatter'=>'multi_row_edit', 'hidden'=>true, 'formatoptions'=>array('subformat'=>'temp', 'temp'=>'%(jszb_id)s:[%(min_value)s, %(max_value)s]')),
+			'defect_gx_wz'=>array('from'=>'defect_gx_wz', 'label'=>'缺陷', 'legend'=>'可能出现的缺陷', 'data_source_table'=>'defect_gx_wz', 'formatter'=>'multi_row_edit', 'hidden'=>true),
+			'gx_wz_zl_detail'=>array('label'=>'单价等信息', 'legend'=>'默认的单价，存放位置等', 'data_source_table'=>'gx_wz_zl_detail', 'formatter'=>'multi_row_edit', 'hidden'=>true),
 			'gys_id'=>array('label'=>'供应商', 'editable'=>true, 'data_source_table'=>'hb'),
 			'kh_id'=>array('label'=>'客户', 'editable'=>true, 'data_source_table'=>'hb'),
 			'pic'=>array('label'=>'照片', 'hidden'=>true),
@@ -66,7 +66,7 @@ class qygl_wz extends table_desc{
 		$this->options['edit'] = array('wz_fl_id', 'name', 'unit_fl_id'=>array('label'=>'计量单位类型'), 
 			'unit_id', 'default_price', 
 			'min_kc', 'max_kc', 'pd_days', 'pd_last', 'jy_days', 'wh_days',
-			'midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'gys_ids', 'kh_ids', 'pic', 'note', 'isactive'
+			'midu', 'tj', 'bmj', 'zuhe', 'wz_cp_zuhe', 'jszb_wz', 'defect_gx_wz', 'gx_wz_zl_detail', 'gys_id', 'kh_id', 'pic', 'note', 'isactive'
 		);
 		// $this->options['navOptions']['refresh'] = false;
 	}

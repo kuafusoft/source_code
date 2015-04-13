@@ -1150,6 +1150,9 @@ class tool_kf{
 			}
 		}
 		if(!empty($e['post'])){
+			if(!is_array($e['post'])){
+				$e['post'] = array('type'=>'text', 'value'=>$e['post']);
+			}
 			if(!isset($e['post']['type']))
 				$e['post']['type'] = 'text';
 		}

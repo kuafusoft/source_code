@@ -9,6 +9,11 @@ class kf_text extends kf_cell{
 				$props['event']['onclick'] = array();
 			$props['event']['onclick'][] = 'XT.datePick(this)';
 		}
+		if($props['unique']){
+			if(empty($props['event']['onblur']))
+				$props['event']['onblur'] = array();
+			$props['event']['onblur'][] = 'XT.checkElement(this)';
+		}
 		$strProps = $this->propStr($props);
 		$ret = "<input {$strProps} >";
 		return $ret;
