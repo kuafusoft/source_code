@@ -239,7 +239,8 @@ class kf_cell{
 	}
 	
 	protected function getProps(){
-		return array('type', 'id', 'name', 'ignored', 'unique', 'title', 'editable', 'value', 'placeholder', 'disabled', 'class', 'style', 'required', 'min', 'max', 'invalidchar', 'width', 'event', 'original_value');
+		return array('type', 'id', 'name', 'ignored', 'unique', 'title', 'editable', 'readonly', 'from',
+			'value', 'placeholder', 'disabled', 'class', 'style', 'required', 'min', 'max', 'invalidChar', 'width', 'event', 'original_value');
 	}
 	
 	protected function oneEdit($value, $props){
@@ -266,8 +267,8 @@ class kf_cell{
 // print_r('required_index = '.$required_index);			
 			unset($label['class'][$required_index]);
 		}
-		if(!empty($this->params['id']))
-			$label['id'] = $this->params['id'];
+		if(!empty($props['id']))
+			$label['id'] = $props['id'];
 		
 		$e = cellFactory::get($label);
 		return $e->display(DISPLAY_STATUS_VIEW, true);

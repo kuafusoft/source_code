@@ -13,7 +13,7 @@ class qygl_yw_action_list extends action_list{
 					$value = $v['value'];
 					list($y, $m) = explode('-', $value);
 					$min = $value.'-01';
-					if(in_array($m, array('1', '3', '5', '7', '8', '10', 12)))
+					if(in_array($m, array('1', '3', '5', '7', '8', '10', '12')))
 						$max = $value.'-31';
 					else if ($m == '2')
 						$max = $value.'-29';

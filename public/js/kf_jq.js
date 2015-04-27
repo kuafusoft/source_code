@@ -494,7 +494,11 @@ jQuery.extend($.fn.fmatter , {
 // tool.debug(row);			
 			var cont = '';
 			switch(opt.colModel.formatoptions.subformat){
-				case 'temp':
+				case 'itemTemp':
+					var temp = opt.colModel.formatoptions.temp, field = opt.colModel.formatoptions.field;
+					cont = sprintf(temp[row[field]], row);
+					break;
+				case 'temp': //如果有条件性选择分支，怎么处理。比如同一个数据可能包含多种类型，根据不同类型分别进行显示
 					var temp = opt.colModel.formatoptions.temp;
 					cont = sprintf(temp, row);
 					break;

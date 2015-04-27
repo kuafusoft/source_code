@@ -56,11 +56,24 @@ class action_save extends action_jqgrid{
 	protected function saveOne2One($affectedID, $linkInfo){
 		$db = $linkInfo['db'];
 		$table = $linkInfo['table'];
+		$from = $db.'.'.$table;
+		$data = array();
+		$options = $this->table_desc->getOptions();
+		foreach($options['list'] as $field=>$model){
+			if($model['from'] == $from && isset($this->params[$field])){
+				$data[$field] = $this->params[$field];
+			}
+		}
+		
+		// $list = $options[]
 // print_r("In saveOne2One\n");		
 // print_r($linkInfo);
+// print_r($this->params);
+// print_r($data);
 		// return;
-		if(!empty($this->params[$table])){
-			$data = $this->params[$table];
+		// if(!empty($this->params[$table])){
+			// // $data = $this->params[$table];
+			// $data = $this->params;
 			unset($data['id']);
 			$data[$linkInfo['self_link_field']] = $affectedID;
 			$res = $this->tool->query("SELECT * FROM $table WHERE {$linkInfo['self_link_field']}=$affectedID");
@@ -72,25 +85,42 @@ class action_save extends action_jqgrid{
 	// _P($params);
 			$save_action = actionFactory::get(null, 'save', $params);
 			$save_action->handlePost();
-		}
+		// }
+	}
+	
+	protected function deleteLinkTable($rel, $affectedID, $linkInfo){
+		switch($rel){
+			case 'one2M':
+				$db = $linkInfo['db'];
+				$real_table = $table = $linkInfo['table'];
+				if(isset($linkInfo['real_table']))
+				$real_table = $linkInfo['real_table'];
+				$this->tool->delete($real_table, $linkInfo['self_link_field']."=$affectedID", $db);
+				break;
+				}
 	}
 	
 	protected function saveOne2M($affectedID, $linkInfo){
-	// _P("in saveOne2M, linkInfo = ");
+// print_r("in saveOne2M, linkInfo = ");
 	// _P($linkInfo);
 // print_r($this->params);	
+// print_r($linkInfo);
 		$db = $linkInfo['db'];
-		$table = $linkInfo['table'];
-		$params = compact('db', 'table');
+		$real_table = $table = $linkInfo['table'];
+		if(isset($linkInfo['real_table']))
+			$real_table = $linkInfo['real_table'];
+		$params = array('db'=>$db, 'table'=>$table);
 		if(!empty($this->params[$table])){
 			$data = $this->params[$table];
 // print_r($data);			
-			$this->tool->delete($table, $linkInfo['self_link_field']."=$affectedID");
+			$this->deleteLinkTable('one2M', $affectedID, $linkInfo);
+			// $this->tool->delete($real_table, $linkInfo['self_link_field']."=$affectedID");
+// print_r($params);			
 			$action_save = actionFactory::get(null, 'save', $params);
 			foreach($data['data'] as $item){
 				$item[$linkInfo['self_link_field']] = $affectedID;
 				$item = array_merge($params, $item);
-	// _P($item);
+	// print_r($item);
 				$action_save->setParams($item);
 				$action_save->handlePost();
 			}
@@ -126,6 +156,7 @@ class action_save extends action_jqgrid{
 	protected function saveM2M($affectedID, $linkInfo){
 // print_r($linkInfo);	
 // print_r($this->params);
+		$this->deleteLinkTable('M2M', $affectedID, $linkInfo);
 		$link_db = $linkInfo['link_db'];
 		$link_table = $linkInfo['link_table'];
 		$data = isset($this->params[$linkInfo['table'].'_ids']) ? $this->params[$linkInfo['table'].'_ids'] : 
@@ -134,7 +165,7 @@ class action_save extends action_jqgrid{
 		$action_save = actionFactory::get(null, 'save', array('db'=>$link_db, 'table'=>$link_table));
 		if(is_string($data))
 			$data = explode(',', $data);
-		$this->tool->delete($linkInfo['link_table'], $linkInfo['self_link_field'].'='.$affectedID, $this->params['db']);
+		// $this->tool->delete($linkInfo['link_table'], $linkInfo['self_link_field'].'='.$affectedID, $this->params['db']);
 		foreach($data as $e){
 			$params = array('db'=>$link_db, 'table'=>$link_table, $linkInfo['self_link_field']=>$affectedID, $linkInfo['link_field']=>$e);
 // print_r("saveM2M:");
@@ -292,7 +323,8 @@ class action_save extends action_jqgrid{
 	
 	protected function newRecord($db, $table, $pair){
 		$this->fillDefaultValues('new', $pair, $db, $table);
-		$affectedID = $this->tool->insert($table, $pair, $db);
+		$real_table = $this->table_desc->get('real_table');
+		$affectedID = $this->tool->insert($real_table, $pair, $db);
 		
 // // print_r($pair);		
 		// $this->db->insert($db.'.'.$table, $pair);
@@ -304,7 +336,8 @@ class action_save extends action_jqgrid{
 		// 填入一些默认值：updater_id, updated
 		$this->fillDefaultValues('update', $pair, $db, $table);
 		$affectedID = $pair[$id];
-		$this->tool->update($table, $pair, '', $db);
+		$real_table = $this->table_desc->get('real_table');
+		$this->tool->update($real_table, $pair, '', $db);
 		// $this->db->update($db.'.'.$table, $pair, $id.'='.$pair[$id]);
 		return $affectedID;
 	}
@@ -337,6 +370,5 @@ class action_save extends action_jqgrid{
 			}
 		}
 	}
-	
 }
 ?>

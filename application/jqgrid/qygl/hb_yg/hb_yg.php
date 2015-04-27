@@ -12,7 +12,7 @@ class qygl_hb_yg extends table_desc{
 			'dept_id'=>array('label'=>'部门'),
 			'position_id'=>array('label'=>'职位'),
 			'salary_fl_id'=>array('label'=>'工资类型'),
-			'base_salary'=>array('label'=>'基本工资'),
+			'base_salary'=>array('label'=>'基本工资', 'post'=>array('value'=>'元')),
             'ticheng_ratio'=>array('label'=>'提成比例'),
         );
 		// $this->options['navOptions']['refresh'] = false;

@@ -24,6 +24,7 @@ class qygl_wz extends table_desc{
             'name'=>array('label'=>'物资', 'editrules'=>array('required'=>true)),
 			'wz_fl_id'=>array('label'=>'类型', 'editrules'=>array('required'=>true)),
 			'unit_id'=>array('label'=>'计量单位'),
+			'unit_name'=>array('label'=>'计量单位', 'hidden'=>true, 'hidedlg'=>true),
 			'default_price'=>array('label'=>'默认单价', 'post'=>'元'),
 			'min_kc'=>array('label'=>'最低库存', 'post'=>$post),
 			'max_kc'=>array('label'=>'最高库存', 'post'=>$post),

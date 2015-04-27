@@ -520,7 +520,7 @@ kf_tool.prototype = {
 					else{
 						$(n).removeClass('required_error');
 						var invalidChar = $(n).attr('invalidchar');
-						if(invalidChar != undefined){
+						if(invalidChar != undefined && invalidChar != ''){
 							var pattern = new RegExp(invalidChar);
 							if (pattern.test($(n).val())){
 								passed.push(inputName);
@@ -528,22 +528,20 @@ kf_tool.prototype = {
 								$(n).addClass('required_error');
 								$(n).attr('title', "There're invalid char " + invalidChar);
 							}
-							else {
-								var minval = $(n).attr('min'), maxval = $(n).attr('max'), intval = Number($(n).val());
-								if (minval != undefined){
-									if (intval < minval){
-										passed.push(inputName);
-										tips.push(label + ' must be >= ' + minval);
-										$(n).addClass('required_error');
-									}
-								}
-								if (maxval != undefined){
-									if (intval > maxval){
-										passed.push(inputName);
-										tips.push(label + ' must be <= ' + maxval);
-										$(n).addClass('required_error');
-									}
-								}
+						}
+						var minval = $(n).attr('min'), maxval = $(n).attr('max'), intval = Number($(n).val());
+						if (minval != undefined){
+							if (intval < minval){
+								passed.push(inputName);
+								tips.push(label + ' must be >= ' + minval);
+								$(n).addClass('required_error');
+							}
+						}
+						if (maxval != undefined){
+							if (intval > maxval){
+								passed.push(inputName);
+								tips.push(label + ' must be <= ' + maxval);
+								$(n).addClass('required_error');
 							}
 						}
 						if ($(n).attr('email') != undefined){
@@ -920,12 +918,17 @@ $this.debug(data['html']);
 			}, 'json');
 		};
 		var fun_linkage = function(event){
+// tool.debug(event);			
 			for(var i in event.data.linked){
 				fun_oneLink(event.data.linked[i], event.data.params, $(this).val());
 			}
 		};
+// $this.debug(source.selector);		
 		$(source.selector).each(function(i){
+// $this.debug("i = " + i);
 			$(this).unbind('change', fun_linkage).bind('change', {linked:linked, params:params}, fun_linkage);
+			//初始化设置：读取source的当前值，根据当前值设置关联的内容
+			$(this).trigger('change');
 		});
 	},
 

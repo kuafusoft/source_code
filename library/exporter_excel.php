@@ -573,6 +573,8 @@ class exporter_excel extends exporter_base{
 	protected function calcStyle($sheetIndex, $headerIndex, $content, $default = ''){
 		$column = $this->headerIndex($sheetIndex, $headerIndex);
 		$count = count($this->params['sheets'][$sheetIndex]['header']['rows']);
+// print_r("index = $sheetIndex, headerIndex = $headerIndex, count = $count, startCol = {$this->params['sheets'][$sheetIndex]['startCol']}\n");	
+// print_r($this->params['sheets'][$sheetIndex]['header']['rows'][$count - 1]);
 		$columnHeader = $this->params['sheets'][$sheetIndex]['header']['rows'][$count - 1][$column - $this->params['sheets'][$sheetIndex]['startCol']];
 //		$headerIndex = $columnHeader['index'];
 		$style = isset($columnHeader['style']) ? $columnHeader['style'] : 

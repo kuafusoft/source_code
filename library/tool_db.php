@@ -769,7 +769,7 @@ class tool_db extends tool_kf{
 		$itemTable = tableDescFactory::get($data_source_db, $data_source_table, $itemParams);
 		$itemOptions = $itemTable->getOptions();
 // print_r($itemOptions);
-		$columnDef['temp'] = $itemOptions['edit'];
+		$columnDef['temp'] = $itemOptions['add'];
 		foreach($columnDef['temp'] as $ik=>$iv){
 			if(/*empty($iv['editable']) || */in_array($iv['index'], $removedFields))
 				unset($columnDef['temp'][$ik]);

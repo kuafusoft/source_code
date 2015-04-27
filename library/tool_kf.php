@@ -969,7 +969,7 @@ class tool_kf{
 			// 'addoptions'=>array(), 'editoptions'=>array(), 'queryoptions'=>array(), 'searchoptions'=>array(),
 			'name'=>'', 'id'=>'', 'label'=>'', 'editable'=>true, 'type'=>'', 'unique'=>false,
 			'post'=>array(), 'class'=>array(), 'placeholder'=>'', 'DATA_TYPE'=>'varchar', 'invalidChar'=>'', 'email'=>0,
-			'force_readonly'=>false, 'ignored'=>false, 
+			'force_readonly'=>false, 'ignored'=>false, 'from'=>'',
 			'temp'=>array(), 'legend'=>'', 'prefix'=>'', 'data_source_db'=>'', 'data_source_table'=>'',
 			'cart_db'=>'', 'cart_table'=>'', 'cart_data'=>array(),
 			);
@@ -1114,10 +1114,6 @@ class tool_kf{
 			switch($e['DATA_TYPE']){
 				case 'int':
 					$e['invalidChar'] = '[^\d-]';
-					if ($e['name'] == 'progress'){
-						$e['min'] = "min='0'";
-						$e['max'] = "max='100'";
-					}
 					break;
 				case 'float':
 				case 'double':
@@ -1128,6 +1124,12 @@ class tool_kf{
 		}
 		if($e['name'] == 'email')
 			$e['email'] = 1;
+		elseif($e['name'] == 'progress'){
+			if(!isset($e['min']))
+				$e['min'] = "min='0'";
+			if(!isset($e['max']))
+				$e['max'] = "max='100'";
+		}
 		if(empty($e['placeholder']))
 			$e['placeholder'] = "Please input {$e['label']} here";
 		if(!in_array($e['type'], array('text', 'textarea')))

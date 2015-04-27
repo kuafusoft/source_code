@@ -91,8 +91,8 @@ class kf_multi_row_edit extends kf_cell{
 		foreach($temp as $e){
 			if(empty($e['id'])) $e['id'] = $e['name'];
 			$label = $e['label'];
-			if(!empty($e['post']))
-				$label .= "({$e['post']})";
+			// if(!empty($e['post']))
+				// $label .= "({$e['post']})";
 			$ret[] = "<th id='{$e['id']}'>$label</th>";
 		}
 		$ret[] = "</tr>";

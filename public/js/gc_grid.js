@@ -437,7 +437,7 @@ gc_grid.prototype.initGrid = function(options, subgrid, optionSelector){
 		
 		var navGrid = $(gridSelector).jqGrid('navGrid', pagerSelector, allOptions.navOptions, allOptions.editOptions, allOptions.addOptions,
 			allOptions.delOptions, allOptions.searchOptions, allOptions.viewOptions);
-		var buttons = Object.keys(allOptions.buttons).length, maxButtons = 3;
+		var buttons = Object.keys(allOptions.buttons).length, maxButtons = 6;
 		var postData = allOptions.gridOptions['postData'];
 // tool.debug(postData);
 // tool.debug(allOptions.buttons);

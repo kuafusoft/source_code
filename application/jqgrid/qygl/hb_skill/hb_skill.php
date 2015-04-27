@@ -7,11 +7,13 @@ class qygl_hb_skill extends table_desc{
 		
         $this->options['list'] = array(
             'id'=>array('editable'=>false, 'hidden'=>true),
-            'hb_id'=>array('label'=>'名称', 'editable'=>false, 'formatter'=>'text'),
+            'hb_id'=>array('label'=>'员工', 'editable'=>false, 'formatter'=>'text'),
 			'skill_id'=>array('label'=>'技能'),
 			'skill_grade_id'=>array('label'=>'技能水平'),
 			'note'=>array('label'=>'备注', 'edittype'=>'text'),
         );
+		
+		$this->options['add'] = array('skill_id', 'skill_grade_id', 'note');
 		// $this->options['navOptions']['refresh'] = false;
 	}
 	

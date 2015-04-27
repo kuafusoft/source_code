@@ -25,7 +25,7 @@ class kf_form{
 	
 	function display($colsInRow = 1, $colWidth = array()){
 // $this->tool->p_t("Before display");
-		$hidden = array("<table id='hidden_elements'><tr>");
+		$hidden = array();
 		$normal = array("<table id='normal_elements' class='ces' style='width:100%'>");
 		$normal[] = "<tr>";
 		$w1 = 25 / $colsInRow;
@@ -47,7 +47,7 @@ class kf_form{
 // print_r($this->elements);		
 		foreach($this->elements as $k=>$cell){
 			if($cell['type'] == 'hidden'){
-				$hidden[] = "<td><input type='hidden' name='{$cell['name']}' id='{$cell['id']}' value='{$cell['value']}'></td>";
+				$hidden[] = "<input type='hidden' name='{$cell['name']}' id='{$cell['id']}' value='{$cell['value']}'>";
 			}
 			else{
 				if($currentCol ++ == 0){
@@ -91,7 +91,6 @@ class kf_form{
 		}
 		if($currentCol != 0)
 			$normal[] = "</tr>";
-		$hidden[] = "</tr></table>";
 		$normal[] = '</table>';
 // print_r($hidden)		;
 // print_r($normal);

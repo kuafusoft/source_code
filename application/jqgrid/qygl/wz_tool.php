@@ -27,7 +27,7 @@ class wz_tool{
 				$sql = "SELECT DISTINCT wz.id, wz.name, wz.default_price, wz.remained, unit.name as unit_name".
 					" FROM gys_wz left join wz on gys_wz.wz_id=wz.id".
 					" left join unit on wz.unit_id=unit.id".
-					" WHERE gys_wz.hb_id=$hb_id and wz.isactive=1";
+					" WHERE gys_wz.hb_id=$hb_id and wz.isactive=1 and wz.id NOT IN(".WZ_YUNSHU.",".WZ_ZHUANGXIE.")";
 				break;
 			case YW_FL_JIESHOUDINGDAN:
 				$sql = "SELECT DISTINCT wz.id, wz.name, wz.default_price, wz.remained, unit.name as unit_name".

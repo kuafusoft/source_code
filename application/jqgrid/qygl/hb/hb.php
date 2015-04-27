@@ -61,6 +61,38 @@ class qygl_hb extends table_desc{
 		// $this->options['navOptions']['refresh'] = false;
 	}
 	
+	// protected function _getLimit($params){
+// print_r($params);		
+		// $limit = array();
+		// $sql = '';
+		// switch($params['table']){
+			// case 'yw_cg': //采购，应只返回供应商列表，还不应包括承运人和装卸人
+				// $sql = "select DISTINCT hb.id from hb left join hb_hb_fl on hb.id=hb_hb_fl.hb_id LEFT JOIN gys_wz on gys_wz.hb_id=hb.id ".
+					// " WHERE hb_hb_fl.hb_fl_id=".HB_FL_GYS." AND gys_wz.wz_id NOT IN (".WZ_YUNSHU.",".WZ_ZHUANGXIE.") ORDER BY id ASC";
+				// break; 
+			// case 'yw_xs': //销售，应只返回客户列表
+				// $sql = "select distinct hb.id from hb left join hb_hb_fl on hb.id=hb_hb_fl.hb_id WHERE hb_hb_fl.hb_fl_id=".HB_FL_KH." ORDER BY id ASC";
+				// break;
+			// case 'yw_ruku': //入库，应只返回承运人和装卸人
+			// case 'yw_chuku'://出库
+				// $sql = "select DISTINCT hb.id from hb left join hb_hb_fl on hb.id=hb_hb_fl.hb_id LEFT JOIN gys_wz on gys_wz.hb_id=hb.id ".
+					// " WHERE hb_hb_fl.hb_fl_id=".HB_FL_GYS." AND gys_wz.wz_id IN (".WZ_YUNSHU.",".WZ_ZHUANGXIE.") ORDER BY id ASC";
+				// break; 
+		// }
+		// if(!empty($sql)){
+// // print_r($sql);			
+			// $res = $this->db->query($sql);
+			// while($row = $res->fetch())
+				// $limit[] = $row['id'];
+		// }
+		// else
+			// $limit = false;
+		// // print_r($params);
+		// // print_r($limit);
+		// return $limit;
+		
+	// }
+	
 	protected function handleFillOptionCondition(){
 		$this->fillOptionConditions['gys_wz_id'] = array(array('field'=>'wz_fl_id', 'op'=>'in', 'value'=>array(WZ_FL_YUANLIAO, WZ_FL_SHEBEI, WZ_FL_LAOBAO, WZ_FL_FUWU, WZ_FL_BANGONG, WZ_FL_NENGYUAN, WZ_FL_WEIXIU, WZ_FL_QITA)));
 		$this->fillOptionConditions['kh_wz_id'] = array(array('field'=>'wz_fl_id', 'op'=>'in', 'value'=>array(WZ_FL_CHANPIN)));

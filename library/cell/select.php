@@ -3,8 +3,11 @@ require_once('kf_cell.php');
 
 class kf_select extends kf_cell{
 	protected function oneView($v, $props){
+// print_r($props);
+// print_r($this->params);
 		$ret = array();
 		$ret[] = "<input type='hidden' id='{$this->params['id']}' value='$v'>";
+		$props['id'] = 'label_'.$props['id'];
 		$ret[] = parent::oneView($v, $props);
 // print_r($v);		
 // print_r($ret);

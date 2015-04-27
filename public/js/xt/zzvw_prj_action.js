@@ -105,7 +105,8 @@
 					};
 					var url = '/jqgrid/jqgrid/db/' + db + '/table/' + table + '/oper/export/element/' + selectedRows;
 					tool.actionDialog(dialog_params, url, checkRel, function(data){
-						location.href = "/download.php?filename=" + encodeURIComponent(data) + "&remove=1";
+tool.debug(data);
+						// location.href = "/download.php?filename=" + encodeURIComponent(data) + "&remove=1";
 					});
 				}
 				break;

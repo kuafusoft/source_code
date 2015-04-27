@@ -2,6 +2,18 @@ var XT;
 XT = XT || {};
 (function(){
 	var tool = new kf_tool();
+	this.yg_index = function(){
+		return this.grid_index('qygl', 'zzvw_yg', '员工管理');
+	}
+	
+	this.gys_index = function(){
+		return this.grid_index('qygl', 'zzvw_gys', '供应商管理');
+	}
+	
+	this.kh_index = function(){
+		return this.grid_index('qygl', 'zzvw_kh', '客户管理');
+	}
+	
 	this.wz_index = function(){
 		return this.grid_index('qygl', 'wz', '物资管理');
 	}
@@ -16,6 +28,10 @@ XT = XT || {};
 	
 	this.ck_index = function(){
 		return this.grid_index('qygl', 'ck', '仓库管理');
+	}
+	
+	this.hobby_index = function(){
+		return this.grid_index('qygl', 'hobby', '爱好管理');
 	}
 	
 	this.ck_weizhi_index = function(){
@@ -74,6 +90,31 @@ XT = XT || {};
 		return this.grid_index('qygl', 'yw', '业务管理');
 	}
 	
+	this.yw_cg_index = function(){
+		return this.grid_index('qygl', 'zzvw_yw_xd', '下采购单');
+	}
+	
+	this.yw_sh_index = function(){
+		return this.grid_index('qygl', 'zzvw_yw_sh', '收货/退货');
+		return this.grid_index('qygl', 'yw_jh', '收货/退货');
+	}
+	
+	this.yw_xs_index = function(){
+		return this.grid_index('qygl', 'zzvw_yw_jd', '接订单');
+	}
+	
+	this.yw_fh_index = function(){
+		return this.grid_index('qygl', 'zzvw_yw_fh', '发货/收退货');
+	}
+	
+	this.yw_jth_index = function(){
+		return this.grid_index('qygl', 'yw_jth', '收退货');
+	}
+	
+	this.yw_chuku_index = function(){
+		return this.grid_index('qygl', 'yw_chuku', '出库');
+	}
+	
 	this.dingdan_index = function(){
 		return this.grid_index('qygl', 'dingdan', '订单管理');
 	}
@@ -96,6 +137,10 @@ XT = XT || {};
 	
 	this.unit_index = function(){
 		return this.grid_index('qygl', 'unit', '计量单位管理');
+	}
+	
+	this.yw_zj_jinchu_index = function(){
+		return this.grid_index('qygl', 'zzvw_yw_zj_jinchu', '资金变动');
 	}
 	
 	this.zjzh_index = function(){

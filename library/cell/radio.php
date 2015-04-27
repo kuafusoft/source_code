@@ -11,6 +11,7 @@ class kf_radio extends kf_cell{
 	protected function oneView($v, $props){
 		$ret = array();
 		$ret[] = "<input type='hidden' id='{$this->params['id']}' value='$v'>";
+		$props['id'] = 'label_'.$props['id'];
 		$ret[] = parent::oneView($v, $props);
 // print_r($v);		
 // print_r($ret);

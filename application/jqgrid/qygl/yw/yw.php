@@ -10,7 +10,7 @@ class qygl_yw extends table_desc{
 // print_r($params);
 		parent::init($db, $table, $params);
 		$yw_tool = new yw_tool($this->tool);
-		$year_month1 = $this->tool->getYearMonthList(6, 36, true);
+		// $year_month1 = $this->tool->getYearMonthList(6, 36, true);
 		$year_month2 = $this->tool->getYearMonthList(0, 36, true);
 
 		$data_source_db = 'qygl';
@@ -19,7 +19,7 @@ class qygl_yw extends table_desc{
 		$itemParams = array('id'=>0, 'yw_fl_id'=>0);
 		if(!empty($params['id'])){
 			$itemParams['id'] = $params['id'];
-			$res = $this->tool->query("select * from yw where id={$params['id']}");
+			$res = $this->tool->query("select * from yw where id={$params['id']} limit 1");
 			if($row = $res->fetch()){
 				$ret = $yw_tool->getDetailTable($row['yw_fl_id']);
 				$data_source_db = $ret['data_source_db'];
@@ -33,20 +33,31 @@ class qygl_yw extends table_desc{
 			'name',
             'yw_fl_id'=>array('label'=>'分类', 'editrules'=>array('required'=>true)),
 			'hb_id'=>array('label'=>'交易方', 'editrules'=>array('required'=>true)),
-			'helper_id'=>array('label'=>'辅助人', 'data_source_table'=>'hb'), //主要是和运输相对应的装卸工
-			'detail'=>array('label'=>'详情', 'formatter'=>'multi_row_edit','legend'=>$legend, 
+			
+			'detail_id'=>array('label'=>'详情', 'formatter'=>'multi_row_edit','legend'=>$legend, 
+				'formatoptions'=>array('subformat'=>'itemTemp', 'field'=>'yw_fl_id', 'temp'=>array()),
 				'data_source_db'=>$data_source_db, 'data_source_table'=>$data_source_table, 'itemParams'=>$itemParams),
+			'cyr_id'=>array('label'=>'承运人', 'data_source_db'=>'qygl', 'data_source_table'=>'hb', 'from'=>'qygl.yw_help'),
+			'yunshu_price'=>array('label'=>'运输单价', 'from'=>'qygl.yw_help'),
+			'zxr_id'=>array('label'=>'装卸人', 'data_source_db'=>'qygl', 'data_source_table'=>'hb', 'from'=>'qygl.yw_help'),
+			'zx_price'=>array('label'=>'装卸单价', 'from'=>'qygl.yw_help'),
+			'amount'=>array('label'=>'数量', 'post'=>'吨', 'hidden'=>true, 'from'=>'qygl.yw_help'),
+			
 			'dj_id'=>array('label'=>'单据'),
 			'note'=>array('label'=>'备注'),
-			'price'=>array('label'=>'单价', 'post'=>'元/吨', 'hidden'=>true),
-			'helper_price'=>array('label'=>'辅助单价', 'post'=>'元/吨', 'hidden'=>true), //主要是和运输相对应的装卸单价
-			'amount'=>array('label'=>'数量', 'post'=>'吨', 'hidden'=>true),
+			// 'helper_id'=>array('label'=>'辅助人', 'data_source_table'=>'hb'), //主要是和运输相对应的装卸工
+			// 'price'=>array('label'=>'单价', 'post'=>'元/吨', 'hidden'=>true),
+			// 'helper_price'=>array('label'=>'辅助单价', 'post'=>'元/吨', 'hidden'=>true), //主要是和运输相对应的装卸单价
 			'jbr_id'=>array('label'=>'经办人', 'data_source_db'=>'qygl', 'data_source_table'=>'zzvw_hb_yg'),
-			'happen_date'=>array('label'=>'交易日期', 'stype'=>'select', 'searchoptions'=>array('value'=>$year_month2)), //只提供三年内的查询
+			'happen_date'=>array('label'=>'交易日期', 'edittype'=>'date',
+				'stype'=>'select', 'searchoptions'=>array('value'=>$year_month2)), //只提供三年内的查询
 			'*'=>array('hidden'=>true),
         );
 
-		$this->options['edit'] = array('yw_fl_id', 'hb_id', 'helper_id', 'price', 'helper_price', 'detail_ids', 'amount', 'note', 'jbr_id', 'happen_date');
+		$this->options['edit'] = array('yw_fl_id', 'hb_id', 'detail_id', 
+			'cyr_id', 'yunshu_price', 'zxr_id', 'zx_price', 'amount',
+		// 'helper_id', 'price', 'helper_price',  
+			'note', 'jbr_id', 'happen_date');
 	}
 	
 	// protected function contextMenu(){

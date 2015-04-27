@@ -38,54 +38,70 @@
 			<device_ver action='mcu_device_ver_index' label='Device' />
 		</mcu>
 		
-		<qygl_wz label='物资管理' >
-
-		</qygl_wz>
-		<qygl_cw label='财务管理' >
-		
-		</qygl_cw>
 		<qygl_sc label='生产管理' >
-		
-		</qygl_sc>
-		<qygl_hb label='伙伴管理' >
-		
-		</qygl_hb>
-		
-		<qygl_op label='企业运营'>
-			<hb action='hb_index' label='合作伙伴' />
-			<wz action='wz_index' label='物资管理' />
-			<pici action='pici_index' label='批次' />
-			<yw action='yw_index' label='业务' />
-			<zjzh action='zjzh_index' label='资金账户管理' />
-			<zj_pj action='zj_pj_index' label='金融票据' />
-		</qygl_op>
-
-		<qygl_base label='基础数据' >
-			<wz_fl action='wz_fl_index' label='物资分类' />
-			<ck action='ck_index' label='仓库' />
-			<ck_weizhi action='ck_weizhi_index' label='仓位' />
-			<yw_fl action='yw_fl_index' label='业务分类' />
-			<skill action='skill_index' label='技能' />
-			<skill_grade action='skill_grade_index' label='技能等级' />
-			<credit_level action='credit_level_index' label='信用等级' />
-			<dept action='dept_index' label='部门' />
-			<position action='position_index' label='职位' />
-			<hb_fl action='hb_fl_index' label='伙伴类型' />
-			<work_type action='work_type_index' label='工种' />
-			<contact_method action='contact_method_index' label='联系方式' />
+			<yg action='yg_index' label='员工' />
+			<scdj action='scdj_index' label='生产登记' />
 			<zl action='zl_index' label='质量等级' />
 			<defect action='defect_index' label='缺陷' />
 			<gx action='gx_index' label='工序' />
 			<gx_fl action='gx_fl_index' label='工序分类' />
 			<gx_de action='gx_de_index' label='定额管理' />
-			<work_type action='work_type_index' label='工种管理' />
-			<zj_fl action='zj_fl_index' label='资金分类' />
+		</qygl_sc>
+
+		<qygl_cg label='采购管理' >
+			<gys action='gys_index' label='供应商' />
+			<yw_cg action='yw_cg_index' label='下采购单' />
+			<yw_sh action='yw_sh_index' label='收货/退货' />
+		</qygl_cg>
+		
+		<qygl_xs label='销售管理'>
+			<kh action='kh_index' label='客户' />
+			<yw_xs action='yw_xs_index' label='接订单' />
+			<yw_fh action='yw_fh_index' label='发货/收退货' />
+		</qygl_xs>
+		
+		<qygl_cw label='财务管理' >
+			<yw_zj_jinchu action='yw_zj_jinchu_index' label='资金进出' />
+			<zjzh action='zjzh_index' label='资金账户管理' />
+			<zj_pj action='zj_pj_index' label='金融票据' />
 			<zj_cause action='zj_cause_index' label='资金变动原因' />
-			<jszb action='jszb_index' label='技术指标' />
+			<zj_fl action='zj_fl_index' label='资金分类' />
+		</qygl_cw>
+	
+		<qygl_hb label='伙伴管理' >
+			<hb action='hb_index' label='合作伙伴' />
+		</qygl_hb>
+
+		<qygl_wz label='物资管理'>
+			<wz action='wz_index' label='物资管理' />
+			<pici action='pici_index' label='批次' />
+			<wz_fl action='wz_fl_index' label='物资分类' />
+			<ck action='ck_index' label='仓库' />
+			<ck_weizhi action='ck_weizhi_index' label='仓位' />
+		</qygl_wz>
+		
+		<qygl_op label='企业运营'>
+			<yw_ruku action='yw_ruku_index' label='入库' />
+			<yw_chuku action='yw_chuku_index' label='出库' />
+			<yw action='yw_index' label='业务' />
+		</qygl_op>
+		
+		<gygl_base label='基础数据'>
+			<hobby action='hobby_index' label='爱好' />
+			<credit_level action='credit_level_index' label='信用等级' />
+			<hb_fl action='hb_fl_index' label='伙伴类型' />
 			<unit_fl action='unit_fl_index' label='单位分类' />
 			<unit action='unit_index' label='单位' />
-		</qygl_base>
-		
+			<jszb action='jszb_index' label='技术指标' />
+			<skill action='skill_index' label='技能' />
+			<skill_grade action='skill_grade_index' label='技能等级' />
+			<dept action='dept_index' label='部门' />
+			<position action='position_index' label='职位' />
+			<work_type action='work_type_index' label='工种' />
+			<contact_method action='contact_method_index' label='联系方式' />
+			<work_type action='work_type_index' label='工种管理' />
+		</gygl_base>
+
 		
         <basetable label="Base Table">
             <tc_type action="tc_type_index" label="Testcase Type" />
@@ -220,40 +236,69 @@
 	</reviewer>
 	
 	<qygl extends='normal'>
+		<qygl_sc display='true'>
+			<yg display='true'/>
+			<scdj display='true'/>
+			<zl display='true'/>
+			<defect display='true'/>
+			<gx display='true'/>
+			<gx_fl display='true'/>
+			<gx_de display='true'/>
+		</qygl_sc>
+
+		<qygl_cg display='true'>
+			<gys display='true'/>
+			<yw_cg display='true'/>
+			<yw_sh display='true'/>
+		</qygl_cg>
+		
+		<qygl_xs display='true'>
+			<kh display='true'/>
+			<yw_xs display='true'/>
+			<yw_fh display='true'/>
+		</qygl_xs>
+		
+		<qygl_cw display='true'>
+			<yw_zj_jinchu display='true'/>
+			<zjzh display='true'/>
+			<zj_pj display='true'/>
+			<zj_cause display='true'/>
+			<zj_fl display='true'/>
+		</qygl_cw>
+	
+		<qygl_hb display='true'>
+			<hb display='true'/>
+		</qygl_hb>
+
+		<qygl_wz display='true'>
+			<wz display='true'/>
+			<pici display='true'/>
+			<wz_fl display='true'/>
+			<ck display='true'/>
+			<ck_weizhi display='true'/>
+		</qygl_wz>
+		
 		<qygl_op display='true'>
-			<hb display='true' />
-			<wz display='true' />
-			<pici display='true' />
-			<yw display='true' />
-			<zjzh display='true' />
-			<zj_pj display='true' />
+			<yw_ruku display='true'/>
+			<yw_chuku display='true'/>
+			<yw display='true'/>
 		</qygl_op>
 		
-		<qygl_base display='true' >
-			<yw_fl display='true' />
-			<skill display='true' />
-			<skill_grade display='true' />
-			<credit_level display='true' />
-			<dept display='true' />
-			<position display='true' />
-			<hb_fl display='true' />
-			<work_type display='true' />
-			<contact_method display='true' />
-			<gx display='true' />
-			<gx_fl display='true' />
-			<gx_de display='true' />
-			<work_type display='true' />
-			<zj_fl display='true' />
-			<zj_cause display='true' />
-			<jszb display='true' />
-			<wz_fl display='true' />
-			<ck display='true' />
-			<ck_weizhi display='true' />
-			<zl display='true' />
-			<defect display='true' />
-			<unit_fl display='true' />
-			<unit display='true' />
-		</qygl_base>
+		<gygl_base display='true'>
+			<hobby display='true' />
+			<credit_level display='true'/>
+			<hb_fl display='true'/>
+			<unit_fl display='true'/>
+			<unit display='true'/>
+			<jszb display='true'/>
+			<skill display='true'/>
+			<skill_grade display='true'/>
+			<dept display='true'/>
+			<position display='true'/>
+			<work_type display='true'/>
+			<contact_method display='true'/>
+			<work_type display='true'/>
+		</gygl_base>
 	</qygl>
 		
 	<workflow extends='normal'>

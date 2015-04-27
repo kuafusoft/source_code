@@ -5,12 +5,16 @@ require_once(APPLICATION_PATH.'/jqgrid/qygl/yw_tool.php');
 
 class qygl_dingdan_action_get_dingdan_by_hb extends action_jqgrid{
 	protected function handlePost(){
-		$tool = new yw_tool($this->tool);
-		$conditions = array('yw_fl_id'=>$this->params['yw_fl_id'], 'yw_isactive'=>ISACTIVE_ACTIVE, 'hb_id'=>$this->params['value']);
-		if(!empty($this->params['dingdan_status_id']))
-			$conditions['dingdan_status_id'] = $this->params['dingdan_status_id'];
-// print_r($this->params)		;
-		$ret = $tool->getDingdanOptions($conditions);//$this->params['yw_fl_id'], ISACTIVE_ACTIVE, $this->params['value']);
-		return $ret;
+		$dingdan = array();
+		$sql = "SELECT * FROM zzvw_dingdan WHERE hb_id={$this->params['value']} and dingdan_status_id={$this->params['status']} and yw_fl_id={$this->params['yw_fl_id']} ";
+// print_r($sql);
+		$res = $this->tool->query($sql);
+		while($row = $res->fetch()){
+			$remained = $row['amount'] - $row['completed_amount'];
+			$row['name'] = "[{$row['defect']}]的[{$row['wz_name']}]{$row['amount']}{$row['unit_name']}, ".
+				"已完成{$row['completed_amount']}{$row['unit_name']}, 尚余===$remained==={$row['unit_name']}";
+			$dingdan[] = $row;
+		}
+		return $dingdan;
 	}
 }

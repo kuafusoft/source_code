@@ -16,26 +16,15 @@ defined('DINGDAN_STATUS_ZHIXING') || define('DINGDAN_STATUS_ZHIXING', 1); //订�
 defined('DINGDAN_STATUS_JIESHU') || define('DINGDAN_STATUS_JIESHU', 2); //订单已完成
 defined('DINGDAN_STATUS_QUXIAO') || define('DINGDAN_STATUS_QUXIAO', 3); //订单已取消
 
-defined('YW_FL_CG') || define('YW_FL_CG', 1); //下采购单
-defined('YW_FL_YUNRU') || define('YW_FL_YUNRU', 2); //运入
-defined('YW_FL_XIEZAI') || define('YW_FL_XIEZAI', 3); //卸载
-defined('YW_FL_ZHUANGZAI') || define('YW_FL_ZHUANGZAI', 17); //装载
-defined('YW_FL_RUKU') || define('YW_FL_RUKU', 4); //入库
-defined('YW_FL_SCDJ') || define('YW_FL_SCDJ', 5);//生产登记
-defined('YW_FL_ZJOUT') || define('YW_FL_ZJOUT', 6); //资金转出
-defined('YW_FL_ZJIN') || define('YW_FL_ZJIN', 7); //资金转入
-defined('YW_FL_ZHUANZHANG') || define('YW_FL_ZHUANZHANG', 8); //转账
-defined('YW_FL_TUIHUO') || define('YW_FL_TUIHUO', 9); //退货
-defined('YW_FL_JIESHOUTUIHUO') || define('YW_FL_JIESHOUTUIHUO', 10); //接收退货
-defined('YW_FL_YIKU') || define('YW_FL_YIKU', 11); //移库
-defined('YW_FL_JIESHOUDINGDAN') || define('YW_FL_JIESHOUDINGDAN', 12); //接收订单
-defined('YW_FL_CHUKU') || define('YW_FL_CHUKU', 13); //出库
-defined('YW_FL_YUNCHU') || define('YW_FL_YUNCHU', 14); //运出
-defined('YW_FL_PANKU') || define('YW_FL_PANKU', 15); //盘库
-defined('YW_FL_TX') || define('YW_FL_TX', 16); //贴息
-defined('YW_FL_JIERU') || define('YW_FL_JIERU', 18); //借入款项
-defined('YW_FL_HUANKUAN') || define('YW_FL_HUANKUAN', 19); //还款
-defined('YW_FL_JIECHU') || define('YW_FL_JIECHU', 20); //借出款项
+defined('YW_FL_XD') || define('YW_FL_XD', 1); //下采购单
+defined('YW_FL_SH') || define('YW_FL_SH', 2); //收货
+defined('YW_FL_SC') || define('YW_FL_SC', 3); //生产
+defined('YW_FL_ZJBD') || define('YW_FL_ZJBD', 4); //资金变动
+defined('YW_FL_JD') || define('YW_FL_JD', 5); //接客户订单
+defined('YW_FL_FH') || define('YW_FL_FH', 6);//发货
+defined('YW_FL_PDCK') || define('YW_FL_PDCK', 6); //盘点仓库
+defined('YW_FL_PDZJ') || define('YW_FL_PDZJ', 8); //盘点资金
+defined('YW_FL_WZYK') || define('YW_FL_WZYK', 8); //物资移库
 
 defined('WZ_PACKAGE_FL_DINGDAN') || define('WZ_PACKAGE_FL_DINGDAN', 1); //订单包
 defined('WZ_PACKAGE_FL_YUNSHU') || define('WZ_PACKAGE_FL_YUNSHU', 1); //运输包
@@ -66,21 +55,20 @@ defined('GX_FL_FSCX') || define('GX_FL_FSCX', 6);     //工序类型：非生产
 
 defined('GX_CG') || define('GX_CG', 1);     //工序：采购
 defined('GX_ZX') || define('GX_ZX', 2);     //工序：造型
-defined('GX_ZX') || define('GX_LXQL', 3);     //工序蜡型清理
-defined('GX_HJ') || define('GX_LXHJ', 4);     //工序：蜡型焊接
-defined('GX_HJ') || define('GX_TLZM', 5);     //工序：涂料制模
-defined('GX_HJ') || define('GX_SL', 6);     //工序：失蜡
-defined('GX_HJ') || define('GX_JZ', 7);     //工序：浇注
-defined('GX_HJ') || define('GX_QS', 8);     //工序：清砂
-defined('GX_HJ') || define('GX_CPFJ', 9);     //工序：产品分解
-defined('GX_HJ') || define('GX_YJFJ', 10);     //工序：一极分拣
-defined('GX_HJ') || define('GX_PWQS', 11);     //工序：抛丸清砂
-defined('GX_HJ') || define('GX_HJXB', 12);     //工序：焊接修补
-defined('GX_HJ') || define('GX_DM', 13);     //工序：打磨
-defined('GX_HJ') || define('GX_EJFJ', 14);     //工序：二级分拣
-defined('GX_HJ') || define('GX_BZ', 15);     //工序：包装
+defined('GX_LXQL') || define('GX_LXQL', 3);     //工序蜡型清理
+defined('GX_LXHJ') || define('GX_LXHJ', 4);     //工序：蜡型焊接
+defined('GX_TLZM') || define('GX_TLZM', 5);     //工序：涂料制模
+defined('GX_SL') || define('GX_SL', 6);     //工序：失蜡
+defined('GX_JZ') || define('GX_JZ', 7);     //工序：浇注
+defined('GX_QS') || define('GX_QS', 8);     //工序：清砂
+defined('GX_CPFJ') || define('GX_CPFJ', 9);     //工序：产品分解
+defined('GX_YJFJ') || define('GX_YJFJ', 10);     //工序：一极分拣
+defined('GX_PWQS') || define('GX_PWQS', 11);     //工序：抛丸清砂
+defined('GX_HJXB') || define('GX_HJXB', 12);     //工序：焊接修补
+defined('GX_DM') || define('GX_DM', 13);     //工序：打磨
+defined('GX_EJFJ') || define('GX_EJFJ', 14);     //工序：二级分拣
+defined('GX_BZ') || define('GX_BZ', 15);     //工序：包装
 defined('GX_JYRK') || define('GX_JYRK', 16);     //工序：检验入库
-defined('GX_HJ') || define('GX_FY', 20);     //工序：发运
 
 defined('GX_LAST') || define('GX_LAST', GX_JYRK);     //工序：最后一道工序
 

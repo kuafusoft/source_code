@@ -16,14 +16,13 @@ class table_desc{
 	protected $action = null;
 	protected $actionName = '';
 	
-	protected $limited = array(); //是否已经进行limit计算
-	protected $limit = array();	//实际的限制条件
+	protected $limited = false; //是否已经进行limit计算
+	protected $limit = array();	//实际的限制条件，主要就是id的选取范围
 	
 	//以下的各种表间关系可能组合出现，所以不适合用继承来实现
 	protected $standardLinkTabled = false;
 	protected $linkTables = array();	//各种表间关系，如对多对关系（通过link表互相关联), 多属性（如一个人有多个通讯方式 ）
 	
-	protected $fillOptionConditions = array();	// 对于传入的params，分析如何过滤可选项
 	protected $blankItems = array();	// 哪些字段需要==BLANK==选项
 	protected $allFields = array();		//哪些字段需要得到全部信息
 	
@@ -97,7 +96,7 @@ class table_desc{
 				}
 			}
 		}
-		$this->handleFillOptionCondition();
+		// $this->handleFillOptionCondition();
 // print_r($this->actionName);		
 	}
 	
@@ -143,7 +142,7 @@ class table_desc{
 					if(empty($linkInfo['db']))
 						$linkInfo['db'] = $this->get('db');
 					if(empty($linkInfo['self_link_field']))
-						$linkInfo['self_link_field'] = $this->get('table').'_id';
+						$linkInfo['self_link_field'] = $this->get('real_table').'_id';
 					if(empty($linkInfo['link_db']))
 						$linkInfo['link_db'] = $this->get('db');
 					if($rel == 'm2m' || $rel == 'node_ver_m2m'){
@@ -187,6 +186,8 @@ class table_desc{
 							$linkInfo['tree_table'] = $node.'_tree';
 						}
 					}
+					if(!empty($relData['real_table']))
+						$linkInfo['real_table'] = $relData['real_table'];
 					$this->options['linkTables'][$rel]["{$linkInfo['db']}.{$linkInfo['table']}"] = $linkInfo;
 				}
 			}
@@ -361,12 +362,12 @@ class table_desc{
 	}
 	
 	//确定自己的最大范围，返回FALSE表示没有限制
-	public function getLimit($field = '', $params = array()){
-		if(empty($this->limited[$field])){
-			$this->limited[$field] = true;
-			$this->limit[$field] = $this->_getLimit($params);
+	public function getLimit($params = array()){
+		if(empty($this->limited)){
+			$this->limited = true;
+			$this->limit = $this->_getLimit($params);
 		}
-		return $this->limit[$field];
+		return $this->limit;
 	}
 	
 	protected function _getLimit($params){
@@ -433,8 +434,15 @@ class table_desc{
 	
 	protected function getEditFields($params){
 //print_r($this->options['edit']);	
-		if (empty($this->options['edit']))
-			$this->options['edit'] = array_keys($this->options['list']);
+		if (empty($this->options['edit'])){
+			$list = $this->options['list'];
+			unset($list['created']);
+			unset($list['updated']);
+			unset($list['modified']);
+			unset($list['creater_id']);
+			
+			$this->options['edit'] = array_keys($list);
+		}
 		$this->options['edit'] = $this->modelFields($this->options['edit'], $params);
 		unset($this->options['edit']['id']);
 		
@@ -442,12 +450,20 @@ class table_desc{
 	}
 	
 	protected function getAddFields($params){
+// print_r($this->options['add']);		
 		if (empty($this->options['add'])){
 			if(!empty($this->options['edit']))
 				$this->options['add'] = $this->options['edit'];
-			else
-				$this->options['add'] = array_keys($this->options['list']);
+			else{
+				$list = $this->options['list'];
+				unset($list['created']);
+				unset($list['updated']);
+				unset($list['modified']);
+				unset($list['creater_id']);
+				$this->options['add'] = array_keys($list);
+			}
 		}
+// print_r($this->options['add']);
 		$this->options['add'] = $this->modelFields($this->options['add'], $params);
 		unset($this->options['add']['id']);
 		return $this->options['add'];
@@ -495,18 +511,18 @@ class table_desc{
         return $allColumns;
     }
     
-	protected function handleFillOptionCondition(){
-		// if(!empty($this->params['searchConditions'])){
-			// $searchConditions = $this->params['searchConditions'];
-			// foreach($searchConditions as $condition){
-				// switch($condition['field']){
-					// case 'testcase_id':
-						// $this->where_testcase_id = $condition;
-						// break;
-				// }
-			// }
-		// }
-	}
+	// protected function handleFillOptionCondition(){
+		// // if(!empty($this->params['searchConditions'])){
+			// // $searchConditions = $this->params['searchConditions'];
+			// // foreach($searchConditions as $condition){
+				// // switch($condition['field']){
+					// // case 'testcase_id':
+						// // $this->where_testcase_id = $condition;
+						// // break;
+				// // }
+			// // }
+		// // }
+	// }
 	
 	public function trimColModel($colModel){
 		$trimed = array();
@@ -759,7 +775,7 @@ class table_desc{
 					$columnDef['key'] = true;
 					if ($displayField != 'id')
 						$columnDef['hidden'] = true;
-					$columnDef['limit'] = $this->getLimit();
+					$columnDef['limit'] = $this->getLimit($this->params);
 					break;
 					
 				case 'isactive':
@@ -975,13 +991,13 @@ class table_desc{
 					$columnDef['data_source_db'] = $db;
 				if($this->tool->tableExist($columnDef['data_source_table'], $columnDef['data_source_db'])){
 					$t = tableDescFactory::get($columnDef['data_source_db'], $columnDef['data_source_table'], array());
-					$columnDef['limit'] = $t->getLimit();
-// if($column['COLUMN_NAME'] == 'period_id')					
-// print_r($columnDef);
+					$columnDef['limit'] = $t->getLimit($this->params);
 					if(!isset($this->params['fill']) || $this->params['fill'] == true)
 						$this->tool->fillOptions($columnDef);
 					else
 						$columnDef['notfill'] = true;
+// if($column['COLUMN_NAME'] == 'owner_id')					
+// print_r($columnDef);
 				}
 			}
 			

@@ -1,21 +1,37 @@
 <?php
 require_once('table_desc.php');
-//员工管理
+require_once("const_def_qygl.php");
+require_once(APPLICATION_PATH.'/jqgrid/qygl/wz_tool.php');
+
 class qygl_dingdan extends table_desc{
 	protected function init($db, $table, $params = array()){
+// print_r($params);		
 		parent::init($db, $table, $params);
+		$info = array('unit_name'=>'?');
+		if($this->actionName == 'information' || $this->actionName == 'update_information_page'){
+			$sql = "SELECT unit.name as unit_name from wz left join unit on wz.unit_id=unit.id left join dingdan on dingdan.wz_id=wz.id where dingdan.id={$params['id']}";
+			$res = $this->tool->query($sql);
+			$info = $res->fetch();
+		}
+
         $this->options['list'] = array(
             'id'=>array('editable'=>false, 'hidden'=>true),
-            'yw_id'=>array('label'=>'业务'),
-			'hb_id'=>array('label'=>'交易方'),
+            'yw_cg_id'=>array('label'=>'业务', 'hidden'=>true, 'hidedlg'=>true),
 			'wz_id'=>array('label'=>'物资'),
-			'price'=>array('label'=>'单价'),
-            'amount'=>array('label'=>'数量'),
-            'completed_amount'=>array('label'=>'已完成量'),
-			'next_date'=>array('label'=>'发货日期'),
+			'unit_name'=>array('label'=>'计量单位', 'hidden'=>true, 'hidedlg'=>true),
+			'defect_id'=>array('label'=>'质量'),
+            'amount'=>array('label'=>'数量', 'post'=>array('type'=>'text', 'value'=>$info['unit_name'])),
+			'price'=>array('label'=>'单价', 'post'=>array('type'=>'text', 'value'=>'元/'.$info['unit_name'])),
+            'completed_amount'=>array('label'=>'已完成量', 'post'=>array('type'=>'text', 'value'=>$info['unit_name'])),
 			'dingdan_status_id'=>array('label'=>'状态')
         );
-		$this->options['edit'] = array('wz_id', 'price', 'amount', 'next_date');
+		$this->options['edit'] = array('wz_id'=>array('editable'=>false), 'defect_id'=>array('editable'=>true), 'amount', 'price', 'dingdan_status_id'=>array('type'=>'hidden'));
+		$this->options['add'] = array('wz_id'=>array('editable'=>true), 'defect_id'=>array('editable'=>true), 'amount', 'price', 'dingdan_status_id'=>array('type'=>'hidden'));
+	}
+	
+	protected function setSubGrid(){
+        $this->options['gridOptions']['subGrid'] = true;
+		$this->options['subGrid'] = array('expandField'=>'dingdan_id', 'db'=>'qygl', 'table'=>'dingdan_jfjh');
 	}
 	
 	// public function accessMatrix(){
@@ -29,20 +45,12 @@ class qygl_dingdan extends table_desc{
 		// return $access_matrix;
 	// }
 	
-	public function getMoreInfoForRow($row){
-		$res = $this->tool->query("SELECT hb_id FROM yw WHERE id={$row['yw_id']}");
-		$hb = $res->fetch();
-		$row['hb_id'] = $hb['hb_id'];
-		return $row;
-	}
-	
     protected function getButtons(){
 		$p_buttons = parent::getButtons();
 		unset($p_buttons['add']);
 		$buttons = array(
-			'redo'=>array('caption'=>'再来一份'),
-			'cancel'=>array('caption'=>'取消'),
-			'finish'=>array('caption'=>'完成'),
+			'jh'=>array('caption'=>'重启'),
+			'js'=>array('caption'=>'完成'),
         );
         return array_merge($buttons, $p_buttons);
     }

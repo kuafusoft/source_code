@@ -11,5 +11,7 @@ class qygl_hb_contact_method extends table_desc{
 			'contact_method_id'=>array('label'=>'联系方式'),
 			'content'=>array('label'=>'内容')
         );
+		
+		$this->options['edit'] = array('contact_method_id', 'content');
 	}
 }

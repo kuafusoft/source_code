@@ -673,7 +673,7 @@ gc_grid_action.prototype.information = function(rowId, newpage, ver, display_sta
 	var dialog_params = {
 		ok:'close', 
 		open:function(){
-			$this.information_open(information_div, rowId, 'all');
+			$this.information_open(information_div, rowId, 'all', display_status);
 		},
 		close: function(){
 			$this.information_close();
@@ -703,7 +703,7 @@ gc_grid_action.prototype.information = function(rowId, newpage, ver, display_sta
 	tool.tabDialog(dialog_params, url);
 };
 
-gc_grid_action.prototype.information_open = function(divId, rowId, pageName){
+gc_grid_action.prototype.information_open = function(divId, rowId, pageName, display_status){
 	var $this = this, this_table = this.getParams('table'), this_id = $('#' + divId + ' #div_hidden #origin_id').val();
 	
 	tool.defaultActionForTab('#' + divId);

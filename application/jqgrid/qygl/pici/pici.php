@@ -14,7 +14,9 @@ class qygl_pici extends table_desc{
 			'wz_id'=>array('label'=>'物资'),
 			'amount'=>array('label'=>'原始总数量'),
 			'remained'=>array('label'=>'当前剩余量'),
-			'detail'=>array('label'=>'详细信息', 'formatter'=>'multi_row_edit','legend'=>'详细信息', 'data_source_db'=>'qygl', 'data_source_table'=>'pici_detail'),
+			'detail'=>array('label'=>'详细信息', 'formatter'=>'multi_row_edit','legend'=>'详细信息', 'data_source_db'=>'qygl', 'data_source_table'=>'pici_detail',
+				'formatoptions'=>array('subformat'=>'temp', 'temp'=>"有[%(defect_id)s]的初始数量为%(amount)s，目前剩余量%(remained)s，单价%(price)s"),
+			),
 			'happen_date'=>array('label'=>'生成日期'),
 			'created'=>array('label'=>'记录日期', 'editable'=>false),
         );
