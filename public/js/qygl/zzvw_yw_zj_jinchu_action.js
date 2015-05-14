@@ -17,75 +17,81 @@
 			eventsBindForZJ_JinChu(divId, this, false);
 	};
 	
-	var eventsBindForZJ_JinChu = function(divId, context, first){ //订单类事件绑定
-		$('#' + divId + ' #zj_cause_id').bind('change', function(event){
-			var option = $(this).find("option:selected"), zj_direct_id = option.attr('zj_direct_id'), zj_cause_id = $(this).val();
+	var eventsBindForZJ_JinChu = function(divId, context, first){ //资金进出事件绑定
+tool.debug(divId);
+		var showFields = function(){
+			var zj_cause = $('#' + divId + ' #zj_cause_id'), cause_option = zj_cause.find("option:selected"), 
+				zj_direct_id = cause_option.attr('zj_direct_id'), zj_cause_id = zj_cause.val(),
+				zj_fl_id = $('#' + divId + ' #zj_fl_id').val();
 			var disp_fields = [], hidden_fields = [];
+
 			switch(zj_direct_id){
-				case 1://支付
+				case '1'://支付
 					disp_fields = ['out_zjzh_id'];
-					hidden_fields = ['in_zjzh_id'];
+					hidden_fields = ['in_pj_zjzh_id', 'in_cash_zjzh_id', 'zj_pj'];
+					if(zj_fl_id == '1'){ //现金
+						hidden_fields.push('out_zj_pj_id');
+						hidden_fields.push('pj_amount');
+					}
+					else{
+						disp_fields.push('out_zj_pj_id');
+						disp_fields.push('pj_amount');
+					}
 					break;
-				case 2://回款
-					disp_fields = ['in_zjzh_id'];
-					hidden_fields = ['out_zjzh_id'];
+				case '2'://回款
+					// disp_fields = ['in_pj_zjzh_id', 'in_cash_zjzh_id'];
+					hidden_fields = ['out_zjzh_id', 'out_zj_pj_id', 'pj_amount'];
+					if(zj_fl_id == '2'){ //票据
+						disp_fields.push('in_pj_zjzh_id');
+						disp_fields.push('zj_pj');
+						hidden_fields.push('in_cash_zjzh_id');
+					}
+					else{ //现金
+						hidden_fields.push('in_pj_zjzh_id');
+						hidden_fields.push('zj_pj');
+						disp_fields.push('in_cash_zjzh_id');
+					}
 					break;
-				case 3://有进有出
+				case '3'://有进有出
 					disp_fields = ['out_zjzh_id', 'in_zjzh_id'];
 					hidden_fields = [];
+					if(zj_fl_id == '2'){ //票据
+						disp_fields.push('in_pj_zjzh_id');
+						disp_fields.push('zj_pj');
+						disp_fields.push('out_zj_pj_id');
+						disp_fields.push('pj_amount');
+						hidden_fields.push('in_cash_zjzh_id');
+					}
+					else{ //现金
+						hidden_fields.push('in_pj_zjzh_id');
+						hidden_fields.push('zj_pj');
+						hidden_fields.push('out_zj_pj_id');
+						hidden_fields.push('pj_amount');
+						disp_fields.push('in_cash_zjzh_id');
+					}
 					break;
 			}
 			for(var i in disp_fields)
-				$('#' + divId + ' #' + disp_fields[i]).show();
+				$('#' + divId + ' #ces_tr_' + disp_fields[i]).show();
 			for(var i in hidden_fields)
-				$('#' + divId + ' #' + hidden_fields[i]).hide();
+				$('#' + divId + ' #ces_tr_' + hidden_fields[i]).hide();
+		};
+		
+		$('#' + divId + ' #zj_cause_id').bind('change', function(event){
+			showFields();
 		});
 		$('#' + divId + ' #zj_fl_id').bind('change', function(event){
-			var option = $(this).find("option:selected"), is_pj = option.attr('is_pj'), zj_fl_id = $(this).val(), zj_cause_id = $('#' + divId + ' #zj_cause_id').val();
-			var disp_fields = [], hidden_fields = [];
-			switch(is_pj){
-				case 1://票据
-					disp_fields = ['out_zjzh_id'];
-					hidden_fields = ['in_zjzh_id'];
-					break;
-				case 2://现金
-					disp_fields = ['in_zjzh_id'];
-					hidden_fields = ['out_zjzh_id'];
-					break;
-			}
-			for(var i in disp_fields)
-				$('#' + divId + ' #' + disp_fields[i]).show();
-			for(var i in hidden_fields)
-				$('#' + divId + ' #' + hidden_fields[i]).hide();
+			showFields();
+			//根据资金类型，确定账户类型
+			$.post('/jqgrid/jqgrid/oper/get_zjzh_by_zj_fl/db/qygl/table/zjzh', {zj_fl_id:$(this).val()}, function(data){
+				$('#' + divId + ' #out_zjzh_id').find('option').remove();
+				tool.generateOptions($('#' + divId + ' #out_zjzh_id'), data, 'id', 'name', false);
+			}, 'json');
 		});
-		
-		//交易方和物资之间绑定
-		var prefix = 'zzvw_pici_sh', temp = '#' + divId + ' #' + prefix + '_temp';
-		target = [
-			{
-				selector:temp + ' #item_id', 
-				type:'select', 
-				field:'item_id', 
-				url:'/jqgrid/jqgrid/oper/get_dingdan_by_hb/db/qygl/table/dingdan/yw_fl_id/1/status/1' //正在执行中的订单
-			}
-		];
-		tool.linkage({selector:temp + ' #hb_id'}, target);
-		//订单和计量单位及默认单价绑定
-		$(temp + ' #item_id').unbind('change').bind('change', function(event){
-			var option = $(this).find("option:selected"), unit_name = option.attr('unit_name'), wz_id = option.attr('wz_id');
-// tool.debug([default_price, unit_name, remained, temp]);
-			$(temp + ' #amount_post').html(unit_name);
-			$(temp + ' #wz_id').val(wz_id);
+		$('#' + divId + ' #out_zj_pj_id').bind('change', function(event){
+			var out_option = $(this).find("option:selected"), total_money = out_option.attr('total_money');
+			$('#' + divId + ' #pj_amount').val(total_money);
 		});
-		
-		//数量、单价和总价之间绑定
-		var auto_generate_total = function(){
-			var $source = [temp + ' #amount', temp + ' #price'];
-			var $dest = temp + ' #total_money';
-			tool.auto_fill_calc_result($dest, $source, '*', 2);
-		}
-		// $(temp + ' #amount').bind('keyup', auto_generate_total);
-		// $(temp + ' #price').bind('keyup', auto_generate_total);
 	};
 	
 	$table.prototype.buttonActions = function(action, p){

@@ -25,8 +25,8 @@ class qygl_dingdan extends table_desc{
             'completed_amount'=>array('label'=>'已完成量', 'post'=>array('type'=>'text', 'value'=>$info['unit_name'])),
 			'dingdan_status_id'=>array('label'=>'状态')
         );
-		$this->options['edit'] = array('wz_id'=>array('editable'=>false), 'defect_id'=>array('editable'=>true), 'amount', 'price', 'dingdan_status_id'=>array('type'=>'hidden'));
-		$this->options['add'] = array('wz_id'=>array('editable'=>true), 'defect_id'=>array('editable'=>true), 'amount', 'price', 'dingdan_status_id'=>array('type'=>'hidden'));
+		$this->options['edit'] = array('wz_id'=>array('editable'=>false), 'defect_id'=>array('editable'=>true), 'price', 'amount', 'dingdan_status_id'=>array('type'=>'hidden'));
+		$this->options['add'] = array('wz_id'=>array('editable'=>true), 'defect_id'=>array('editable'=>true), 'price', 'amount', 'dingdan_status_id'=>array('type'=>'hidden'));
 	}
 	
 	protected function setSubGrid(){

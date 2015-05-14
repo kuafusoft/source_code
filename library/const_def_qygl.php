@@ -22,9 +22,15 @@ defined('YW_FL_SC') || define('YW_FL_SC', 3); //生产
 defined('YW_FL_ZJBD') || define('YW_FL_ZJBD', 4); //资金变动
 defined('YW_FL_JD') || define('YW_FL_JD', 5); //接客户订单
 defined('YW_FL_FH') || define('YW_FL_FH', 6);//发货
-defined('YW_FL_PDCK') || define('YW_FL_PDCK', 6); //盘点仓库
+defined('YW_FL_PDCK') || define('YW_FL_PDCK', 7); //盘点仓库
 defined('YW_FL_PDZJ') || define('YW_FL_PDZJ', 8); //盘点资金
-defined('YW_FL_WZYK') || define('YW_FL_WZYK', 8); //物资移库
+defined('YW_FL_WZYK') || define('YW_FL_WZYK', 9); //物资移库
+defined('YW_FL_TH') || define('YW_FL_TH', 10); //退货
+defined('YW_FL_JTH') || define('YW_FL_JTH', 11); //接收退货
+defined('YW_FL_ZHIFU') || define('YW_FL_ZHIFU', 12); //支付
+defined('YW_FL_HK') || define('YW_FL_HK', 13); //回款
+defined('YW_FL_PJTX') || define('YW_FL_PJTX', 14); //票据贴息或拆分
+defined('YW_FL_ZJHB') || define('YW_FL_ZJHB', 15); //资金划拨
 
 defined('WZ_PACKAGE_FL_DINGDAN') || define('WZ_PACKAGE_FL_DINGDAN', 1); //订单包
 defined('WZ_PACKAGE_FL_YUNSHU') || define('WZ_PACKAGE_FL_YUNSHU', 1); //运输包
@@ -42,9 +48,15 @@ defined('ZJ_CAUSE_CG') || define('ZJ_CAUSE_CG', 1);     //支付采购款
 defined('ZJ_CAUSE_YUNSHU') || define('ZJ_CAUSE_YUNSHU', 2);     //支付运输费
 defined('ZJ_CAUSE_ZHUANGXIE') || define('ZJ_CAUSE_ZHUANGXIE', 3);     //支付装卸费
 
+defined('ZJ_DIRECT_OUT') || define('ZJ_DIRECT_OUT', 1);     //支付
+defined('ZJ_DIRECT_IN') || define('ZJ_DIRECT_IN', 2);     //收款
+defined('ZJ_DIRECT_INOUT') || define('ZJ_DIRECT_INOUT', 3);     //有进有出
+
 defined('ZJ_FL_XIANJIN') || define('ZJ_FL_XIANJIN', 1);     //现金
-defined('ZJ_FL_XIANJINZHIPIAO') || define('ZJ_FL_XIANJINZHIPIAO', 2);     //现金支票
-defined('ZJ_FL_CHENGDUIHUIPIAO') || define('ZJ_FL_CHENGDUIHUIPIAO', 3);     //银行承兑
+defined('ZJ_FL_PIAOJU') || define('ZJ_FL_PIAOJU', 2);     //票据
+
+defined('ZJ_PJ_FL_XIANJINZHIPIAO') || define('ZJ_PJ_FL_XIANJINZHIPIAO', 1);     //现金支票
+defined('ZJ_PJ_FL_CHENGDUIHUIPIAO') || define('ZJ_PJ_FL_CHENGDUIHUIPIAO', 2);     //银行承兑
 
 defined('GX_FL_ZH') || define('GX_FL_ZH', 1);     //工序类型：置换
 defined('GX_FL_ZUHE') || define('GX_FL_ZUHE', 2);     //工序类型：组合

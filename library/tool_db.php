@@ -30,6 +30,13 @@ class tool_db extends tool_kf{
 		return $res;
 	}
 	
+	public function freeRes(&$res){
+		if(is_object($res)){
+			$res->closeCursor();
+		}
+		unset($res);
+	}
+	
 	function getDB_Table($table, $db){
 		$a = explode('.', $table);
 		if(count($a) == 2){

@@ -682,6 +682,17 @@ class table_desc{
 			// $column['editable'] = true;
 			$column['IDENTITY'] = false;
 		}
+		if(!isset($column['edittype']) && isset($column['formatter']))
+			$column['edittype'] = $column['formatter'];
+		if(!isset($column['editoptions']) && isset($column['formatoptions'])){
+				$column['editoptions'] = $column['formatoptions'];
+		}
+		if(!isset($column['addoptions']) && isset($column['editoptions'])){
+				$column['addoptions'] = $column['editoptions'];
+		}
+		elseif(isset($column['addoptions']) && !isset($column['editoptions'])){
+				$column['editoptions'] = $column['addoptions'];
+		}
 		// if(empty($column['type']))
 			// $column['type'] = 'text';
 		$columnDef = array(

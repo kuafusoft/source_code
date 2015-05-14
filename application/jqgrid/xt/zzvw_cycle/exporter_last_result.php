@@ -328,6 +328,7 @@ class xt_zzvw_cycle_exporter_last_result extends exporter_excel{
 			$mid['module'][$row['testcase_module']][$row['prj']][$compiler][$build_target][$test_env][$cycle][$row['testcase']] = $test_result;
 			$mid['detail'][$row['testcase_module']][$row['testcase']][$row['prj']][$compiler][$build_target][$test_env][$cycle] = $test_result;
 		}
+		$this->tool->freeRes($res);
 // print_r($mid);
 		return $mid;
 	}
@@ -410,6 +411,7 @@ class xt_zzvw_cycle_exporter_last_result extends exporter_excel{
 			$mid['module'][$row['testcase_module']][$row['prj']][$compiler][$build_target][$test_env][$cycle][$row['testcase']] = $test_result;
 			$mid['detail'][$row['testcase_module']][$row['testcase']][$row['prj']][$compiler][$build_target][$test_env][$cycle] = $test_result;
 		}
+		$this->tool->freeRes($res);
 		return $mid;
 	}
 
@@ -898,6 +900,7 @@ class xt_zzvw_cycle_exporter_last_result extends exporter_excel{
 			$data[$row['prj_id']][$row['testcase_type_id']][$row['testcase_module_id']]['total_1_3'] += $row['cc'];
 			$data[$row['prj_id']][$row['testcase_type_id']][$row['testcase_module_id']]['total_'.$row['testcase_priority_id']] = $row['cc'];
 		}
+		$this->tool->freeRes($res);
 		
 		$skipResult = implode(',', array(RESULT_TYPE_SKIP, RESULT_TYPE_NT));
 		$sql = "select last.prj_id, tc.testcase_type_id, tc.testcase_module_id, ver.testcase_priority_id, count(*) as cc".
@@ -919,6 +922,7 @@ class xt_zzvw_cycle_exporter_last_result extends exporter_excel{
 			$data[$row['prj_id']][$row['testcase_type_id']][$row['testcase_module_id']]['runed_1_3'] += $row['cc'];
 			$data[$row['prj_id']][$row['testcase_type_id']][$row['testcase_module_id']]['runed_'.$row['testcase_priority_id']] = $row['cc'];
 		}
+		$this->tool->freeRes($res);
 		$sql = "SELECT last.prj_id, last.rel_id, group_concat(distinct rel.name separator ',') as rel, group_concat(distinct cycle.name separator ',')as cycle ".
 			" FROM testcase_last_result last left join cycle_detail on last.cycle_detail_id=cycle_detail.id".
 			" left join cycle on cycle_detail.cycle_id=cycle.id".

@@ -6,6 +6,10 @@ XT = XT || {};
 		return this.grid_index('qygl', 'zzvw_yg', '员工管理');
 	}
 	
+	this.scdj_index = function(){
+		return this.grid_index('qygl', 'zzvw_yw_scdj', '生产登记');
+	}
+	
 	this.gys_index = function(){
 		return this.grid_index('qygl', 'zzvw_gys', '供应商管理');
 	}
@@ -47,7 +51,7 @@ XT = XT || {};
 	}
 	
 	this.pici_index = function(){
-		return this.grid_index('qygl', 'pici', '批次管理');
+		return this.grid_index('qygl', 'zzvw_pici', '批次管理');
 	}
 	
 	this.hb_index = function(){
@@ -141,6 +145,26 @@ XT = XT || {};
 	
 	this.yw_zj_jinchu_index = function(){
 		return this.grid_index('qygl', 'zzvw_yw_zj_jinchu', '资金变动');
+	}
+	
+	this.yw_zj_zhifu_index = function(){
+		return this.grid_index('qygl', 'zzvw_yw_zj_zhifu', '支付');
+	}
+	
+	this.yw_zj_hk_index = function(){
+		return this.grid_index('qygl', 'zzvw_yw_zj_hk', '回款');
+	}
+	
+	this.zjzh_huabo = function(){
+		return this.grid_index('qygl', 'zzvw_yw_zj_huabo', '账户间划拨');
+	}
+	
+	this.chengdui_tiexi = function(){
+		return this.grid_index('qygl', 'zzvw_yw_zj_pj_tiexi', '票据贴息/拆分');
+	}
+	
+	this.chengdui_chaifen = function(){
+		return this.grid_index('qygl', 'chengdui_chaifen', '承兑拆分');
 	}
 	
 	this.zjzh_index = function(){

@@ -41,11 +41,6 @@
 		<qygl_sc label='生产管理' >
 			<yg action='yg_index' label='员工' />
 			<scdj action='scdj_index' label='生产登记' />
-			<zl action='zl_index' label='质量等级' />
-			<defect action='defect_index' label='缺陷' />
-			<gx action='gx_index' label='工序' />
-			<gx_fl action='gx_fl_index' label='工序分类' />
-			<gx_de action='gx_de_index' label='定额管理' />
 		</qygl_sc>
 
 		<qygl_cg label='采购管理' >
@@ -61,11 +56,12 @@
 		</qygl_xs>
 		
 		<qygl_cw label='财务管理' >
-			<yw_zj_jinchu action='yw_zj_jinchu_index' label='资金进出' />
+			<yw_zj_zhifu action='yw_zj_zhifu_index' label='支付' />
+			<yw_zj_hk action='yw_zj_hk_index' label='回款' />
+			<zjzh_huabo action='zjzh_huabo' label='账户间划拨' />
+			<chengdui_tiexi action='chengdui_tiexi' label='票据贴息拆分' />
 			<zjzh action='zjzh_index' label='资金账户管理' />
 			<zj_pj action='zj_pj_index' label='金融票据' />
-			<zj_cause action='zj_cause_index' label='资金变动原因' />
-			<zj_fl action='zj_fl_index' label='资金分类' />
 		</qygl_cw>
 	
 		<qygl_hb label='伙伴管理' >
@@ -80,13 +76,12 @@
 			<ck_weizhi action='ck_weizhi_index' label='仓位' />
 		</qygl_wz>
 		
-		<qygl_op label='企业运营'>
-			<yw_ruku action='yw_ruku_index' label='入库' />
-			<yw_chuku action='yw_chuku_index' label='出库' />
-			<yw action='yw_index' label='业务' />
-		</qygl_op>
-		
 		<gygl_base label='基础数据'>
+			<zl action='zl_index' label='质量等级' />
+			<defect action='defect_index' label='缺陷' />
+			<gx action='gx_index' label='工序' />
+			<gx_fl action='gx_fl_index' label='工序分类' />
+			<gx_de action='gx_de_index' label='定额管理' />
 			<hobby action='hobby_index' label='爱好' />
 			<credit_level action='credit_level_index' label='信用等级' />
 			<hb_fl action='hb_fl_index' label='伙伴类型' />
@@ -100,6 +95,8 @@
 			<work_type action='work_type_index' label='工种' />
 			<contact_method action='contact_method_index' label='联系方式' />
 			<work_type action='work_type_index' label='工种管理' />
+			<zj_cause action='zj_cause_index' label='资金变动原因' />
+			<zj_fl action='zj_fl_index' label='资金分类' />
 		</gygl_base>
 
 		
@@ -239,11 +236,6 @@
 		<qygl_sc display='true'>
 			<yg display='true'/>
 			<scdj display='true'/>
-			<zl display='true'/>
-			<defect display='true'/>
-			<gx display='true'/>
-			<gx_fl display='true'/>
-			<gx_de display='true'/>
 		</qygl_sc>
 
 		<qygl_cg display='true'>
@@ -259,11 +251,12 @@
 		</qygl_xs>
 		
 		<qygl_cw display='true'>
-			<yw_zj_jinchu display='true'/>
-			<zjzh display='true'/>
-			<zj_pj display='true'/>
-			<zj_cause display='true'/>
-			<zj_fl display='true'/>
+			<yw_zj_zhifu display='true' />
+			<yw_zj_hk display='true' />
+			<zjzh_huabo display='true' />
+			<chengdui_tiexi display='true' />
+			<zjzh display='true' />
+			<zj_pj display='true' />
 		</qygl_cw>
 	
 		<qygl_hb display='true'>
@@ -278,13 +271,12 @@
 			<ck_weizhi display='true'/>
 		</qygl_wz>
 		
-		<qygl_op display='true'>
-			<yw_ruku display='true'/>
-			<yw_chuku display='true'/>
-			<yw display='true'/>
-		</qygl_op>
-		
 		<gygl_base display='true'>
+			<zl display='true'/>
+			<defect display='true'/>
+			<gx display='true'/>
+			<gx_fl display='true'/>
+			<gx_de display='true'/>
 			<hobby display='true' />
 			<credit_level display='true'/>
 			<hb_fl display='true'/>
@@ -298,6 +290,8 @@
 			<work_type display='true'/>
 			<contact_method display='true'/>
 			<work_type display='true'/>
+			<zj_cause display='true' />
+			<zj_fl display='true' />
 		</gygl_base>
 	</qygl>
 		

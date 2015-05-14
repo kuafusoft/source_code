@@ -364,7 +364,7 @@ kf_tool.prototype = {
 		});
 		$(divSelector + ' :input:enabled:first').focus();
 	},
-	
+/*	
 	checkUnique : function(e, params){
 //$this.debug("This is checkUnique");	
 		if (!$(e).attr('unique')) return true;
@@ -403,7 +403,7 @@ kf_tool.prototype = {
 //$this.debug("End checkUnique");		
 		return true;
 	},
-	
+*/	
 	getAllInput : function(divSelector, ignored){
 		var $this = this;
 // this.debug($(divSelector));	
@@ -1044,8 +1044,10 @@ $this.debug(data['html']);
 	
 	bindOptions : function(event){
 		$.post(event.url, event.data, function(data){
+			event.blankItem = event.blankItem || true;
+			event.currentVal = event.currentVal || 0;
 			event.target.find('option').remove();
-			this.generateOptions(event.target, data, 'id', 'name', event.blankItem);
+			this.generateOptions(event.target, data, 'id', 'name', event.blankItem, event.currentVal);
 		}, 'json');
 	},
 
@@ -1062,8 +1064,10 @@ $this.debug(data['html']);
 				existed = true;
 		}
 		$.each(data, function(i, n){
-			if(currentVal && currentVal == n[value])
+			if(currentVal && currentVal == n[value]){
 				existed = true;
+				n['selected'] = 'selected';
+			}
 			//可以将data里的所有字段都打包到option里
 			select.append($this.generateOptionStr(n, value, title));
 			

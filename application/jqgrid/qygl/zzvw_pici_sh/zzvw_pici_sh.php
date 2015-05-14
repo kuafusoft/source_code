@@ -10,7 +10,7 @@ class qygl_zzvw_pici_sh extends table_desc{
             'id'=>array('editable'=>false, 'hidden'=>true),
             'name'=>array('label'=>'概述', 'editrules'=>array('required'=>true)),
 			'hb_id'=>array('label'=>'供应商', 'editable'=>true, 'editrules'=>array('required'=>true), 'data_source_table'=>'zzvw_stgys'),
-			'item_id'=>array('label'=>'物资订单', 'data_source_table'=>'dingdan', 'hidden'=>true),
+			'dingdan_id'=>array('label'=>'物资订单', 'data_source_table'=>'dingdan', 'hidden'=>true),
 			'wz_id'=>array('label'=>'物资'),
 			
 			'defect_id'=>array('label'=>'缺陷'),
@@ -22,7 +22,7 @@ class qygl_zzvw_pici_sh extends table_desc{
         );
 		
 		$this->options['edit'] = array(
-			'hb_id', 'item_id', 'wz_id'=>array('disabled'=>true), 'defect_id', 'amount'=>array('label'=>'数量', 'title'=>'输入负数为退货'), 'ck_weizhi_id'
+			'hb_id', 'dingdan_id', 'wz_id'=>array('disabled'=>true), 'defect_id', 'amount'=>array('label'=>'数量', 'title'=>'输入负数为退货'), 'ck_weizhi_id'
 		);
 	}
 	

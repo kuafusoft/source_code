@@ -23,7 +23,7 @@ class qygl_zzvw_yw_sh extends table_desc{
 			'zx_price'=>array('label'=>'装卸单价', 'post'=>array('value'=>'元/吨'), 'defval'=>$price[WZ_ZHUANGXIE], 'from'=>'qygl.yw_yunshu', 'editable'=>true, 'DATA_TYPE'=>'float'),
 			'zzvw_pici_sh'=>array('label'=>'清单', 'editable'=>true, 'legend'=>'', 'required'=>true,
 				'formatter'=>'multi_row_edit', 
-				'formatoptions'=>array('subformat'=>'temp', 'temp'=>"%(hb_id)s发售的%(defect_id)s的%(wz_id)s %(amount)s")
+				'formatoptions'=>array('subformat'=>'temp', 'temp'=>"%(name)s")
 				),
 			'weight'=>array('label'=>'重量', 'post'=>array('value'=>'吨'), 'from'=>'qygl.yw_yunshu', 'editable'=>true, 'DATA_TYPE'=>'float'),
 			'kg_id'=>array('label'=>'库管', 'from'=>'qygl.yw_yunshu', 'data_source_table'=>'zzvw_yg', 'editable'=>true),

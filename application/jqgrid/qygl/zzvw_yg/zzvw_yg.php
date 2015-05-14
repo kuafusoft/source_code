@@ -21,25 +21,30 @@ class qygl_zzvw_yg extends table_desc{
 			'hb_contact_method'=>array('label'=>'联系方式', 'formatter'=>'multi_row_edit', 'legend'=>'',
 				'formatoptions'=>array('subformat'=>'temp', 'temp'=>'%(contact_method_id)s:%(content)s')
 			),
+			'enter_date'=>array('label'=>'进厂日期', 'editable'=>true, 'from'=>'qygl.hb_yg'),
 			'work_type_id'=>array('label'=>'工种', 'editable'=>true, 'from'=>'qygl.hb_yg'),
 			'dept_id'=>array('label'=>'部门', 'editable'=>true, 'from'=>'qygl.hb_yg'),
 			'position_id'=>array('label'=>'职位', 'editable'=>true, 'from'=>'qygl.hb_yg'),
 			'salary_fl_id'=>array('label'=>'工资类型', 'editable'=>true, 'from'=>'qygl.hb_yg'),
 			'base_salary'=>array('label'=>'基本工资', 'editable'=>true, 'from'=>'qygl.hb_yg'),
 			'ticheng_ratio'=>array('label'=>'提成比例', 'editable'=>true, 'from'=>'qygl.hb_yg'),
+			'baoxian_type_id'=>array('label'=>'保险类型', 'editable'=>true, 'from'=>'qygl.hb_yg'),
+			'baoxian_start_date'=>array('label'=>'保险起付日期', 'editable'=>true, 'from'=>'qygl.hb_yg'),
+			'baoxian_feiyong'=>array('label'=>'保险费用', 'editable'=>true, 'from'=>'qygl.hb_yg'),
+			
 			'hb_skill'=>array('label'=>'员工技能', 'formatter'=>'multi_row_edit', 'legend'=>'',
 				'formatoptions'=>array('subformat'=>'temp', 'temp'=>'%(skill_id)s:%(skill_grade_id)s')
 			),
 			'hb_hobby_id'=>array('label'=>'爱好', 'editable'=>true, 'data_source_table'=>'hobby'),
-			'lxr'=>array('label'=>'联系人'),
+			'lxr'=>array('label'=>'紧急联系人'),
 			'cell_no'=>array('label'=>'联系人手机'),
             'isactive'=>array('label'=>'状态'),
         );
 		
 		$this->options['edit'] = array('name', 'gender_id', 'zhengjian_fl_id', 'identity_no', 
 			'credit_level_id', 'bank_account_no', 'init_date', 'init_account_receivable', 'account_receivable', 'address',
-			'hb_contact_method', 'work_type_id', 'dept_id', 'position_id', 'salary_fl_id', 'base_salary', 'ticheng_ratio', 'hb_skill',
-			'hb_hobby_id', 'lxr', 'cell_no'
+			'hb_contact_method', 'enter_date', 'work_type_id', 'dept_id', 'position_id', 'salary_fl_id', 'base_salary', 'ticheng_ratio', 'hb_skill',
+			'baoxian_type_id', 'baoxian_start_date', 'baoxian_feiyong', 'hb_hobby_id', 'lxr', 'cell_no'
 		);
 		$this->linkTables = array(
 			'm2m'=>array(

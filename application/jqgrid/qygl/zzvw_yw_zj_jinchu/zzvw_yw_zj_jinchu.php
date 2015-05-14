@@ -11,17 +11,16 @@ class qygl_zzvw_yw_zj_jinchu extends table_desc{
 		$this->options['real_table'] = 'yw';
 		$year_month2 = $this->tool->getYearMonthList(0, 36, true);
 		$this->options['list'] = array(
-			'zj_cause_id'=>array('label'=>'变动原因', 'from'=>'qygl.yw_zj_jinchu', 'editable'=>true),
+			'zj_cause_id'=>array('label'=>'变动原因', 'from'=>'qygl.yw_zj_jinchu', 'editable'=>true, 'editrules'=>array('required'=>true)),
 			'zj_fl_id'=>array('label'=>'资金类型', 'editable'=>true),
-			'hb_id'=>array('label'=>'客户'),
-			'out_zjzh_id'=>array('label'=>'支付账户', 'data_source_table'=>'zjzh', 'from'=>'qygl.yw_zj_jinchu', 'editable'=>true),
-			'out_zj_pj_id'=>array('label'=>'支付票据', 'from'=>'qygl.yw_zj_jinchu', 'editable'=>true, 'data_source_table'=>'zj_pj'),
-			'in_zjzh_id'=>array('label'=>'回款账户', 'data_source_table'=>'zjzh', 'from'=>'qygl.yw_zj_jinchu', 'editable'=>true),
-			'zj_pj'=>array('label'=>'拆分成的票据', 'formatter'=>'multi_row_edit',  'editable'=>true, 'legend'=>'', 
-				'formatoptions'=>array('subformat'=>'temp', 'temp'=>"%(code)s, 金额%(total_money)s, 到期日 %(expire_date)s")
-			),
-			'amount'=>array('label'=>'总金额', 'post'=>'元', 'DATA_TYPE'=>'float', 'from'=>'qygl.yw_zj_jinchu', 'editable'=>true),
-			'cost'=>array('label'=>'费用', 'post'=>'元', 'DATA_TYPE'=>'float', 'from'=>'qygl.yw_zj_jinchu', 'editable'=>true),
+			'hb_id'=>array('label'=>'交易方'),
+			'zjzh_id'=>array('label'=>'资金账户', 'data_source_table'=>'zjzh', 'from'=>'qygl.yw_zj_jinchu', 'editable'=>true),
+			'zj_pj_fl_id'=>array('label'=>'票据类型', 'from'=>'qygl.zj_pj', 'editable'=>true),
+			'code'=>array('label'=>'票据编号', 'from'=>'qygl.zj_pj', 'editable'=>true),
+			// 'total_money'=>array('label'=>'票据面额', 'from'=>'qygl.zj_pj', 'editable'=>true),
+			'expire_date'=>array('label'=>'到期日', 'from'=>'qygl.zj_pj', 'editable'=>true),
+			'amount'=>array('label'=>'总金额', 'post'=>array('value'=>'元'), 'DATA_TYPE'=>'float', 'from'=>'qygl.yw_zj_jinchu', 'editable'=>true),
+			'cost'=>array('label'=>'费用', 'post'=>array('value'=>'元'), 'defval'=>0, 'DATA_TYPE'=>'float', 'from'=>'qygl.yw_zj_jinchu', 'editable'=>true),
 			'dj_id'=>array('label'=>'单据'),
 			'note'=>array('label'=>'备注'),
 			'jbr_id'=>array('label'=>'经办人', 'data_source_db'=>'qygl', 'data_source_table'=>'zzvw_yg'),
@@ -30,16 +29,17 @@ class qygl_zzvw_yw_zj_jinchu extends table_desc{
 			'*'=>array('hidden'=>true),
 			
 		);
-		$this->options['edit'] = array('yw_fl_id'=>array('type'=>'hidden', 'defval'=>4), 'zj_cause_id', 'zj_fl_id', 'hb_id', 
-			'out_zjzh_id', 'out_zj_pj_id', 'pj_amount'=>array('label'=>'票据面额', 'disabled'=>false, 'editable'=>true, 'DATA_TYPE'=>'float'), 
-			'in_zjzh_id', 'zj_pj',  'cash_zjzh_id'=>array('label'=>'现金账户', 'editable'=>true, 'data_source_table'=>'zjzh'), 'amount', 'cost', 'dj_id', 'note', 'jbr_id', 'happen_date');
+		$this->options['edit'] = array('yw_fl_id'=>array('type'=>'hidden', 'defval'=>YW_FL_ZJBD), 'zj_cause_id', 'zj_fl_id', 
+			'hb_id', 'zjzh_id', 'zj_pj_fl_id', 'cost', 'expire_date', 'amount', 'cost',
+			'dj_id', 'note', 'jbr_id', 'happen_date');
 		$this->linkTables = array(
 			'one2one'=>array(
-				array('table'=>'yw_zj_jinchu', 'self_link_field'=>'yw_id')
+				array('table'=>'yw_zj_jinchu', 'self_link_field'=>'yw_id'),
+				array('table'=>'zj_pj', 'self_link_field'=>'from_yw_id')
 			),
-			'one2m'=>array(
-				array('table'=>'zj_pj', 'self_link_field'=>'id', 'link_field'=>'from_yw_id')
-			)
+			// 'one2m'=>array(
+				// array('table'=>'zj_pj', 'self_link_field'=>'id', 'link_field'=>'from_yw_id')
+			// )
 		);
 	}
 	

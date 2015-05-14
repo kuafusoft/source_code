@@ -12,7 +12,15 @@ class kf_text extends kf_cell{
 		if($props['unique']){
 			if(empty($props['event']['onblur']))
 				$props['event']['onblur'] = array();
-			$props['event']['onblur'][] = 'XT.checkElement(this)';
+			$uniq_params = array();
+			$strP = '{}';
+			if(!empty($this->params['uniq_db']))
+				$uniq_params[] = "db:\"{$this->params['uniq_db']}\"";
+			if(!empty($this->params['uniq_table']))
+				$uniq_params[] = "table:\"{$this->params['uniq_table']}\"";
+			if(!empty($uniq_params))
+				$strP = "{".implode(",", $uniq_params)."}";
+			$props['event']['onblur'][] = "XT.checkElement(this, $strP)";
 		}
 		$strProps = $this->propStr($props);
 		$ret = "<input {$strProps} >";

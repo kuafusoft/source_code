@@ -11,7 +11,7 @@ class qygl_zzvw_pici_sh_action_save extends action_save{
 		$res = $this->tool->query("SELECT hb.name as hb, wz.name as wz, hb_id, wz_id, unit.name as unit ".
 			" FROM dingdan left join yw on dingdan.yw_id=yw.id ".
 			"left join wz on dingdan.wz_id=wz.id left join hb on yw.hb_id=hb.id left join unit on wz.unit_id=unit.id".
-			" WHERE dingdan.id={$pair['item_id']}");
+			" WHERE dingdan.id={$pair['dingdan_id']}");
 		$dingdan = $res->fetch();
 		$amount = floatval($pair['amount']);
 		$action = '收到';
@@ -26,7 +26,7 @@ class qygl_zzvw_pici_sh_action_save extends action_save{
 	//应更新物资情况
 	protected function afterSave($affectID){
 		// 更新采购执行计划
-		$res = $this->tool->query("select * from dingdan_jfjh WHERE dingdan_id={$this->params['item_id']} and happen_amount=0 order by plan_date ASC limit 1");
+		$res = $this->tool->query("select * from dingdan_jfjh WHERE dingdan_id={$this->params['dingdan_id']} and happen_amount=0 order by plan_date ASC limit 1");
 		if($jfjh = $res->fetch()){ //有未执行的交付计划
 			$jfjh['happen_date'] = $this->params['happen_date'];
 			$jfjh['happen_amount'] = $this->params['amount'];
@@ -34,11 +34,11 @@ class qygl_zzvw_pici_sh_action_save extends action_save{
 			$this->tool->update('dingdan_jfjh', $jfjh);
 		}
 		else{ //没有未执行的交付计划
-			$jfjh = array('pici_id'=>$affectID, 'dingdan_id'=>$this->params['item_id'], 'happen_date'=>$this->params['happen_date'], 'happen_amount'=>$this->params['amount']);
+			$jfjh = array('pici_id'=>$affectID, 'dingdan_id'=>$this->params['dingdan_id'], 'happen_date'=>$this->params['happen_date'], 'happen_amount'=>$this->params['amount']);
 			$this->tool->insert('dingdan_jfjh', $jfjh);
 		}
 		//更新订单完成情况
-		$res = $this->tool->query("select * from dingdan WHERE id={$this->params['item_id']} and defect_id={$this->params['defect_id']}");
+		$res = $this->tool->query("select * from dingdan WHERE id={$this->params['dingdan_id']} and defect_id={$this->params['defect_id']}");
 		if($dingdan = $res->fetch()){
 			$dingdan['completed_amount'] = $dingdan['completed_amount'] + $this->params['amount'];
 			$this->tool->update('dingdan', $dingdan);

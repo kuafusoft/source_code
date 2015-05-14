@@ -60,6 +60,7 @@ class action_save extends action_jqgrid{
 		$data = array();
 		$options = $this->table_desc->getOptions();
 		foreach($options['list'] as $field=>$model){
+// print_r($field);			
 			if($model['from'] == $from && isset($this->params[$field])){
 				$data[$field] = $this->params[$field];
 			}
@@ -94,10 +95,10 @@ class action_save extends action_jqgrid{
 				$db = $linkInfo['db'];
 				$real_table = $table = $linkInfo['table'];
 				if(isset($linkInfo['real_table']))
-				$real_table = $linkInfo['real_table'];
+					$real_table = $linkInfo['real_table'];
 				$this->tool->delete($real_table, $linkInfo['self_link_field']."=$affectedID", $db);
 				break;
-				}
+		}
 	}
 	
 	protected function saveOne2M($affectedID, $linkInfo){

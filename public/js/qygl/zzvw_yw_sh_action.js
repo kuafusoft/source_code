@@ -22,15 +22,15 @@
 		var prefix = 'zzvw_pici_sh', temp = '#' + divId + ' #' + prefix + '_temp';
 		target = [
 			{
-				selector:temp + ' #item_id', 
+				selector:temp + ' #dingdan_id', 
 				type:'select', 
-				field:'item_id', 
+				field:'dingdan_id', 
 				url:'/jqgrid/jqgrid/oper/get_dingdan_by_hb/db/qygl/table/dingdan/yw_fl_id/1/status/1' //正在执行中的订单
 			}
 		];
 		tool.linkage({selector:temp + ' #hb_id'}, target);
 		//订单和计量单位及默认单价绑定
-		$(temp + ' #item_id').unbind('change').bind('change', function(event){
+		$(temp + ' #dingdan_id').unbind('change').bind('change', function(event){
 			var option = $(this).find("option:selected"), unit_name = option.attr('unit_name'), wz_id = option.attr('wz_id');
 // tool.debug([default_price, unit_name, remained, temp]);
 			$(temp + ' #amount_post').html(unit_name);

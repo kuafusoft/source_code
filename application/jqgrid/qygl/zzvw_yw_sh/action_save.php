@@ -9,6 +9,7 @@ class qygl_zzvw_yw_sh_action_save extends action_save{
 			foreach($this->params['zzvw_pici_sh']['data'] as &$data){
 				$data['happen_date'] = $this->params['happen_date'];
 				$data['remained'] = $data['amount'];
+				$data['gx_id'] = YW_FL_SH;
 			}
 		}
 		$res = $this->tool->query("SELECT name FROM hb WHERE id={$pair['hb_id']}");

@@ -23,7 +23,7 @@ class qygl_zzvw_yw_jd extends table_desc{
 				),
 			'dj_id'=>array('label'=>'单据'),
 			'note'=>array('label'=>'备注'),
-			'jbr_id'=>array('label'=>'接单人', 'data_source_db'=>'qygl', 'data_source_table'=>'yg'),
+			'jbr_id'=>array('label'=>'接单人', 'data_source_db'=>'qygl', 'data_source_table'=>'zzvw_yg'),
 			'happen_date'=>array('label'=>'接单日期', 'edittype'=>'date',
 				'stype'=>'select', 'searchoptions'=>array('value'=>$year_month2)), //只提供三年内的查询
 			'*'=>array('hidden'=>true),
